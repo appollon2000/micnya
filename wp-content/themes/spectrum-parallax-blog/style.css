@@ -187,29 +187,29 @@ html[xmlns] .clearfix {
 03 Layout
 ----------------------------*/
 #cover-left {
-	background: transparent url(images/cover-left-white-small.gif) repeat-y right;
+	/*background: transparent url(images/cover-left-white-small.gif) repeat-y right;
 	right:50%;
-	margin-right:830px;
+	margin-right:830px;*/
 
 }
 
 #cover-right {
-	background: transparent url(images/cover-right-white-small.gif) repeat-y;
+	/*background: transparent url(images/cover-right-white-small.gif) repeat-y;
 	left:50%;
-	margin-left:830px;
+	margin-left:830px;*/
 
 }
 
 #cover-right, #cover-left {
 	position:fixed;
 	top:0;
-	height:100%;
-	width:100%;
+	/*height:100%;
+	width:100%;*/
 	z-index:10;
 }
 
 #container {	
-	margin: 0 auto;
+	margin: 0 auto !important;
 	width: 100%;		
 	padding: 0;
 	background:transparent;	
@@ -217,7 +217,7 @@ html[xmlns] .clearfix {
 
 #main {
 	margin: 0;	
-	border-bottom: 1px solid #dbdbdb;
+	border-bottom: 0;
 	padding: 0;
 }
 
@@ -251,12 +251,19 @@ html[xmlns] .clearfix {
 
 #content.postshome .post, #content.postshome .page {
 	margin:0;
-	min-height: 961px !important;
+	min-height: 960px !important;
 	padding: 0 40px;
 }
 
-
-
+/* Footer */
+#footer { background: transparent !important; bottom: -3px; position: fixed; }
+#footer .right { display: none; }
+#footer .left { color: #edefe8; font-size: 12px; margin: -25px 0 0 390px; }
+/* Removing section headers */
+.blockText { display: none; }
+/* Right Navigation */
+#content #nav li a:hover, #content #nav li a.active { background: url('/wp-content/themes/nya/images/bullet.on.png') no-repeat !important; border: 0; height: 21px; width: 22px; }
+#content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat !important; border: 0 !important; height: 21px !important; width: 22px !important; }
 /* ---------------------------
 04 Header
 ----------------------------*/
@@ -266,8 +273,8 @@ html[xmlns] .clearfix {
 	top:0;
 	width:100%;
 	z-index: 300;
-	background:#fff;
-	border-bottom:#333 solid 1px;
+	background:rgb(0, 177, 204);
+	border-bottom:0;
 	color:#000;
 }
 
@@ -286,15 +293,16 @@ html[xmlns] .clearfix {
 }
 
 #socialNetworks {
-	margin:0 0 0 250px;
-	text-align:right;
+	margin:0 0 0 40px;
+	text-align:left;
 }
 
 #socialNetworks a {
-	margin: 0 5px 0 0;
+	margin: 0 -2px 0 0;
 }
 
 #logo {		
+	display: none;
 	position:absolute;
 	bottom:0;
 	left:0;

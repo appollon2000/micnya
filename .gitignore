@@ -4,3 +4,5 @@ wp-config-sample.php
 */.DS_Store
 *.DS_Store
 wp-content/.DS_Store
+wp-content/themes/spectrum-parallax-blog/images/.DS_Store
+wp-content/themes/spectrum-parallax-blog/images/icons/.DS_Store

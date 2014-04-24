@@ -16,7 +16,7 @@ $(document).ready(function() { //when the document is ready...
 	//save selectors as variables to increase performance
 	var $window = $(window);	
 	var windowHeight = $window.height(); //get the height of the window
-	
+	parallaxHeight = 960;
 	//apply the class "inview" to a section that is in the viewport
 	$('.parallax-container').bind('inview', function (event, visible) {
 			if (visible == true) {
@@ -74,6 +74,13 @@ $(document).ready(function() { //when the document is ready...
 			
 		
 	}
+	
+	function setFooterFAQ() {
+		$("#socialNetworks a:nth-child(3)").attr("href", "faq");
+		$("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
+	}
+	
+	setFooterFAQ();
 		
 	RepositionNav(); //Reposition the Navigation to center it in the window when the script loads
 	
