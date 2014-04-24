@@ -262,6 +262,7 @@ html[xmlns] .clearfix {
 /* Removing section headers */
 .blockText { display: none; }
 /* Right Navigation */
+#content #nav { top: 60px !important; }
 #content #nav li a:hover, #content #nav li a.active { background: url('/wp-content/themes/nya/images/bullet.on.png') no-repeat !important; border: 0; height: 21px; width: 22px; }
 #content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat !important; border: 0 !important; height: 21px !important; width: 22px !important; }
 /* ---------------------------
