@@ -76,7 +76,7 @@ $(document).ready(function() { //when the document is ready...
 	}
 	
 	function setFooterFAQ() {
-		$("#socialNetworks a:nth-child(3)").attr("href", "faq");
+		$("#socialNetworks a:nth-child(3)").attr("href", "page-faq");
 		$("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
 	}
 	
