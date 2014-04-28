@@ -21,6 +21,7 @@ while ($num = mysql_fetch_assoc ($result2)) {
 
 <?php get_header("michael"); ?>
 <div id="mast" class="appear">
+	<div id="tile-donate-btn"><a href="#">DONATE NOW</a></div>
 	<div id="ib-main-wrapper" class="ib-main-wrapper">
 		<div class="ib-main">
 <?php
@@ -30,7 +31,9 @@ $picUrl='http://ny3.dev/wp-content/themes/blankslate/images/newtiles/tiles/';
 $redirUrl='https://www.facebook.com/';
 
 $i = 0;
+$k = -1;
 while($row = mysql_fetch_array($result)){
+$k++;
 $clf = strtolower(trim($row['donor_first_name']));
 $cll = strtolower(trim($row['donor_last_name']));
 $numero = strtolower(trim($row['icon']));
@@ -79,7 +82,7 @@ $gift = '<div class="allgift">From:<br /> '.$donorInfo.'</div>';
 $gift = '';
 }
 
-echo '<div class="tyle ib-content '.$category.$numero.'" rel="'.$cleanRel.'"><img class="load-delay" data-original="/wp-content/themes/spectrum-parallax-blog/images/tiles/'.$numero.'-'.$lettre.'.png" src="" data-largesrc="" alt=""/><div class="honor">In honor of</div><div class="ib-teaser"><h2>'.$myfname. ' '.
+echo '<div class="tyle ib-content '.$category.$numero.'" rel="'.$cleanRel.'"  id="goto'.$k.'"><img class="load-delay" data-original="/wp-content/themes/spectrum-parallax-blog/images/tiles/'.$numero.'-'.$lettre.'.png" src="" data-largesrc="" alt=""/><div class="honor">In honor of</div><div class="ib-teaser"><h2>'.$myfname. ' '.
 $mylname. '<br /></h2></div><div class="categz">transformer</div><div class="ts-dates">'.$mysqldate.'</div><div class="ts-city">'.$place.'</div><div class="socialz">'.$gift.'<div class="iconz"><a class="sharefb" href="https://www.facebook.com/dialog/feed?app_id='.$appId.'&amp;link='.$linkUrl.'&amp;picture='.$picUrl.$numero.'-'.$lettre.'.png&name='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&amp;description=Check out my tile&amp;redirect_uri='.$redirUrl.'"></a>
 <a class="sharetwt" href="https://twitter.com/share?text='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&amp;url='.$picUrl.$numero.'-'.$lettre.'.png"></a></div>
 </div><div class="ib-content-full">
@@ -93,6 +96,20 @@ $mylname. '<br /></h2></div><div class="categz">transformer</div><div class="ts-
 </div><!-- ib-main -->
 </div><!-- ib-main-wrapper -->
 </div><!-- mast -->
+
+<div class="clr"></div>
+<div style="margin-top:50px">
+	<div id="dosearch">
+		<form id="searchus">
+			<input type="text" placeholder="TYPE IN NAME" id="searchTerm" name="searchTerm" maxlength="20">
+			<div id="searchGo" class="brownGradRight">
+		  	<div id="searchArrow" class="arrowCentered">&#916;</div>
+			</div>
+		</form>
+	</div>
+
+	<div id="results"></div>
+</div>
 
 
 

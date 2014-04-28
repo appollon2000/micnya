@@ -79,6 +79,8 @@ if (!$detect->isMobile() && !tia_get_option('tia_scrollEasing_enabled') ) { ?>
    		var obj = window;
    		console.log(obj.length);
   		console.log("selector" in obj);
+	jQuery("#accordion").accordion({autoHeight: false, collapsible: true, active: false}).css("height","auto");
+
 	});
 	</script>
 <?php } ?>

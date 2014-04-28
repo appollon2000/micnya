@@ -67,7 +67,7 @@ if (!$detect->isMobile()) { ?>
 			$('#container').localScroll({offset: {left: 0, top: headerHeightNeg}});
 			$('.story .blockText').css('margin-top',storyBump);
 			setTopMargin();
-
+			jQuery("#accordion").accordion({autoHeight: false, collapsible: true, active: false}).css("height","auto");
 			$(window).resize(function() { setTopMargin(); });
 		});
 	</script>
