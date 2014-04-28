@@ -17,6 +17,40 @@ $(document).ready(function() { //when the document is ready...
 	var $window = $(window);	
 	var windowHeight = $window.height(); //get the height of the window
 	parallaxHeight = 960;
+	var $donationBody = $("#donation-body"),
+		$donationSelector = $donationBody.find(".oval"),
+		$donationNext = $("#next a");
+		
+	var amountSelected = false,
+		currentDonationStep = 1;
+		
+	$donationSelector.on("click", function(e){
+		e.preventDefault();
+	
+		if ($(this).text() != '0') {
+			$donationBody.find(".donation-content").removeClass("light-selected-donation");
+			$donationBody.find(".donation-amount").removeClass("dark-selected-donation");
+			
+			$(this).parent().find(".donation-content").addClass("light-selected-donation");
+			$(this).parent().find(".donation-amount").addClass("dark-selected-donation");
+			
+			amountSelected = true;
+		} else {
+			amountSelected = false;
+		}
+	});
+	
+	$donationNext.on("click", function(e) {
+		e.preventDefault();
+		
+		if (amountSelected) {
+			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function(){
+				currentDonationStep++;
+				
+				$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			});
+		}
+	});
 	//apply the class "inview" to a section that is in the viewport
 	$('.parallax-container').bind('inview', function (event, visible) {
 			if (visible == true) {
@@ -66,11 +100,10 @@ $(document).ready(function() { //when the document is ready...
 		});
 		var scrollPosition = $("body").scrollTop();
 		var firstBlockId = $('.inview').first().attr('id');
-
 		
-		firstBlockLink = firstBlockId.replace("block","li#blockLink") + ' a' ;
-		removeActive();
-		$(firstBlockLink).addClass("active");
+	//	firstBlockLink = firstBlockId.replace("block","li#blockLink") + ' a' ;
+	//	removeActive();
+	//	$(firstBlockLink).addClass("active");
 			
 		
 	}
