@@ -480,36 +480,60 @@ doct.mouseup(function (e) {
 }, 2500);
 
 function addWave() {
-  $('.tyle').slice(0,36).each(function(i) {
+var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
+  parz.slice(0,36).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
+    row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 100,function() {
       row.removeClass('skew');
 });
-  }, 140*i);
+  }, 300*i);
 });
-$('.tyle').slice(36,72).each(function(i) {
+parz.slice(36,72).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
+     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 100,function() {
       row.removeClass('skew');
 });
-  }, 140*i);
+  }, 300*i);
 });
-$('.tyle').slice(72,108).each(function(i) {
+parz.slice(72,108).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
+    row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 100,function() {
       row.removeClass('skew');
 });
-  }, 140*i);
+  }, 300*i);
 });
-
+parz.slice(108,144).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 100,function() {
+      row.removeClass('skew');
+});
+  }, 300*i);
+});
+parz.slice(144,180).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 100,function() {
+      row.removeClass('skew');
+});
+  }, 300*i);
+});
+parz.slice(180,216).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 100,function() {
+      row.removeClass('skew');
+});
+  }, 300*i);
+});
 }
 
 //jQuery.fn.reverse = [].reverse;
 //$('.tyle').slice(0,).repeat().each($).animate({opacity:0},$).animate({opacity:1});
-setInterval(addWave, 20000);
+setInterval(addWave, 14000);
 
 
 

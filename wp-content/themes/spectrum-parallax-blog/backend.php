@@ -4,7 +4,7 @@ Template Name: Backend
 
 session_start();
 
-$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC LIMIT 80";
+$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC";
 $query2 = "SELECT * FROM donation"; 
 $query3 = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC LIMIT 15";
 $result = mysql_query($query) or die(mysql_error());
@@ -82,6 +82,11 @@ $gift = '<div class="allgift">From:<br /> '.$donorInfo.'</div>';
 $gift = '';
 }
 
+  if($i%36 == 0) {
+    echo $i > 0 ? "</div>" : ""; // close div if it's not the first
+    echo "<div class='threesixth'>";
+  }
+
 echo '<div class="tyle ib-content '.$category.$numero.'" rel="'.$cleanRel.'"  id="goto'.$k.'"><img class="load-delay" data-original="/wp-content/themes/spectrum-parallax-blog/images/tiles/'.$numero.'-'.$lettre.'.png" src="" data-largesrc="" alt=""/><div class="honor">In honor of</div><div class="ib-teaser"><h2>'.$myfname. ' '.
 $mylname. '<br /></h2></div><div class="categz">transformer</div><div class="ts-dates">'.$mysqldate.'</div><div class="ts-city">'.$place.'</div><div class="socialz">'.$gift.'<div class="iconz"><a class="sharefb" href="https://www.facebook.com/dialog/feed?app_id='.$appId.'&amp;link='.$linkUrl.'&amp;picture='.$picUrl.$numero.'-'.$lettre.'.png&name='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&amp;description=Check out my tile&amp;redirect_uri='.$redirUrl.'"></a>
 <a class="sharetwt" href="https://twitter.com/share?text='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&amp;url='.$picUrl.$numero.'-'.$lettre.'.png"></a></div>
@@ -89,9 +94,10 @@ $mylname. '<br /></h2></div><div class="categz">transformer</div><div class="ts-
 <p>'.$cleanMsg.'</p></div>
 <div class="popupbg">anmbg'.$numero.'</div>
 </div>';
+$i++;
 }
 ?>
-
+</div>
 <div class="clr"></div>
 </div><!-- ib-main -->
 </div><!-- ib-main-wrapper -->
