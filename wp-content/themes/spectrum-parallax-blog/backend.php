@@ -63,7 +63,7 @@ $cleanRel=str_replace(' ', '',strtolower($myfname.$mylname));
 $anonm=$myfname.' ' .$mylname;
 }else {
 $myfname=$row['recipient_first_name'];
-$mylname=(strlen($row['recipient_last_name']) > 20) ? substr($row['recipient_last_name'],0,18).'...' : $row['recipient_last_name'];
+$mylname=(strlen($row['recipient_last_name']) > 22) ? substr($row['recipient_last_name'],0,20).'...' : $row['recipient_last_name'];
 $donorInfo = substr($row['donor_first_name'], 0, 1). ' '. substr($row['donor_last_name'], 0, 1);
  
 $cleanRel=str_replace(' ', '',strtolower($myfname.$mylname));
@@ -74,7 +74,7 @@ $anonm=str_replace(' ', '',$klfn.$klln);
 $cleanMsg =(strlen($row['message']) > 88) ? substr($row['message'],0,85).'...' : $row['message'];
 $phpdate = strtotime($row['donation_date']);
 $mysqldate = date("m/d/y", $phpdate);
-$place = $row['donor_location'];
+$place =(strlen($row['donor_location']) > 18) ? substr($row['donor_location'],0,15).'...' : $row['donor_location'];
 
 if($row['is_gift']==1) {
 $gift = '<div class="allgift">From:<br /> '.$donorInfo.'</div>';
