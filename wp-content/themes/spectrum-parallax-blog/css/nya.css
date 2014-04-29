@@ -1,0 +1,64 @@
+/* Donation Container */
+.light-yellow-selected-donation { background-color: #e6ec5d !important; }
+.dark-yellow-selected-donation { background-color: #fff452 !important; }
+.light-red-selected-donation { background-color: #d73748 !important; }
+.dark-red-selected-donation { background-color: #ee2b3b !important; }
+.other-input { display: block !important; }
+
+#step-1 { display: block;}
+#step-2, #step-3, #step-4, #step-5, #step-6 { display: none; }
+#next { margin: 0 auto; width: 875px; }
+#next a { background: url('/wp-content/themes/nya/images/transitions.btn.png') no-repeat; float: left; height: 58px; margin-left: 345px; text-align: center; text-indent: -9999px; width: 178px; }
+#next a.submit-transition { background-position: 0 -58px; }
+#main { margin: 0 auto; width: 100%; }
+#donation-container { background-color: #1c4c59; color: #fff; height: 475px; margin: 120px auto 0; opacity: 0.7; width: 875px; }
+#donation-header { background-color: #26343d; height: 128px; text-align: center; }
+#donation-header h1 { color: #fff; display: block; font-size: 30px; font-weight: bold; padding: 35px 0 15px 0; text-transform: uppercase; }
+#donation-header h2 { color: #fff; font-size: 17px; margin-left: 10%; width: 80%; }
+#donation-body { padding-top: 45px; }
+#donation-body .selection { float: left; height: 60px; margin: 0 0 2px 10%; width: 80%; }
+#donation-body .selection p { margin: 0; }
+#donation-body .oval { background: url('/wp-content/themes/nya/images/donation.selection.off.png') 19px 19px no-repeat; float: left; height: 20px; padding: 30px; text-indent: -9999px; width: 4%; }
+#donation-body .oval.selected, #donation-body .oval:hover { background: url('/wp-content/themes/nya/images/donation.selection.on.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
+#donation-body .donation-content { background-color: #03a7c1; float: left; height: 100%; width: 90%; }
+#donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; color: #fff; font-size: 13px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
+#donation-body .donation-amount { font-size: 15px; height: 60px; padding-left: 30px; width: 15%; }
+#donation-body .donation-amount.other { /*font-size: 11px; padding-left: 20px; padding-top: 13px; text-align: center; text-transform: lowercase;*/ }
+#donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
+#donation-body .donation-amount.other p { color: #fff; font-size: 14px; line-height: 12px; margin: -8px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
+#donation-body .donation-amount.other p.other-input { margin: 4px 0 0 0; }
+#donation-body .donation-content.other .donation-info { display: none; margin-left: 125px; padding: 28px 0 0; }
+#donation-body .donation-reference { background: transparent; text-align: center; width: 21%; }
+#donation-body .donation-info { float: left; font-size: 11px; line-height: 11px; padding: 10px 0 0 35px; text-transform: uppercase; width: 62%; }
+
+#step-2 .left-container, #step-2 .right-container { float: left; width: 40%; }
+#step-2 .left-container { margin-left: 15%; }
+#step-2 .user-info input { background-color: #0895ac; border: 0; color: #fff; margin-bottom: 2px; width: 80%; }
+#step-2 .user-info input { background-color: #0895ac; border: 0; color: #fff; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 79%; }
+#step-2 .user-info .cvv { width: 17%; }
+#step-2 .user-info label { color: #fff; margin-left: 5px; }
+#step-2 .user-info.cc-name { width: 80%; }
+#step-2 .user-info.cc-name > div { float: left; width: 45%; }
+#step-2 .user-info.cc-name input { float: left; width: 20% !important; }
+#step-2 #select-city .dd-select, #step-2 #select-country .dd-select, #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select { background-color: #0895AC !important; border: 0; border-radius: 0; height: 30px; margin-bottom: 2px; width: 80% !important; }
+#step-2 #select-exp-day { width: 22.5% !important; }
+#step-2 #select-exp-year { margin: -32px 0 0 19%; width: 25% !important; }
+/*#step-2 #select-exp-day .dd-select { width: 18% !important; }
+#step-2 #select-exp-year .dd-select { width: 22% !important; }*/
+#step-2 #select-city .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options { border: 0; box-shadow: none; width: 80% !important; }
+
+#step-3 #post-transaction { color: #fff; margin: 0 auto; text-align: center; width: 80%; }
+#step-3 #post-transaction span { color: #fff454; font-weight: bold; }
+
+#step-5 { margin-top: -20px; }
+#step-5 .section-container { margin: 0 auto; width: 40%; }
+#step-5 .section-container .section-top { margin-left: 10%; width: 90%; }
+#step-5 p { color: #fff; font-weight: bold; margin: 15px 0; }
+#step-5 .section-bottom p { margin-left: 37px; }
+#step-5 .user-info p { font-weight: normal; margin: 3px 0; }
+#step-5 .user-info input { background: #0895ac; border: 0; color: #fff; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 79%; }
+#donation-body #step-5 .selection { margin-left: 0; width: 100%; }
+#donation-body #step-5 .oval { background-position: 0 0; margin-right: 15px; padding: 0; width: 21px; }
+#donation-body #step-5 .oval.selected, #donation-body #step-5 .oval:over { }
+#step-5 .section-bottom .user-info input { margin-left: 37px; width: 70%; }
+#step-5 .section-bottom .selection.bottom { margin-top: 70px; }
