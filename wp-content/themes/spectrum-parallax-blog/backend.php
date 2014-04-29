@@ -4,7 +4,7 @@ Template Name: Backend
 
 session_start();
 
-$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC";
+$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC LIMIT 80";
 $query2 = "SELECT * FROM donation"; 
 $query3 = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC LIMIT 15";
 $result = mysql_query($query) or die(mysql_error());

@@ -504,38 +504,7 @@ var row = $(this);
 });
   }, 140*i);
 });
-$('.tyle').slice(108,144).each(function(i) {
-var row = $(this);
-    setTimeout(function() {
-     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
-      row.removeClass('skew');
-});
-  }, 140*i);
-});
-$('.tyle').slice(144,180).each(function(i) {
-var row = $(this);
-    setTimeout(function() {
-     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
-      row.removeClass('skew');
-});
-  }, 140*i);
-});
-$('.tyle').slice(180,216).each(function(i) {
-var row = $(this);
-    setTimeout(function() {
-     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
-      row.removeClass('skew');
-});
-  }, 140*i);
-});
-$('.tyle').slice(216,254).each(function(i) {
-var row = $(this);
-    setTimeout(function() {
-     row.addClass('skew').animate({opacity:0}).animate({opacity:1}, 60,function() {
-      row.removeClass('skew');
-});
-  }, 140*i);
-});
+
 }
 
 //jQuery.fn.reverse = [].reverse;
