@@ -5,12 +5,16 @@
 .dark-red-selected-donation { background-color: #ee2b3b !important; }
 .other-input { display: block !important; }
 
-#view-your-tile, #donate-another { display: none; }
+#view-your-tile a, #donate-another a { display: none; }
 #step-1 { display: block;}
 #step-2, #step-3, #step-4, #step-5, #step-6, #step-7 { display: none; }
 #next { margin: 0 auto; width: 875px; }
 #next a { background: url('/wp-content/themes/nya/images/transitions.btn.png') no-repeat; float: left; height: 58px; margin-left: 345px; text-align: center; text-indent: -9999px; width: 178px; }
 #next a.submit-transition { background-position: 0 -58px; }
+#view-your-tile, #donate-another { float: left; height: 58px; margin: 0 auto; }
+#view-your-tile a { background: url('http://jimmypino.com/projects/eyeball/images/view.tile.btn.png') no-repeat; float: left; height: 58px; margin: 0 4px 0 77px; text-indent: -9999px; width: 374px; }
+#donate-another a { background: url('http://jimmypino.com/projects/eyeball/images/donate.tile.btn.png') no-repeat; float: left; height: 58px; text-indent: -9999px; width: 374px; }
+
 #main { margin: 0 auto; width: 100%; }
 #donation-container { background-color: #1c4c59; color: #fff; height: 475px; margin: 120px auto 0; opacity: 0.7; width: 875px; }
 #donation-header { background-color: #26343d; height: 128px; text-align: center; }
@@ -67,8 +71,8 @@
 #step-6 .left-container, #step-6 .right-container { float: left; margin: 0 5%; width: 40%; }
 #step-6 .section-container { margin: -30px auto; padding: 0 10%; width: 100%; }
 #step-6 .user-info p { color: #fff; font-weight: bold; margin: 10px 0; }
-#step-6 .text-area-message { background-color: #0895ac; border: 0; color: #fff; padding: 1%; resize: none; width: 86%; }
-#step-6 .tile { float: left; height: 46px; margin: 0 5px 5px 0; text-indent: -9999px; width: 44px; }
+#step-6 .text-area-message { background-color: #0895ac; border: 0; color: #fff; height: 110px; padding: 1%; resize: none; width: 95%; }
+#step-6 .tile { float: left; height: 46px; margin: 0 11px 11px 0; text-indent: -9999px; width: 44px; }
 #step-6 .tile-1 { background: url('/wp-content/themes/nya/images/tile-1.png') no-repeat; }
 #step-6 .tile-2 { background: url('/wp-content/themes/nya/images/tile-2.png') no-repeat; }
 #step-6 .tile-3 { background: url('/wp-content/themes/nya/images/tile-3.png') no-repeat; }
@@ -93,5 +97,11 @@
 #step-6 .blue-3  { background-color: #067a91; }
 #step-6 .blue-4  { background-color: #285083; }
 #step-6 .right-container a.tile:hover { border: 2px solid #fff452 }
-#step-6 .right-container { margin-top: 113px; }
-#step-6 .right-container .row { float: left; width: 70%; }
+#step-6 .right-container { margin-top: 156px; }
+#step-6 .right-container .row { float: left; width: 80%; }
+#step-6 #preview-tile { background: url('/wp-content/themes/nya/images/preview.tile.btn.png') no-repeat; float: left; height: 31px; text-indent: -9999px; width: 209px; }
+#step-7 { font-size: 16px; font-weight: normal; line-height: 17px; margin: 15px auto 0; padding: 0 5%; text-align: center; text-transform: none; width: 90%; }
+#step-7 #social-icons-tiles { float: left; margin-top: 60px; padding: 0 20%; width: 100%; }
+#step-7 #social-icons-tiles a { color: #fff; float: left; height: 43px; margin: 0 auto; padding: 14px 0 0 25px; width: 50%; }
+#step-7 #social-icons-tiles #fb-share { background: url('http://jimmypino.com/projects/eyeball/images/donate.fb.btn.png') no-repeat; }
+#step-7 #social-icons-tiles #tw-share { background: url('http://jimmypino.com/projects/eyeball/images/donate.tw.btn.png') no-repeat; }

@@ -4,6 +4,8 @@ $(document).ready(function() {
 		$donationHeader = $("#donation-header"),
 		$donationSelector = $("#donation-body").find(".oval"),
 		$donationNext = $("#next a"),
+		$donateAnotherTile = $("#donate-another a"),
+		$viewYourTile = $("#view-your-tile a"),
 		$userOtherDonation = $donationBody.find(".other input");
 	
 	var amountSelected = false,
@@ -71,6 +73,36 @@ $(document).ready(function() {
 		}
 	});
 	
+	$donateAnotherTile.on("click", function (e) {
+		e.preventDefault();
+		
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+
+			$donationHeader.find("h1").fadeOut("slow", function() {
+				$(this).text("Choose your donation amount");
+				$(this).fadeIn();
+			});
+			
+			$donationHeader.find("h2").text("Together we can create Ocean Wonders: Sharks! and build a new New York Aquarium for generations of curious minds to come.");
+			$donationHeader.find("h2").fadeIn();
+			
+			$donationContainer.animate({
+				height: 475
+			}, 500, "linear");
+			
+			currentDonationStep = 1;
+
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+		});
+		
+	});
+	
+	$viewYourTile.on("click", function (e) {
+		e.preventDefault();
+		
+		console.log("go to your tile");
+	});
+	
 	$userOtherDonation.on("click", function (e) {
 		e.preventDefault();
 		
@@ -122,14 +154,20 @@ $(document).ready(function() {
 				height: 65
 			}, 500, "linear");
 			
+			$donationHeader.find("h1").animate({
+				paddingTop: 22
+			}, 500, "linear");
+			
 			$donationContainer.animate({
 				height: 430
 			}, 500, "linear");
 			
+			
+			
 			$donationHeader.find("h1").fadeOut("slow", function() {
 				$(this).text("Enter Billing Information");
 				$(this).fadeIn();
-			})
+			});
 			
 			$donationHeader.find("h2").hide();
 			
@@ -195,6 +233,10 @@ $(document).ready(function() {
 				height: 128
 			}, 500, "linear");
 			
+			$donationHeader.find("h1").animate({
+				paddingTop: 35
+			}, 500, "linear");
+			
 			$donationContainer.animate({
 				height: 560
 			}, 500, "linear");
@@ -222,6 +264,14 @@ $(document).ready(function() {
 	function thankYouSection () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep++;
+			
+			$donationContainer.animate({
+				height: 430
+			}, 500, "linear");
+			
+			$donationNext.fadeOut();
+			$donateAnotherTile.fadeIn();
+			$viewYourTile.fadeIn();
 			
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
