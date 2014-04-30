@@ -535,8 +535,7 @@ rez.fadeOut(800, function() {
 mainFrame.animate({
 scrollTop: 0 + targz.position().top,scrollLeft:0 + targz.position().left
 }, 2000, function() {
-$('#goto3').trigger('click');
-
+targz.trigger('click');
 });
 });
 });
