@@ -91,7 +91,6 @@ transform-style: preserve-3d;
 -moz-transform: perspective(300px) rotateX(30deg);
 -webkit-transform-style: preserve-3d;
 -moz-transform-style: preserve-3d;
-background:#BCC6CC;
-opacity:0.7;
+opacity: 0.8;
 }
 
