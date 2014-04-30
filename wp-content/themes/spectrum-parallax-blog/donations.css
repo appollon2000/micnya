@@ -80,6 +80,12 @@ span.ib-close{display:none !important;opacity:0;}
 #ib-content-preview[rel="anmbg14"]{background:#ccc url(images/popup/14.png) no-repeat}
 #ib-content-preview[rel="anmbg15"]{background:#ccc url(images/popup/15.png) no-repeat}
 
+.threesixth {
+overflow: visible !important;
+transform-style: preserve-3d;
+-webkit-transform-style: preserve-3d;
+}
+
 .skew{
 -webkit-transform:perspective(250px) rotateX(20deg);
 -moz-transform: perspective(250px) rotateX(20deg);
