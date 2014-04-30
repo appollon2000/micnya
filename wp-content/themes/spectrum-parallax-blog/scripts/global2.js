@@ -492,7 +492,7 @@ var row = $(this);
 parz.slice(36,72).each(function(i) {
 var row = $(this);
    setTimeout(function() {
-    row.addClass('skew').delay(100).queue(function(){
+    row.addClass('skew').delay(250).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 300*i);
@@ -500,34 +500,34 @@ var row = $(this);
 parz.slice(72,108).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(100).queue(function(){
+    row.addClass('skew').delay(300).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 320*i);
+  }, 300*i);
 });
 parz.slice(108,144).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(100).queue(function(){
+    row.addClass('skew').delay(350).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 340*i);
+  }, 300*i);
 });
 parz.slice(144,180).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(100).queue(function(){
+    row.addClass('skew').delay(400).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 380*i);
+  }, 300*i);
 });
 parz.slice(180,216).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(100).queue(function(){
+    row.addClass('skew').delay(450).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 400*i);
+  }, 300*i);
 });
 }
 

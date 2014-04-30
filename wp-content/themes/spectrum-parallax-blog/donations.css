@@ -87,9 +87,11 @@ transform-style: preserve-3d;
 }
 
 .skew{
--webkit-transform:perspective(500px) rotateX(35deg);
--moz-transform: perspective(500px) rotateX(35deg);
+-webkit-transform:perspective(300px) rotateX(30deg);
+-moz-transform: perspective(300px) rotateX(30deg);
 -webkit-transform-style: preserve-3d;
 -moz-transform-style: preserve-3d;
+background:#BCC6CC;
+opacity:0.15;
 }
 
