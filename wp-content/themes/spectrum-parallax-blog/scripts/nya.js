@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	var $donationContainer = $("#donation-container"),
+	var $main = $("#main"),
+		$donationContainer = $("#donation-container"),
 		$donationBody = $("#donation-body"),
 		$donationHeader = $("#donation-header"),
 		$donationSelector = $("#donation-body").find(".oval"),
@@ -12,9 +13,11 @@ $(document).ready(function() {
 		currentDonationStep = 1,
 		donationAmount,
 		donationLevel,
-		regExpNumbers = /[^0-9]/g;
+		regExpNumbers = /[^0-9]/g,
+		staticBackground = "<div id='static-background'></div>";
 		
 	$userOtherDonation.val("");
+	$main.prepend(staticBackground);
 		
 	$donationSelector.on("click", function(e){
 		e.preventDefault();
