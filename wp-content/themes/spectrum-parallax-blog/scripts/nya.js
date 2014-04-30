@@ -212,7 +212,7 @@ $(document).ready(function() {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep++;
 			
-			
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
 });
