@@ -65,6 +65,9 @@ $(document).ready(function() {
 			case 5:
 				customizeUserTile();
 				break;
+			case 6:
+				thankYouSection();
+				break;
 		}
 	});
 	
@@ -209,6 +212,14 @@ $(document).ready(function() {
 	}
 	
 	function customizeUserTile () {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			currentDonationStep++;
+			
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+		});
+	}
+	
+	function thankYouSection () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep++;
 			

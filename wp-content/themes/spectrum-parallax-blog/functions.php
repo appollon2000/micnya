@@ -97,6 +97,7 @@ function tia_scripts() {
 	wp_enqueue_script('superfish', get_bloginfo('template_url').'/scripts/superfish/superfish.js', array('jquery'), '1.4.8', true);
 	wp_enqueue_script('supersubs', get_bloginfo('template_url').'/scripts/superfish/supersubs.js', array('jquery'), '1.4.8', true);
 	wp_enqueue_style('superfish', get_bloginfo('template_url').'/scripts/superfish/superfish.css', false, '1.4.8', 'all' );	
+	wp_enqueue_style('nya', get_bloginfo('template_url').'/css/nya.css', false, '1.4.8', 'all' );	
 	
 	wp_enqueue_script('fancybox', get_bloginfo('template_url').'/scripts/fancybox/jquery.fancybox-1.3.4.pack.js', array('jquery'), '1.3.4', true);
 	wp_enqueue_style('fancybox', get_bloginfo('template_url').'/scripts/fancybox/jquery.fancybox-1.3.4.css', false, '1.3.4', 'all' );
@@ -107,6 +108,8 @@ function tia_scripts() {
 	wp_enqueue_style('donation', get_bloginfo('template_url').'/donations.css', false, '', 'all' );
 	wp_enqueue_script('collapse', get_bloginfo('template_url').'/scripts/bootstrap.min.js', array('jquery'), '', true);
 	wp_enqueue_script('global', get_bloginfo('template_url') . '/scripts/global2.js', false, '2014',true );
+	wp_enqueue_script('ddslick', get_bloginfo('template_url') . '/scripts/ddslick.min.js', false, '2014',true );
+	wp_enqueue_script('nya', get_bloginfo('template_url') . '/scripts/nya.js', false, '2014',true );
 
 }
 
