@@ -484,13 +484,51 @@ var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
   parz.slice(0,36).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(1000).queue(function(){
+     row.addClass('skew').delay(400).queue(function(){
     row.removeClass('skew').dequeue();
 });
   }, 300*i);
 });
-
-
+parz.slice(36,72).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+     row.addClass('skew').delay(400).queue(function(){
+    row.removeClass('skew').dequeue();
+});
+  }, 300*i);
+});
+parz.slice(72,108).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+     row.addClass('skew').delay(400).queue(function(){
+    row.removeClass('skew').dequeue();
+});
+  }, 300*i);
+});
+parz.slice(108,144).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+      row.addClass('skew').delay(400).queue(function(){
+    row.removeClass('skew').dequeue();
+});
+  }, 300*i);
+});
+parz.slice(144,180).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+      row.addClass('skew').delay(400).queue(function(){
+    row.removeClass('skew').dequeue();
+});
+  }, 300*i);
+});
+parz.slice(180,216).each(function(i) {
+var row = $(this);
+    setTimeout(function() {
+      row.addClass('skew').delay(400).queue(function(){
+    row.removeClass('skew').dequeue();
+});
+  }, 300*i);
+});
 }
 
 //jQuery.fn.reverse = [].reverse;
