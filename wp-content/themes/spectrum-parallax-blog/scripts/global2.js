@@ -487,7 +487,7 @@ var row = $(this);
     row.addClass('skew').delay(200).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 300*i);
+  }, 100*i);
 });
 parz.slice(36,72).each(function(i) {
 var row = $(this);
@@ -495,7 +495,7 @@ var row = $(this);
     row.addClass('skew').delay(230).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 310*i);
+  }, 110*i);
 });
 parz.slice(72,108).each(function(i) {
 var row = $(this);
@@ -503,7 +503,7 @@ var row = $(this);
     row.addClass('skew').delay(260).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 320*i);
+  }, 120*i);
 });
 parz.slice(108,144).each(function(i) {
 var row = $(this);
@@ -511,7 +511,7 @@ var row = $(this);
     row.addClass('skew').delay(290).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 330*i);
+  }, 130*i);
 });
 parz.slice(144,180).each(function(i) {
 var row = $(this);
@@ -519,7 +519,7 @@ var row = $(this);
     row.addClass('skew').delay(320).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 340*i);
+  }, 140*i);
 });
 parz.slice(180,216).each(function(i) {
 var row = $(this);
@@ -527,13 +527,13 @@ var row = $(this);
     row.addClass('skew').delay(350).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
-  }, 350*i);
+  }, 150*i);
 });
 }
 
 //jQuery.fn.reverse = [].reverse;
 //$('.tyle').slice(0,).repeat().each($).animate({opacity:0},$).animate({opacity:1});
-setInterval(addWave, 20000);
+setInterval(addWave, 12000);
 
 
 
@@ -593,8 +593,8 @@ targz.trigger('click');
 
  var donorStr = "&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&other_amount=10";
 
-var urlStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555";
-var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + urlStr;
+var urlStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true";
+var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&user_donation_amt=10';
 
 $('input#subCvio').on("click", function(e) {
  e.preventDefault();
@@ -603,18 +603,15 @@ var xdr;
         try {
             xdr = $.ajax({
                 type: "POST",
-                url: url,
-                data: donorStr,
-                dataType: "xml",
-                headers: {  headers:{'Accept' :'application/json','Content-Type' :'application/json'}}
+                data: url,
+                dataType: "xml"
             });
             xdr.done(alert('done'));
             xdr.fail(alert('fail'));
         } catch (e){
-            console.log('errror');
+            console.log('errrror');
         }
 });
 
 
 });
-
