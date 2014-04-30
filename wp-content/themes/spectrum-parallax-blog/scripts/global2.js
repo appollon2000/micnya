@@ -593,7 +593,7 @@ targz.trigger('click');
 
  var donorStr = "&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&other_amount=10";
 
-var urlStr = "method=donate&v=1.0&api_key=zooapikey&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555";
+var urlStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555";
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + urlStr;
 
 $('input#subCvio').on("click", function(e) {
@@ -608,8 +608,8 @@ var xdr;
                 dataType: "xml",
                 headers: {  headers:{'Accept' :'application/json','Content-Type' :'application/json'}}
             });
-            xdr.done('done');
-            xdr.fail('fail');
+            xdr.done(alert('done'));
+            xdr.fail(alert('fail'));
         } catch (e){
             console.log('errror');
         }
