@@ -4,7 +4,9 @@
 .light-red-selected-donation { background-color: #d73748 !important; }
 .dark-red-selected-donation { background-color: #ee2b3b !important; }
 .other-input { display: block !important; }
-/*#static-background { background: url("http://ec2-54-86-42-60.compute-1.amazonaws.com/wp-content/uploads/2014/04/mission.bkg_.one_.jpg") no-repeat; background-position: 50% 0 !important; background-size: auto auto; height: 960px; position: fixed; width: 100%; z-index: 9998; }*/
+#static-background { background: url("/wp-content/themes/nya/images/main.bkg.color.jpg") no-repeat; background-position: 50% 0 !important; background-size: auto auto; height: 960px; position: fixed; width: 100%; z-index: 9998; }
+#bg-overlay { background-color: #00b1cc; height: 960px; opacity: 0.8; position: fixed; width: 100%; z-index: 9999; }
+#content { position: absolute; z-index: 9999; }
 #view-your-tile a, #donate-another a { display: none; }
 #step-1 { display: block;}
 #step-2, #step-3, #step-4, #step-5, #step-6, #step-7 { display: none; }
@@ -105,3 +107,12 @@
 #step-7 #social-icons-tiles a { color: #fff; float: left; height: 43px; margin: 0 auto; padding: 14px 0 0 25px; width: 50%; }
 #step-7 #social-icons-tiles #fb-share { background: url('/wp-content/themes/nya/images/donate.fb.btn.png') no-repeat; }
 #step-7 #social-icons-tiles #tw-share { background: url('/wp-content/themes/nya/images/donate.tw.btn.png') no-repeat; }
+
+#explore-further { height: 590px; margin: 120px auto 0; width: 875px; }
+#explore-further h1 { color: #26343d; display: block; font-size: 40px; text-align: center; padding-bottom: 30px; }
+#explore-further #explore-further-container { background-color: #1c4c59; opacity: 0.7; }
+#explore-further #wall-video { background: #000; display: inline; float: right; height: 200px; margin: 0 0 20px 20px; width: 300px; }
+#explore-further #explore-further-container .header { background-color: #26343d; height: 50px; text-align: center; }
+#explore-further #explore-further-container .header h2 { color: #fff; font-size: 21px; padding-top: 20px; }
+#explore-further #explore-further-container .content { padding: 15px 40px; }
+#explore-further #explore-further-container .content p { color: #fff; font-weight: normal; text-transform: none; }

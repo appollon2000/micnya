@@ -14,7 +14,7 @@ $(document).ready(function() {
 		donationAmount,
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
-		staticBackground = "<div id='static-background'></div>";
+		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>";
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
@@ -53,7 +53,7 @@ $(document).ready(function() {
 	
 	$donationNext.on("click", function(e) {
 		e.preventDefault();
-		
+
 		switch(currentDonationStep) {
 			case 1:
 				authorizeFirstStep();
@@ -93,9 +93,14 @@ $(document).ready(function() {
 				height: 475
 			}, 500, "linear");
 			
+			resetDonationForm();
 			currentDonationStep = 1;
 
-			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			$donationNext.fadeIn();
+			$donateAnotherTile.fadeOut();
+			$viewYourTile.fadeOut();
+			
+			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();//css({"opacity": '1'});
 		});
 		
 	});
@@ -137,7 +142,7 @@ $(document).ready(function() {
 					donationLevel = "Transformer";
 				}
 				
-				donationAmount = amountRegistered;
+				donationAmount = "$ " + amountRegistered;
 				
 				continueToSecondStep();
 			} else {
@@ -173,13 +178,14 @@ $(document).ready(function() {
 			});
 			
 			$donationHeader.find("h2").hide();
-			
+
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 
-			$donationBody.find("#select-city").ddslick();
-			$donationBody.find("#select-country").ddslick();
-			$donationBody.find("#select-exp-day").ddslick();
-			$donationBody.find("#select-exp-year").ddslick();
+			/* Will need to fix to match comps */
+		//	$donationBody.find("#select-city").ddslick();
+		//	$donationBody.find("#select-country").ddslick();
+		//	$donationBody.find("#select-exp-day").ddslick();
+		//	$donationBody.find("#select-exp-year").ddslick();
 		});
 	}
 	
@@ -278,5 +284,13 @@ $(document).ready(function() {
 			
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
+	}
+	
+	function resetDonationForm () {
+		amountSelected = false;
+		
+		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
+		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
+		$donationBody.find(".oval").removeClass("selected");
 	}
 });
