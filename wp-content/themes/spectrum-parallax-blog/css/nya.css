@@ -1,3 +1,27 @@
+/* Footer */
+#footer { background: transparent !important; bottom: -3px; position: fixed; }
+#footer .right { display: none; }
+#footer .left { color: #edefe8; font-size: 12px; margin: -25px 0 0 390px; }
+/* Removing section headers */
+.blockText { background: transparent !important; }
+.blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
+/* Right Navigation */
+#content #nav { top: 60px !important; }
+#content #nav li a:hover, #content #nav li a.active { background: url('/wp-content/themes/nya/images/bullet.on.png') 160px 0 no-repeat !important; border: 0; color: #000 !important; height: 21px; width: 22px; }
+#content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 160px 0 !important; border: 0 !important; color: #000; font-size: 13px; font-weight: bold; height: 21px !important; margin-bottom: -2px; padding-top: 2px; text-transform: uppercase; text-indent: 0 !important; width: 200px !important; }
+#content #nav #blockLink2, #content #nav #blockLink3, #content #nav #blockLink4, #content #nav #blockLink5, #content #nav #blockLink9, #content #nav #blockLink10 { display: none; } 
+.page-id-58 {  background-color: #00b1cc !important; height: 960px; margin: 0 auto; width: 1430px; }
+.page-id-58 #container { background: url('/wp-content/themes/nya/images/main.bkg.jpg') no-repeat !important; height: 100%; }
+.page-id-58 #container .inside { width: 1260px; }
+.page-id-58 #commentForm { display: none; }
+.page-id-58 #content { margin-top: 150px; width: 100% }
+.page-id-58 h1 { background-color: #253640; color: #fff; height: 60px; margin-bottom: -2px; padding-top: 35px; text-align: center; }
+.page-id-58 #accordion { background: #1e4d5a; padding: 30px 0; }
+.page-id-58 #accordion h3 { background: #00b1cc; border: 0; border-radius: 0; margin-left: 10%; width: 80%; }
+.page-id-58 #accordion h3 a { color: #fff; font-weight: bold; text-transform: uppercase; }
+.page-id-58 #accordion h3 a:hover { color: #fff454; }
+.page-id-58 .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
+
 /* Donation Container */
 .light-yellow-selected-donation { background-color: #e6ec5d !important; }
 .dark-yellow-selected-donation { background-color: #fff452 !important; }
