@@ -328,8 +328,96 @@ $i++;
     <div id="cnvDonationForm-success"></div>
 </div>
 
+<div class="clr"></div>
 
+<div id="mix3">
+    <form id="signupForm" action="" method="POST">
+    <div class="padex" id="recip00ColorText">Personalize your gift with a message</div>
+    <div id="recip00Message" class="textarea">
+        <textarea maxlength="300" name="msg0" placeholder="(maximum 300 characters)"></textarea>
+    </div>
+<div class="clr"></div>
+     <div class="colLeft">
+        <div class="padex" id="recip00ColorText">Select your animal</div>
+        <div class="animalIconBar">
+            <div id="rec0Icon" class="colLeft animals">
+              <ul>
+              <li><a class="animalIcon01 lrner" href="#" rel="1" data="recicon0"></a></li>
+              <li><a class="animalIcon02" href="#" rel="2" data="recicon0"></a></li>
+              <li><a class="animalIcon03" href="#" rel="3" data="recicon0"></a></li>
+              <li><a class="animalIcon04" href="#" rel="4" data="recicon0"></a></li>
+              <li><a class="animalIcon05" href="#" rel="5" data="recicon0"></a></li>
+              <li><a class="animalIcon06" href="#" rel="6" data="recicon0"></a></li>
+              <li><a class="animalIcon07" href="#" rel="7" data="recicon0"></a></li>
+              <li><a class="animalIcon08" href="#" rel="8" data="recicon0"></a></li>
+              <li><a class="animalIcon09" href="#" rel="9" data="recicon0"></a></li>
+              <li><a class="animalIcon10" href="#" rel="10" data="recicon0"></a></li>
+              <li><a class="animalIcon11" href="#" rel="11" data="recicon0"></a></li>
+              <li><a class="animalIcon12" href="#" rel="12" data="recicon0"></a></li>
+              <li><a class="animalIcon13" href="#" rel="13" data="recicon0"></a></li>
+              <li><a class="animalIcon14" href="#" rel="14" data="recicon0"></a></li>
+              <li><a class="animalIcon15" href="#" rel="15" data="recicon0"></a></li>
+              </ul>
+            </div>
+        </div>
+     </div>
+
+<div class="colLeft couleur">
+    <div class="padex" id="recip00ColorText">Choose a color</div>
+    <div id="donorColour00" class="colLeft colourBar">
+        <ul>
+            <li><a class="colourDiv colour01 crner" href="#" rel="E81F83" data="color0"></a></li>
+            <li><a class="colourDiv colour02" href="#" rel="E87058" data="color0"></a></li>
+            <li><a class="colourDiv colour03" href="#" rel="E8C037" data="color0"></a></li>
+            <li><a class="colourDiv colour04" href="#" rel="74B26B" data="color0"></a></li>
+            <li><a class="colourDiv colour05" href="#" rel="00A49E" data="color0"></a></li>
+            <li><a class="colourDiv colour06" href="#" rel="177A8F" data="color0"></a></li>
+            <li><a class="colourDiv colour07 last" href="#" rel="2E4F80" data="color0"></a></li>
+        </ul>
+    </div>
+    <div class="clr"></div>
+    <div class="clear padex">
+        <div id="tilePreview">
+          <a href="#" data-rec="recicon0" data-col="color0" data-first="firstname" data-last="lastname" rel="prettyPhoto" data-amv="amvary">Preview your tile</a>
+        </div>
+    </div>
 </div>
+<div class="clr"></div>
+<input type="hidden" id="recicon0" name="recicon0" value="1" />
+<input type="hidden" id="color0" name="color0" value="E81F83" />
+<input type="hidden" id="iscatg" name="iscatg" value="0" />
+</form>
+    <div id="WrpopupPrev-box">
+    <div id="prevClose"><a href="#"></a></div>
+     <div id="WrpopupPrev" rel="anmbg1">
+        <div id="popupPrev">
+            <div class="prevHonor">In honor of</div>
+            <div class="prevName"><h2>Brad Peske<br></h2></div>  
+            <div class="prevCategz">transformer</div>    
+            <div class="prevDates">11/30/13</div>   
+            <div class="prevCity">Rockville Centr...</div>    
+            <div class="prevSocialz">
+                <div class="prevAllgift">From:<br> Tracy Mojica</div>
+                <div class="prevIconz">
+                    <a href="#" class="sharefb"></a>
+                    <a href="#" class="sharetwt"></a>
+                </div>
+            </div>     
+            <div class="popupbg">anmbg11</div>   
+            <div class="prevContent">
+                <p>Brad,
+                Just keep swimming and always follow your dreams.  
+                Love, 
+                Mom</p>
+            </div>    
+        </div><!-- end popupPrev -->
+    </div><!-- end WrpopupPrev -->
+</div><!-- end WrpopupPrev-box -->
+
+</div><!-- end mix3 -->
+
+
+</div><!-- end donateHolder -->
 
 
 

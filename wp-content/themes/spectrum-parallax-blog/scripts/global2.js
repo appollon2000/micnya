@@ -12,6 +12,8 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#mix3 .animals ul li a'),colors=$('#mix3 .colourBar ul li a'),thprev=$('#tilePreview a'), prevTile = $('#tilePreview a'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a');
+
 $j = jQuery.noConflict();
  $(function() {
       
@@ -449,6 +451,51 @@ $j = jQuery.noConflict();
         
         Template.init();
 
+animals.on("click", function(e) {
+  e.preventDefault();
+  var that = $(this),rel = that.attr('rel'),dat = that.attr('data');
+  $("#rec0Icon ul li a[data='"+dat+"']").removeClass('lrner');
+  $('#signupForm input#'+dat).val(rel);
+  that.addClass('lrner');
+});
+colors.on("click", function(e) {
+  e.preventDefault();
+  var that = $(this),rel = that.attr('rel'),dat = that.attr('data');
+  $("#donorColour00 ul li a[data='"+dat+"']").removeClass('crner');
+  $('#signupForm input#'+dat).val(rel);
+  that.addClass('crner');
+});
+thprev.on("click", function(e) {
+  e.preventDefault();
+  var that = $(this),daticon = that.attr('data-rec'),datcol = that.attr('data-col'),ltrec=$('input#'+daticon).val(),ltcol=$('input#'+datcol).val(), bdy = $('body'),
+  datfirst=that.attr('data-first'),datlast=that.attr('data-last'),mif=$('input#'+datfirst).val(),mil=$('input#'+datlast).val(),datav=that.attr('data-amv'),
+  amva = $('select#'+datav+' option:selected').attr('class'),thisImg=$('#donateHolder img[data-img="'+daticon+'"]');bdy.removeClass('Bronze Silver Gold');
+  that.attr('href','/wp-content/themes/blankslate/images/preview/'+ltrec+ltcol+'.png');
+  that.attr('title',mif+' '+mil);thisImg.attr('alt',amva);bdy.addClass(amva);
+});
+prevTile.on("click", function(e) {
+  e.preventDefault();
+  var Box = $('#WrpopupPrev-box');
+  Box.fadeIn();
+});
+prevClose.on("click", function(e) {
+  e.preventDefault();
+  var Box = $('#WrpopupPrev-box');
+  Box.fadeOut();
+});
+$(document).on('click', prevIconz, function (e) {
+ e.preventDefault();
+return false;
+});
+documt.mouseup(function (e) {
+  var container = $("#WrpopupPrev-box,#tilePreview"),boxOnly = $("#WrpopupPrev-box");
+  if (!container.is(e.target) && container.has(e.target).length === 0) 
+  {
+    boxOnly.fadeOut();
+  }
+
+});
+
 
 setTimeout(function () {
   var doct = $(document);
@@ -537,11 +584,6 @@ setInterval(addWave, 12000);
 
 
 
-
-
-
-
-var $parentDiv = $('#ib-main-wrapper'),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus');
 
 inpt.on("click", function(e) {
   e.preventDefault();
