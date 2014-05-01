@@ -108,11 +108,20 @@
 #step-7 #social-icons-tiles #fb-share { background: url('/wp-content/themes/nya/images/donate.fb.btn.png') no-repeat; }
 #step-7 #social-icons-tiles #tw-share { background: url('/wp-content/themes/nya/images/donate.tw.btn.png') no-repeat; }
 
-#explore-further { height: 590px; margin: 120px auto 0; width: 875px; }
+#block8 .story { width: 1050px; }
+#explore-further { height: 590px; margin: 120px auto 0; width: 1050px; }
 #explore-further h1 { color: #26343d; display: block; font-size: 40px; text-align: center; padding-bottom: 30px; }
 #explore-further #explore-further-container { background-color: #1c4c59; opacity: 0.7; }
-#explore-further #wall-video { background: #000; display: inline; float: right; height: 200px; margin: 0 0 20px 20px; width: 300px; }
+#explore-further #wall-video { background: #000; display: inline; float: right; height: 250px; margin: 0 0 20px 20px; width: 420px; }
 #explore-further #explore-further-container .header { background-color: #26343d; height: 50px; text-align: center; }
 #explore-further #explore-further-container .header h2 { color: #fff; font-size: 21px; padding-top: 20px; }
 #explore-further #explore-further-container .content { padding: 15px 40px; }
-#explore-further #explore-further-container .content p { color: #fff; font-weight: normal; text-transform: none; }
+#explore-further #explore-further-container .content p { color: #fff; font-size: 14px; font-weight: normal; text-transform: none; }
+
+#block9 .story { width: 1050px; }
+#explore-further-discover, #explore-further-find-out { color: #fff; font-size: 45px; margin-bottom: 700px; text-align: center; width: 1050px; }
+#explore-further-discover a, #explore-further-find-out a { color: #fff; text-decoration: underline; }
+#explore-further-donate { text-align: center; width: 1050px; }
+#explore-further-donate a { background-color: #26343d; color: #fff452; float: left; font-size: 40px; height: 100px; margin: 0 0 300px 20%; padding-top: 44px; width: 60%; }
+#explore-further-discover a:hover, #explore-further-find-out a:hover { color: #fff452; text-decoration: underline; }
+#explore-further-donate a:hover { color: #fff; }
