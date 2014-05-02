@@ -124,7 +124,7 @@ if (!$detect->isMobile() && !tia_get_option('tia_scrollEasing_enabled') ) { ?>
 </script>
 </head>
 <body <?php body_class(tia_get_option('tia_theme_color')." ".tia_get_option('tia_theme_bkg')); ?> id="desk">
-<div id="container" class="clearfix">
+<div id="container">
     <div id="headerBar" class="navbar navbar-default">
         <div id="header" class="navbar-inner navbar-header">
 					<div class="container">

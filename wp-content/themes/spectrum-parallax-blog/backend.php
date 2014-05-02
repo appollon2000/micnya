@@ -105,6 +105,10 @@ $i++;
 
 <div class="clr"></div>
 <div style="margin-top:50px">
+    <div id="countem">
+        <span>Donated $<?php echo number_format($qty); ?></span>
+    </div>
+    <div id="defaultCountdown"></div>
 	<div id="dosearch">
 		<form id="searchus">
 			<input type="text" placeholder="TYPE IN NAME" id="searchTerm" name="searchTerm" maxlength="20">

@@ -1,6 +1,6 @@
 <?php $postType = 'page'; ?>
 	<!--post nav-->
-            <ul id="nav">
+            <ul id="nav>
                 <?php
 					if(tia_get_option('tia_reorder_enabled')) {
 						$orderby = 'menu_order';

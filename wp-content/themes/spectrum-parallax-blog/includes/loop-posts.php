@@ -102,6 +102,20 @@
 	</div>	
                 
     <?php else : ?>
+            <?php
+$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC";
+$query2 = "SELECT * FROM donation"; 
+$query3 = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id ORDER BY donation.donation_date DESC LIMIT 15";
+$result = mysql_query($query) or die(mysql_error());
+$result2 = mysql_query($query2) or die(mysql_error());
+$result3 = mysql_query($query3) or die(mysql_error());
+$sum = $result2['value_sum'];
+
+$qty= 0;
+while ($num = mysql_fetch_assoc ($result2)) {
+    $qty += $num['amount'];
+}
+?>
     	<div id="block<?php echo $i; ?>" <?php $i++; ?> <?php post_class('parallax-container'); ?>  style="background-image: url(<?php echo $src[0]; ?>); overflow: hidden; min-height:<?php echo $setParallaxHeight; ?>px;<?php if ($lb_bgcolor==true){echo " background-color:".$lb_bgcolor.";";} ?>">
         	<div class="story">
             	<div class="<?php if($postAlignment) { echo $postAlignment; } ?> blank blockText" style="<?php if($noTextBackground){echo'background:none;';}  if($blockTextColor){echo ' color:', $blockTextColor;} ?>">

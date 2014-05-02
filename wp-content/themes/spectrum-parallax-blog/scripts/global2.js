@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#mix3 .animals ul li a'),colors=$('#mix3 .colourBar ul li a'),thprev=$('#tilePreview a'), prevTile = $('#tilePreview a'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#mix3 .animals ul li a'),colors=$('#mix3 .colourBar ul li a'),thprev=$('#tilePreview a'), prevTile = $('#tilePreview a'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a'), ctdn = jQuery('#defaultCountdown');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -450,6 +450,7 @@ $j = jQuery.noConflict();
           })();
         
         Template.init();
+ctdn.countdown({until: new Date(2014, 5 - 1, 5, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
 
 animals.on("click", function(e) {
   e.preventDefault();
@@ -524,7 +525,7 @@ doct.mouseup(function (e) {
   }
 });
 
-}, 2500);
+}, 6000);
 
 function addWave() {
 var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
@@ -580,7 +581,7 @@ var row = $(this);
 
 //jQuery.fn.reverse = [].reverse;
 //$('.tyle').slice(0,).repeat().each($).animate({opacity:0},$).animate({opacity:1});
-setInterval(addWave, 12000);
+setInterval(addWave, 15000);
 
 
 

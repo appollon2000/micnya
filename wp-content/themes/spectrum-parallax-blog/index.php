@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-	<div id="main" class="clearfix">				 
+
+	<div id="main">				 
 		<div id="content" class="postshome clearfix">
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
@@ -37,7 +38,8 @@
 			</div>
 				
 		</div> <!-- end content -->
-	</div>	
+	</div>
+
 <?php get_footer(); ?>
 
 

@@ -111,3 +111,5 @@ transform-style: preserve-3d;
 .popupbg {display: none;}
 .prevContent{clear: both;color: #FFF;display: none;font-size: 20px;line-height: 26px;margin: 0 auto;max-height: 114px;padding-top: 13px;position: relative;text-align: center;text-transform: none;width: 250px;}
 .prevContent p {color: #000;font-size: 13px;font-weight: 400;height: 72px;line-height: 16px;margin-left: 5px;overflow: hidden;padding: 16px 13px 10px 21px;text-align: left;}
+#ascrail2000{width:16px !important;background: #26343d !important;}
+#ascrail2000 div {background-color:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
