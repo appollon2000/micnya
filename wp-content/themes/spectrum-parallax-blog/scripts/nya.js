@@ -14,10 +14,12 @@ $(document).ready(function() {
 		donationAmount,
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
-		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>";
+		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
+		verticalLinkConnector = "<did id='links-vertical-connector'></div>";
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
+	$main.find("#nav").before(verticalLinkConnector);
 		
 	$donationSelector.on("click", function(e){
 		e.preventDefault();
