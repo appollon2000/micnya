@@ -20,6 +20,8 @@ $(document).ready(function() {
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
 	$main.find("#nav").before(verticalLinkConnector);
+	
+	setFooterFAQ();
 		
 	$donationSelector.on("click", function(e){
 		e.preventDefault();
@@ -294,5 +296,10 @@ $(document).ready(function() {
 		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".oval").removeClass("selected");
+	}
+	
+	function setFooterFAQ() {
+		$("#socialNetworks a:nth-child(3)").attr("href", "page-faq");
+		$("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
 	}
 });
