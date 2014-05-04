@@ -27,7 +27,7 @@ body { background: #eeefe9 !important; }
 .page-id-58 #accordion h3 a { color: #fff; font-weight: bold; text-transform: uppercase; }
 .page-id-58 #accordion h3 a:hover { color: #fff454; }
 .page-id-58 .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
-
+#step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
 #links-vertical-connector { border: 1px solid #000; height: 92px; position: fixed; right: 48px; top: 65px; width: 1px; }
 /* Donation Container */
 .light-yellow-selected-donation { background-color: #e6ec5d !important; }
@@ -75,15 +75,20 @@ body { background: #eeefe9 !important; }
 #step-2 .user-info input { background-color: #0895ac; border: 0; color: #fff; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 79%; }
 #step-2 .user-info .cvv { width: 17%; }
 #step-2 .user-info label { color: #fff; margin-left: 5px; }
-#step-2 .user-info.cc-name { width: 80%; }
-#step-2 .user-info.cc-name > div { float: left; width: 45%; }
-#step-2 .user-info.cc-name input { float: left; width: 20% !important; }
-#step-2 #select-city .dd-select, #step-2 #select-country .dd-select, #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select { background-color: #0895AC !important; border: 0; border-radius: 0; height: 30px; margin-bottom: 2px; width: 80% !important; }
-#step-2 #select-exp-day { width: 22.5% !important; }
-#step-2 #select-exp-year { margin: -32px 0 0 19%; width: 25% !important; }
+#step-2 .user-info.cc-type { width: 80%; }
+#step-2 .user-info.cc-type > div { float: left; width: 45%; }
+#step-2 .user-info.cc-type input { float: left; width: 20% !important; }
+#step-2 #select-state, #step-2 #select-country { margin-top: -10px; width: 99% !important; }
+#step-2 #select-state a, #step-2 #select-country a, #step-2 #select-exp-day a, #step-2 #select-exp-year a { color: #000; padding-left: 4px; text-transform: normal !important; }
+#step-2 #select-state .dd-selected-text { text-transform: normal !important; }
+#step-2 #select-state ul li, #step-2 #select-country ul li, #step-2 #select-exp-day ul li, #step-2 #select-exp-year ul li { float: left; margin: 0; padding: 0; width: 100% }
+#step-2 #select-state { margin-bottom: -8px; }
+#step-2 #select-state .dd-select, #step-2 #select-country .dd-select, #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select { background-color: #0895AC !important; border: 0; border-radius: 0; height: 30px; margin-bottom: 2px; width: 80% !important; }
+#step-2 #select-exp-day { margin-top: -10px; width: 75px !important; }
+#step-2 #select-exp-year { margin: -52px 0 0 19%; width: 25% !important; }
 /*#step-2 #select-exp-day .dd-select { width: 18% !important; }
 #step-2 #select-exp-year .dd-select { width: 22% !important; }*/
-#step-2 #select-city .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options { border: 0; box-shadow: none; width: 80% !important; }
+#step-2 #select-state .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options { border: 0; box-shadow: none; width: 80% !important; }
 
 #step-3 #post-transaction { color: #fff; margin: 0 auto; text-align: center; width: 80%; }
 #step-3 #post-transaction span { color: #fff454; font-weight: bold; }
