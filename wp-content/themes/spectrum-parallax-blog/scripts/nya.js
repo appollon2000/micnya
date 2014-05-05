@@ -8,7 +8,9 @@ $(document).ready(function() {
 		$donationNext = $("#next a"),
 		$donateAnotherTile = $("#donate-another a"),
 		$viewYourTile = $("#view-your-tile a"),
-		$userOtherDonation = $donationBody.find(".other input");
+		$userOtherDonation = $donationBody.find(".other input"),
+		$userTileToWall = $donationContainer.find("#step-6 .left-container a"),
+		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -18,13 +20,16 @@ $(document).ready(function() {
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
 		verticalLinkConnector = "<did id='links-vertical-connector'></div>",
 		virtualTileSelection = "memory-oval",
-		tileDonationTriggered = false;
+		tileDonationTriggered = false,
+		animalTileSelected = "",
+		colorTileSelected = "";
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
 	$main.find("#nav").before(verticalLinkConnector);
 	
 	setFooterFAQ();
+	
 	$donationBody.find("#select-state").ddslick();
 	$donationBody.find("#select-country").ddslick();
 	$donationBody.find("#select-exp-day").ddslick();
@@ -62,6 +67,35 @@ $(document).ready(function() {
 		}
 	});
 	
+	$donationContainer.find("#step-5 input").on("click", function (e) {
+		var sectionClass;
+		
+		//$(this).removeClass("error-input");
+		
+		if ($(this).hasClass("virtual-tile")) {
+			$donationContainer.find(".oval").removeClass("selected");
+			tileDonationTriggered = false;
+		} else if ($(this).hasClass("virtual-tile-honor")) {
+			if (!$donationContainer.find("#in-honor-donation .oval").hasClass("selected")) {
+				$donationContainer.find(".oval").removeClass("selected");
+				$donationContainer.find("#in-honor-donation .oval").addClass("selected");
+				
+				virtualTileSelection = "honor-oval";
+			} 
+			
+			tileDonationTriggered = true;
+		} else {
+			if (!$donationContainer.find("#in-memory-donation .oval").hasClass("selected")) {
+				$donationContainer.find(".oval").removeClass("selected");
+				$donationContainer.find("#in-memory-donation .oval").addClass("selected");
+				
+				virtualTileSelection = "memory-oval";
+			}
+			
+			tileDonationTriggered = true;
+		}
+	});
+	
 	$tileSelector.on("click", function (e){
 		e.preventDefault();
 		
@@ -75,6 +109,30 @@ $(document).ready(function() {
 		$donationBody.find(".section-bottom input").removeClass("error-input");
 		
 		tileDonationTriggered = true;
+	});
+	
+	$userTileToWall.on("click", function (e) {
+		e.preventDefault();
+	
+		$donationContainer.find("#step-6 .left-container a").each( function (index, element) {
+			$(this).removeClass("selected");
+		});
+		
+		$(this).addClass("selected");
+		
+		animalTileSelected = $(this).data("animal");
+	});
+	
+	$userColorTileToWall.on("click", function (e) {
+		e.preventDefault();
+		
+		$donationContainer.find("#step-6 .right-container a").each( function (index, element) {
+			$(this).removeClass("selected");
+		});
+		
+		$(this).addClass("selected");
+		
+		colorTileSelected = $(this).data("color"); 
 	});
 	
 	$donationContainer.find("input").on("click", function (e) {
@@ -304,19 +362,21 @@ $(document).ready(function() {
 	}
 	
 	function thankYouSection () {
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep++;
+		if (animalTileSelected != "" &&  colorTileSelected != "") {
+			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+				currentDonationStep++;
 			
-			$donationContainer.animate({
-				height: 430
-			}, 500, "linear");
+				$donationContainer.animate({
+					height: 430
+				}, 500, "linear");
 			
-			$donationNext.fadeOut();
-			$donateAnotherTile.fadeIn();
-			$viewYourTile.fadeIn();
+				$donationNext.fadeOut();
+				$donateAnotherTile.fadeIn();
+				$viewYourTile.fadeIn();
 			
-			$donationBody.find("#step-" + currentDonationStep).fadeIn();
-		});
+				$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			});
+		}
 	}
 	
 	function resetDonationForm () {
@@ -325,6 +385,12 @@ $(document).ready(function() {
 		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".oval").removeClass("selected");
+		
+		$donationContainer.find("input").removeClass("error-input").val("");
+		$donationContainer.find("#step-6 a.tile").removeClass("selected");
+		
+		animalTileSelected = "";
+		colorTileSelected = "";
 	}
 	
 	function setFooterFAQ() {
