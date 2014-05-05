@@ -72,13 +72,13 @@ body { background: #eeefe9 !important; }
 #step-2 .left-container, #step-2 .right-container { float: left; width: 40%; }
 #step-2 .left-container { margin-left: 15%; }
 #step-2 .user-info input { background-color: #0895ac; border: 0; color: #fff; margin-bottom: 2px; width: 80%; }
-#step-2 .user-info input { background-color: #0895ac; border: 0; color: #fff; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 79%; }
+#step-2 .user-info input { background-color: #0895ac; border: 0; color: #fff; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 277px; }
 #step-2 .user-info .cvv { width: 17%; }
 #step-2 .user-info label { color: #fff; margin-left: 5px; }
 #step-2 .user-info.cc-type { width: 80%; }
 #step-2 .user-info.cc-type > div { float: left; width: 45%; }
 #step-2 .user-info.cc-type input { float: left; width: 20% !important; }
-#step-2 #select-state, #step-2 #select-country { margin-top: -10px; width: 99% !important; }
+#step-2 #select-state, #step-2 #select-country { margin-top: -10px; width: 346px !important; }
 #step-2 #select-state a, #step-2 #select-country a, #step-2 #select-exp-day a, #step-2 #select-exp-year a { color: #000; padding-left: 4px; text-transform: normal !important; }
 #step-2 #select-state .dd-selected-text { text-transform: normal !important; }
 #step-2 #select-state ul li, #step-2 #select-country ul li, #step-2 #select-exp-day ul li, #step-2 #select-exp-year ul li { float: left; margin: 0; padding: 0; width: 100% }

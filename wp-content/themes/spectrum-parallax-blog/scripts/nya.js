@@ -70,7 +70,7 @@ $(document).ready(function() {
 	$donationContainer.find("#step-5 input").on("click", function (e) {
 		var sectionClass;
 		
-		//$(this).removeClass("error-input");
+		$donationContainer.find("#step-5 input").removeClass("error-input");
 		
 		if ($(this).hasClass("virtual-tile")) {
 			$donationContainer.find(".oval").removeClass("selected");
@@ -465,7 +465,7 @@ $(document).ready(function() {
 				}); 
 			} else {
 				if ($donationBody.find("#in-memory-donation input").val() == "") {
-					$(this).addClass("error-input");
+					$donationBody.find("#in-memory-donation input").addClass("error-input");
 				} else {
 					//($donationBody.find("#in-memory-donation input").val());
 					donationOrMemoryInput = true;
