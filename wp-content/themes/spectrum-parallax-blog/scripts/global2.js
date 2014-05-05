@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#mix3 .animals ul li a'),colors=$('#mix3 .colourBar ul li a'),thprev=$('#tilePreview a'), prevTile = $('#tilePreview a'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a'), ctdn = jQuery('#defaultCountdown');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'),thprev=$('#tilePreview a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a'), ctdn = jQuery('#defaultCountdown');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -450,39 +450,39 @@ $j = jQuery.noConflict();
           })();
         
         Template.init();
-ctdn.countdown({until: new Date(2014, 5 - 1, 5, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
+ctdn.countdown({until: new Date(2014, 5 - 1, 11, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
 
 animals.on("click", function(e) {
   e.preventDefault();
   var that = $(this),rel = that.attr('rel'),dat = that.attr('data');
   $("#rec0Icon ul li a[data='"+dat+"']").removeClass('lrner');
-  $('#signupForm input#'+dat).val(rel);
+  $('input#'+dat).val(rel);
   that.addClass('lrner');
 });
 colors.on("click", function(e) {
   e.preventDefault();
   var that = $(this),rel = that.attr('rel'),dat = that.attr('data');
   $("#donorColour00 ul li a[data='"+dat+"']").removeClass('crner');
-  $('#signupForm input#'+dat).val(rel);
+  $('input#'+dat).val(rel);
   that.addClass('crner');
 });
 thprev.on("click", function(e) {
   e.preventDefault();
   var that = $(this),daticon = that.attr('data-rec'),datcol = that.attr('data-col'),ltrec=$('input#'+daticon).val(),ltcol=$('input#'+datcol).val(), bdy = $('body'),
   datfirst=that.attr('data-first'),datlast=that.attr('data-last'),mif=$('input#'+datfirst).val(),mil=$('input#'+datlast).val(),datav=that.attr('data-amv'),
-  amva = $('select#'+datav+' option:selected').attr('class'),thisImg=$('#donateHolder img[data-img="'+daticon+'"]');bdy.removeClass('Bronze Silver Gold');
+  amva = $('select#'+datav+' option:selected').attr('class'),thisImg=$('#donation-container img[data-img="'+daticon+'"]');bdy.removeClass('Bronze Silver Gold');
   that.attr('href','/wp-content/themes/blankslate/images/preview/'+ltrec+ltcol+'.png');
   that.attr('title',mif+' '+mil);thisImg.attr('alt',amva);bdy.addClass(amva);
 });
 prevTile.on("click", function(e) {
   e.preventDefault();
   var Box = $('#WrpopupPrev-box');
-  Box.fadeIn();
+  Box.show();
 });
 prevClose.on("click", function(e) {
   e.preventDefault();
   var Box = $('#WrpopupPrev-box');
-  Box.fadeOut();
+  Box.hide();
 });
 $(document).on('click', prevIconz, function (e) {
  e.preventDefault();
@@ -492,7 +492,7 @@ documt.mouseup(function (e) {
   var container = $("#WrpopupPrev-box,#tilePreview"),boxOnly = $("#WrpopupPrev-box");
   if (!container.is(e.target) && container.has(e.target).length === 0) 
   {
-    boxOnly.fadeOut();
+    boxOnly.hide();
   }
 
 });
@@ -525,7 +525,7 @@ doct.mouseup(function (e) {
   }
 });
 
-}, 6000);
+}, 3000);
 
 function addWave() {
 var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
@@ -597,8 +597,8 @@ inpt.on("click", function(e) {
       resu.empty();ints.val('');
       resu.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ inval +"</div><ul id='newList'></ul>");
       $innerListItem.each(function() {
-      var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id');
-     $("#newList").append("<li><a class='"+gotoId+"' href='#'>"+fullname+"</a></li>");
+      var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id'),locat= $(this).find('.ts-city').text();
+     $("#newList").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr'>"+fullname+"</span> <span class='tileAttr'>"+locat+"</span></a></li>");
       });
 
 }else if($innerListItem.length > 5){
@@ -627,8 +627,8 @@ var mid = $(this).attr('class'),targz = $('#'+mid),mainFrame = $('#ib-main-wrapp
 rez.fadeOut(800, function() {
 mainFrame.animate({
 scrollTop: 0 + targz.position().top,scrollLeft:0 + targz.position().left
-}, 2000, function() {
-targz.trigger('click');
+}, 2300, function() {
+targz[0].click();
 });
 });
 });

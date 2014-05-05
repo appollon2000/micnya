@@ -108,12 +108,11 @@ function tia_scripts() {
 	wp_enqueue_style('animate', get_bloginfo('template_url').'/css/animate.css', false, '', 'all' );
 	wp_enqueue_style('donation', get_bloginfo('template_url').'/donations.css', false, '', 'all' );
 	wp_enqueue_script('collapse', get_bloginfo('template_url').'/scripts/bootstrap.min.js', array('jquery'), '', true);
-	wp_enqueue_script('global', get_bloginfo('template_url') . '/scripts/global2.js', false, '2014',true );
-	wp_enqueue_script('jquery.1.11', get_bloginfo('template_url') . '/scripts/jquery-1.11.0.min.js', false, '2014',true );
 	wp_enqueue_script('ddslick', get_bloginfo('template_url') . '/scripts/ddslick.min.js', false, '2014',true );
 	wp_enqueue_script('nya', get_bloginfo('template_url') . '/scripts/nya.js', false, '2014',true );
 	wp_enqueue_script('plug-minjs', get_bloginfo('template_url') . '/scripts/jquery.plugin.min.js', false, '2014',false );
 	wp_enqueue_script('countdownjs', get_bloginfo('template_url') . '/scripts/countdown-min.js', false, '2014',false );
+	wp_enqueue_script('global', get_bloginfo('template_url') . '/scripts/global2.js', false, '2014',true );
 
 }
 

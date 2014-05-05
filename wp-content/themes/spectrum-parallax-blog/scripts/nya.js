@@ -1,13 +1,14 @@
-$(document).ready(function() {
-	var $main = $("#main"),
-		$donationContainer = $("#donation-container"),
-		$donationBody = $("#donation-body"),
-		$donationHeader = $("#donation-header"),
-		$donationSelector = $("#donation-body").find(".donate-oval"),
+$j = jQuery.noConflict();
+$j(document).ready(function() {
+	var $main = $j("#main"),
+		$donationContainer = $j("#donation-container"),
+		$donationBody = $j("#donation-body"),
+		$donationHeader = $j("#donation-header"),
+		$donationSelector = $j("#donation-body").find(".donate-oval"),
 		$tileSelector = $donationBody.find(".tile-oval"),
-		$donationNext = $("#next a"),
-		$donateAnotherTile = $("#donate-another a"),
-		$viewYourTile = $("#view-your-tile a"),
+		$donationNext = $j("#next a"),
+		$donateAnotherTile = $j("#donate-another a"),
+		$viewYourTile = $j("#view-your-tile a"),
 		$userOtherDonation = $donationBody.find(".other input"),
 		$userTileToWall = $donationContainer.find("#step-6 .left-container a"),
 		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a");
@@ -45,20 +46,20 @@ $(document).ready(function() {
 		$donationBody.find(".donation-content").removeClass("light-red-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
 
-		if ($(this).text() != '0') {			
-			$(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");
-			$(this).parent().find(".donation-amount").addClass("dark-yellow-selected-donation");
+		if ($j(this).text() != '0') {			
+			$j(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");
+			$j(this).parent().find(".donation-amount").addClass("dark-yellow-selected-donation");
 			
-			donationAmount = $(this).parent().find(".donation-amount").text();
-			donationLevel = $(this).parent().find(".donation-reference").text();
+			donationAmount = $j(this).parent().find(".donation-amount").text();
+			donationLevel = $j(this).parent().find(".donation-reference").text();
 			
-			$(this).addClass("selected");
+			$j(this).addClass("selected");
 			
 			amountSelected = true;
 		} else {
-			$(this).addClass("selected");
-			$(this).parent().find(".donation-content").removeClass("light-red-selected-donation");
-			$(this).parent().find(".donation-amount").removeClass("dark-red-selected-donation");
+			$j(this).addClass("selected");
+			$j(this).parent().find(".donation-content").removeClass("light-red-selected-donation");
+			$j(this).parent().find(".donation-amount").removeClass("dark-red-selected-donation");
 			
 			$donationBody.find(".other p.other-amount").hide();
 			$userOtherDonation.focus();
@@ -72,10 +73,10 @@ $(document).ready(function() {
 		
 		$donationContainer.find("#step-5 input").removeClass("error-input");
 		
-		if ($(this).hasClass("virtual-tile")) {
+		if ($j(this).hasClass("virtual-tile")) {
 			$donationContainer.find(".oval").removeClass("selected");
 			tileDonationTriggered = false;
-		} else if ($(this).hasClass("virtual-tile-honor")) {
+		} else if ($j(this).hasClass("virtual-tile-honor")) {
 			if (!$donationContainer.find("#in-honor-donation .oval").hasClass("selected")) {
 				$donationContainer.find(".oval").removeClass("selected");
 				$donationContainer.find("#in-honor-donation .oval").addClass("selected");
@@ -101,9 +102,9 @@ $(document).ready(function() {
 		
 		$tileSelector.removeClass("selected");
 		
-		$(this).addClass("selected");
+		$j(this).addClass("selected");
 		
-		virtualTileSelection = $(this).attr("href");
+		virtualTileSelection = $j(this).attr("href");
 		
 		$donationBody.find(".section-top input").removeClass("error-input").val("");
 		$donationBody.find(".section-bottom input").removeClass("error-input");
@@ -115,28 +116,28 @@ $(document).ready(function() {
 		e.preventDefault();
 	
 		$donationContainer.find("#step-6 .left-container a").each( function (index, element) {
-			$(this).removeClass("selected");
+			$j(this).removeClass("selected");
 		});
 		
-		$(this).addClass("selected");
+		$j(this).addClass("selected");
 		
-		animalTileSelected = $(this).data("animal");
+		animalTileSelected = $j(this).data("animal");
 	});
 	
 	$userColorTileToWall.on("click", function (e) {
 		e.preventDefault();
 		
 		$donationContainer.find("#step-6 .right-container a").each( function (index, element) {
-			$(this).removeClass("selected");
+			$j(this).removeClass("selected");
 		});
 		
-		$(this).addClass("selected");
+		$j(this).addClass("selected");
 		
-		colorTileSelected = $(this).data("color"); 
+		colorTileSelected = $j(this).data("color"); 
 	});
 	
 	$donationContainer.find("input").on("click", function (e) {
-		$(this).removeClass("error-input");
+		$j(this).removeClass("error-input");
 	});
 	
 	$donationNext.on("click", function(e) {
@@ -170,8 +171,8 @@ $(document).ready(function() {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 
 			$donationHeader.find("h1").fadeOut("slow", function() {
-				$(this).text("Choose your donation amount");
-				$(this).fadeIn();
+				$j(this).text("Choose your donation amount");
+				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").text("Together we can create Ocean Wonders: Sharks! and build a new New York Aquarium for generations of curious minds to come.");
@@ -208,7 +209,7 @@ $(document).ready(function() {
 	$donationBody.find(".other p").on("click", function (e) {
 		e.preventDefault();
 		
-		$(this).hide();
+		$j(this).hide();
 		$userOtherDonation.focus();
 	});
 	// Step 1: user selects a donation amount or enter one that is > $25
@@ -261,8 +262,8 @@ $(document).ready(function() {
 			
 			
 			$donationHeader.find("h1").fadeOut("slow", function() {
-				$(this).text("Enter Billing Information");
-				$(this).fadeIn();
+				$j(this).text("Enter Billing Information");
+				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").hide();
@@ -285,14 +286,14 @@ $(document).ready(function() {
 				}, 500, "linear");
 			
 				$donationHeader.find("h1").fadeOut("slow", function () {
-					$(this).text("Summary");
-					$(this).fadeIn();
+					$j(this).text("Summary");
+					$j(this).fadeIn();
 				});
 			
 				$donationNext.addClass("submit-transition");
 			
-				$("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
-				$("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
+				$j("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
+				$j("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
 			
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
@@ -308,10 +309,10 @@ $(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$(this).text("Your transaction is complete");
+				$j(this).text("Your transaction is complete");
 				$donationNext.removeClass("submit-transition");
 
-				$(this).fadeIn();
+				$j(this).fadeIn();
 			});
 			
 			$donationBody.hide();
@@ -338,9 +339,9 @@ $(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$(this).text("Personalize your virtual tile");
+				$j(this).text("Personalize your virtual tile");
 				
-				$(this).fadeIn();
+				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").text("In appreciation of your support, you can personalize a symbolic tile on our virtual shimmer wall.").show();
@@ -394,8 +395,8 @@ $(document).ready(function() {
 	}
 	
 	function setFooterFAQ() {
-		$("#socialNetworks a:nth-child(3)").attr("href", "page-faq");
-		$("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
+		$j("#socialNetworks a:nth-child(3)").attr("href", "page-faq");
+		$j("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
 	}
 	
 	function checkOnTransactionInput () {
@@ -413,8 +414,8 @@ $(document).ready(function() {
 			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text();
 		
 		$donationBody.find("#step-2 input").each( function (index, element) {
-			if ($(this).val() == "") {
-				$(this).addClass("error-input");
+			if ($j(this).val() == "") {
+				$j(this).addClass("error-input");
 			} else {
 				userInputClear = true;
 			}
@@ -448,8 +449,8 @@ $(document).ready(function() {
 		
 		if (!tileDonationTriggered) {
 			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
-				if ($(this).val() == "") {
-					$(this).addClass("error-input");
+				if ($j(this).val() == "") {
+					$j(this).addClass("error-input");
 				} else {
 					tileNameLocation = true;
 				}
@@ -457,8 +458,8 @@ $(document).ready(function() {
 		} else {
 			if (virtualTileSelection == "honor-oval") {
 				$donationBody.find("#in-honor-donation input").each( function (index, element) {
-					if ($(this).val() == "") {
-						$(this).addClass("error-input");
+					if ($j(this).val() == "") {
+						$j(this).addClass("error-input");
 					} else {
 						donationOrMemoryInput = true;
 					}
