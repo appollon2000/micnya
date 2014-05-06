@@ -79,7 +79,7 @@ span.ib-close{display:none !important;opacity:0;}
 #ib-content-preview[rel="anmbg13"],#WrpopupPrev[rel="anmbg13"]{background:#ccc url(images/popup/13.png) no-repeat}
 #ib-content-preview[rel="anmbg14"],#WrpopupPrev[rel="anmbg14"]{background:#ccc url(images/popup/14.png) no-repeat}
 #ib-content-preview[rel="anmbg15"],#WrpopupPrev[rel="anmbg15"]{background:#ccc url(images/popup/15.png) no-repeat}
-h2.titleTps{color: #FFF;display: block;font-size: 50px;left: 40%;letter-spacing: 1px;margin-top: -45px;position: absolute;text-align: center;top: -25px;width: 875px;}
+h2.titleTops{color: #FFF;display: block;font-size: 50px;left: 40%;letter-spacing: 1px;margin-top: -45px;position: absolute;text-align: center;top: -25px;width: 875px;}
 #tilePreview {width:220px;height:32px;background:#fff452;text-align:center;}#tilePreview a{display:block;width:220px;height:32px;color:#000;line-height:35px;}
 .threesixth {
 overflow: visible !important;
