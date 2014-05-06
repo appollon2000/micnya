@@ -123,7 +123,7 @@ $i++;
 
 <div class="clr"></div>
 
-<div id="donateHolder">
+<div id="donation-container">
 
 <div id="cnvDonationForm">
     <div id="cnvDonationForm-description">
@@ -264,7 +264,7 @@ $i++;
                                 <option value="NC">NC - North Carolina</option>
                                 <option value="ND">ND - North Dakota</option>
                                 <option value="NE">NE - Nebraska</option>
-                                <option value="NH">NH - New Hampshire</option>  go h
+                                <option value="NH">NH - New Hampshire</option>
                                 <option value="NJ">NJ - New Jersey</option>
                                 <option value="NM">NM - New Mexico</option>
                                 <option value="NY">NY - New York</option>
@@ -421,7 +421,7 @@ $i++;
 </div><!-- end mix3 -->
 
 
-</div><!-- end donateHolder -->
+</div><!-- end donation-container -->
 
 
 

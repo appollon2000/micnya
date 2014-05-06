@@ -1,13 +1,17 @@
-$(document).ready(function() {
-	var $main = $("#main"),
-		$donationContainer = $("#donation-container"),
-		$donationBody = $("#donation-body"),
-		$donationHeader = $("#donation-header"),
-		$donationSelector = $("#donation-body").find(".oval"),
-		$donationNext = $("#next a"),
-		$donateAnotherTile = $("#donate-another a"),
-		$viewYourTile = $("#view-your-tile a"),
-		$userOtherDonation = $donationBody.find(".other input");
+$j = jQuery.noConflict();
+$j(document).ready(function() {
+	var $main = $j("#main"),
+		$donationContainer = $j("#donation-container"),
+		$donationBody = $j("#donation-body"),
+		$donationHeader = $j("#donation-header"),
+		$donationSelector = $j("#donation-body").find(".donate-oval"),
+		$tileSelector = $donationBody.find(".tile-oval"),
+		$donationNext = $j("#next a"),
+		$donateAnotherTile = $j("#donate-another a"),
+		$viewYourTile = $j("#view-your-tile a"),
+		$userOtherDonation = $donationBody.find(".other input"),
+		$userTileToWall = $donationContainer.find("#step-6 .left-container a"),
+		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -15,14 +19,23 @@ $(document).ready(function() {
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
-		verticalLinkConnector = "<did id='links-vertical-connector'></div>";
+		verticalLinkConnector = "<did id='links-vertical-connector'></div>",
+		virtualTileSelection = "memory-oval",
+		tileDonationTriggered = false,
+		animalTileSelected = "",
+		colorTileSelected = "";
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
 	$main.find("#nav").before(verticalLinkConnector);
 	
 	setFooterFAQ();
-		
+	
+	$donationBody.find("#select-state").ddslick();
+	$donationBody.find("#select-country").ddslick();
+	$donationBody.find("#select-exp-day").ddslick();
+	$donationBody.find("#select-exp-year").ddslick();
+	
 	$donationSelector.on("click", function(e){
 		e.preventDefault();
 	
@@ -33,26 +46,98 @@ $(document).ready(function() {
 		$donationBody.find(".donation-content").removeClass("light-red-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
 
-		if ($(this).text() != '0') {			
-			$(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");
-			$(this).parent().find(".donation-amount").addClass("dark-yellow-selected-donation");
+		if ($j(this).text() != '0') {			
+			$j(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");
+			$j(this).parent().find(".donation-amount").addClass("dark-yellow-selected-donation");
 			
-			donationAmount = $(this).parent().find(".donation-amount").text();
-			donationLevel = $(this).parent().find(".donation-reference").text();
+			donationAmount = $j(this).parent().find(".donation-amount").text();
+			donationLevel = $j(this).parent().find(".donation-reference").text();
 			
-			$(this).addClass("selected");
+			$j(this).addClass("selected");
 			
 			amountSelected = true;
 		} else {
-			$(this).addClass("selected");
-			$(this).parent().find(".donation-content").removeClass("light-red-selected-donation");
-			$(this).parent().find(".donation-amount").removeClass("dark-red-selected-donation");
+			$j(this).addClass("selected");
+			$j(this).parent().find(".donation-content").removeClass("light-red-selected-donation");
+			$j(this).parent().find(".donation-amount").removeClass("dark-red-selected-donation");
 			
 			$donationBody.find(".other p.other-amount").hide();
 			$userOtherDonation.focus();
 			
 			amountSelected = false;
 		}
+	});
+	
+	$donationContainer.find("#step-5 input").on("click", function (e) {
+		var sectionClass;
+		
+		$donationContainer.find("#step-5 input").removeClass("error-input");
+		
+		if ($j(this).hasClass("virtual-tile")) {
+			$donationContainer.find(".oval").removeClass("selected");
+			tileDonationTriggered = false;
+		} else if ($j(this).hasClass("virtual-tile-honor")) {
+			if (!$donationContainer.find("#in-honor-donation .oval").hasClass("selected")) {
+				$donationContainer.find(".oval").removeClass("selected");
+				$donationContainer.find("#in-honor-donation .oval").addClass("selected");
+				
+				virtualTileSelection = "honor-oval";
+			} 
+			
+			tileDonationTriggered = true;
+		} else {
+			if (!$donationContainer.find("#in-memory-donation .oval").hasClass("selected")) {
+				$donationContainer.find(".oval").removeClass("selected");
+				$donationContainer.find("#in-memory-donation .oval").addClass("selected");
+				
+				virtualTileSelection = "memory-oval";
+			}
+			
+			tileDonationTriggered = true;
+		}
+	});
+	
+	$tileSelector.on("click", function (e){
+		e.preventDefault();
+		
+		$tileSelector.removeClass("selected");
+		
+		$j(this).addClass("selected");
+		
+		virtualTileSelection = $j(this).attr("href");
+		
+		$donationBody.find(".section-top input").removeClass("error-input").val("");
+		$donationBody.find(".section-bottom input").removeClass("error-input");
+		
+		tileDonationTriggered = true;
+	});
+	
+	$userTileToWall.on("click", function (e) {
+		e.preventDefault();
+	
+		$donationContainer.find("#step-6 .left-container a").each( function (index, element) {
+			$j(this).removeClass("selected");
+		});
+		
+		$j(this).addClass("selected");
+		
+		animalTileSelected = $j(this).data("animal");
+	});
+	
+	$userColorTileToWall.on("click", function (e) {
+		e.preventDefault();
+		
+		$donationContainer.find("#step-6 .right-container a").each( function (index, element) {
+			$j(this).removeClass("selected");
+		});
+		
+		$j(this).addClass("selected");
+		
+		colorTileSelected = $j(this).data("color"); 
+	});
+	
+	$donationContainer.find("input").on("click", function (e) {
+		$j(this).removeClass("error-input");
 	});
 	
 	$donationNext.on("click", function(e) {
@@ -86,8 +171,8 @@ $(document).ready(function() {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 
 			$donationHeader.find("h1").fadeOut("slow", function() {
-				$(this).text("Choose your donation amount");
-				$(this).fadeIn();
+				$j(this).text("Choose your donation amount");
+				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").text("Together we can create Ocean Wonders: Sharks! and build a new New York Aquarium for generations of curious minds to come.");
@@ -124,10 +209,10 @@ $(document).ready(function() {
 	$donationBody.find(".other p").on("click", function (e) {
 		e.preventDefault();
 		
-		$(this).hide();
+		$j(this).hide();
 		$userOtherDonation.focus();
 	});
-	
+	// Step 1: user selects a donation amount or enter one that is > $25
 	function authorizeFirstStep () {
 		// If the user selects a default amount, proceed to the next section; otherwise,
 		// validate the user entry.
@@ -157,7 +242,7 @@ $(document).ready(function() {
 			}
 		}
 	}
-	
+	// If not errors on Step 1, proceed to Step 2
 	function continueToSecondStep () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep++;
@@ -177,46 +262,44 @@ $(document).ready(function() {
 			
 			
 			$donationHeader.find("h1").fadeOut("slow", function() {
-				$(this).text("Enter Billing Information");
-				$(this).fadeIn();
+				$j(this).text("Enter Billing Information");
+				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").hide();
 
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
-
-			/* Will need to fix to match comps */
-		//	$donationBody.find("#select-city").ddslick();
-		//	$donationBody.find("#select-country").ddslick();
-		//	$donationBody.find("#select-exp-day").ddslick();
-		//	$donationBody.find("#select-exp-year").ddslick();
 		});
 	}
-	
+	// Step 2: check the user has entered all the proper information and initiate transaction
+	// If everything goes well, user is redirected to the submit section
 	function authorizeSecondStep () {
 		// make sure all calls are made
+		var allFieldsCompleted = checkOnTransactionInput();
 		
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep++;
+		if (allFieldsCompleted) {
+			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+				currentDonationStep++;
 			
-			$donationContainer.animate({
-				height: 210
-			}, 500, "linear");
+				$donationContainer.animate({
+					height: 210
+				}, 500, "linear");
 			
-			$donationHeader.find("h1").fadeOut("slow", function () {
-				$(this).text("Summary");
-				$(this).fadeIn();
+				$donationHeader.find("h1").fadeOut("slow", function () {
+					$j(this).text("Summary");
+					$j(this).fadeIn();
+				});
+			
+				$donationNext.addClass("submit-transition");
+			
+				$j("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
+				$j("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
+			
+				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
-			
-			$donationNext.addClass("submit-transition");
-			
-			$("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
-			$("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
-			
-			$donationBody.find("#step-" + currentDonationStep).fadeIn();
-		});
+		}
 	}
-	
+	// Step 3: let the user acknowledge the amount of the transaction and what kind of donor he/she will become
 	function submitTransaction () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep++;
@@ -226,16 +309,17 @@ $(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$(this).text("Your transaction is complete");
+				$j(this).text("Your transaction is complete");
 				$donationNext.removeClass("submit-transition");
 
-				$(this).fadeIn();
+				$j(this).fadeIn();
 			});
 			
 			$donationBody.hide();
 		});
 	}
-	
+	// Step 4: transaction was successful; now user has the change to initiate tile customization
+	// donor information 
 	function customizeUserTileInfo () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			$donationBody.show();
@@ -255,9 +339,9 @@ $(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$(this).text("Personalize your virtual tile");
+				$j(this).text("Personalize your virtual tile");
 				
-				$(this).fadeIn();
+				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").text("In appreciation of your support, you can personalize a symbolic tile on our virtual shimmer wall.").show();
@@ -267,27 +351,33 @@ $(document).ready(function() {
 	}
 	
 	function customizeUserTile () {
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep++;
+		var tileInfoVerification = verifyTileInfoEntry();
+		
+		if (tileInfoVerification) {
+			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+				currentDonationStep++;
 			
-			$donationBody.find("#step-" + currentDonationStep).fadeIn();
-		});
+				$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			});
+		}
 	}
 	
 	function thankYouSection () {
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep++;
+		if (animalTileSelected != "" &&  colorTileSelected != "") {
+			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+				currentDonationStep++;
 			
-			$donationContainer.animate({
-				height: 430
-			}, 500, "linear");
+				$donationContainer.animate({
+					height: 430
+				}, 500, "linear");
 			
-			$donationNext.fadeOut();
-			$donateAnotherTile.fadeIn();
-			$viewYourTile.fadeIn();
+				$donationNext.fadeOut();
+				$donateAnotherTile.fadeIn();
+				$viewYourTile.fadeIn();
 			
-			$donationBody.find("#step-" + currentDonationStep).fadeIn();
-		});
+				$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			});
+		}
 	}
 	
 	function resetDonationForm () {
@@ -296,10 +386,99 @@ $(document).ready(function() {
 		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".oval").removeClass("selected");
+		
+		$donationContainer.find("input").removeClass("error-input").val("");
+		$donationContainer.find("#step-6 a.tile").removeClass("selected");
+		
+		animalTileSelected = "";
+		colorTileSelected = "";
 	}
 	
 	function setFooterFAQ() {
-		$("#socialNetworks a:nth-child(3)").attr("href", "page-faq");
-		$("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
+		$j("#socialNetworks a:nth-child(3)").attr("href", "page-faq");
+		$j("#socialNetworks a:nth-child(3) img").attr("src", "/wp-content/themes/spectrum-parallax-blog/images/icons/socialmedia/faq.png");
+	}
+	
+	function checkOnTransactionInput () {
+		var infoVerified = true, // needs to be false, set to true for testing only
+			userInputClear = false,
+			userCCTypeSelected = false,
+			stateSelected = false,
+			countrySelected = false,
+			expDaySelected = false,
+			expYearSelected = false,
+			$ccSelection = $donationBody.find("input:radio[name=cc-type]"),
+			countrySelection = $donationBody.find("#select-state .dd-selected-text").text(),
+			stateSelection = $donationBody.find("#select-country .dd-selected-text").text(),
+			selectExpDay = $donationBody.find("#select-exp-day .dd-selected-text").text(),
+			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text();
+		
+		$donationBody.find("#step-2 input").each( function (index, element) {
+			if ($j(this).val() == "") {
+				$j(this).addClass("error-input");
+			} else {
+				userInputClear = true;
+			}
+		});
+		
+		if ($ccSelection.is(":checked") === false) {
+			userCCTypeSelected = false;
+		} else {
+			userCCTypeSelected = true;
+		}
+		
+		if (countrySelection != "Country") {
+			countrySelected = true
+		} 
+		
+		if (stateSelection != "State") {
+			stateSelected = true;
+		}
+
+		if (userInputClear && userCCTypeSelected && stateSelection && countrySelection) {
+			infoVerified = true;
+		}
+		
+		return infoVerified;
+	}
+	
+	function verifyTileInfoEntry () {
+		var infoVerified = false,
+			donationOrMemoryInput = false,
+			tileNameLocation = false;
+		
+		if (!tileDonationTriggered) {
+			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
+				if ($j(this).val() == "") {
+					$j(this).addClass("error-input");
+				} else {
+					tileNameLocation = true;
+				}
+			});
+		} else {
+			if (virtualTileSelection == "honor-oval") {
+				$donationBody.find("#in-honor-donation input").each( function (index, element) {
+					if ($j(this).val() == "") {
+						$j(this).addClass("error-input");
+					} else {
+						donationOrMemoryInput = true;
+					}
+				}); 
+			} else {
+				if ($donationBody.find("#in-memory-donation input").val() == "") {
+					$donationBody.find("#in-memory-donation input").addClass("error-input");
+				} else {
+					//($donationBody.find("#in-memory-donation input").val());
+					donationOrMemoryInput = true;
+				}
+			}
+		}
+		
+		if (donationOrMemoryInput || tileNameLocation) {
+			infoVerified = true;
+			tileDonationTriggered = false;
+		}
+		
+		return infoVerified;
 	}
 });
