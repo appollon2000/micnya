@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'),thprev=$('#tilePreview a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a'), ctdn = jQuery('#defaultCountdown');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a'), ctdn = jQuery('#widget-days-left');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -454,9 +454,10 @@ ctdn.countdown({until: new Date(2014, 5 - 1, 11, 18, 00, 00), format: 'dHMS', ti
 
 animals.on("click", function(e) {
   e.preventDefault();
-  var that = $(this),rel = that.attr('rel'),dat = that.attr('data');
+  var that = $(this),rel = that.attr('rel'),dat = that.attr('data'), icz = that.attr('data-icon'), motif = $('#WrpopupPrev-box #WrpopupPrev');
   $("#rec0Icon ul li a[data='"+dat+"']").removeClass('lrner');
   $('input#'+dat).val(rel);
+  motif.attr('rel',icz);
   that.addClass('lrner');
 });
 colors.on("click", function(e) {
@@ -466,17 +467,11 @@ colors.on("click", function(e) {
   $('input#'+dat).val(rel);
   that.addClass('crner');
 });
-thprev.on("click", function(e) {
-  e.preventDefault();
-  var that = $(this),daticon = that.attr('data-rec'),datcol = that.attr('data-col'),ltrec=$('input#'+daticon).val(),ltcol=$('input#'+datcol).val(), bdy = $('body'),
-  datfirst=that.attr('data-first'),datlast=that.attr('data-last'),mif=$('input#'+datfirst).val(),mil=$('input#'+datlast).val(),datav=that.attr('data-amv'),
-  amva = $('select#'+datav+' option:selected').attr('class'),thisImg=$('#donation-container img[data-img="'+daticon+'"]');bdy.removeClass('Bronze Silver Gold');
-  that.attr('href','/wp-content/themes/blankslate/images/preview/'+ltrec+ltcol+'.png');
-  that.attr('title',mif+' '+mil);thisImg.attr('alt',amva);bdy.addClass(amva);
-});
 prevTile.on("click", function(e) {
   e.preventDefault();
-  var Box = $('#WrpopupPrev-box');
+  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span');
+  tileLoc.text(vloc);tileDate.text(todayDate);tileFrom.text(vname);
+  if(hLength > 0) {inOf.text('In honor of');tileFname.text(hname);}else {inOf.text('In memory of');tileFname.text(mname);}
   Box.show();
 });
 prevClose.on("click", function(e) {
@@ -499,13 +494,12 @@ documt.mouseup(function (e) {
 
 
 setTimeout(function () {
-  var doct = $(document);
-  $('.load-delay').each(function () {
-      var imagex = $(this);
-      var imgOriginal = imagex.data('original');
+  var doct = $(document),tyl = $('.tyle'),lDelay = $('.load-delay');
+  lDelay.each(function () {
+      var imagex = $(this), imgOriginal = imagex.data('original');
       $(imagex).attr('src', imgOriginal);
   });
-  $('.tyle').each(function(i) {
+  tyl.each(function(i) {
 var row = $('.tyle:even');
 var row2 = $('.tyle:odd');
 row.addClass('zigzag');

@@ -1,9 +1,36 @@
 <?php get_header(); ?>
+<?php
+$qry2 = "SELECT * FROM donation"; 
+$resl2 = mysql_query($qry2) or die(mysql_error());
+$smt = $result2['value_sum'];
+$quty= 0;
+while ($numb = mysql_fetch_assoc ($resl2)) {
+    $qty1 += $numb['amount'];
+}
+?>
 
 	<div id="main">				 
 		<div id="content" class="postshome clearfix">
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
+          <div id="donation-widget">
+        <div id="widget-logo"></div>
+          <div id="widget-content">
+            <div id="donation-goal">
+              <div class="widget-container-header">$ Goal</div>
+            <div class="widget-container-info" id="widget-goal">300,000</div>
+            </div>
+            <div id="amount-donated">
+              <div class="widget-container-header">$ Donated</div>
+            <div class="widget-container-info" id="widget-donated-amount"><?php echo number_format($qty1); ?></div>
+            </div>
+            <div id="donation-left">
+              <div class="widget-container-header">Days Left</div>
+            <div class="widget-container-info" id="widget-days-left"></div>
+            </div>
+          </div>
+          <div id="widget-donate"><a href="widget-donate">Donate Now</a></div>
+      </div>
 
             <!--end post nav -->
         	<?php $i = 1; //Start a counter outside of the loop

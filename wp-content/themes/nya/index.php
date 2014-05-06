@@ -3,24 +3,6 @@
 		<div id="content" class="postshome clearfix">
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
-			<div id="donation-widget">
-				<div id="widget-logo"></div>
-			  	<div id="widget-content">
-			    	<div id="donation-goal">
-			    		<div class="widget-container-header">$ Goal</div>
-						<div class="widget-container-info" id="widget-goal">300,000</div>
-			    	</div>
-			    	<div id="amount-donated">
-			    		<div class="widget-container-header">$ Donated</div>
-						<div class="widget-container-info" id="widget-donated-amount">123,234</div>
-			    	</div>
-			    	<div id="donation-left">
-			    		<div class="widget-container-header">Days Left</div>
-						<div class="widget-container-info" id="widget-days-left">500</div>
-			    	</div>
-			  	</div>
-			  	<div id="widget-donate"><a href="widget-donate">Donate Now</a></div>
-			</div>
 <ul id="nav"> <!-- post nav -->
 <li id="blockLink1"><a class="block-link" href="#block1">OUR MISSION</a></li>
 <li id="blockLink2"><a class="block-link" href="#block2">HELP US BUILD</a></li>

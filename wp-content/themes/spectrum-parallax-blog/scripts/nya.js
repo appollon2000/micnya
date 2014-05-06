@@ -52,6 +52,8 @@ $j(document).ready(function() {
 			
 			donationAmount = $j(this).parent().find(".donation-amount").text();
 			donationLevel = $j(this).parent().find(".donation-reference").text();
+			tileprevLevel = $j('#WrpopupPrev .prevCategz');
+			tileprevLevel.text(donationLevel);
 			
 			$j(this).addClass("selected");
 			
