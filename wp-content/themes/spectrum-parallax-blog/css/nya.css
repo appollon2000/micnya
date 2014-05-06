@@ -49,7 +49,7 @@ body { background: #eeefe9 !important; }
 #donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: left; height: 58px; text-indent: -9999px; width: 374px; }
 
 #main { margin: 0 auto; top: -12px; width: 100%; }
-#donation-container { background-color: #1c4c59; color: #fff; height: 475px; margin: 120px auto 0; opacity: 0.7; width: 875px; }
+#donation-container { background-color: #1c4c59; color: #fff; height: 475px; margin: 120px auto 0; opacity: 0.8; width: 875px; }
 #donation-header { background-color: #26343d; height: 128px; text-align: center; }
 #donation-header h1 { color: #fff; display: block; font-size: 30px; font-weight: bold; padding: 35px 0 15px 0; text-transform: uppercase; }
 #donation-header h2 { color: #fff; font-size: 17px; margin-left: 10%; width: 80%; }
