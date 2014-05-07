@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'),prevIconz=$('#prevIconz a'), ctdn = jQuery('#widget-days-left');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -62,7 +62,7 @@ $j = jQuery.noConflict();
               setWrapperSize  = function() {
                 
                 var containerMargins  = $j('#ib-top').outerHeight(true) + $j('#header').outerHeight(true) + parseInt( $ibItems.css('margin-top') );
-                $ibWrapper.css( 'height', 540 - containerMargins )
+                $ibWrapper.css({"height": 440,width: 583});
                 
               },
               initEvents   = function() {
@@ -83,8 +83,8 @@ $j = jQuery.noConflict();
                   setWrapperSize();
                   
                   $j('#ib-img-preview, #ib-content-preview').css({
-                    width : 1235,
-                    height  : 540
+                    width : 583,
+                    height  : 440
                   })
                   
                 });
@@ -414,8 +414,8 @@ $j = jQuery.noConflict();
                 var img = new Image();
                 img.src  = src;
                 
-                var w_w = 1235,
-                  w_h = 540,
+                var w_w = 583,
+                  w_h = 440,
                   r_w = w_h / w_w,
                   i_w = img.width,
                   i_h = img.height,
@@ -479,10 +479,6 @@ prevClose.on("click", function(e) {
   var Box = $('#WrpopupPrev-box');
   Box.hide();
 });
-$(document).on('click', prevIconz, function (e) {
- e.preventDefault();
-return false;
-});
 documt.mouseup(function (e) {
   var container = $("#WrpopupPrev-box,#tilePreview"),boxOnly = $("#WrpopupPrev-box");
   if (!container.is(e.target) && container.has(e.target).length === 0) 
@@ -494,11 +490,7 @@ documt.mouseup(function (e) {
 
 
 setTimeout(function () {
-  var doct = $(document),tyl = $('.tyle'),lDelay = $('.load-delay');
-  lDelay.each(function () {
-      var imagex = $(this), imgOriginal = imagex.data('original');
-      $(imagex).attr('src', imgOriginal);
-  });
+  var doct = $(document),tyl = $('.tyle');
   tyl.each(function(i) {
 var row = $('.tyle:even');
 var row2 = $('.tyle:odd');
@@ -519,7 +511,15 @@ doct.mouseup(function (e) {
   }
 });
 
-}, 3000);
+}, 2000);
+
+setTimeout(function () {
+  lDelay = $('.load-delay');
+  lDelay.each(function () {
+      var imagex = $(this), imgOriginal = imagex.data('original');
+      $(imagex).attr('src', imgOriginal);
+  });
+}, 10000);
 
 function addWave() {
 var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
@@ -628,26 +628,124 @@ targz[0].click();
 });
 
 
+ //var donorStr = "&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&other_amount=10";
+
+//var urlStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true";
+//var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?method=donate&v=1.0&api_key=zooapikey&source=&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&user_donation_amt=10';
+
+function onResponse(resp, status, jqXHR){
+var failMsg;
+var $resp = $($.parseXML(jqXHR.responseText));
+if ($resp == null || typeof ($resp) == 'undefined' || !$resp) {
+failMsg = 'ERROR!\n\nNo response. Please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
+}
+else {
+var $errors=$resp.find('errors');
+if($errors.text()){
+  //API returned an error
+  var $reason = $errors.find('reason');
+  if($reason.text()=='CARD_DECLINED') failMsg = 'ERROR!\n\nYour card has been declined.\nPlease check the billing information or try another card.\nYou have NOT been charged.';
+  else if($reason.text()=='FIELD_VALIDATION'){
+      $errors.children().each(function(i,v){
+          var $val = $(v);
+          if($val[0].localName=="fieldError") {
+              if($val.text().indexOf('email address')!=-1) failMsg = 'ERROR!\n\nThere are problems with your email address. If problem persists, please contact the administrator at nyashimmerwall@wcs.org\nYour card has NOT been charged.';
+              else if($val.text().indexOf('card number')!=-1) failMsg = 'ERROR!\n\nThe card number is invalid. Please enter a valid card number. If problem persists, please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
+              else if($val.text().indexOf('CVV number')!=-1) failMsg = 'ERROR!\n\nThe CVV number is invalid. Please enter a valid number. If problem persists, please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
+              else failMsg = 'ERROR!\n\nOne of your billing fields is invalid. If problem persists, please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.'
+          }
+      })
+  }
+  else if($reason.text()=='UNSPECIFIED') failMsg = 'ERROR!\n\nSome of your credit card information is invalid. Please check again. If problem persists, please contact the administrator at '+App.Vars.masterEmail+'\nYou have NOT been charged.'
+  else failMsg = 'ERROR!\n\nPlease contact the administrator at '+App.Vars.masterEmail+'\nYou have NOT been charged.';
+}
+
+}
+if (failMsg) {
+alert(failMsg);
+}
+else{
+//API returned no errors
+var transactionID=$resp.find('transaction_id').text();
+console.log(transactionID);
+}
+}
+
+function onFailure(jqXHR, textStatus, error){
+  var failMsg = 'ERROR!\n\n'+error+'\n\nTransaction failed. Please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
+  alert(failMsg);
+}
+
+function onTimeout(){
+  var failMsg = 'ERROR!\n\nYour transaction timed out. Please try again or contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
+}
+
+
+
+
+
+$('a#convioz').on("click", function(e) {
+ e.preventDefault();
  var donorStr = "&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&other_amount=10";
 
-var urlStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true";
-var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&user_donation_amt=10';
+var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555";
 
-$('input#subCvio').on("click", function(e) {
- e.preventDefault();
+var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
 var xdr;
 
         try {
             xdr = $.ajax({
                 type: "POST",
-                data: url,
-                dataType: "xml"
+                url: url,
+                data: donorStr,
+                dataType: "xml",
+                 headers: {
+            'Accept' :'application/xml',
+            'Content-Type' :'application/x-www-form-urlencoded; charset=UTF-8'
+        },
+
+          success:function() {
+
+             $.ajax({
+                type: 'POST',
+                url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/entries.php',
+                dataType: 'json',
+                data: url
+                });
+
+
+          }
+
             });
-            xdr.done(alert('done'));
-            xdr.fail(alert('fail'));
+            xdr.done(onResponse);
+            xdr.fail(onFailure);
         } catch (e){
-            console.log('errrror');
+            //ajax request failed (ie8or9)
+            onFailure({},"","AJAX request did not get processed.")
         }
+});
+
+
+var isDragging = false;
+$("#ib-main-wrapper").mousedown(function() {
+    $(window).mousemove(function() {
+        isDragging = true, btn = $('#tile-donate-btn'), frTile = $('#ib-main-wrapper'),tinytile = $("#ib-content-preview");
+        $(window).unbind("mousemove");
+btn.css('opacity',0).hide(10);
+tinytile.find('div.ib-teaser, div.ib-content-full, span.ib-close').hide().end().hide(function() {isAnimating = false;});
+frTile.css('width',1234);
+    });
+})
+.mouseup(function() {
+    var wasDragging = isDragging, btn = $('#tile-donate-btn'), frTile = $('#ib-main-wrapper');
+    btn.show();
+    isDragging = false;
+    frTile.css('width',583);
+    btn.css('opacity',1);
+    $(window).unbind("mousemove");
+    if (!wasDragging) {
+      btn.css('opacity',1).show(10);
+    }
 });
 
 

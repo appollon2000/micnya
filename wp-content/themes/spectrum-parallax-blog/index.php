@@ -7,6 +7,12 @@ $quty= 0;
 while ($numb = mysql_fetch_assoc ($resl2)) {
     $qty1 += $numb['amount'];
 }
+if ($_POST) {
+$sql1 = "INSERT INTO donor (`email`)
+VALUES ('".mysql_real_escape_string('mmmmii@we.fr')."')";
+$resq1 = mysql_query($sql1) or die(mysql_error());
+}
+
 ?>
 
 	<div id="main">				 
