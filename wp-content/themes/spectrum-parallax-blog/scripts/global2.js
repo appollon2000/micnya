@@ -680,6 +680,12 @@ function onTimeout(){
   var failMsg = 'ERROR!\n\nYour transaction timed out. Please try again or contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
 }
 
+function getTrID(resp, status, jqXHR){
+var $resp = $($.parseXML(jqXHR.responseText));
+var transactionID=$resp.find('transaction_id').text();
+return transactionID
+  }
+
 
 
 
@@ -691,6 +697,7 @@ $('a#convioz').on("click", function(e) {
 var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555";
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
+var longStr = url + donorStr;
 var xdr;
 
         try {
@@ -704,13 +711,13 @@ var xdr;
             'Content-Type' :'application/x-www-form-urlencoded; charset=UTF-8'
         },
 
-          success:function() {
-
+          success:function(xml) {
+            a =  $(xml), trID=a.find('transaction_id').text();
              $.ajax({
                 type: 'POST',
                 url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/entries.php',
                 dataType: 'json',
-                data: url
+                data: longStr + '&tr_ID=' + trID
                 });
 
 
