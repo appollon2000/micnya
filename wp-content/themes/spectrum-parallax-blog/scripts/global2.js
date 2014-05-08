@@ -627,12 +627,6 @@ targz[0].click();
 });
 });
 
-
- //var donorStr = "&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&other_amount=10";
-
-//var urlStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=yes&source=NYA%20Microsite%20Donation%20Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true";
-//var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?method=donate&v=1.0&api_key=zooapikey&source=&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555&donor.email_opt_in=true&remember_me=true&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&user_donation_amt=10';
-
 function onResponse(resp, status, jqXHR){
 var failMsg;
 var $resp = $($.parseXML(jqXHR.responseText));
@@ -680,21 +674,12 @@ function onTimeout(){
   var failMsg = 'ERROR!\n\nYour transaction timed out. Please try again or contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
 }
 
-function getTrID(resp, status, jqXHR){
-var $resp = $($.parseXML(jqXHR.responseText));
-var transactionID=$resp.find('transaction_id').text();
-return transactionID
-  }
-
-
-
-
 
 $('a#convioz').on("click", function(e) {
  e.preventDefault();
- var donorStr = "&donor.email=test@test.com&card_cvv=111&card_exp_date=15&card_exp_date_month=12&card_exp_date_year=2015&card_number=4111111111111111&other_amount=10";
+ var donorStr = "&donor.email=" + $('input#donor-email').val() + "&card_cvv="+ $('input#donor-cvv').val() + "&card_exp_date_month="+$.trim($('#select-exp-day ul.dd-options li a.dd-option-selected').text())+"&card_exp_date_year="+ $.trim($('#select-exp-year ul.dd-options li a.dd-option-selected').text())+ "&card_number="+$('input#donor-cc-number').val()+"&other_amount="+ $('input#other_amount').val();
 
-var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first=test&billing.name.last=test2&billing.address.street1=111%20avenue%20new%20york&billing.address.street2=none&billing.address.city=New%20York&billing.address.state=NY&billing.address.zip=44555";
+var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val();
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
 var longStr = url + donorStr;

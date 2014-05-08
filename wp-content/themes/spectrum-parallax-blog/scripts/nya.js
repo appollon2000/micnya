@@ -58,6 +58,8 @@ $j(document).ready(function() {
 			$j(this).addClass("selected");
 			
 			amountSelected = true;
+			var cleanAmount = donationAmount.slice(1), finalAmount = $('input#other_amount');
+			finalAmount.val(cleanAmount);
 		} else {
 			$j(this).addClass("selected");
 			$j(this).parent().find(".donation-content").removeClass("light-red-selected-donation");
@@ -242,6 +244,8 @@ $j(document).ready(function() {
 				$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
 				
 			}
+			var finalAmount = $('input#other_amount');
+			finalAmount.val(amountRegistered);
 		}
 	}
 	// If not errors on Step 1, proceed to Step 2
