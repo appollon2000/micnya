@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left'),sendConv = $('a#convioz'), writeTile = $('a#write-tile');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -675,11 +675,20 @@ function onTimeout(){
 }
 
 
-$('a#convioz').on("click", function(e) {
+sendConv.on("click", function(e) {
  e.preventDefault();
- var donorStr = "&donor.email=" + $('input#donor-email').val() + "&card_cvv="+ $('input#donor-cvv').val() + "&card_exp_date_month="+$.trim($('#select-exp-day ul.dd-options li a.dd-option-selected').text())+"&card_exp_date_year="+ $.trim($('#select-exp-year ul.dd-options li a.dd-option-selected').text())+ "&card_number="+$('input#donor-cc-number').val()+"&other_amount="+ $('input#other_amount').val();
+ var amnt = $('input#other_amount').val(), categz;
 
-var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val();
+if(amnt >= 25 && amnt < 150) {         
+categz = "Friend";         
+} else if (amnt >= 150 && amnt < 250) {
+categz = "Supporter";
+} else {
+categz = "Transformer";
+}
+ var donorStr = "&donor.email=" + $('input#donor-email').val() + "&card_cvv="+ $('input#donor-cvv').val() + "&card_exp_date_month="+$.trim($('#select-exp-day ul.dd-options li a.dd-option-selected').text())+"&card_exp_date_year="+ $.trim($('#select-exp-year ul.dd-options li a.dd-option-selected').text())+ "&card_number="+$('input#donor-cc-number').val()+"&other_amount="+ amnt;
+
+var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val()+"&category="+categz;
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
 var longStr = url + donorStr;
@@ -716,6 +725,12 @@ var xdr;
             onFailure({},"","AJAX request did not get processed.")
         }
 });
+
+writeTile.on("click", function(e) {
+ e.preventDefault();
+ var msg = $('#step-6 textarea').val(), animal = $('input#recicon0').val(), color = $('input#color0').val(), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val();
+ var tileStr = "&message=" + msg + "&icon="+ animal + "&color=" + color + "&vname=" + vname + "&vloc=" + vloc +"&hname=" + hname + "&hemail=" + hemail + "&mname=" + mname;
+ });
 
 
 var isDragging = false;
