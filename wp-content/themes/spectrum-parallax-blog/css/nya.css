@@ -2,7 +2,8 @@ body { background: #eeefe9 !important; }
 /* Footer */
 #footer { background: transparent !important; bottom: -3px; position: fixed; z-index: 9999; }
 #footer .right { display: none; }
-#footer .left { color: #edefe8; font-size: 12px; margin: -25px 0 0 390px; }
+#footer .left { background-color: #26343d; color: #edefe8; font-size: 9px; height: 29px; margin: -33px 0 0 368px; padding: 9px 20px; text-transform: uppercase; }
+#footer .left a { color: #edefe8; text-decoration: underline; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
@@ -76,8 +77,9 @@ body { background: #eeefe9 !important; }
 #step-2 .user-info .cvv { width: 17%; }
 #step-2 .user-info label { color: #fff; margin-left: 5px; }
 #step-2 .user-info.cc-type { width: 80%; }
-#step-2 .user-info.cc-type > div { float: left; width: 45%; }
-#step-2 .user-info.cc-type input { float: left; width: 20% !important; }
+#step-2 .user-info.cc-type > div { float: left; margin-bottom: 10px; width: 50%; }
+#step-2 .user-info.cc-type label { margin-left: 0; }
+#step-2 .user-info.cc-type input { float: left; height: 16px !important; overflow: hidden; padding-left: 0; width: 15px !important; }
 #step-2 #select-state, #step-2 #select-country { margin-top: -10px; width: 346px !important; }
 #step-2 #select-state a, #step-2 #select-country a, #step-2 #select-exp-day a, #step-2 #select-exp-year a { color: #000; padding-left: 4px; text-transform: normal !important; }
 #step-2 #select-state .dd-selected-text { text-transform: normal !important; }
@@ -89,7 +91,9 @@ body { background: #eeefe9 !important; }
 /*#step-2 #select-exp-day .dd-select { width: 18% !important; }
 #step-2 #select-exp-year .dd-select { width: 22% !important; }*/
 #step-2 #select-state .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options { border: 0; box-shadow: none; width: 80% !important; }
-
+#step-2 input[type="radio"] { opacity: 0; z-index: 9999; }
+#step-2 input[type="radio"]:checked + .radio-overlay { background: url("/wp-content/themes/nya/images/checkbox.png") no-repeat scroll 0 -16px rgba(0, 0, 0, 0); }
+#step-2 .radio-overlay { background: url("/wp-content/themes/nya/images/checkbox.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); display: inline-block; height: 15px; left: -1em; overflow: hidden; position: relative; width: 16px; }
 #step-3 #post-transaction { color: #fff; margin: 0 auto; text-align: center; width: 80%; }
 #step-3 #post-transaction span { color: #fff454; font-weight: bold; }
 
