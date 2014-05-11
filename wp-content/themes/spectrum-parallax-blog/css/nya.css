@@ -17,17 +17,19 @@ body { background: #eeefe9 !important; }
 #content #nav #blockLink6 a { padding-left: 97px !important; }
 #content #nav #blockLink7 a { padding-left: 13px !important; }
 #content #nav #blockLink8 a { padding-left: 70px !important; }
-.page-id-58 {  background-color: #00b1cc !important; height: 960px; margin: 0 auto; width: 1430px; }
+
+.page-id-58 { background-color: #00b1cc !important; height: 960px; margin: 0 auto; width: 1430px; }
 .page-id-58 #container { background: url('/wp-content/themes/nya/images/main.bkg.jpg') no-repeat !important; height: 100%; }
 .page-id-58 #container .inside { width: 1260px; }
 .page-id-58 #commentForm { display: none; }
-.page-id-58 #content { margin-top: 150px; width: 100% }
+.page-id-58 #content { margin-top: 150px; width: 75% }
 .page-id-58 h1 { background-color: #253640; color: #fff; height: 60px; margin-bottom: -2px; padding-top: 35px; text-align: center; }
 .page-id-58 #accordion { background: #1e4d5a; padding: 30px 0; }
 .page-id-58 #accordion h3 { background: #00b1cc; border: 0; border-radius: 0; margin-left: 10%; width: 80%; }
 .page-id-58 #accordion h3 a { color: #fff; font-weight: bold; text-transform: uppercase; }
 .page-id-58 #accordion h3 a:hover { color: #fff454; }
 .page-id-58 .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
+
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
 #links-vertical-connector { border: 1px solid #000; height: 92px; position: fixed; right: 48px; top: 65px; width: 1px; }
 /* Donation Container */
