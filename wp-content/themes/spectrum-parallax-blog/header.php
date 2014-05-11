@@ -20,8 +20,8 @@
 	<?php } ?>
 
 	<?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-
+	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
+	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery-1.11.0.min.js"></script>
 	<?php
 	include 'scripts/Mobile_Detect.php';
 	$detect = new Mobile_Detect();
@@ -52,7 +52,6 @@ echo("parallaxHeight = $parallaxHeight; \n");
 echo("</script>"); }
 
 if (!$detect->isMobile()) { ?>
-
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.localscroll-1.2.9-min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/parallax.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.scrollTo-1.4.6-min.js"></script>
@@ -65,7 +64,7 @@ if (!$detect->isMobile()) { ?>
 			}
 			var headerHeightNeg = 0 - $('#headerBar').height();
 			$('#container').localScroll({offset: {left: 0, top: headerHeightNeg}});
-			$('.story .blockText').css('margin-top',storyBump);
+			$('.story .blockText').css('margin-top','50px');
 			setTopMargin();
 			jQuery("#accordion").accordion({autoHeight: false, collapsible: true, active: false}).css("height","auto");
 			$(window).resize(function() { setTopMargin(); });

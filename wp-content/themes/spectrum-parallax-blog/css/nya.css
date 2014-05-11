@@ -23,7 +23,8 @@ body { background: #eeefe9 !important; }
 .page-id-58 #container .inside { width: 1260px; }
 .page-id-58 #commentForm { display: none; }
 .page-id-58 #content { margin-top: 150px; width: 75% }
-.page-id-58 h1 { background-color: #253640; color: #fff; height: 60px; margin-bottom: -2px; padding-top: 35px; text-align: center; }
+.page-id-58 h1 { background-color: #253640; color: #fff; font-size: 30px; height: 60px; margin-bottom: -2px; padding: 15px 0; text-align: center; }
+.page-id-58 #accordion h2 { color: #fff; font-size: 25px; margin: 10px 0; }
 .page-id-58 #accordion { background: #1e4d5a; padding: 30px 0; }
 .page-id-58 #accordion h3 { background: #00b1cc; border: 0; border-radius: 0; margin-left: 10%; width: 80%; }
 .page-id-58 #accordion h3 a { color: #fff; font-weight: bold; text-transform: uppercase; }
