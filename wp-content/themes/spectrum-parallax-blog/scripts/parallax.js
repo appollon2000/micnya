@@ -90,7 +90,9 @@ $(document).ready(function() { //when the document is ready...
 	});
 
 	$window.bind('scroll', function() { //when the user is scrolling...
-		Move(); //move the background images in relation to the movement of the scrollbar
+		if (!$('body').hasClass("page-id-58")) {
+			Move(); //move the background images in relation to the movement of the scrollbar
+		}
 	});
 
 });

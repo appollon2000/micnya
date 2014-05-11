@@ -52,6 +52,7 @@ echo("</script>"); }
 
 if (!$detect->isMobile()) { ?>
 
+	
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.localscroll-1.2.9-min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/parallax.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.scrollTo-1.4.6-min.js"></script>
