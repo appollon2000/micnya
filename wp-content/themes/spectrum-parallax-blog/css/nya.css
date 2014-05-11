@@ -7,6 +7,7 @@ body { background: #eeefe9 !important; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
+#block3, #block4, #block5 { background-position: 50% 0 !important; }
 /* Right Navigation */
 #content #nav { right: 37px !important; top: 60px !important; width: 100px; }
 #content ul li { float: right; }
@@ -30,6 +31,8 @@ body { background: #eeefe9 !important; }
 .page-id-58 #accordion h3 a { color: #fff; font-weight: bold; text-transform: uppercase; }
 .page-id-58 #accordion h3 a:hover { color: #fff454; }
 .page-id-58 .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
+.page-id-58 #back-to-main { background: url("/wp-content/themes/nya/images/transitions.btn.png") no-repeat scroll 0 -116px rgba(0, 0, 0, 0); float: left; height: 58px; margin-top: -10px; text-indent: -9999px; width: 178px; }
+.page-id-58 { left: 0; }
 
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
 #links-vertical-connector { border: 1px solid #000; height: 92px; position: fixed; right: 48px; top: 65px; width: 1px; }
