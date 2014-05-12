@@ -16,9 +16,12 @@ $(document).ready(function() { //when the document is ready...
 	//save selectors as variables to increase performance
 	var $window = $(window);
 	var windowHeight = $window.height(); //get the height of the window
+	var positionInWindow = $window.scrollTop();
 	parallaxHeight = 960;
+	getCurrentPosition();
 	//apply the class "inview" to a section that is in the viewport
-	$('.parallax-container').addClass('inview');
+	//$('.parallax-container').addClass('inview');
+	//$('#block1').addClass('inview');
 	$('.parallax-container').bind('inview', function(event, visible) {
 		if (visible == true) {
 			$(this).addClass("inview");
@@ -26,6 +29,24 @@ $(document).ready(function() { //when the document is ready...
 			$(this).removeClass("inview");
 		}
 	});
+	
+	function setCurrentPosition() {
+		var curPosition = Math.ceil(($window.scrollTop() / parallaxHeight));
+
+		$("#content").find(".type-post").removeClass("inview");
+			
+		if (curPosition == 0) {
+			curPosition = 1;
+		}
+			
+		$("#block" + curPosition).addClass("inview");
+	}	
+	
+	function getCurrentPosition() {
+		var curPosition = Math.ceil((positionInWindow / parallaxHeight) + 1);
+		
+		$("#block" + curPosition).addClass("inview");
+	}
 
 	function removeActive() {
 		$("a.block-link.active").removeClass("active");
@@ -59,6 +80,7 @@ $(document).ready(function() { //when the document is ready...
 	function Move() {
 		var pos = $window.scrollTop(); //position of the scrollbar
 		var blockAdjust = null;
+		setCurrentPosition();
 		$('.parallax-container').each(function(i) {
 			var blockAdjust = 0;
 			$('#pixels').html(pos); //display the number of pixels scrolled at the bottom of the page
@@ -74,12 +96,9 @@ $(document).ready(function() { //when the document is ready...
 		var scrollPosition = $("body").scrollTop();
 		var firstBlockId = $('.inview').first().attr('id');
 
-
 		firstBlockLink = firstBlockId.replace("block", "li#blockLink") + ' a';
 		removeActive();
 		$(firstBlockLink).addClass("active");
-
-
 	}
 
 	RepositionNav(); //Reposition the Navigation to center it in the window when the script loads
