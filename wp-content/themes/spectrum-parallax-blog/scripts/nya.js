@@ -11,7 +11,9 @@ $j(document).ready(function() {
 		$viewYourTile = $j("#view-your-tile a"),
 		$userOtherDonation = $donationBody.find(".other input"),
 		$userTileToWall = $donationContainer.find("#step-6 .left-container a"),
-		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a");
+		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a"),
+		$donationSteps = $("#donation-steps"),
+		$donationBackBtn = $("#back-button a");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -188,7 +190,8 @@ $j(document).ready(function() {
 			
 			resetDonationForm();
 			currentDonationStep = 1;
-
+			
+			$donationSteps.find(".step-number").text(currentDonationStep);
 			$donationNext.fadeIn();
 			$donateAnotherTile.fadeOut();
 			$viewYourTile.fadeOut();
@@ -200,6 +203,9 @@ $j(document).ready(function() {
 	
 	$viewYourTile.on("click", function (e) {
 		e.preventDefault();
+		
+		resetDonationForm();
+		currentDonationStep = 1;
 		
 		console.log("go to your tile");
 	});
@@ -265,7 +271,8 @@ $j(document).ready(function() {
 				height: 430
 			}, 500, "linear");
 			
-			
+			$donationSteps.find(".step-number").text(currentDonationStep);
+			$donationBackBtn.show();
 			
 			$donationHeader.find("h1").fadeOut("slow", function() {
 				$j(this).text("Enter Billing Information");
@@ -300,7 +307,8 @@ $j(document).ready(function() {
 			
 				$j("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
 				$j("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
-			
+				
+				$donationSteps.find(".step-number").text(currentDonationStep);
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
@@ -351,7 +359,7 @@ $j(document).ready(function() {
 			});
 			
 			$donationHeader.find("h2").text("In appreciation of your support, you can personalize a symbolic tile on our virtual shimmer wall.").show();
-			
+			$donationSteps.find(".step-number").text(currentDonationStep - 1);
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
@@ -363,6 +371,7 @@ $j(document).ready(function() {
 			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 				currentDonationStep++;
 			
+				$donationSteps.find(".step-number").text(currentDonationStep - 1);
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
@@ -395,7 +404,7 @@ $j(document).ready(function() {
 		
 		$donationContainer.find("input").removeClass("error-input").val("");
 		$donationContainer.find("#step-6 a.tile").removeClass("selected");
-		
+		$donationSteps.find(".step-number").text(1);
 		animalTileSelected = "";
 		colorTileSelected = "";
 	}

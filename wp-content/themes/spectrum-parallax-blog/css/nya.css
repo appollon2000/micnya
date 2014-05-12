@@ -34,8 +34,9 @@ body { background: #eeefe9 !important; }
 .page-id-58 #back-to-main { background: url("/wp-content/themes/nya/images/transitions.btn.png") no-repeat scroll 0 -116px rgba(0, 0, 0, 0); float: left; height: 58px; margin-top: -10px; text-indent: -9999px; width: 178px; }
 .page-id-58 { left: 0; }
 
-#donation-steps { background-color: #fff; color: #0081cc; float: left; height: 30px; padding: 10px 0; text-align: center; width: 100%; }
-#back-button a { }
+#donation-widget-steps { display: none; }
+#donation-steps { background-color: #fff; color: #0081cc; float: left; height: 30px; margin: 2px 0; padding: 10px 0; text-align: center; width: 100%; }
+#back-button a { background: url('/wp-content/themes/nya/images/donation.back.btn.png') no-repeat; display: none; float: left; height: 39px; text-indent: -9999px; width: 322px; }
 
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
 #links-vertical-connector { border: 1px solid #000; height: 92px; position: fixed; right: 48px; top: 65px; width: 1px; }

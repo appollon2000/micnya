@@ -38,6 +38,14 @@ $(document).ready(function() { //when the document is ready...
 		if (curPosition == 0) {
 			curPosition = 1;
 		}
+		
+		if ($("#blockLink6 a").hasClass("active")) {
+			$("#donation-widget-steps").show();
+			$("#widget-donate").hide();
+		} else {
+			$("#donation-widget-steps").hide();
+			$("#widget-donate").show();
+		}
 			
 		$("#block" + curPosition).addClass("inview");
 	}	

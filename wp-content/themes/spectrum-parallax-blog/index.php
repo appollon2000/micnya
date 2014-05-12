@@ -36,8 +36,10 @@ $resq1 = mysql_query($sql1) or die(mysql_error());
             </div>
           </div>
           <div id="widget-donate"><a href="widget-donate">Donate Now</a></div>
-		  <div id="donation-steps">1 of 5</div>
-		  <div id="back-button"><a href="back">Back</a></div>
+		  <div id="donation-widget-steps">
+		  	<div id="donation-steps">Step <span class="step-number">1</span> of 5</div>
+		  	<div id="back-button"><a href="back">Back</a></div>
+	      </div>
       </div>
 
             <!--end post nav -->
