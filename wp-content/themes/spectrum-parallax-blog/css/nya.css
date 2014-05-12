@@ -81,6 +81,9 @@ p, a, h1, h2, h3, h4, h5 { font-family: Arial, Helvetica, Verdana, sans-serif; }
 #donation-body .donation-content.other .donation-info { display: none; margin-left: 125px; padding: 28px 0 0; }
 #donation-body .donation-reference { background: transparent; text-align: center; width: 21%; }
 #donation-body .donation-info { float: left; font-size: 11px; line-height: 11px; padding: 10px 0 0 35px; text-transform: uppercase; width: 62%; }
+#donation-body .twenty-five .donation-info { padding-top: 22px; }
+#donation-body .one-fifty .donation-info { padding-top: 20px; }
+#donation-body .two-fifty .donation-info { padding-top: 9px; }
 
 #step-2 .left-container, #step-2 .right-container { float: left; width: 40%; }
 #step-2 .left-container { margin-left: 15%; }
