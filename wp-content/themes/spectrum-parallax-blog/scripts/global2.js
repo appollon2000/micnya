@@ -755,8 +755,10 @@ frTile.css('width',1234);
     var wasDragging = isDragging, btn = $('#tile-donate-btn'), frTile = $('#ib-main-wrapper');
     btn.show();
     isDragging = false;
+    setTimeout(function () {
     frTile.css('width',583);
     btn.css('opacity',1);
+  }, 4000);
     $(window).unbind("mousemove");
     if (!wasDragging) {
       btn.css('opacity',1).show(10);
