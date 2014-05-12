@@ -32,7 +32,7 @@ body { background: #eeefe9 !important; }
 .page-id-58 #accordion h3 a:hover { color: #fff454; }
 .page-id-58 .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
 .page-id-58 #back-to-main { background: url("/wp-content/themes/nya/images/transitions.btn.png") no-repeat scroll 0 -116px rgba(0, 0, 0, 0); float: left; height: 58px; margin-top: -10px; text-indent: -9999px; width: 178px; }
-.page-id-58 { left: 0; }
+.page-id-58 #footer { left: 0; }
 
 #donation-widget-steps { display: none; }
 #donation-steps { background-color: #fff; color: #0081cc; float: left; height: 30px; margin: 2px 0; padding: 10px 0; text-align: center; width: 100%; }
