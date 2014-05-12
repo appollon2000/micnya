@@ -35,7 +35,7 @@ body { background: #eeefe9 !important; }
 .page-id-58 #footer { left: 0; }
 
 #donation-widget-steps { display: none; }
-#donation-steps { background-color: #fff; color: #0081cc; float: left; height: 30px; margin: 2px 0; padding: 10px 0; text-align: center; width: 100%; }
+#donation-steps { background-color: #fff; color: #00B1CC; font-weight: bold; float: left; height: 30px; margin: 2px 0; padding: 0; font-size: 24px;text-align: center; width: 100%; }
 #back-button a { background: url('/wp-content/themes/nya/images/donation.back.btn.png') no-repeat; display: none; float: left; height: 39px; text-indent: -9999px; width: 322px; }
 
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
@@ -60,7 +60,7 @@ body { background: #eeefe9 !important; }
 #donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: left; height: 58px; text-indent: -9999px; width: 374px; }
 
 #main { margin: 0 auto; top: -12px; width: 100%; }
-#donation-container { background-color: #1c4c59; color: #fff; height: 475px; margin: 120px auto 0; opacity: 0.8; width: 875px; }
+#donation-container { color: #fff; height: 475px; margin: 120px auto 0; background: rgba(28,76,89,0.8); width: 875px; }
 #donation-header { background-color: #26343d; height: 128px; text-align: center; }
 #donation-header h1 { color: #fff; display: block; font-size: 30px; font-weight: bold; padding: 35px 0 15px 0; text-transform: uppercase; }
 #donation-header h2 { color: #fff; font-size: 17px; margin-left: 10%; width: 80%; }
@@ -78,7 +78,7 @@ body { background: #eeefe9 !important; }
 #donation-body .donation-amount.other p.other-input { margin: 4px 0 0 0; }
 #donation-body .donation-content.other .donation-info { display: none; margin-left: 125px; padding: 28px 0 0; }
 #donation-body .donation-reference { background: transparent; text-align: center; width: 21%; }
-#donation-body .donation-info { float: left; font-size: 11px; line-height: 11px; padding: 10px 0 0 35px; text-transform: uppercase; width: 62%; }
+#donation-body .donation-info { float: left; font-size: 10px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
 
 #step-2 .left-container, #step-2 .right-container { float: left; width: 40%; }
 #step-2 .left-container { margin-left: 15%; }
