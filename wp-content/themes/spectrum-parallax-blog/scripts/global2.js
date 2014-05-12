@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left'),sendConv = $('a#convioz'), writeTile = $('a#write-tile');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -450,7 +450,7 @@ $j = jQuery.noConflict();
           })();
         
         Template.init();
-ctdn.countdown({until: new Date(2014, 5 - 1, 11, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
+ctdn.countdown({until: new Date(2014, 5 - 1, 19, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
 
 animals.on("click", function(e) {
   e.preventDefault();
@@ -469,8 +469,8 @@ colors.on("click", function(e) {
 });
 prevTile.on("click", function(e) {
   e.preventDefault();
-  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span');
-  tileLoc.text(vloc);tileDate.text(todayDate);tileFrom.text(vname);
+  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), prevContent = $('#WrpopupPrev .prevContent'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span'), txtArea = $('textarea.text-area-message').val();
+  tileLoc.text(vloc);tileDate.text(todayDate);tileFrom.text(vname);prevContent.text(txtArea);
   if(hLength > 0) {inOf.text('In honor of');tileFname.text(hname);}else {inOf.text('In memory of');tileFname.text(mname);}
   Box.show();
 });
@@ -675,7 +675,7 @@ function onTimeout(){
 }
 
 
-sendConv.on("click", function(e) {
+$(document).on('click', 'a.submit-transition', function (e) {
  e.preventDefault();
  var amnt = $('input#other_amount').val(), categz;
 
@@ -726,11 +726,19 @@ var xdr;
         }
 });
 
-writeTile.on("click", function(e) {
+$(document).on('click', 'a.virtual-submit', function (e) {
  e.preventDefault();
  var msg = $('#step-6 textarea').val(), animal = $('input#recicon0').val(), color = $('input#color0').val(), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val();
  var tileStr = "&message=" + msg + "&icon="+ animal + "&color=" + color + "&vname=" + vname + "&vloc=" + vloc +"&hname=" + hname + "&hemail=" + hemail + "&mname=" + mname;
- });
+
+$.ajax({
+type: 'POST',
+url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/personal.php',
+dataType: 'json',
+data: tileStr
+});
+
+});
 
 
 var isDragging = false;

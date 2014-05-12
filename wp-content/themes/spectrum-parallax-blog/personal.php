@@ -8,15 +8,28 @@ Template Name: PersonalTiles Page
 */
 
 $kooks = $_COOKIE['last_id'];
-$bodyText = $_POST['other_amount'];
+$bodyText = $_POST['message'];
+$vname = $_POST['vname'];
+$vloc = $_POST['vloc'];
+$vicon = $_POST['icon'];
+$vcolor = $_POST['color'];
+$hname = $_POST['hname'];
+$mname = $_POST['mname'];
+$vemail = $_POST['hemail'];
+
+if(strlen(trim($hname))> 0) {
+$praiseName = $hname;
+$praise = 0;
+}else {
+$praiseName = $mname;
+$praise = 1;
+}
 
 $sql3 = "SELECT * FROM dentry WHERE `id` = '" . $kooks . "'";
 $resq3 = mysql_query($sql3) or die(mysql_error());
 $t_id = $resq3['id'];
 
-$sql4 = "INSERT INTO dentry (`message`, `icon`, `color`, `recipient_email`, `recipient_last_name`, `recipient_first_name`,`donation_id`,`category`)
-VALUES ('".mysql_real_escape_string($msg0)."','".mysql_real_escape_string($icon0)."', '".mysql_real_escape_string($color0)."', '".mysql_real_escape_string($ema)."','".mysql_real_escape_string($lnam)."',
-'".mysql_real_escape_string($fnam)."','".$cooks."')";
+$sql4 = "UPDATE dentry SET message = '".mysql_real_escape_string($bodyText)."', icon = '$vicon', recipient_location = '".mysql_real_escape_string($vloc)."', color = '".mysql_real_escape_string($vcolor)."', recipient_first_name = '".mysql_real_escape_string($vname)."', recipient_first_name = '".mysql_real_escape_string($vname)."', recipient_email = '".mysql_real_escape_string($vemail)."', praise_name = '".mysql_real_escape_string($praiseName)."', praise = '$praise' WHERE id = " . $kooks;
 $resq4 = mysql_query($sql4) or die(mysql_error());
 
 }

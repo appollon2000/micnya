@@ -24,8 +24,8 @@ $j(document).ready(function() {
 		verticalLinkConnector = "<did id='links-vertical-connector'></div>",
 		virtualTileSelection = "memory-oval",
 		tileDonationTriggered = false,
-		animalTileSelected = "",
-		colorTileSelected = "";
+		animalTileSelected = "anmbg1",
+		colorTileSelected = "1";
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
@@ -373,6 +373,7 @@ $j(document).ready(function() {
 			
 				$donationSteps.find(".step-number").text(currentDonationStep - 1);
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
+				$donationNext.addClass("virtual-submit");
 			});
 		}
 	}
@@ -386,6 +387,7 @@ $j(document).ready(function() {
 					height: 430
 				}, 500, "linear");
 			
+				$donationNext.removeClass("virtual-submit");
 				$donationNext.fadeOut();
 				$donateAnotherTile.fadeIn();
 				$viewYourTile.fadeIn();

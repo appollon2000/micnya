@@ -22,7 +22,7 @@ a.sharetwt{background:url(images/icons/icon-twt.png) no-repeat;width:16px;height
 .allgift{float:left;text-transform:none;width:145px;line-height:16px;margin:-15px 0 0 25px;text-align:left;color:#4b5e62;font-size:12px;}
 .iconz {float:right;margin-right:20px;}
 .ib-content-full{position:relative;clear:both;text-align:center;width:350px;margin:0 auto;display:none;text-transform:none;line-height:26px;font-size:20px;color:#fff;padding-top:13px}
-.ib-content-preview .ib-teaser h2{text-transform:uppercase;font-size:22px;font-weight:bold;margin-left:25px;color:#00b1cc}
+.ib-content-preview .ib-teaser h2{text-transform:uppercase;font-size:22px;font-weight:bold;margin-left:24px;color:#00b1cc}
 .tyle .iconz{opacity:0;}
 .headerList {width:100%;padding:20px 0;font-weight:bold;background-color: #192a37;}
 ul#newList {list-style:none;display:block;margin:35px 0 0;padding:0;}ul#newList li {padding-bottom:12px;margin:0;float:none;}ul#newList a {color:#DDD;}ul#newList a:hover{color:#fff452;}.noresults {margin-top:30px;font-size:21px;font-weight:bold;line-height: 24px;}
@@ -108,10 +108,10 @@ transform-style: preserve-3d;
 .prevAllgift{color: #4B5E62;float: left;font-size: 12px;line-height: 16px;margin: -15px 0 0 25px;text-align: left;text-transform: none;width: 145px;}
 .prevIconz {float: right;margin-right: 20px;}
 .popupbg,#today-date {display: none;}#tile-donate-btn a:hover{color:#fff;}
-.prevContent{clear: both;color: #FFF;display: none;font-size: 20px;line-height: 26px;margin: 0 auto;max-height: 114px;padding-top: 13px;position: relative;text-align: center;text-transform: none;width: 250px;}
-.prevContent p {color: #000;font-size: 13px;font-weight: 400;height: 72px;line-height: 16px;margin-left: 5px;overflow: hidden;padding: 16px 13px 10px 21px;text-align: left;}
+.prevContent{clear: both;color: #26343D;font-size: 11px;line-height: 16px;;position: relative; margin-left: 25px;padding: 8px 0 0;text-transform: uppercase;text-transform: none;width: 208px;}
 #ascrail2000{width:16px !important;background: #26343d !important;}
 #ascrail2000 div {background-color:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
 span.tileAttr{padding-right:30px;}
 #block7 .story {min-width: 1200px;width: 1200px;}
-a#convioz,a#write-tile{display:none;}
+/*a#convioz,a#write-tile{display:none;}*/
+#block7{background: rgba(184, 92, 103, 0.50) !important;}

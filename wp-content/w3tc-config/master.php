@@ -13,7 +13,7 @@ return array(
 	'dbcache.engine' => 'file',
 	'dbcache.file.gc' => 3600,
 	'dbcache.file.locking' => false,
-	'dbcache.lifetime' => 180,
+	'dbcache.lifetime' => 2,
 	'dbcache.memcached.persistant' => true,
 	'dbcache.memcached.servers' => array(
 		0 => '127.0.0.1:11211',
@@ -27,6 +27,7 @@ return array(
 		2 => '_wp_session_',
 	),
 	'dbcache.reject.uri' => array(
+		0 => '/',
 	),
 	'dbcache.reject.words' => array(
 		0 => '^\\s*insert\\b',
@@ -421,7 +422,7 @@ return array(
 	'browsercache.other.etag' => false,
 	'browsercache.other.w3tc' => false,
 	'browsercache.other.replace' => false,
-	'browsercache.timestamp' => '',
+	'browsercache.timestamp' => '1399912469',
 	'browsercache.replace.exceptions' => array(
 	),
 	'mobile.enabled' => false,
@@ -626,7 +627,7 @@ return array(
 	'notes.plugins_updated' => false,
 	'notes.cdn_upload' => false,
 	'notes.cdn_reupload' => false,
-	'notes.need_empty_pgcache' => true,
+	'notes.need_empty_pgcache' => false,
 	'notes.need_empty_minify' => false,
 	'notes.need_empty_objectcache' => false,
 	'notes.root_rules' => true,
