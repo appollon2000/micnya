@@ -20,7 +20,7 @@ $resq1 = mysql_query($sql1) or die(mysql_error());
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
           <div id="donation-widget">
-        <div id="widget-logo"></div>
+        <div id="widget-logo"><a href="/"></a></div>
           <div id="widget-content">
             <div id="donation-goal">
               <div class="widget-container-header">$ Goal</div>
@@ -35,7 +35,7 @@ $resq1 = mysql_query($sql1) or die(mysql_error());
             <div class="widget-container-info" id="widget-days-left"></div>
             </div>
           </div>
-          <div id="widget-donate"><a href="widget-donate">Donate Now</a></div>
+          <div id="widget-donate"><a href="widget-donate" class="click-donate">Donate Now</a></div>
 		  <div id="donation-widget-steps">
 		  	<div id="donation-steps">Step <span class="step-number">1</span> of 5</div>
 		  	<div id="back-button"><a href="back">Back</a></div>

@@ -12,7 +12,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -487,6 +487,14 @@ documt.mouseup(function (e) {
   }
 
 });
+clkDonate.on("click", function(e) {
+  e.preventDefault();
+var trigLink = $('ul#nav li#blockLink7 a'),maindonBtn = $('a#donate-now-button');
+trigLink.trigger('click');
+setTimeout(function () {
+maindonBtn.trigger('click');
+}, 1400);
+});
 
 
 setTimeout(function () {
@@ -526,7 +534,7 @@ var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
   parz.slice(0,36).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(200).queue(function(){
+    row.addClass('skew').delay(150).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 100*i);
@@ -534,7 +542,7 @@ var row = $(this);
 parz.slice(36,72).each(function(i) {
 var row = $(this);
    setTimeout(function() {
-    row.addClass('skew').delay(230).queue(function(){
+    row.addClass('skew').delay(180).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 110*i);
@@ -542,7 +550,7 @@ var row = $(this);
 parz.slice(72,108).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(260).queue(function(){
+    row.addClass('skew').delay(210).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 120*i);
@@ -550,7 +558,7 @@ var row = $(this);
 parz.slice(108,144).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(290).queue(function(){
+    row.addClass('skew').delay(240).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 130*i);
@@ -558,7 +566,7 @@ var row = $(this);
 parz.slice(144,180).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(320).queue(function(){
+    row.addClass('skew').delay(270).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 140*i);
@@ -566,7 +574,7 @@ var row = $(this);
 parz.slice(180,216).each(function(i) {
 var row = $(this);
     setTimeout(function() {
-    row.addClass('skew').delay(350).queue(function(){
+    row.addClass('skew').delay(300).queue(function(){
     $(this).removeClass('skew').dequeue();
 });
   }, 150*i);
@@ -758,10 +766,13 @@ frTile.css('width',1234);
     setTimeout(function () {
     frTile.css('width',583);
     btn.css('opacity',1);
-  }, 4000);
+  }, 10000);
     $(window).unbind("mousemove");
     if (!wasDragging) {
-      btn.css('opacity',1).show(10);
+     setTimeout(function () {
+    frTile.css('width',583);
+    btn.css('opacity',1);
+  }, 10000);
     }
 });
 
