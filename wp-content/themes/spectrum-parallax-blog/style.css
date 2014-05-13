@@ -26,8 +26,6 @@ TABLE OF CONTENTS
 /* ---------------------------
 01 Style Reset
 ----------------------------*/
-@import url("//hello.myfonts.net/count/2ae29a");
-
 @font-face {
     font-family: 'LeagueGothicRegular';
     src: url('League_Gothic-webfont.eot');
@@ -39,8 +37,6 @@ TABLE OF CONTENTS
     font-style: normal;
 
 }
-
-@font-face {font-family: 'Swiss721BT-Black';src: url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.eot');src: url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.woff') format('woff'),url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.ttf') format('truetype');}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
