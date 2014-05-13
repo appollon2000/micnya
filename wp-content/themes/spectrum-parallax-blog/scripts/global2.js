@@ -504,11 +504,15 @@ documt.mouseup(function (e) {
 });
 clkDonate.on("click", function(e) {
   e.preventDefault();
-var trigLink = $('ul#nav li#blockLink7 a'),maindonBtn = $('a#donate-now-button');
+var trigLink = $('ul#nav li#blockLink7 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
+if (!isOn){
 trigLink.trigger('click');
 setTimeout(function () {
 maindonBtn.trigger('click');
 }, 1400);
+}else {
+  return false;
+}
 });
 
 
