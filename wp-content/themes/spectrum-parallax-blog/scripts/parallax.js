@@ -48,6 +48,14 @@ $(document).ready(function() { //when the document is ready...
 		}
 			
 		$("#block" + curPosition).addClass("inview");
+		
+		if ($("#blockLink1 a").hasClass("active") || $("#blockLink2 a").hasClass("active") || $("#blockLink3 a").hasClass("active") || $("#blockLink4 a").hasClass("active") || $("#blockLink5 a").hasClass("active")) {
+			$("#blockLink1 a").addClass("active-link")
+		} else if($("#blockLink8 a").hasClass("active") || $("#blockLink9 a").hasClass("active") || $("#blockLink10 a").hasClass("active")) { 
+			$("#blockLink8 a").addClass("active-link")
+		} else {
+			$("#blockLink1 a").removeClass("active-link")
+		}
 	}	
 	
 	function getCurrentPosition() {
