@@ -1,50 +1,58 @@
+@import url("//hello.myfonts.net/count/2ae29a");
+@font-face {font-family: 'Swiss721BT-Black';src: url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.eot');src: url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.eot?#iefix') format('embedded-opentype'),url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.woff') format('woff'),url('/wp-content/themes/spectrum-parallax-blog/webfonts/2AE29A_0_0.ttf') format('truetype');}
+
 body { background: #eeefe9 !important; }
 /* Footer */
 #footer { background: transparent !important; bottom: -3px; position: fixed; z-index: 9999; }
 #footer .right { display: none; }
-#footer .left { background-color: #26343d; color: #edefe8; font-size: 9px; height: 29px; margin: -33px 0 0 368px; padding: 9px 20px; text-transform: uppercase; }
-#footer .left a { color: #edefe8; text-decoration: underline; }
+#footer .left { color: #26343d; font-size: 9px; height: 29px; margin: -33px 0 0 368px; padding: 9px 20px; text-transform: uppercase; }
+#footer .left a { color: #26343d; text-decoration: underline; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
 #block3, #block4, #block5 { background-position: 50% 0 !important; }
+.Swiss721BT-Black { 
+	font-family: "Swiss721BT-Black";
+	font-weight: normal;
+	font-style: normal;
+}
 /* Right Navigation */
 #content #nav { right: 37px !important; top: 60px !important; width: 100px; }
 #content ul li { float: right; }
-#content #nav li a:hover, #content #nav li a.active, #content #nav li a.active-link { background: url('/wp-content/themes/nya/images/bullet.on.png') 208px 0 no-repeat !important; border: 0; color: #000 !important; height: 21px; width: 22px; }
-#content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 208px 0 !important; border: 0 !important; color: #000; font-size: 12px; font-weight: bold; height: 21px !important; margin-bottom: -2px; padding-top: 2px; text-transform: uppercase; text-indent: 0 !important; width: 230px !important; }
+#content #nav li a:hover, #content #nav li a.active, #content #nav li a.active-link { background: url('/wp-content/themes/nya/images/bullet.on.png') 247px 0 no-repeat !important; border: 0; color: #000 !important; height: 21px; width: 22px; }
+#content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 247px 0 !important; border: 0 !important; color: #000; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: bold; height: 21px !important; margin-bottom: -2px; padding-top: 4px; text-transform: uppercase; text-indent: 0 !important; width: 270px !important; }
 #content #nav #blockLink2, #content #nav #blockLink3, #content #nav #blockLink4, #content #nav #blockLink5, #content #nav #blockLink9, #content #nav #blockLink10 { display: none; } 
-#content #nav #blockLink1 a { padding-left: 100px !important; }
-#content #nav #blockLink6 a { padding-left: 97px !important; }
-#content #nav #blockLink7 a { padding-left: 13px !important; }
-#content #nav #blockLink8 a { padding-left: 70px !important; }
+#content #nav #blockLink1 a { padding-left: 128px !important; }
+#content #nav #blockLink6 a { padding-left: 114px !important; }
+#content #nav #blockLink7 a { padding-left: 11px !important; }
+#content #nav #blockLink8 a { padding-left: 87px !important; }
 
 .page-id-58 { background-color: #00b1cc !important; height: 960px; margin: 0 auto; width: 1430px; }
 .page-id-58 #container { background: url('/wp-content/themes/nya/images/main.bkg.jpg') no-repeat !important; height: 100%; }
 .page-id-58 #container .inside { width: 1260px; }
 .page-id-58 #commentForm { display: none; }
 .page-id-58 #content { margin-top: 150px; width: 75% }
-.page-id-58 h1 { background-color: #253640; color: #fff; font-size: 30px; height: 60px; margin-bottom: -2px; padding: 15px 0; text-align: center; }
-.page-id-58 #accordion h2 { color: #fff; font-size: 25px; margin: 10px 0; }
+.page-id-58 h1 { background-color: #253640; color: #fff; font-family: "Swiss721BT-Black"; font-size: 30px; height: 60px; margin-bottom: -2px; padding: 20px 0; text-align: center; }
+.page-id-58 #accordion h2 { color: #fff454; font-family: "Swiss721BT-Black"; font-size: 14px; margin: 15px 0 0; }
 .page-id-58 #accordion { background: #1e4d5a; padding: 30px 0; }
 .page-id-58 #accordion h3 { background: #00b1cc; border: 0; border-radius: 0; margin-left: 10%; width: 80%; }
-.page-id-58 #accordion h3 a { color: #fff; font-weight: bold; text-transform: uppercase; }
+.page-id-58 #accordion h3 a { color: #fff; font-family: "Swiss721BT-Black"; text-transform: uppercase; }
 .page-id-58 #accordion h3 a:hover { color: #fff454; }
 .page-id-58 .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
 .page-id-58 #back-to-main { background: url("/wp-content/themes/nya/images/transitions.btn.png") no-repeat scroll 0 -116px rgba(0, 0, 0, 0); float: left; height: 58px; margin-top: -10px; text-indent: -9999px; width: 178px; }
 .page-id-58 #footer { left: 0; }
 
 #donation-widget-steps { display: none; }
-#donation-steps { background-color: #fff; color: #00B1CC; font-weight: bold; float: left; height: 30px; margin: 2px 0; padding: 0; font-size: 24px;text-align: center; width: 100%; }
+#donation-steps { background-color: #fff; color: #00B1CC; font-weight: bold; float: left; height: 30px; margin: 2px 0; padding: 5px 0 0 0; font-family: "Swiss721BT-Black"; font-size: 18px;text-align: center; width: 100%; }
 #back-button a { background: url('/wp-content/themes/nya/images/donation.back.btn.png') no-repeat; display: none; float: left; height: 39px; text-indent: -9999px; width: 322px; }
 
 #donation-info { margin-top: 250px; }
-#donation-info h1 { color: #fff; display: block; font-size: 70px; line-height: 65px; text-align: center; }
-#donation-info h2 { color: #fff; font-size: 20px; line-height: 30px; margin-top: 20px; text-align: center; }
+#donation-info h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 70px; line-height: 65px; text-align: center; }
+#donation-info h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 20px; line-height: 30px; margin-top: 20px; text-align: center; }
 #donation-info #donate-now-button { background: url('/wp-content/themes/nya/images/donate.now.lg.png') no-repeat; float: left; height: 74px; margin: 20px 0 0 34%; text-indent: -9999px; width: 313px; }
 
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
-#links-vertical-connector { border: 1px solid #000; height: 92px; position: fixed; right: 48px; top: 65px; width: 1px; }
+#links-vertical-connector { background-color: #000; height: 92px; position: fixed; right: 49px; top: 65px; width: 1px; }
 /* Donation Container */
 .light-yellow-selected-donation { background-color: #e6ec5d !important; color: #000 !important; }
 .dark-yellow-selected-donation { background-color: #fff452 !important; color: #000 !important; }
@@ -69,22 +77,22 @@ body { background: #eeefe9 !important; }
 #main { margin: 0 auto; top: -12px; width: 100%; }
 #donation-container { color: #fff; display: none; height: 475px; margin: 120px auto 0; background: rgba(28,76,89,0.8); width: 875px; }
 #donation-header { background-color: #26343d; height: 128px; text-align: center; }
-#donation-header h1 { color: #fff; display: block; font-size: 30px; font-weight: bold; padding: 35px 0 15px 0; text-transform: uppercase; }
-#donation-header h2 { color: #fff; font-size: 17px; margin-left: 10%; width: 80%; }
+#donation-header h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 30px; font-weight: bold; padding: 35px 0 15px 0; text-transform: uppercase; }
+#donation-header h2 { color: #fff; font-size: 15px; line-height: 20px; margin-left: 10%; width: 80%; }
 #donation-body { padding-top: 45px; }
 #donation-body .selection { float: left; height: 60px; margin: 0 0 2px 10%; width: 80%; }
 #donation-body .selection p { margin: 0; }
 #donation-body .oval { background: url('/wp-content/themes/nya/images/donation.selection.off.png') 19px 19px no-repeat; float: left; height: 20px; padding: 30px; text-indent: -9999px; width: 4%; }
 #donation-body .oval.selected, #donation-body .oval:hover { background: url('/wp-content/themes/nya/images/donation.selection.on.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
 #donation-body .donation-content { background-color: #03a7c1; float: left; height: 100%; width: 90%; }
-#donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; font-size: 13px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
-#donation-body .donation-amount { font-size: 15px; height: 60px; padding-left: 30px; width: 15%; }
+#donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; font-size: 12px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
+#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; height: 60px; padding-left: 26px; width: 14%; }
 #donation-body .donation-amount.other { /*font-size: 11px; padding-left: 20px; padding-top: 13px; text-align: center; text-transform: lowercase;*/ }
 #donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
-#donation-body .donation-amount.other p { color: #fff; font-size: 14px; line-height: 12px; margin: -8px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
+#donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -8px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
 #donation-body .donation-amount.other p.other-input { margin: 4px 0 0 0; }
 #donation-body .donation-content.other .donation-info { display: none; margin-left: 125px; padding: 28px 0 0; }
-#donation-body .donation-reference { background: transparent; text-align: center; width: 21%; }
+#donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; text-align: center; width: 22%; }
 #donation-body .donation-info { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
 #donation-body .twenty-five .donation-info { padding-top: 22px; }
 #donation-body .one-fifty .donation-info { padding-top: 20px; }
@@ -120,7 +128,7 @@ body { background: #eeefe9 !important; }
 #step-5 { margin-top: -20px; }
 #step-5 .section-container { margin: 0 auto; width: 40%; }
 #step-5 .section-container .section-top { margin-left: 10%; width: 90%; }
-#step-5 p { color: #fff; font-weight: bold; margin: 15px 0; }
+#step-5 p { color: #fff; font-family: "Swiss721BT-Black"; font-size: 13px; margin: 15px 0; }
 #step-5 .section-bottom p { margin-left: 37px; }
 #step-5 .user-info p { font-weight: normal; margin: 3px 0; }
 #step-5 .user-info input { background: #0895ac; border: 0; color: #000; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 79%; }
@@ -132,8 +140,8 @@ body { background: #eeefe9 !important; }
 
 #step-6 .left-container, #step-6 .right-container { float: left; margin: 0 5%; width: 40%; }
 #step-6 .section-container { margin: -30px auto; padding: 0 10%; width: 100%; }
-#step-6 .user-info p { color: #fff; font-weight: bold; margin: 10px 0; }
-#step-6 .text-area-message { background-color: #0895ac; border: 0; color: #fff; height: 110px; padding: 1%; resize: none; width: 95%; }
+#step-6 .user-info p { color: #fff; font-family: "Swiss721BT-Black"; font-size: 13px; margin: 10px 0; }
+#step-6 .text-area-message { background-color: #0895ac; border: 0; color: #fff; font-family: Arial, Verdana, Helvetica, sans-serif; height: 110px; padding: 1%; resize: none; width: 95%; }
 #step-6 .tile { float: left; height: 46px; margin: 0 11px 11px 0; text-indent: -9999px; width: 44px; }
 #step-6 .tile-1 { background: url('/wp-content/themes/nya/images/tile-1.png') no-repeat; }
 #step-6 .tile-2 { background: url('/wp-content/themes/nya/images/tile-2.png') no-repeat; }
@@ -170,13 +178,14 @@ body { background: #eeefe9 !important; }
 #step-7 #social-icons-tiles #tw-share { background: url('/wp-content/themes/nya/images/donate.tw.btn.png') no-repeat; }
 
 #block7 { background: rgba(28, 76, 89, 0.5); }
+#block7 h2.titleTops { font-family: "Swiss721BT-Black"; width: 1000px; }
 #block8 .story { width: 1050px; }
 #explore-further { height: 590px; margin: 190px auto 0; width: 1050px; }
-#explore-further h1 { color: #26343d; display: block; font-size: 40px; text-align: center; padding-bottom: 30px; }
+#explore-further h1 { color: #26343d; display: block; font-family: "Swiss721BT-Black"; font-size: 40px; text-align: center; padding-bottom: 30px; }
 #explore-further #explore-further-container { background: rgba(28,76,89,0.7); }
 #explore-further #wall-video { background: #000; display: inline; float: right; height: 250px; margin: 0 0 20px 20px; width: 420px; }
 #explore-further #explore-further-container .header { background-color: #26343d; height: 50px; text-align: center; }
-#explore-further #explore-further-container .header h2 { color: #fff; font-size: 21px; padding-top: 20px; }
+#explore-further #explore-further-container .header h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 21px; padding-top: 23px; }
 #explore-further #explore-further-container .content { padding: 15px 40px; }
 #explore-further #explore-further-container .content p { color: #fff; font-size: 14px; font-weight: normal; text-transform: none; }
 
@@ -184,7 +193,7 @@ body { background: #eeefe9 !important; }
 #block9 .story { width: 1050px; }
 #block9 .story .float-left { width: 1050px; }
 #block8 .story .float-left { width: 1050px }
-#explore-further-discover, #explore-further-find-out { color: #fff; font-size: 45px; margin-bottom: 700px; text-align: center; width: 1050px; }
+#explore-further-discover, #explore-further-find-out { color: #fff; font-family: "Swiss721BT-Black"; font-size: 45px; margin-bottom: 700px; text-align: center; width: 1050px; }
 #explore-further-discover a, #explore-further-find-out a { color: #fff; text-decoration: underline; }
 #explore-further-discover { margin-top: 200px; }
 #explore-further-donate { text-align: center; width: 1050px; }
@@ -199,4 +208,4 @@ body { background: #eeefe9 !important; }
 #donation-widget #widget-donate a { background: url('/wp-content/themes/nya/images/widget.donate.now.png') no-repeat; float: left; height: 39px; margin-top: 2px; text-indent: -9999px; width: 322px; }
 #donation-widget #donation-goal, #donation-widget #amount-donated, #donation-widget #donation-left { background-color: #fff; float: left; height: 100%; text-align: center; padding-top: 10px; width: 32%; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
-#donation-widget .widget-container-header { color: #00b1cc; margin-bottom: 10px; }
+#donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; margin-bottom: 10px; }
