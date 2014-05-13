@@ -13,7 +13,8 @@ $j(document).ready(function() {
 		$userTileToWall = $donationContainer.find("#step-6 .left-container a"),
 		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a"),
 		$donationSteps = $("#donation-steps"),
-		$donationBackBtn = $("#back-button a");
+		$donationBackBtn = $("#back-button a"),
+		$donationInfo = $("#donation-info");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -37,6 +38,23 @@ $j(document).ready(function() {
 	$donationBody.find("#select-country").ddslick();
 	$donationBody.find("#select-exp-day").ddslick();
 	$donationBody.find("#select-exp-year").ddslick();
+	
+	$donationInfo.on("click", function (e) {
+		e.preventDefault();
+		$donationInfo.fadeOut("slow", function(){
+		
+			$donationContainer.fadeIn();
+			$donationNext.fadeIn();
+		});
+	});
+	
+	$donationContainer.find("input").on("focusin", function() {
+		$j(this).addClass("focus-in-background");
+	});
+	
+	$donationContainer.find("input").on("focusout", function() {
+		$j(this).removeClass("focus-in-background");
+	});
 	
 	$donationSelector.on("click", function(e){
 		e.preventDefault();
