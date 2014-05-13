@@ -11,7 +11,7 @@ body { background: #eeefe9 !important; }
 /* Right Navigation */
 #content #nav { right: 37px !important; top: 60px !important; width: 100px; }
 #content ul li { float: right; }
-#content #nav li a:hover, #content #nav li a.active { background: url('/wp-content/themes/nya/images/bullet.on.png') 208px 0 no-repeat !important; border: 0; color: #000 !important; height: 21px; width: 22px; }
+#content #nav li a:hover, #content #nav li a.active, #content #nav li a.active-link { background: url('/wp-content/themes/nya/images/bullet.on.png') 208px 0 no-repeat !important; border: 0; color: #000 !important; height: 21px; width: 22px; }
 #content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 208px 0 !important; border: 0 !important; color: #000; font-size: 12px; font-weight: bold; height: 21px !important; margin-bottom: -2px; padding-top: 2px; text-transform: uppercase; text-indent: 0 !important; width: 230px !important; }
 #content #nav #blockLink2, #content #nav #blockLink3, #content #nav #blockLink4, #content #nav #blockLink5, #content #nav #blockLink9, #content #nav #blockLink10 { display: none; } 
 #content #nav #blockLink1 a { padding-left: 100px !important; }
