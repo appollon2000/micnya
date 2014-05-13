@@ -820,6 +820,6 @@ $(window).scroll(function(){ // bind window scroll event
   }
   }
 });
-
+$("html, body").animate({ scrollTop: 0 }, "slow");
 
 });
