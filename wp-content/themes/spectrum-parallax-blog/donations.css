@@ -25,7 +25,7 @@ a.sharetwt{background:url(images/icons/icon-twt.png) no-repeat;width:16px;height
 .ib-content-preview .ib-teaser h2{text-transform:uppercase;font-size:22px;font-weight:bold;margin-left:24px;color:#00b1cc}
 .tyle .iconz{opacity:0;}
 .headerList {width:100%;padding:20px 0;font-weight:bold;background-color: #192a37;text-transform:uppercase;}
-ul#newList {width:87%;margin: 10px auto 0;list-style:none;display:block;margin:35px 0 0;padding:0;}ul#newList li {line-height: 28px;margin:0;float:none;}ul#newList a {color:#DDD;}ul#newList a:hover{color:#fff452;}.noresults {margin-top:30px;font-size:21px;font-weight:bold;line-height: 24px;}
+ul#newList {width:87%;margin: 10px auto 0;list-style:none;display:block;padding:0;}ul#newList li {line-height: 28px;margin:0;float:none;}ul#newList a {color:#DDD;}ul#newList a:hover{color:#fff452;}.noresults {margin-top:30px;font-size:21px;font-weight:bold;line-height: 24px;}
 #footer .main.clearfix{display:none;}#tilePreview a:hover{color:#000;}
 
 .friend1,.friend2,.friend3,.friend4,.friend5,.friend6,.friend7,.friend8,.friend9,.friend10,.friend11,.friend12,.friend13,.friend14,.friend15{background:transparent url(images/tiles/friend1.png) no-repeat}
