@@ -192,7 +192,7 @@ body { background: #eeefe9 !important; }
 #explore-further-discover a:hover, #explore-further-find-out a:hover { color: #fff452; text-decoration: underline; }
 #explore-further-donate a:hover { color: #fff; }
 
-#content #block10 { background-image: url('/wp-content/uploads/2014/05/long.bkg.jpg') !important; background-position: 50% 0 !important; }
+/*#content #block10 { background-image: url('/wp-content/uploads/2014/05/long.bkg.jpg') !important; background-position: 50% 0 !important; }*/
 #donation-widget { height: 194px; left: 50px; position: fixed; top: 60px; width: 322px; z-index: 50000; font-weight: bold; text-transform: uppercase;}
 #donation-widget #widget-logo { background: url('/wp-content/themes/nya/images/nya.logo.png') no-repeat; display: block; float: left; height: 91px; margin-bottom: 2px; width: 322px; }
 #donation-widget #widget-content { float: left; height: 61px; width: 322px; }
