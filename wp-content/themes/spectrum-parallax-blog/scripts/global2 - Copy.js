@@ -615,7 +615,7 @@ inpt.on("click", function(e) {
       resu.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ inval +"</div><ul id='newList'></ul>");
       $innerListItem.each(function() {
       var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id'),locat= $(this).find('.ts-city').text();
-     $("#newList").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr first'>"+fullname+"</span> <span class='tileAttr second'>"+locat+"</span></a></li>");
+     $("#newList").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr'>"+fullname+"</span> <span class='tileAttr'>"+locat+"</span></a></li>");
       });
 
 }else if($innerListItem.length > 5){

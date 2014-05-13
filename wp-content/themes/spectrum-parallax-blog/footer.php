@@ -17,6 +17,16 @@
 		</div><!-- end footer main -->
 		
 		<div class="secondary clearfix">
+			<div id="searchBox">
+				<div id="dosearch">
+					<form id="searchus">
+						<input type="text" placeholder="TYPE IN NAME" id="searchTerm" name="searchTerm" maxlength="20">
+						<div id="searchGo" class="brownGradRight">
+						<div id="searchArrow" class="arrowCentered"></div>
+						</div>
+					</form>
+				</div>
+		</div>
          <?php include( TEMPLATEPATH . '/includes/socialNetworks.php'); ?>
 			<?php $footer_left = tia_get_option('tia_footer_left'); ?>
 			<?php $footer_right = tia_get_option('tia_footer_right'); ?>
