@@ -435,7 +435,7 @@ $j(document).ready(function() {
 	}
 	
 	function checkOnTransactionInput () {
-		var infoVerified = true, // needs to be false, set to true for testing only
+		var infoVerified = false, // needs to be false, set to true for testing only
 			userInputClear = false,
 			userCCTypeSelected = false,
 			stateSelected = false,
