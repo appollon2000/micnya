@@ -130,4 +130,4 @@ a.dd-selected,span.dd-pointer-down {color: #fff !important;}
 #searchBox {display:none;position: absolute;z-index: 100;bottom: 33px;left:41px;}
 #searchBox input::-webkit-input-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input:-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input::-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input:-ms-input-placeholder{font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}
 .togHide{display:block !important;}
-#block6 .float-left.blank {margin-left:-18%;}
+#block6 .float-left.blank {margin-left:-3%;}
