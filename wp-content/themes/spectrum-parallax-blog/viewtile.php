@@ -25,8 +25,8 @@ $row = mysql_fetch_array($result);
 </style>
 <?php
 $appId='631772250191311';
-$linkUrl='/';
-$picUrl='/wp-content/themes/blankslate/images/newtiles/tiles/';
+$linkUrl='http://ec2-54-86-42-60.compute-1.amazonaws.com';
+$picUrl='http://ec2-54-86-42-60.compute-1.amazonaws.com/wp-content/themes/blankslate/images/newtiles/tiles/';
 $redirUrl='https://www.facebook.com/';
 
 $clf = strtolower(trim($row['donor_first_name']));
