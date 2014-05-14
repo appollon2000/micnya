@@ -40,7 +40,7 @@ $lastID = mysql_insert_id();
 if (isset($_COOKIE['last_id'])) {
 setcookie("last_id", "",time()-3600);
 }
-setcookie("last_id", $lastID);
+setcookie("last_id", $lastID,time()+86400);
 $cooks = $_COOKIE['last_id'];
 }
 ?>

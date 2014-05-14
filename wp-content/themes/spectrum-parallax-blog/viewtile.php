@@ -7,7 +7,7 @@ Template Name: ViewTile Page
 session_start();
 $mid = $_COOKIE['last_id'];
 
-$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id WHERE dentry.id = '$mid' ORDER BY donation.donation_date DESC";
+$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id WHERE dentry.id = 492 ORDER BY donation.donation_date DESC";
 $result = mysql_query($query) or die(mysql_error());
 $row = mysql_fetch_array($result); 
 
