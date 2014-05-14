@@ -17,8 +17,17 @@ $(document).ready(function() { //when the document is ready...
 	var $window = $(window);
 	var windowHeight = $window.height(); //get the height of the window
 	var positionInWindow = $window.scrollTop();
+	var $widgetDonate = $("#widget-donate a");
+	
 	parallaxHeight = 960;
 	getCurrentPosition();
+	
+	$widgetDonate.on("click", function (e) {
+		e.preventDefault();
+		
+		
+	});
+	
 	//apply the class "inview" to a section that is in the viewport
 	//$('.parallax-container').addClass('inview');
 	//$('#block1').addClass('inview');
@@ -50,11 +59,12 @@ $(document).ready(function() { //when the document is ready...
 		$("#block" + curPosition).addClass("inview");
 		
 		if ($("#blockLink1 a").hasClass("active") || $("#blockLink2 a").hasClass("active") || $("#blockLink3 a").hasClass("active") || $("#blockLink4 a").hasClass("active")) {
-			$("#blockLink1 a").addClass("active-link")
+			$("#blockLink1 a").addClass("active-link");
 		} else if($("#blockLink7 a").hasClass("active") || $("#blockLink8 a").hasClass("active") || $("#blockLink9 a").hasClass("active") || $("#blockLink10 a").hasClass("active")) { 
-			$("#blockLink7 a").addClass("active-link")
+			$("#blockLink7 a").addClass("active-link");
 		} else {
-			$("#blockLink7 a").removeClass("active-link")
+			$("#blockLink7 a").removeClass("active-link");
+			$("#blockLink1 a").removeClass("active-link");
 		}
 	}	
 	

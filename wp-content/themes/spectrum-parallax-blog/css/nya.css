@@ -68,8 +68,10 @@ body { background: #eeefe9 !important; }
 #step-1 { display: block;}
 #step-2, #step-3, #step-4, #step-5, #step-6, #step-7 { display: none; }
 #next { margin: 0 auto; width: 875px; }
-#next a { background: url('/wp-content/themes/nya/images/transitions.btn.png') no-repeat; display: none; float: left; height: 58px; margin-left: 345px; text-align: center; text-indent: -9999px; width: 178px; }
-#next a.submit-transition { background-position: 0 -58px; }
+#next a { background: url('/wp-content/themes/nya/images/transitions.btn.png') no-repeat -121px 0; display: none; float: left; height: 58px; margin-left: 345px; text-align: center; text-indent: -9999px; width: 178px; }
+#next a.submit-transition { background-position: -121px -58px; }
+#next a.complete-tile { background-position: -24px -174px; margin-left: 244px; width: 379px; }
+#next a.personalize-tile { background-position: 0 -233px; margin-left: 227px; width: 420px; }
 #view-your-tile, #donate-another { float: left; height: 58px; margin: 0 auto; }
 #view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: left; height: 58px; margin: 0 4px 0 77px; text-indent: -9999px; width: 374px; }
 #donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: left; height: 58px; text-indent: -9999px; width: 374px; }

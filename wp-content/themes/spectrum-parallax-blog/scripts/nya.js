@@ -49,12 +49,6 @@ $j(document).ready(function() {
 		});
 	});
 	
-	$widgetDonate.on("click", function (e) {
-		e.preventDefault();
-		
-		console.log("widget")
-	})
-	
 	$donationContainer.find("input").on("focusin", function() {
 		$j(this).addClass("focus-in-background");
 	});
@@ -72,6 +66,9 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".donation-content").removeClass("light-red-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
+		
+		$("#donation-widget-steps").show();
+		$("#widget-donate").hide();
 
 		if ($j(this).text() != '0') {			
 			$j(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");
@@ -217,6 +214,7 @@ $j(document).ready(function() {
 			currentDonationStep = 1;
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
+			$donationNext.removeClass("complete-tile");
 			$donationNext.fadeIn();
 			$donateAnotherTile.fadeOut();
 			$viewYourTile.fadeOut();
@@ -349,7 +347,7 @@ $j(document).ready(function() {
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
 				$j(this).text("Your transaction is complete");
-				$donationNext.removeClass("submit-transition");
+				$donationNext.removeClass("submit-transition").addClass("personalize-tile");
 
 				$j(this).fadeIn();
 			});
@@ -357,7 +355,7 @@ $j(document).ready(function() {
 			$donationBody.hide();
 		});
 	}
-	// Step 4: transaction was successful; now user has the change to initiate tile customization
+	// Step 4: transaction was successful; now user has the chance to initiate tile customization
 	// donor information 
 	function customizeUserTileInfo () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
@@ -379,6 +377,7 @@ $j(document).ready(function() {
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
 				$j(this).text("Personalize your virtual tile");
+				//$donationNext.removeClass("personalize-tile").addClass("complete-tile");
 				
 				$j(this).fadeIn();
 			});
@@ -398,7 +397,8 @@ $j(document).ready(function() {
 			
 				$donationSteps.find(".step-number").text(currentDonationStep - 1);
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
-				$donationNext.addClass("virtual-submit");
+				$donationNext.removeClass("personalize-tile").addClass("complete-tile");
+				//$donationNext.removeClass("complete-tile").addClass("virtual-submit");
 			});
 		}
 	}
@@ -432,8 +432,8 @@ $j(document).ready(function() {
 		$donationContainer.find("input").removeClass("error-input").val("");
 		$donationContainer.find("#step-6 a.tile").removeClass("selected");
 		$donationSteps.find(".step-number").text(1);
-		animalTileSelected = "";
-		colorTileSelected = "";
+		animalTileSelected = "anmbg1";
+		colorTileSelected = "1";
 	}
 	
 	function setFooterFAQ() {
@@ -450,8 +450,8 @@ $j(document).ready(function() {
 			expDaySelected = false,
 			expYearSelected = false,
 			$ccSelection = $donationBody.find("input:radio[name=cc-type]"),
-			countrySelection = $donationBody.find("#select-state .dd-selected-text").text(),
-			stateSelection = $donationBody.find("#select-country .dd-selected-text").text(),
+			stateSelection = $donationBody.find("#select-state .dd-selected-text").text(),
+			countrySelection = $donationBody.find("#select-country .dd-selected-text").text(),
 			selectExpDay = $donationBody.find("#select-exp-day .dd-selected-text").text(),
 			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text();
 		
@@ -470,17 +470,17 @@ $j(document).ready(function() {
 		}
 		
 		if (countrySelection != "Country") {
-			countrySelected = true
+				countrySelected = true;
 		} 
 		
 		if (stateSelection != "State") {
 			stateSelected = true;
-		}
+		} 
 
-		if (userInputClear && userCCTypeSelected && stateSelection && countrySelection) {
+		if (userInputClear && userCCTypeSelected && stateSelected && countrySelected) {
 			infoVerified = true;
 		}
-		
+
 		return infoVerified;
 	}
 	
