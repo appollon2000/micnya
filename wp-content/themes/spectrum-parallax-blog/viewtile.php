@@ -4,10 +4,15 @@
 Template Name: ViewTile Page
 */
 
-session_start();
-$mid = $_COOKIE['last_id'];
+if(isset($_GET['trid'])) {
+$mid = $_GET['trid'];
+}
+else {
+  return false;
+  exit;
+}
 
-$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id WHERE dentry.id = 492 ORDER BY donation.donation_date DESC";
+$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id WHERE donation.convio_transaction_id = '$mid'";
 $result = mysql_query($query) or die(mysql_error());
 $row = mysql_fetch_array($result); 
 
