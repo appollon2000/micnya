@@ -82,7 +82,7 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
 		
 		$("#donation-widget-steps").show();
-		$("#widget-donate").hide();
+		$("#widget-donate a").hide();
 
 		if ($j(this).text() != '0') {			
 			$j(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");

@@ -19,6 +19,9 @@ $(document).ready(function() { //when the document is ready...
 	var positionInWindow = $window.scrollTop();
 	parallaxHeight = 960;
 	getCurrentPosition();
+	var isDonation = false,
+		$widgetDonate = $("#widget-donate a"),
+		$widgetDonationSteps = $("#donation-widget-steps");
 	//apply the class "inview" to a section that is in the viewport
 	//$('.parallax-container').addClass('inview');
 	//$('#block1').addClass('inview');
@@ -40,11 +43,11 @@ $(document).ready(function() { //when the document is ready...
 		}
 		
 		if ($("#blockLink5 a").hasClass("active")) {
-			$("#donation-widget-steps").show();
-			$("#widget-donate a").hide();
+			$widgetDonationSteps.show();
+			$widgetDonate.hide();
 		} else {
-			$("#donation-widget-steps").hide();
-			$("#widget-donate a").show();
+			$widgetDonationSteps.hide();
+			$widgetDonate.show();		
 		}
 			
 		$("#block" + curPosition).addClass("inview");
