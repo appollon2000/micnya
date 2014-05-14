@@ -25,8 +25,8 @@ $row = mysql_fetch_array($result);
 </style>
 <?php
 $appId='631772250191311';
-$linkUrl='http://ny3.dev';
-$picUrl='http://ny3.dev/wp-content/themes/blankslate/images/newtiles/tiles/';
+$linkUrl='/';
+$picUrl='/wp-content/themes/blankslate/images/newtiles/tiles/';
 $redirUrl='https://www.facebook.com/';
 
 $clf = strtolower(trim($row['donor_first_name']));
@@ -97,4 +97,4 @@ echo '<div class="ib-content-preview" id="ib-content-preview" rel="anmbg2">
 ?>
 <div class="clr"></div>
 
-<?php get_footer(); ?>
+
