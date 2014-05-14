@@ -39,7 +39,7 @@ $(document).ready(function() { //when the document is ready...
 			curPosition = 1;
 		}
 		
-		if ($("#blockLink6 a").hasClass("active")) {
+		if ($("#blockLink5 a").hasClass("active")) {
 			$("#donation-widget-steps").show();
 			$("#widget-donate").hide();
 		} else {
@@ -49,12 +49,12 @@ $(document).ready(function() { //when the document is ready...
 			
 		$("#block" + curPosition).addClass("inview");
 		
-		if ($("#blockLink1 a").hasClass("active") || $("#blockLink2 a").hasClass("active") || $("#blockLink3 a").hasClass("active") || $("#blockLink4 a").hasClass("active") || $("#blockLink5 a").hasClass("active")) {
+		if ($("#blockLink1 a").hasClass("active") || $("#blockLink2 a").hasClass("active") || $("#blockLink3 a").hasClass("active") || $("#blockLink4 a").hasClass("active")) {
 			$("#blockLink1 a").addClass("active-link")
-		} else if($("#blockLink8 a").hasClass("active") || $("#blockLink9 a").hasClass("active") || $("#blockLink10 a").hasClass("active")) { 
-			$("#blockLink8 a").addClass("active-link")
+		} else if($("#blockLink7 a").hasClass("active") || $("#blockLink8 a").hasClass("active") || $("#blockLink9 a").hasClass("active") || $("#blockLink10 a").hasClass("active")) { 
+			$("#blockLink7 a").addClass("active-link")
 		} else {
-			$("#blockLink1 a").removeClass("active-link")
+			$("#blockLink7 a").removeClass("active-link")
 		}
 	}	
 	

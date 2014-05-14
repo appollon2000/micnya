@@ -14,7 +14,8 @@ $j(document).ready(function() {
 		$userColorTileToWall = $donationContainer.find("#step-6 .right-container a"),
 		$donationSteps = $("#donation-steps"),
 		$donationBackBtn = $("#back-button a"),
-		$donationInfo = $("#donation-info");
+		$donationInfo = $("#donation-info"),
+		$widgetDonate = $("#widget-donate a");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -47,6 +48,12 @@ $j(document).ready(function() {
 			$donationNext.fadeIn();
 		});
 	});
+	
+	$widgetDonate.on("click", function (e) {
+		e.preventDefault();
+		
+		console.log("widget")
+	})
 	
 	$donationContainer.find("input").on("focusin", function() {
 		$j(this).addClass("focus-in-background");
