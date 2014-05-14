@@ -753,7 +753,7 @@ var xdr;
         }
 });
 
-$(document).on('click', 'a.virtual-submit', function (e) {
+$(document).on('click', 'a.complete-tile', function (e) {
  e.preventDefault();
  var msg = $('#step-6 textarea').val(), animal = $('input#recicon0').val(), color = $('input#color0').val(), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val();
  var tileStr = "&message=" + msg + "&icon="+ animal + "&color=" + color + "&vname=" + vname + "&vloc=" + vloc +"&hname=" + hname + "&hemail=" + hemail + "&mname=" + mname;
