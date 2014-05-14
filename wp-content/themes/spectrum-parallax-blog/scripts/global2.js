@@ -736,7 +736,7 @@ var xdr;
             a =  $(xml), trID=a.find('transaction_id').text(), btHref = $('#view-your-tile a');
              $.ajax({
                 type: 'POST',
-                url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/entries.php',
+                url: '/wp-content/themes/spectrum-parallax-blog/entries.php',
                 dataType: 'json',
                 data: longStr + '&tr_ID=' + trID
                 });
@@ -760,7 +760,7 @@ $(document).on('click', 'a.virtual-submit', function (e) {
 
 $.ajax({
 type: 'POST',
-url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/personal.php',
+url: '/wp-content/themes/spectrum-parallax-blog/personal.php',
 dataType: 'json',
 data: tileStr
 });
