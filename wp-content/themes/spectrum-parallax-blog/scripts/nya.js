@@ -17,7 +17,11 @@ $j(document).ready(function() {
 		$donationBackBtn = $("#back-button a"),
 		$donationInfo = $("#donation-info"),
 		$widgetDonate = $("#widget-donate a"),
-		$donateNowBtnBottom = $("#donate-now");
+		$donateNowBtnBottom = $("#donate-now"),
+		$ourMissionNav = $("#blockLink1 a"),
+		$helpUsBuildNav = $("#blockLink5 a"),
+		$shimmerWallNav = $("#blockLink6 a"),
+		$exploreNav = $("#blockLink7 a");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -41,6 +45,13 @@ $j(document).ready(function() {
 	$donationBody.find("#select-country").ddslick();
 	$donationBody.find("#select-exp-day").ddslick();
 	$donationBody.find("#select-exp-year").ddslick();
+	
+	/* Navitation links overwrite */
+	$helpUsBuildNav.on("click", function (e) {
+		e.preventDefault();
+		
+		gotoDonationForm();
+	})
 	
 	$donationInfo.on("click", function (e) {
 		e.preventDefault();
