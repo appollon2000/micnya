@@ -17,17 +17,8 @@ $(document).ready(function() { //when the document is ready...
 	var $window = $(window);
 	var windowHeight = $window.height(); //get the height of the window
 	var positionInWindow = $window.scrollTop();
-	var $widgetDonate = $("#widget-donate a");
-	
 	parallaxHeight = 960;
 	getCurrentPosition();
-	
-	$widgetDonate.on("click", function (e) {
-		e.preventDefault();
-		
-		
-	});
-	
 	//apply the class "inview" to a section that is in the viewport
 	//$('.parallax-container').addClass('inview');
 	//$('#block1').addClass('inview');

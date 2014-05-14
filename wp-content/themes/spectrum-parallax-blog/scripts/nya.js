@@ -1,6 +1,7 @@
 $j = jQuery.noConflict();
 $j(document).ready(function() {
-	var $main = $j("#main"),
+	var $window = $(window),
+		$main = $j("#main"),
 		$donationContainer = $j("#donation-container"),
 		$donationBody = $j("#donation-body"),
 		$donationHeader = $j("#donation-header"),
@@ -15,7 +16,8 @@ $j(document).ready(function() {
 		$donationSteps = $("#donation-steps"),
 		$donationBackBtn = $("#back-button a"),
 		$donationInfo = $("#donation-info"),
-		$widgetDonate = $("#widget-donate a");
+		$widgetDonate = $("#widget-donate a"),
+		$donateNowBtnBottom = $("#donate-now");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -55,6 +57,18 @@ $j(document).ready(function() {
 	
 	$donationContainer.find("input").on("focusout", function() {
 		$j(this).removeClass("focus-in-background");
+	});
+	
+	$donateNowBtnBottom.on("click", function (e ) {
+		e.preventDefault();
+		
+		gotoDonationForm();	
+	});
+	
+	$widgetDonate.on("click", function (e) {
+		e.preventDefault();
+		
+		gotoDonationForm();
 	});
 	
 	$donationSelector.on("click", function(e){
@@ -523,5 +537,16 @@ $j(document).ready(function() {
 		}
 		
 		return infoVerified;
+	}
+	
+	function gotoDonationForm () {	
+		var moveToPosition = 4618; //$window.height() * 5;
+
+		$(document.body).animate({
+			scrollTop: moveToPosition
+		}, 500, "linear", function() {
+			$("#donation-widget-steps").show();
+			$widgetDonate.hide();
+		});
 	}
 });
