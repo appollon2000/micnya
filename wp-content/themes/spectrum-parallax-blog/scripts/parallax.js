@@ -41,10 +41,10 @@ $(document).ready(function() { //when the document is ready...
 		
 		if ($("#blockLink5 a").hasClass("active")) {
 			$("#donation-widget-steps").show();
-			$("#widget-donate").hide();
+			$("#widget-donate a").hide();
 		} else {
 			$("#donation-widget-steps").hide();
-			$("#widget-donate").show();
+			$("#widget-donate a").show();
 		}
 			
 		$("#block" + curPosition).addClass("inview");
