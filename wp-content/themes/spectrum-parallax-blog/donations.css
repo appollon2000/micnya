@@ -131,3 +131,4 @@ a.dd-selected,span.dd-pointer-down {color: #fff !important;}
 #searchBox input::-webkit-input-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input:-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input::-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input:-ms-input-placeholder{font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}
 .togHide{display:block !important;}
 #block6 .float-left.blank {margin-left:-3%;}
+input.focus-in-background{color:#000 !important;}

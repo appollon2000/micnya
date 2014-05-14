@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: ViewTile Page
+Template Name: Facebooklink Page
 */
 
 if(isset($_GET['trid'])) {
@@ -83,26 +83,7 @@ $gift = '<div class="allgift">From:<br /> '.$myfname.' ' .$mylname.'</div>';
 $gift = '';
 }
 
-echo '<div class="ib-content-preview" id="ib-content-preview" rel="anmbg2">
-<div class="ts-wrapper">
-<div class="honor">'.$praisy.'</div>
-<div style="" class="ib-teaser">
-<h2>'.$myfname. ' '.$mylname. '<br /></h2>
-</div>
-<div class="categz">'.$category.'</div>
-<div class="ts-dates">'.$mysqldate.'</div>
-<div class="ts-city">'.$place.'</div>
-<div class="socialz">
-<div class="allgift">'.$gift.'</div>
-<div class="iconz"><a href="https://www.facebook.com/dialog/feed?app_id='.$appId.'&link='.$linkUrl.'&picture='.$picUrl.$numero.'-'.$lettre.'.png&name='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&description=Check out my tile&redirect_uri='.$redirUrl.'" class="sharefb" target="_blank"></a><a href="https://twitter.com/share?text='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&amp;url='.$picUrl.$numero.'-'.$lettre.'.png" class="sharetwt" target="_blank"></a>
-</div>
-</div>     
-<div style="display: block;" class="ib-content-full">
-<p>'.$cleanMsg.'</p>
-</div>
-</div>'
-
+echo 'https://www.facebook.com/dialog/feed?app_id='.$appId.'&link='.$linkUrl.'&picture='.$picUrl.$numero.'-'.$lettre.'.png&name='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&description=Check out my tile&redirect_uri='.$redirUrl;
 ?>
-<div class="clr"></div>
 
 

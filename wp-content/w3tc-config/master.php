@@ -164,7 +164,7 @@ return array(
 	'pgcache.prime.limit' => 10,
 	'pgcache.prime.sitemap' => '',
 	'pgcache.prime.post.enabled' => false,
-	'minify.enabled' => false,
+	'minify.enabled' => true,
 	'minify.auto' => true,
 	'minify.debug' => false,
 	'minify.engine' => 'file',
@@ -422,7 +422,7 @@ return array(
 	'browsercache.other.etag' => false,
 	'browsercache.other.w3tc' => false,
 	'browsercache.other.replace' => false,
-	'browsercache.timestamp' => '1399989231',
+	'browsercache.timestamp' => '1400096328',
 	'browsercache.replace.exceptions' => array(
 	),
 	'mobile.enabled' => false,
