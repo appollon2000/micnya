@@ -504,7 +504,7 @@ documt.mouseup(function (e) {
 });
 clkDonate.on("click", function(e) {
   e.preventDefault();
-var trigLink = $('ul#nav li#blockLink7 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
+var trigLink = $('ul#nav li#blockLink6 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
 trigLink.trigger('click');
 setTimeout(function () {
@@ -715,7 +715,7 @@ categz = "Transformer";
 }
  var donorStr = "&donor.email=" + $('input#donor-email').val() + "&card_cvv="+ $('input#donor-cvv').val() + "&card_exp_date_month="+$.trim($('#select-exp-day ul.dd-options li a.dd-option-selected').text())+"&card_exp_date_year="+ $.trim($('#select-exp-year ul.dd-options li a.dd-option-selected').text())+ "&card_number="+$('input#donor-cc-number').val()+"&other_amount="+ amnt;
 
-var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=5640&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val()+"&category="+categz;
+var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=7081&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val()+"&category="+categz;
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
 var longStr = url + donorStr;
@@ -733,14 +733,14 @@ var xdr;
         },
 
           success:function(xml) {
-            a =  $(xml), trID=a.find('transaction_id').text();
+            a =  $(xml), trID=a.find('transaction_id').text(), btHref = $('#view-your-tile a');
              $.ajax({
                 type: 'POST',
-                url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/entries.php',
+                url: '/wp-content/themes/spectrum-parallax-blog/entries.php',
                 dataType: 'json',
                 data: longStr + '&tr_ID=' + trID
                 });
-
+             btHref.attr('href', btHref.attr('href') + trID);
 
           }
 
@@ -760,39 +760,11 @@ $(document).on('click', 'a.virtual-submit', function (e) {
 
 $.ajax({
 type: 'POST',
-url: 'http://ny3.dev/wp-content/themes/spectrum-parallax-blog/personal.php',
+url: '/wp-content/themes/spectrum-parallax-blog/personal.php',
 dataType: 'json',
 data: tileStr
 });
 
-});
-
-
-var isDragging = false;
-$("#ib-main-wrapper").mousedown(function() {
-    $(window).mousemove(function() {
-        isDragging = true, btn = $('#tile-donate-btn'), frTile = $('#ib-main-wrapper'),tinytile = $("#ib-content-preview");
-        $(window).unbind("mousemove");
-btn.css('opacity',0).hide(10);
-tinytile.find('div.ib-teaser, div.ib-content-full, span.ib-close').hide().end().hide(function() {isAnimating = false;});
-frTile.css('width',1234);
-    });
-})
-.mouseup(function() {
-    var wasDragging = isDragging, btn = $('#tile-donate-btn'), frTile = $('#ib-main-wrapper');
-    btn.show();
-    isDragging = false;
-    setTimeout(function () {
-    frTile.css('width',583);
-    btn.css('opacity',1);
-  }, 10000);
-    $(window).unbind("mousemove");
-    if (!wasDragging) {
-     setTimeout(function () {
-    frTile.css('width',583);
-    btn.css('opacity',1);
-  }, 10000);
-    }
 });
 
 indivTile.mouseover(function() {
@@ -803,23 +775,25 @@ var that = $(this);
 that.removeClass('skew');
 });
 
-if( $('#block7').length > 0 ) { // if target element exists in DOM
+if( $('#mast').length > 0 ) { // if target element exists in DOM
   var tgHide = $('#searchBox');
-  if( $('#block7').is_on_screen() ) { // if target element is visible on screen after DOM loaded
+  if( $('#mast').is_on_screen() ) { // if target element is visible on screen after DOM loaded
       tgHide.addClass('togHide');
   } else {
       tgHide.removeClass('togHide');
   }
 }
 $(window).scroll(function(){ // bind window scroll event
-  if( $('#block7').length > 0 ) { // if target element exists in DOM
-    if( $('#block7').is_on_screen() ) { // if target element is visible on screen after DOM loaded
+  if( $('#mast').length > 0 ) { // if target element exists in DOM
+    if( $('#mast').is_on_screen() ) { // if target element is visible on screen after DOM loaded
       tgHide.addClass('togHide');
   } else {
       tgHide.removeClass('togHide');
   }
   }
 });
-$("html, body").animate({ scrollTop: 0 }, "slow");
+$("html, body").animate({ scrollTop:0 }, 500, function() {
+  $(this).animate({ scrollTop:2 },100);            
+});
 
 });

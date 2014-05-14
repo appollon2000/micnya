@@ -4,10 +4,15 @@
 Template Name: ViewTile Page
 */
 
-session_start();
-$mid = $_COOKIE['last_id'];
+if(isset($_GET['trid'])) {
+$mid = $_GET['trid'];
+}
+else {
+  return false;
+  exit;
+}
 
-$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id WHERE dentry.id = '$mid' ORDER BY donation.donation_date DESC";
+$query = "SELECT * FROM dentry INNER JOIN donation ON donation.id = dentry.donation_id INNER JOIN donor ON donor.id = donation.donor_id WHERE donation.convio_transaction_id = '$mid'";
 $result = mysql_query($query) or die(mysql_error());
 $row = mysql_fetch_array($result); 
 
@@ -20,8 +25,8 @@ $row = mysql_fetch_array($result);
 </style>
 <?php
 $appId='631772250191311';
-$linkUrl='http://ny3.dev';
-$picUrl='http://ny3.dev/wp-content/themes/blankslate/images/newtiles/tiles/';
+$linkUrl='http://ec2-54-86-42-60.compute-1.amazonaws.com';
+$picUrl='http://ec2-54-86-42-60.compute-1.amazonaws.com/wp-content/themes/spectrum-parallax-blog/images/tiles/';
 $redirUrl='https://www.facebook.com/';
 
 $clf = strtolower(trim($row['donor_first_name']));
@@ -92,4 +97,4 @@ echo '<div class="ib-content-preview" id="ib-content-preview" rel="anmbg2">
 ?>
 <div class="clr"></div>
 
-<?php get_footer(); ?>
+

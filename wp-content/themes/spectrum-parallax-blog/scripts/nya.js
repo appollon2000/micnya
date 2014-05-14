@@ -226,11 +226,12 @@ $j(document).ready(function() {
 	
 	$viewYourTile.on("click", function (e) {
 		e.preventDefault();
-		
+		var that = $(this);
 		resetDonationForm();
 		currentDonationStep = 1;
 		
 		console.log("go to your tile");
+		window.location.href = that.attr('href');
 	});
 	
 	$userOtherDonation.on("click", function (e) {
