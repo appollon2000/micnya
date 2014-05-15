@@ -91,6 +91,22 @@ $j(document).ready(function() {
 		gotoDonationForm();
 	});
 	
+	$donationBackBtn.on("click", function (e) {
+		e.preventDefault();
+	
+		switch(currentDonationStep) {
+			case 2:
+				goBackToFirstStep();
+				break;
+			case 3:
+				goBackToSecondStep();
+				break;
+			case 6:
+				goBackToFourthStep();
+				break;
+		}
+	});
+	
 	$donationSelector.on("click", function(e){
 		e.preventDefault();
 	
@@ -264,7 +280,6 @@ $j(document).ready(function() {
 		resetDonationForm();
 		currentDonationStep = 1;
 		
-		console.log("go to your tile");
 		window.location.href = that.attr('href');
 	});
 	
@@ -342,6 +357,36 @@ $j(document).ready(function() {
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
+	/* If user wants to donate a differet amount, back button will return him/her to donation section */
+	function goBackToFirstStep() {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			currentDonationStep--;
+			
+			$donationHeader.animate({
+				height: 128
+			}, 500, "linear");
+			
+			$donationHeader.find("h1").animate({
+				paddingTop: 35
+			}, 500, "linear");
+			
+			$donationContainer.animate({
+				height: 475
+			}, 500, "linear");
+			
+			$donationSteps.find(".step-number").text(currentDonationStep);
+			$donationBackBtn.hide();
+			
+			$donationHeader.find("h1").fadeOut("slow", function() {
+				$j(this).text("Choose donation amount");
+				$j(this).fadeIn();
+			});
+			
+			$donationHeader.find("h2").show();
+
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+		});
+	}
 	// Step 2: check the user has entered all the proper information and initiate transaction
 	// If everything goes well, user is redirected to the submit section
 	function authorizeSecondStep () {
@@ -371,6 +416,26 @@ $j(document).ready(function() {
 			});
 		}
 	}
+	
+	function goBackToSecondStep() {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			currentDonationStep--;
+			
+			$donationContainer.animate({
+				height: 430
+			}, 500, "linear");
+			
+			$donationHeader.find("h1").fadeOut("slow", function () {
+				$j(this).text("Enter Billing Information");
+				$j(this).fadeIn();
+			});
+			
+			$donationNext.removeClass("submit-transition");
+			
+			$donationSteps.find(".step-number").text(currentDonationStep);
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+		});
+	}
 	// Step 3: let the user acknowledge the amount of the transaction and what kind of donor he/she will become
 	function submitTransaction () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
@@ -388,6 +453,7 @@ $j(document).ready(function() {
 			});
 			
 			$donationBody.hide();
+			$donationBackBtn.hide();
 		});
 	}
 	// Step 4: transaction was successful; now user has the chance to initiate tile customization
@@ -411,14 +477,24 @@ $j(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$j(this).text("Personalize your virtual tile");
-				//$donationNext.removeClass("personalize-tile").addClass("complete-tile");
-				
+				$j(this).text("Personalize your virtual tile");				
 				$j(this).fadeIn();
 			});
 			
 			$donationHeader.find("h2").text("In appreciation of your support, you can personalize a symbolic tile on our virtual shimmer wall.").show();
 			$donationSteps.find(".step-number").text(currentDonationStep - 1);
+			$donationBackBtn.hide();
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+		});
+	}
+	
+	function goBackToFourthStep () {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			currentDonationStep--;
+			
+			$donationBackBtn.hide();
+			$donationNext.removeClass("complete-tile").addClass("personalize-tile");
+			
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
@@ -433,7 +509,7 @@ $j(document).ready(function() {
 				$donationSteps.find(".step-number").text(currentDonationStep - 1);
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 				$donationNext.removeClass("personalize-tile").addClass("complete-tile");
-				//$donationNext.removeClass("complete-tile").addClass("virtual-submit");
+				$donationBackBtn.show();
 			});
 		}
 	}
@@ -451,7 +527,7 @@ $j(document).ready(function() {
 				$donationNext.fadeOut();
 				$donateAnotherTile.fadeIn();
 				$viewYourTile.fadeIn();
-			
+				$donationBackBtn.hide();
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
@@ -575,4 +651,6 @@ $j(document).ready(function() {
 			scrollTop: moveToPosition
 		}, 500, "linear");
 	}
+	
+	
 });
