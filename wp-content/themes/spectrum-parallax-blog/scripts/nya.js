@@ -21,7 +21,8 @@ $j(document).ready(function() {
 		$ourMissionNav = $("#blockLink1 a"),
 		$helpUsBuildNav = $("#blockLink5 a"),
 		$shimmerWallNav = $("#blockLink6 a"),
-		$exploreNav = $("#blockLink7 a");
+		$exploreNav = $("#blockLink7 a"),
+		$welcomeArrow = $("#arrow-down a");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -49,9 +50,30 @@ $j(document).ready(function() {
 	/* Navitation links overwrite */
 	$helpUsBuildNav.on("click", function (e) {
 		e.preventDefault();
+
+//		gotoDonationForm();
+	});
+	
+	$shimmerWallNav.on("click", function (e) {
+		e.preventDefault();
 		
-		gotoDonationForm();
-	})
+//		navOverwriteTransition(5600);
+	});
+	
+	$exploreNav.on("click", function (e) {
+		e.preventDefault();
+		
+//		navOverwriteTransition(6400);
+	});
+	
+	/* Welcome arrow */
+	$welcomeArrow.on("click", function (e) {
+		e.preventDefault();
+
+		$(document.body).animate({
+			scrollTop: 800
+		}, 500, "linear");
+	});
 	
 	$donationInfo.on("click", function (e) {
 		e.preventDefault();
@@ -559,5 +581,11 @@ $j(document).ready(function() {
 			$("#donation-widget-steps").show();
 			$widgetDonate.hide();
 		});
+	}
+	
+	function navOverwriteTransition (moveToPosition) {
+		$(document.body).animate({
+			scrollTop: moveToPosition
+		}, 500, "linear");
 	}
 });

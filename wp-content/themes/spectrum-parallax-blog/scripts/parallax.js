@@ -19,6 +19,7 @@ $(document).ready(function() { //when the document is ready...
 	var positionInWindow = $window.scrollTop();
 	parallaxHeight = 960;
 	getCurrentPosition();
+	
 	var isDonation = false,
 		$widgetDonate = $("#widget-donate a"),
 		$widgetDonationSteps = $("#donation-widget-steps");
