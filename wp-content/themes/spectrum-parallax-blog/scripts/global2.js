@@ -798,7 +798,10 @@ $(window).scroll(function(){ // bind window scroll event
   }
 });
 $("html, body").animate({ scrollTop:0 }, 500, function() {
-  $(this).animate({ scrollTop:2 },100);            
+  var bl6 = $('#block6');
+  $(this).animate({ scrollTop:2 },100);
+  bl6.addClass('shimbg');
+
 });
 
 });
