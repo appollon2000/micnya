@@ -2812,7 +2812,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   display: inline-block;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
     -webkit-animation-name: wobble-vertical;
   animation-name: wobble-vertical;
   -webkit-animation-duration: 0.7s;
@@ -2821,5 +2820,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-timing-function: ease-in-out;
   -webkit-animation-iteration-count: 0.7s;
   animation-iteration-count: 0.7s;
+-webkit-transform-style: preserve-3d;
+-moz-transform-style: preserve-3d;
 }
 

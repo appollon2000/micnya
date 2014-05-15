@@ -1,10 +1,10 @@
 <div id="socialNetworks">
 	
 	<?php if(tia_get_option('tia_facebook')) : ?>
-            <a href="<?php echo tia_get_option('tia_facebook'); ?>" title="on facebook"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/facebook-20.png" alt="facebook" /></a>
+            <a href="<?php echo tia_get_option('tia_facebook'); ?>" target="_blank" title="on facebook"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/facebook-20.png" alt="facebook" /></a>
     <?php endif; ?>
     <?php if(tia_get_option('tia_twitter')) : ?>
-            <a href="<?php echo tia_get_option('tia_twitter'); ?>" title="on twitter"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/twitter-20.png" alt="facebook" /></a>
+            <a href="<?php echo tia_get_option('tia_twitter'); ?>" target="_blank" title="on twitter"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/twitter-20.png" alt="facebook" /></a>
     <?php endif; ?>
     <?php if(tia_get_option('tia_pinterest')) : ?>
             <a href="<?php echo tia_get_option('tia_pinterest'); ?>" title="on Pinterest" id="pinterest"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/pinterest-20.png" alt="pinterest" /></a>
