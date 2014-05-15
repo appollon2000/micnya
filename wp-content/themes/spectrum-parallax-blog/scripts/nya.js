@@ -48,23 +48,10 @@ $j(document).ready(function() {
 	$donationBody.find("#select-exp-year").ddslick();
 	
 	/* Navitation links overwrite */
-	$helpUsBuildNav.on("click", function (e) {
-		e.preventDefault();
-
-//		gotoDonationForm();
-	});
-	
-	$shimmerWallNav.on("click", function (e) {
-		e.preventDefault();
-		
-//		navOverwriteTransition(5600);
-	});
-	
-	$exploreNav.on("click", function (e) {
-		e.preventDefault();
-		
-//		navOverwriteTransition(6400);
-	});
+	$ourMissionNav.attr("href", "#block3");
+	$helpUsBuildNav.attr("href", "#block6");
+	$shimmerWallNav.attr("href", "#block7");
+	$exploreNav.attr("href", "#block8");
 	
 	/* Welcome arrow */
 	$welcomeArrow.on("click", function (e) {

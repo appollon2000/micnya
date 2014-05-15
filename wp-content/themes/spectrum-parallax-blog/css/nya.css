@@ -191,7 +191,7 @@ body { background: #eeefe9 !important; }
 #mission-block-container #text-bottom h2 { color: #fff; font-size: 40px; line-height: 60px; text-transform: none; }
 #block7 { background: rgba(28, 76, 89, 0.5); }
 #block7 h2.titleTops { font-family: "Swiss721BT-Black"; width: 1000px; }
-#block7 .story { min-width: 1050px !important; width: 1050px !important; }
+#block7 .story { margin-top: 100px; min-width: 1050px !important; width: 1050px !important; }
 #block8 .story { width: 1050px; }
 #explore-further { height: 590px; margin: 30px auto 0; width: 1050px; }
 #explore-further h1 { color: #26343d; display: block; font-family: "Swiss721BT-Black"; font-size: 40px; text-align: center; padding-bottom: 30px; }
