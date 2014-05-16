@@ -269,7 +269,7 @@ $j(document).ready(function() {
 			$donateAnotherTile.fadeOut();
 			$viewYourTile.fadeOut();
 			
-			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();//css({"opacity": '1'});
+			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
 		});
 		
 	});
@@ -289,12 +289,39 @@ $j(document).ready(function() {
 		$donationBody.find(".other p.other-amount").hide();
 	});
 	
+	$userOtherDonation.on("keyup", function (e) {
+		e = (e) ? e : window.event;
+		var charCode = (e.which) ? e.which : e.keyCode;
+		
+		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+		    return false;
+		}
+		
+		checkOnUserKeyInput();
+		
+		return true;
+	});
+	
 	$donationBody.find(".other p").on("click", function (e) {
 		e.preventDefault();
 		
 		$j(this).hide();
 		$userOtherDonation.focus();
 	});
+	
+	function checkOnUserKeyInput() {
+		var userInput = Number($userOtherDonation.val());
+		
+		if (!regExpNumbers.test($userOtherDonation.val()) && userInput >= 25) {				
+			if(userInput >= 25 && userInput < 100) {							
+				console.log("is friend")		
+			} else if (userInput >= 100 && userInput < 250) {
+				console.log("is supporter")	
+			} else {
+				console.log("is transformer")	
+			}
+		}
+	}
 	// Step 1: user selects a donation amount or enter one that is > $25
 	function authorizeFirstStep () {
 		// If the user selects a default amount, proceed to the next section; otherwise,
