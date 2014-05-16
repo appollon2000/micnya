@@ -27,7 +27,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('#prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a');
 
 $j = jQuery.noConflict();
  $(function() {
@@ -741,14 +741,13 @@ var xdr;
         },
 
           success:function(xml) {
-            a =  $(xml), trID=a.find('transaction_id').text(), btHref = $('#view-your-tile a');
+            a =  $(xml), trID=a.find('transaction_id').text();
              $.ajax({
                 type: 'POST',
                 url: '/wp-content/themes/spectrum-parallax-blog/entries.php',
                 dataType: 'json',
                 data: longStr + '&tr_ID=' + trID
                 });
-             btHref.attr('href', btHref.attr('href') + trID);
 
           }
 

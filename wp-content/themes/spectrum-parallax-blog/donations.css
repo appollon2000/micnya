@@ -93,8 +93,8 @@ transform-style: preserve-3d;
 .skew2{-webkit-transform:perspective(200px) rotateX(30deg);-moz-transform: perspective(200px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;}
 h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
 #WrpopupPrev-box{display:none;height: 302px;width: 272px;background: #283b44;position:absolute;z-index:10;top:271px;left:469px;}
-#prevClose{background: url(images/prevclose.png) no-repeat;width:17px;height:17px;position: absolute;z-index: 10;top:8px;right:6px;}
-#prevClose a{display:block;width:17px;height:17px;}
+.prevClose{background: url(images/prevclose.png) no-repeat;width:17px;height:17px;position: absolute;z-index: 10;top:8px;right:6px;}
+.prevClose a{display:block;width:17px;height:17px;}
 #WrpopupPrev{height: 250px;width: 250px;margin: 36px auto 0;}
 #popupPrev {height: 250px;width: 250px;position: relative;}
 .prevHonor {color: #26343D;font-size: 13px;font-weight: normal;margin-left: 25px;padding-top: 15px;text-transform: none;}

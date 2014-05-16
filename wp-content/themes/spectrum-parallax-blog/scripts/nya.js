@@ -41,7 +41,7 @@ $j(document).ready(function() {
 	$main.find("#nav").before(verticalLinkConnector);
 	
 	setFooterFAQ();
-	resetDonationForm();
+	//resetDonationForm();
 	
 	$donationBody.find("#select-state").ddslick();
 	$donationBody.find("#select-country").ddslick();
