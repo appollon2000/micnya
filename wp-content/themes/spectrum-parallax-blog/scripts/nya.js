@@ -48,7 +48,7 @@ $j(document).ready(function() {
 	$donationBody.find("#select-exp-year").ddslick();
 	
 	/* Navitation links overwrite */
-	$ourMissionNav.attr("href", "#block3");
+	//$ourMissionNav.attr("href", "#block3");
 	$helpUsBuildNav.attr("href", "#block6");
 	$shimmerWallNav.attr("href", "#block7");
 	$exploreNav.attr("href", "#block8");
@@ -371,7 +371,7 @@ $j(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationContainer.animate({
-				height: 475
+				height: 515
 			}, 500, "linear");
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
