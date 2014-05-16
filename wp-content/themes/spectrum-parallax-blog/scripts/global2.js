@@ -198,7 +198,7 @@ $j = jQuery.noConflict();
                 
               },
               // opens one content item (fullscreen)
-              loadContentItem       = function( $item, callback ) {
+              loadContentItem  = function( $item, callback ) {
                 
                 var hasContentPreview = ($j('#ib-content-preview').length > 0 ),
                   honor        = $item.children('div.honor').html(),
@@ -235,6 +235,7 @@ $j = jQuery.noConflict();
                   }, 100, function() {
                     
                     var $this = $j(this),
+                      $honor = $this.find('div.honor'),
                       $teaser = $this.find('div.ib-teaser'),
                       $content= $this.find('div.ib-content-full'),
                       $tsdates = $this.find('div.ts-dates'),
@@ -245,6 +246,7 @@ $j = jQuery.noConflict();
                       $close  = $this.find('span.ib-close');
                       
                     if( hasContentPreview ) {
+                      $honor.html( honor )
                       $teaser.html( teaser )
                       $content.html( content )
                       $tsdates.html( tsdates )
@@ -253,7 +255,7 @@ $j = jQuery.noConflict();
                       $tssocial.html( tssocial )
                       $popupbg.html( popupbg )
                     }
-                  
+                    $honor.show();
                     $teaser.show();
                     $content.show();
                     $tsdates.show();
@@ -274,7 +276,7 @@ $j = jQuery.noConflict();
                 
               },
               // preloads an image
-              preloadImage        = function( src, callback ) {
+              preloadImage  = function( src, callback ) {
               
                 $j('<img/>').load(function(){
                 

@@ -139,7 +139,7 @@ body { background: #eeefe9 !important; }
 #donation-body #step-5 .oval { background-position: 0 0; margin-right: 15px; padding: 0; width: 21px; }
 #donation-body #step-5 .oval.selected, #donation-body #step-5 .oval:over { }
 #step-5 .section-bottom .user-info input { margin-left: 37px; width: 70%; }
-#step-5 .section-bottom .selection.bottom { margin-top: 0; }
+#step-5 .section-bottom .selection.bottom { margin-top: 70px; }
 
 #step-6 .left-container, #step-6 .right-container { float: left; margin: 0 5%; width: 40%; }
 #step-6 .section-container { margin: -30px auto; padding: 0 10%; width: 100%; }
