@@ -544,7 +544,7 @@ doct.mouseup(function (e) {
   }
 });
 
-}, 2000);
+}, 1600);
 
 setTimeout(function () {
   lDelay = $('.load-delay');
@@ -615,14 +615,14 @@ setInterval(addWave, 13000);
 
 inpt.on("click", function(e) {
   e.preventDefault();
-  var inval = $.trim($('input#searchTerm').val()).replace(/ /g,'');
+  var inval = $.trim($('input#searchTerm').val()).replace(/ /g,''), rawVal = $('#dosearch input#searchTerm').val();
   resu.empty();   
   if(!inval==''){
     var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
     if($innerListItem.length > 0 && $innerListItem.length < 6){
       //console.log($innerListItem);
       resu.empty();ints.val('');
-      resu.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ inval +"</div><ul id='newList'></ul>");
+      resu.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ rawVal +"</div><ul id='newList'></ul>");
       $innerListItem.each(function() {
       var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id'),locat= $(this).find('.ts-city').text();
      $("#newList").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr first'>"+fullname+"</span> <span class='tileAttr second'>"+locat+"</span></a></li>");

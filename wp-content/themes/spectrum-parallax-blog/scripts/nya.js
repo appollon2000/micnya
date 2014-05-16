@@ -184,7 +184,7 @@ $j(document).ready(function() {
 		
 		virtualTileSelection = $j(this).attr("href");
 		
-		$donationBody.find(".section-top input").removeClass("error-input").val("");
+		$donationBody.find(".section-top input").removeClass("error-input");
 		$donationBody.find(".section-bottom input").removeClass("error-input");
 		
 		tileDonationTriggered = true;

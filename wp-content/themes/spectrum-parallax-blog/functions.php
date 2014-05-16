@@ -105,7 +105,6 @@ function tia_scripts() {
 
 	wp_enqueue_style('collapse', get_bloginfo('template_url').'/css/collapse.css', false, '', 'all' );
 	wp_enqueue_style('jui-css', get_bloginfo('template_url').'/css/jquery-ui-1.10.4.custom.min.css', false, '', 'all' );
-	wp_enqueue_style('animate', get_bloginfo('template_url').'/css/animate.css', false, '', 'all' );
 	wp_enqueue_style('donation', get_bloginfo('template_url').'/donations.css', false, '', 'all' );
 	wp_enqueue_script('collapse', get_bloginfo('template_url').'/scripts/bootstrap.min.js', array('jquery'), '', true);
 	wp_enqueue_script('ddslick', get_bloginfo('template_url') . '/scripts/ddslick.min.js', false, '2014',true );

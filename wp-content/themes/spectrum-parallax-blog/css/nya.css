@@ -128,8 +128,8 @@ body { background: #eeefe9 !important; }
 #step-3 #post-transaction { color: #fff; font-family: Arial, Verdana, Helvetica, sans-serif; margin: 0 auto; text-align: center; width: 80%; }
 #step-3 #post-transaction span { color: #fff454; font-family: Arial, Verdana, Helvetica, sans-serif; font-weight: bold; }
 
-#step-5 { margin-top: -20px; }
-#step-5 .section-container { margin: 0 auto; width: 40%; }
+#step-5 { margin-top: -43px; }
+#step-5 .section-container { margin: 0 auto; width: 42%; }
 #step-5 .section-container .section-top { margin-left: 10%; width: 90%; }
 #step-5 p { color: #fff; font-family: "Swiss721BT-Black"; font-size: 13px; margin: 15px 0; }
 #step-5 .section-bottom p { margin-left: 37px; }
@@ -139,7 +139,7 @@ body { background: #eeefe9 !important; }
 #donation-body #step-5 .oval { background-position: 0 0; margin-right: 15px; padding: 0; width: 21px; }
 #donation-body #step-5 .oval.selected, #donation-body #step-5 .oval:over { }
 #step-5 .section-bottom .user-info input { margin-left: 37px; width: 70%; }
-#step-5 .section-bottom .selection.bottom { margin-top: 70px; }
+#step-5 .section-bottom .selection.bottom { margin-top: 0; }
 
 #step-6 .left-container, #step-6 .right-container { float: left; margin: 0 5%; width: 40%; }
 #step-6 .section-container { margin: -30px auto; padding: 0 10%; width: 100%; }
