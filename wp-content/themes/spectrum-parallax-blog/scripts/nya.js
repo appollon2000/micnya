@@ -306,9 +306,9 @@ $j(document).ready(function() {
 				
 			if (!regExpNumbers.test($userOtherDonation.val()) && amountRegistered >= 25) {	
 				
-				if(amountRegistered >= 25 && amountRegistered < 150) {					
+				if(amountRegistered >= 25 && amountRegistered < 100) {					
 					donationLevel = "Friend";					
-				} else if (amountRegistered >= 150 && amountRegistered < 250) {
+				} else if (amountRegistered >= 100 && amountRegistered < 250) {
 					donationLevel = "Supporter";
 				} else {
 					donationLevel = "Transformer";
@@ -371,7 +371,7 @@ $j(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationContainer.animate({
-				height: 515
+				height: 475
 			}, 500, "linear");
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
@@ -407,6 +407,20 @@ $j(document).ready(function() {
 				});
 			
 				$donationNext.addClass("submit-transition");
+				
+				if (donationLevel == "Supporter") {
+					$j("#step-" + currentDonationStep).find(".supporter-donation").show();
+					$j("#step-" + currentDonationStep).find(".transformer-donation").hide();
+					$j("#step-" + currentDonationStep).find("friend-donation").hide();
+				} else if (donationLevel == "Transformer") {
+					$j("#step-" + currentDonationStep).find(".transformer-donation").show();
+					$j("#step-" + currentDonationStep).find(".supporter-donation").hide();
+					$j("#step-" + currentDonationStep).find("friend-donation").hide();
+				} else {
+					$j("#step-" + currentDonationStep).find("friend-donation").show();
+					$j("#step-" + currentDonationStep).find(".supporter-donation").hide();
+					$j("#step-" + currentDonationStep).find(".transformer-donation").hide();
+				}
 			
 				$j("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
 				$j("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
