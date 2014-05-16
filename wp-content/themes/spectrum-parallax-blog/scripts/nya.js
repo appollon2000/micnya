@@ -41,6 +41,7 @@ $j(document).ready(function() {
 	$main.find("#nav").before(verticalLinkConnector);
 	
 	setFooterFAQ();
+	//resetDonationForm();
 	
 	$donationBody.find("#select-state").ddslick();
 	$donationBody.find("#select-country").ddslick();
@@ -247,6 +248,10 @@ $j(document).ready(function() {
 		e.preventDefault();
 		
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
+		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
+		$donationBody.find(".oval").removeClass("selected");
+		$donationContainer.find("input").removeClass('error-input');
 
 			$donationHeader.find("h1").fadeOut("slow", function() {
 				$j(this).text("Choose your donation amount");
@@ -260,7 +265,6 @@ $j(document).ready(function() {
 				height: 475
 			}, 500, "linear");
 			
-			resetDonationForm();
 			currentDonationStep = 1;
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
