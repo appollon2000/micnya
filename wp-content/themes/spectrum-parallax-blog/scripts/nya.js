@@ -411,13 +411,13 @@ $j(document).ready(function() {
 				if (donationLevel == "Supporter") {
 					$j("#step-" + currentDonationStep).find(".supporter-donation").show();
 					$j("#step-" + currentDonationStep).find(".transformer-donation").hide();
-					$j("#step-" + currentDonationStep).find("friend-donation").hide();
+					$j("#step-" + currentDonationStep).find(".friend-donation").hide();
 				} else if (donationLevel == "Transformer") {
 					$j("#step-" + currentDonationStep).find(".transformer-donation").show();
 					$j("#step-" + currentDonationStep).find(".supporter-donation").hide();
-					$j("#step-" + currentDonationStep).find("friend-donation").hide();
+					$j("#step-" + currentDonationStep).find(".friend-donation").hide();
 				} else {
-					$j("#step-" + currentDonationStep).find("friend-donation").show();
+					$j("#step-" + currentDonationStep).find(".friend-donation").show();
 					$j("#step-" + currentDonationStep).find(".supporter-donation").hide();
 					$j("#step-" + currentDonationStep).find(".transformer-donation").hide();
 				}
