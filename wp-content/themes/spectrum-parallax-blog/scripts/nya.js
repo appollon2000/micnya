@@ -356,7 +356,7 @@ $j(document).ready(function() {
 					donationLevel = "Transformer";
 				}
 				
-				donationAmount = "$ " + amountRegistered;
+				donationAmount = "$" + amountRegistered;
 				
 				continueToSecondStep();
 			} else {
