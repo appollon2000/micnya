@@ -22,7 +22,8 @@ $j(document).ready(function() {
 		$helpUsBuildNav = $("#blockLink5 a"),
 		$shimmerWallNav = $("#blockLink6 a"),
 		$exploreNav = $("#blockLink7 a"),
-		$welcomeArrow = $("#arrow-down a");
+		$welcomeArrow = $("#arrow-down a"),
+		$faqLink = $("#socialNetworks a.subscribe");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -30,6 +31,7 @@ $j(document).ready(function() {
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
+		faqPlaceHolder = "<div id='faq-place-holder' style='position:absolute'></div>",
 		verticalLinkConnector = "<did id='links-vertical-connector'></div>",
 		virtualTileSelection = "memory-oval",
 		tileDonationTriggered = false,
@@ -38,6 +40,7 @@ $j(document).ready(function() {
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
+	$main.prepend(faqPlaceHolder);
 	$main.find("#nav").before(verticalLinkConnector);
 	
 	setFooterFAQ();
@@ -61,6 +64,12 @@ $j(document).ready(function() {
 		$(document.body).animate({
 			scrollTop: 800
 		}, 500, "linear");
+	});
+	
+	$faqLink.on("click", function (e) {
+	//	e.preventDefault();
+		
+	//	$("#faq-place-holder").load("/page-faq");
 	});
 	
 	$donationInfo.on("click", function (e) {
