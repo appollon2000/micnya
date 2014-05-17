@@ -133,6 +133,11 @@ $j(document).ready(function() {
 			$j(this).addClass("selected");
 			
 			amountSelected = true;
+			
+			if ($userOtherDonation.val() == "") {
+				$donationBody.find(".other p.other-amount").show();
+			}
+			
 			var cleanAmount = donationAmount.slice(1), finalAmount = $('input#other_amount');
 			finalAmount.val(cleanAmount);
 		} else {
@@ -291,6 +296,8 @@ $j(document).ready(function() {
 		e.preventDefault();
 		
 		$donationBody.find(".other p.other-amount").hide();
+		
+		resetInitialDonationFields();
 	});
 	
 	$userOtherDonation.on("keyup", function (e) {
@@ -299,7 +306,7 @@ $j(document).ready(function() {
 		
 		if (charCode > 31 && (charCode < 48 || charCode > 57)) {
 		    return false;
-		}
+		} 
 		
 		checkOnUserKeyInput();
 		
@@ -318,12 +325,16 @@ $j(document).ready(function() {
 		
 		if (!regExpNumbers.test($userOtherDonation.val()) && userInput >= 25) {				
 			if(userInput >= 25 && userInput < 100) {							
-				console.log("is friend")		
+				$donationBody.find(".donation-content.other .donation-reference").text("Friend");	
 			} else if (userInput >= 100 && userInput < 250) {
-				console.log("is supporter")	
+				$donationBody.find(".donation-content.other .donation-reference").text("Supporter");
 			} else {
-				console.log("is transformer")	
-			}
+				$donationBody.find(".donation-content.other .donation-reference").text("Transformer");	
+			} 
+		}
+		
+		if ($userOtherDonation.val() == "") {
+			$donationBody.find(".donation-content.other .donation-reference").text("");	
 		}
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25
@@ -695,6 +706,17 @@ $j(document).ready(function() {
 		$(document.body).animate({
 			scrollTop: moveToPosition
 		}, 500, "linear");
+	}
+	
+	function resetInitialDonationFields() {
+		$donationSelector.removeClass("selected");	
+		
+		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
+		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
+		$donationBody.find(".donation-content").removeClass("light-red-selected-donation");
+		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
+		
+		$donationBody.find(".oval-other").addClass("selected");
 	}
 	
 	
