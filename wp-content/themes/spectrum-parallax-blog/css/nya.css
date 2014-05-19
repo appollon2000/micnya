@@ -12,6 +12,20 @@ body { background: #eeefe9 !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
 #block2, #block3, #block4, #block5, #block9, #block10 { background-position: 50% 0 !important; }
 #arrow-down a { background: url('/wp-content/themes/nya/images/arrow.down.png') no-repeat; display: block; height: 41px; margin: 20px auto; width: 67px; }
+#faq-place-holder { display:none; height: 100%; position: fixed; width:100%; z-index: 10000; }
+#faq-place-holder #holder { margin: 150px auto 0; width: 75%; }
+#faq-place-holder #holder #content { width: 75%; }
+#faq-place-holder #holder h1 { background-color: #253640; color: #fff; font-family: "Swiss721BT-Black"; font-size: 30px; height: 60px; padding: 20px 0; text-align: center; }
+#faq-place-holder #holder #accordion { background-color: #1e4d5a; padding: 30px 0; }
+#faq-place-holder #holder #accordion h3 { background: #00b1cc; border: 0; border-radius: 0; margin-left: 10%; width: 80%; }
+#faq-place-holder #holder #accordion h3 a { color: #fff; font-family: "Swiss721BT-Black"; text-transform: uppercase; }
+#faq-place-holder #holder #accordion h3 a:hover { color: #fff454; }
+#faq-place-holder #holder .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
+#faq-place-holder #holder #close-faq { background: url('/wp-content/themes/nya/images/close.faq.btn.png') no-repeat; float: right; height: 29px; margin: -4px 15px 0 0; text-indent: -9999px; width: 29px; }
+#faq-place-holder #holder #footer,
+#faq-place-holder #holder .post-edit-link,
+#faq-place-holder #holder #commentForm { display: none; }
+
 .Swiss721BT-Black { 
 	font-family: "Swiss721BT-Black";
 	font-weight: normal;

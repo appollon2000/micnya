@@ -31,12 +31,15 @@ $j(document).ready(function() {
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
-		faqPlaceHolder = "<div id='faq-place-holder' style='position:absolute'></div>",
-		verticalLinkConnector = "<did id='links-vertical-connector'></div>",
+		faqPlaceHolder = "<div id='faq-place-holder'><div id='holder'></div></div>",
+		verticalLinkConnector = "<div id='links-vertical-connector'></div>",
+		closeFaq = "<a href='close-faq' id='close-faq'>Close</a>",
 		virtualTileSelection = "memory-oval",
 		tileDonationTriggered = false,
 		animalTileSelected = "anmbg1",
-		colorTileSelected = "1";
+		colorTileSelected = "1",
+		isFaqContentLoaded = false,
+		isFaqContentActive = false;
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
@@ -67,9 +70,32 @@ $j(document).ready(function() {
 	});
 	
 	$faqLink.on("click", function (e) {
-	//	e.preventDefault();
+		e.preventDefault();
 		
-	//	$("#faq-place-holder").load("/page-faq");
+		if (!isFaqContentActive) {
+			if (!isFaqContentLoaded) {
+				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
+					isFaqContentLoaded = true;
+				
+					$main.find("#faq-place-holder #holder h1").append(closeFaq);
+					$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
+						e.preventDefault();
+
+						$main.find("#faq-place-holder").hide();
+
+					});
+				});
+			} else {
+				$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
+					e.preventDefault();
+
+					$main.find("#faq-place-holder").hide();
+				});
+			}
+		}
+		
+		$main.find("#faq-place-holder").show();
+		
 	});
 	
 	$donationInfo.on("click", function (e) {
