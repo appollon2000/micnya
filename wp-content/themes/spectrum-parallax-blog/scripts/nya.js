@@ -362,15 +362,19 @@ $j(document).ready(function() {
 		if (!regExpNumbers.test($userOtherDonation.val()) && userInput >= 25) {				
 			if(userInput >= 25 && userInput < 100) {							
 				$donationBody.find(".donation-content.other .donation-reference").text("Friend");	
+				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.twenty-five .donation-info").text());
 			} else if (userInput >= 100 && userInput < 250) {
 				$donationBody.find(".donation-content.other .donation-reference").text("Supporter");
+				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.one-fifty .donation-info").text());
 			} else {
 				$donationBody.find(".donation-content.other .donation-reference").text("Transformer");	
+				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.two-fifty .donation-info").text());
 			} 
 		}
 		
 		if ($userOtherDonation.val() == "") {
 			$donationBody.find(".donation-content.other .donation-reference").text("");	
+			$donationBody.find(".donation-content.other .donation-info-other").text("");
 		}
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25
