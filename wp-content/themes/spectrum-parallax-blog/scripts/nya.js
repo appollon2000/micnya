@@ -380,7 +380,6 @@ $j(document).ready(function() {
 		if ($userOtherDonation.val() == "") {
 			$donationBody.find(".donation-content.other .donation-reference").text("");	
 			$donationBody.find(".donation-content.other .donation-info-other").text("");
-			$donationBody.find(".oval-other").removeClass("selected");
 		}
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25

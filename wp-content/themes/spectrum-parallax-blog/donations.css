@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
 .popupbg,#today-date {display: none;}#tile-donate-btn a:hover{color:#fff;}
 .prevContent{clear: both;color: #26343D;font-size: 11px;line-height: 16px;;position: relative; margin-left: 25px;padding: 8px 0 0;text-transform: uppercase;text-transform: none;width: 208px;}
 #ascrail2000{width:16px !important;background: #26343d !important;}
-#ascrail2000 div {background-color:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
+#ascrail2000 div {background-color:#fff452 !important;background:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
 span.tileAttr{padding-right:30px;text-align: left;}
 span.tileAttr.first,span.tileAttr.second{width:280px;float:left;}
 #block6 .story {min-width: 1200px;width: 1200px;}
@@ -137,3 +137,4 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #ib-content-preview.certificate .ib-teaser h2 {font-size: 42px;padding-top: 10px;max-height: 100px !important;overflow: visible !important;text-transform: capitalize;}
 #ib-content-preview.certificate .categz {color:#00B1CC;text-align: center;font-size: 18px;font-weight: bold;margin-top:7px;padding:0;}
 #ib-content-preview.certificate a{text-decoration: underline;color: #00B1CC;}
+div#ascrail2001 > div {background-color:#fff452 !important;background:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
