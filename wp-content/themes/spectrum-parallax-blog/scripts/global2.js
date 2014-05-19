@@ -467,8 +467,7 @@ $j = jQuery.noConflict();
           })();
         
         Template.init();
-ctdn.countdown({until: new Date(2014, 5 - 1, 19, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
-
+ctdn.countdown({until: new Date(2014, 5 - 1, 30, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
 animals.on("click", function(e) {
   e.preventDefault();
   var that = $(this),rel = that.attr('rel'),dat = that.attr('data'), icz = that.attr('data-icon'), motif = $('#WrpopupPrev-box #WrpopupPrev');
@@ -802,7 +801,19 @@ $("html, body").animate({ scrollTop:0 }, 500, function() {
   var bl6 = $('#block6');
   $(this).animate({ scrollTop:2 },100);
   bl6.addClass('shimbg');
-
 });
+if (getUrlVars()["vtile"]) {
+setTimeout(function () {
+$("html, body").animate({ scrollTop: $("#block6").offset().top }, 3000, function() {
+$('#goto0').trigger('click');
+});
+}, 4400);
+}
+if (getUrlVars()["shimmer"]) {
+setTimeout(function () {
+$("html, body").animate({ scrollTop: $("#block6").offset().top }, 3000, function() {
+});
+}, 4400);
+}
 
 });
