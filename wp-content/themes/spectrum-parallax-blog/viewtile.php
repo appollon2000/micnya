@@ -21,12 +21,13 @@ $row = mysql_fetch_array($result);
 <?php get_header(''); ?>
 </div>
 <style type="text/css">
-html,body,#container{margin:0 !important;padding:0 !important;}
+html,body,#container{margin:0 !important;padding:0 !important;background:#fff !important;}
 .ib-content-preview{display:block !important;position: static !important;margin:0 !important;padding:0 !important;}
 .allgift{margin:-15px 0 0 14px !important;}
 #container{display:none;}
 @media print {
- body {font-family: "Swiss721BT-Black";}
+#ib-content-preview.certificate .ib-content-full {width:650px !important;padding-top: 0 !important;}
+#ib-content-preview.certificate .ib-content-full p{color: #333 !important;font-size:13px !important;padding: 1px 0;}
 }
 
 
@@ -83,22 +84,22 @@ $gift = '<div class="allgift">From:<br /> '.$myfname.' ' .$mylname.'</div>';
 $gift = '';
 }
 
-echo '<div class="ib-content-preview" id="ib-content-preview" rel="anmbg2">
+echo '<div class="ib-content-preview certificate" id="ib-content-preview">
 <div class="ts-wrapper">
-<div class="honor">'.$praisy.'</div>
+<div class="cstile"><img src="/wp-content/themes/spectrum-parallax-blog/images/tiles/'.$numero.'-'.$lettre.'.png" /></div>
 <div style="" class="ib-teaser">
 <h2>'.$myfname. ' '.$mylname. '<br /></h2>
 </div>
 <div class="categz">'.$category.'</div>
-<div class="ts-dates">'.$mysqldate.'</div>
-<div class="ts-city">'.$place.'</div>
-<div class="socialz">
-<div class="allgift">'.$gift.'</div>
-<div class="iconz"><a href="https://www.facebook.com/dialog/feed?app_id='.$appId.'&link='.$linkUrl.'&picture='.$picUrl.$numero.'-'.$lettre.'.png&name='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&description=Check out my tile&redirect_uri='.$redirUrl.'" class="sharefb" target="_blank"></a><a href="https://twitter.com/share?text='.$row['recipient_first_name'].' '.$row['recipient_last_name'].'&amp;url='.$picUrl.$numero.'-'.$lettre.'.png" class="sharetwt" target="_blank"></a>
-</div>
-</div>     
 <div style="display: block;" class="ib-content-full">
-<p>'.$cleanMsg.'</p>
+<p>In recognition of his donation, a virtual shimmer wall tile has been personalized with your name. You can see it <a href="/?shimmer=1">here</a>.</p>
+<p>
+The Ocean Wonders: Sharks! exhibit will transform the Aquarium and connect people to their local seascape like never before. A virtual tile on the 3D model of this exhibit now bears your name. Please visit 
+nyaquarium.com/shimmer to view your tile.
+</p>
+<p>
+Created by WCS’s design team in collaboration with award-winning environmental artist Ned Kahn, the real-life shimmer wall at the WCS New York Aquarium will wrap the entire exterior of Ocean Wonders: Sharks! in 33,000 aluminum tiles, transforming the Coney Island skyline.
+</p>
 </div>
 </div>'
 
