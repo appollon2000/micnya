@@ -31,6 +31,7 @@ $j(document).ready(function() {
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
+		pageOverlay = "<div id='page-overlay'></div>",
 		faqPlaceHolder = "<div id='faq-place-holder' class='faq-popup'><div id='holder'></div></div>",
 		verticalLinkConnector = "<div id='links-vertical-connector'></div>",
 		closeFaq = "<a href='close-faq' id='close-faq'>Close</a>",
@@ -43,6 +44,7 @@ $j(document).ready(function() {
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
+	//$main.prepend(pageOverlay);
 	$main.prepend(faqPlaceHolder);
 	$main.find("#nav").before(verticalLinkConnector);
 	
@@ -77,7 +79,9 @@ $j(document).ready(function() {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
 					isFaqContentLoaded = true;
 					isFaqContentActive = true;
-					
+					//console.log("win hei: "+ $$window.height + ", " + $main.height + ", " + $("#container").height);
+					$main.prepend(pageOverlay);
+					$main.find("#page-overlay").show();
 					$main.find(".faq-popup").show();
 					$main.find("#faq-place-holder #holder h1").append(closeFaq);
 					$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
@@ -89,6 +93,7 @@ $j(document).ready(function() {
 				});
 			} else {
 				$main.find(".faq-popup").show();
+				$main.find("#page-overlay").show();
 				$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
 					e.preventDefault();
 
@@ -749,9 +754,8 @@ $j(document).ready(function() {
 	}
 	
 	function hideFaqSection() {
-		console.log("hiding faq");
-		
 		$main.find(".faq-popup").hide();
+		$main.find("#page-overlay").hide();
 	}
 	
 	function resetInitialDonationFields() {

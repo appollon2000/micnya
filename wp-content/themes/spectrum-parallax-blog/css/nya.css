@@ -7,13 +7,15 @@ body { background: #eeefe9 !important; }
 #footer .right { display: none; }
 #footer .left { color: #26343d; font-size: 9px; height: 29px; margin: -33px 0 0 368px; padding: 9px 20px; text-transform: uppercase; }
 #footer .left a { color: #26343d; text-decoration: underline; }
+/* page overlay */
+#page-overlay { background: #000; display: none; height: 10800px; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%; z-index: 10000; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
 #block2, #block3, #block4, #block5, #block9, #block10 { background-position: 50% 0 !important; }
 #arrow-down a { background: url('/wp-content/themes/nya/images/arrow.down.png') no-repeat; display: block; height: 41px; margin: 20px auto; width: 67px; }
 #faq-place-holder { display:none; height: 100%; position: fixed; width:100%; z-index: 10000; }
-#faq-place-holder #holder { margin: 150px auto 0; width: 75%; }
+#faq-place-holder #holder { margin: 250px auto 0; width: 75%; }
 #faq-place-holder #holder #content { width: 75%; }
 #faq-place-holder #holder h1 { background-color: #253640; color: #fff; font-family: "Swiss721BT-Black"; font-size: 30px; height: 60px; padding: 20px 0; text-align: center; }
 #faq-place-holder #holder #accordion { background-color: #1e4d5a; padding: 30px 0; }
