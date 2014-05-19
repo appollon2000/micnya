@@ -20,6 +20,7 @@ body { background: #eeefe9 !important; }
 #faq-place-holder #holder #accordion h3 { background: #00b1cc; border: 0; border-radius: 0; margin-left: 10%; width: 80%; }
 #faq-place-holder #holder #accordion h3 a { color: #fff; font-family: "Swiss721BT-Black"; text-transform: uppercase; }
 #faq-place-holder #holder #accordion h3 a:hover { color: #fff454; }
+#faq-place-holder #holder #accordion h2 { color: #fff454; font-family: "Swiss721BT-Black"; font-size: 14px; margin: 15px 0 0; }
 #faq-place-holder #holder .ui-accordion .ui-accordion-content { background: transparent; border: 0; color: #fff; font-size: 14px; margin-left: 10%; width: 75%; }
 #faq-place-holder #holder #close-faq { background: url('/wp-content/themes/nya/images/close.faq.btn.png') no-repeat; float: right; height: 29px; margin: -4px 15px 0 0; text-indent: -9999px; width: 29px; }
 #faq-place-holder #holder #footer,
@@ -110,7 +111,7 @@ body { background: #eeefe9 !important; }
 #donation-body .donation-amount.other p.other-input { margin: 4px 0 0 0; }
 #donation-body .donation-content.other .donation-info { display: none; margin-left: 125px; padding: 28px 0 0; }
 #donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; text-align: center; width: 22%; }
-#donation-body .donation-info { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
+#donation-body .donation-info, #donation-body .donation-info-other { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
 #donation-body .twenty-five .donation-info { padding-top: 22px; }
 #donation-body .one-fifty .donation-info { padding-top: 20px; }
 #donation-body .two-fifty .donation-info { padding-top: 9px; }
