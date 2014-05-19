@@ -31,7 +31,7 @@ $j(document).ready(function() {
 		donationLevel,
 		regExpNumbers = /[^0-9]/g,
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
-		faqPlaceHolder = "<div id='faq-place-holder'><div id='holder'></div></div>",
+		faqPlaceHolder = "<div id='faq-place-holder' class='faq-popup'><div id='holder'></div></div>",
 		verticalLinkConnector = "<div id='links-vertical-connector'></div>",
 		closeFaq = "<a href='close-faq' id='close-faq'>Close</a>",
 		virtualTileSelection = "memory-oval",
@@ -71,31 +71,32 @@ $j(document).ready(function() {
 	
 	$faqLink.on("click", function (e) {
 		e.preventDefault();
-		
+
 		if (!isFaqContentActive) {
 			if (!isFaqContentLoaded) {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
 					isFaqContentLoaded = true;
-				
+					isFaqContentActive = true;
+					
+					$main.find(".faq-popup").show();
 					$main.find("#faq-place-holder #holder h1").append(closeFaq);
 					$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
 						e.preventDefault();
 
-						$main.find("#faq-place-holder").hide();
-
+						isFaqContentActive = false;
+						hideFaqSection();
 					});
 				});
 			} else {
+				$main.find(".faq-popup").show();
 				$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
 					e.preventDefault();
 
-					$main.find("#faq-place-holder").hide();
+					isFaqContentActive = false;
+					hideFaqSection();
 				});
 			}
-		}
-		
-		$main.find("#faq-place-holder").show();
-		
+		}	
 	});
 	
 	$donationInfo.on("click", function (e) {
@@ -741,6 +742,12 @@ $j(document).ready(function() {
 		$(document.body).animate({
 			scrollTop: moveToPosition
 		}, 500, "linear");
+	}
+	
+	function hideFaqSection() {
+		console.log("hiding faq");
+		
+		$main.find(".faq-popup").hide();
 	}
 	
 	function resetInitialDonationFields() {
