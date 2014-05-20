@@ -84,7 +84,7 @@ $j(document).ready(function() {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
 					isFaqContentLoaded = true;
 					isFaqContentActive = true;
-					//console.log("win hei: "+ $$window.height + ", " + $main.height + ", " + $("#container").height);
+					
 					$main.prepend(pageOverlay);
 					$main.find("#page-overlay").show();
 					$main.find(".faq-popup").show();
@@ -677,6 +677,7 @@ $j(document).ready(function() {
 				$j(this).addClass("error-input");
 			} else {
 				userInputClear = true;
+				$j(this).removeClass("error-input");
 			}
 		});
 		
@@ -700,6 +701,11 @@ $j(document).ready(function() {
 			$("#select-state").find(".dd-selected").removeClass("error-input");
 		} else {
 			$("#select-state").find(".dd-selected").addClass("error-input");
+		}
+		
+		$("#iscatg").removeClass("error-input");
+		if ($donationBody.find("#step-2 input").hasClass("error-input")) {
+			userInputClear = false;
 		}
 
 		if (userInputClear && userCCTypeSelected && stateSelected && countrySelected) {
