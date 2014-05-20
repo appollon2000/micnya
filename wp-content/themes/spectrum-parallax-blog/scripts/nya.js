@@ -23,7 +23,8 @@ $j(document).ready(function() {
 		$shimmerWallNav = $("#blockLink6 a"),
 		$exploreNav = $("#blockLink7 a"),
 		$welcomeArrow = $("#arrow-down a"),
-		$faqLink = $("#socialNetworks a.subscribe");
+		$faqLink = $("#socialNetworks a.subscribe"),
+		$selectedOption = $(".dd-selected");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -70,6 +71,10 @@ $j(document).ready(function() {
 			scrollTop: 800
 		}, 500, "linear");
 	});
+	
+	$selectedOption.on("click", function (e) {
+		$(this).removeClass("error-input");
+	})
 	
 	$faqLink.on("click", function (e) {
 		e.preventDefault();
@@ -677,21 +682,29 @@ $j(document).ready(function() {
 		
 		if ($ccSelection.is(":checked") === false) {
 			userCCTypeSelected = false;
+			$donationBody.find("#step-2 .user-info.cc-type label").addClass("error-input");
 		} else {
 			userCCTypeSelected = true;
+			$donationBody.find("#step-2 .user-info.cc-type label").removeClass("error-input");
 		}
 		
 		if (countrySelection != "Country") {
-				countrySelected = true;
-		} 
+			countrySelected = true;
+			$("#select-country").find(".dd-selected").removeClass("error-input");
+		} else {
+			$("#select-country").find(".dd-selected").addClass("error-input");
+		}
 		
 		if (stateSelection != "State") {
 			stateSelected = true;
-		} 
+			$("#select-state").find(".dd-selected").removeClass("error-input");
+		} else {
+			$("#select-state").find(".dd-selected").addClass("error-input");
+		}
 
 		if (userInputClear && userCCTypeSelected && stateSelected && countrySelected) {
 			infoVerified = true;
-		}
+		} 
 
 		return infoVerified;
 	}
