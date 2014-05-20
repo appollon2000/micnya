@@ -89,8 +89,8 @@ transform-style: preserve-3d;
 -webkit-transform-style: preserve-3d;
 }
 
-.skew{-webkit-transform:perspective(300px) rotateX(30deg);-moz-transform: perspective(300px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;}
-.skew2{-webkit-transform:perspective(200px) rotateX(30deg);-moz-transform: perspective(200px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;}
+.skew{-webkit-transform:perspective(300px) rotateX(30deg);-moz-transform: perspective(300px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform::perspective(300px) rotateX(30deg);transform-style: preserve-3d;transform:perspective(300px) rotateX(30deg);}
+.skew2{-webkit-transform:perspective(200px) rotateX(30deg);-moz-transform: perspective(200px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform::perspective(200px) rotateX(30deg);transform-style: preserve-3d;transform:perspective(200px) rotateX(30deg);}
 h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
 #WrpopupPrev-box{display:none;height: 302px;width: 272px;background: #283b44;position:absolute;z-index:10;top:271px;left:469px;}
 .prevClose{background: url(images/prevclose.png) no-repeat;width:17px;height:17px;position: absolute;z-index: 10;top:8px;right:6px;}
@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
 .popupbg,#today-date {display: none;}#tile-donate-btn a:hover{color:#fff;}
 .prevContent{clear: both;color: #26343D;font-size: 11px;line-height: 16px;;position: relative; margin-left: 25px;padding: 8px 0 0;text-transform: uppercase;text-transform: none;width: 208px;}
 #ascrail2000{width:16px !important;background: #26343d !important;}
-#ascrail2000 div {background-color:#fff452 !important;background:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
+#ascrail2000 div {background-color:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
 span.tileAttr{padding-right:30px;text-align: left;}
 span.tileAttr.first,span.tileAttr.second{width:280px;float:left;}
 #block6 .story {min-width: 1200px;width: 1200px;}
@@ -137,4 +137,23 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #ib-content-preview.certificate .ib-teaser h2 {font-size: 42px;padding-top: 10px;max-height: 100px !important;overflow: visible !important;text-transform: capitalize;}
 #ib-content-preview.certificate .categz {color:#00B1CC;text-align: center;font-size: 18px;font-weight: bold;margin-top:7px;padding:0;}
 #ib-content-preview.certificate a{text-decoration: underline;color: #00B1CC;}
-div#ascrail2001 > div {background-color:#fff452 !important;background:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
+#ascrail2001{display: none !important;}
+
+#mobNav{text-align:right;width:100%;position: fixed;z-index: 10000;top:0;display:none;cursor:pointer;}
+#next-nav{float:right;text-transform:uppercase;color:#fff;font-size:14px;font-weight:bold;padding-top:12px;}
+#mobNav .navbar-toggle{float: right;margin:10px 30px 0 10px;padding:0;position: relative;}
+#mobNav .navbar-toggle .icon-bar {background-color: #fff;display: block;height: 2px;margin-top: 4px;width: 22px;}
+#mobNav .navbar-collapse.ensb{width:100%;}
+#mobNav .navbar-collapse ul {float:right;width:100%;text-align:right;list-style: none;margin: 0;padding: 0;display:none;}
+#mobNav .navbar-collapse ul li {display: block;position: relative;width: 100%;clear:both;padding: 15px 0 0;}
+.navbar-collapse ul li a {font-weight: bold;background:#26343d;color:#fff;display: block;width:100%;line-height: 20px;margin: 0;padding:10px 30px 10px 0;position: relative;}
+.navbar-collapse ul li a:hover{color: #00B1CC;background:#fff;}
+
+@media only screen and (min-width : 1px) and (max-width : 1024px) {
+ul#nav,#links-vertical-connector,#widget-donate{display:none;}
+#mobNav{display:block;}
+#donation-widget{width:100%;left:0;top:0;height:inherit !important;}
+#donation-widget #widget-logo{width:100%;background: #26343d url(images/mobile/mob-logo.png) no-repeat 50% 50px;height:inherit !important;padding-top: 40px;}
+#widget-logo a{width: 100%;}
+#donation-widget #widget-content{clear:both;width:100%;}
+}

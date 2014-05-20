@@ -73,7 +73,7 @@ if (!$detect->isMobile()) { ?>
 
 <?php } else { ?>
 	<style type="text/css" media="screen">
-		#nav, .widget_tia_pixelscroll {display: none;}
+		#nav, .widget_tia_pixelscroll,#links-vertical-connector {display: none;}
 		<?php if(tia_get_option('tia_mobile_backgrounds')) { ?>
 		div.parallax-container[style] {background-image: none !important;}
 		<?php } ?>

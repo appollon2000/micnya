@@ -7,15 +7,30 @@ $quty= 0;
 while ($numb = mysql_fetch_assoc ($resl2)) {
     $qty1 += $numb['amount'];
 }
-if ($_POST) {
-$sql1 = "INSERT INTO donor (`email`)
-VALUES ('".mysql_real_escape_string('mmmmii@we.fr')."')";
-$resq1 = mysql_query($sql1) or die(mysql_error());
-}
 
 ?>
 
-	<div id="main">				 
+	<div id="main">
+    <div id="mobNav">
+      <div id="menuMob">
+        <div class="navbar-toggle">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </div>
+      <div id="next-nav">MENU</div>
+    </div>
+      <div class="navbar-collapse clearfix ensb" style="display: block;">
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a href="#" rel="blockLink1" class="dropdown-toggle" data-toggle="dropdown">OUR MISSION <b class="caret"></b></a>
+            <a href="#" rel="blockLink5" class="dropdown-toggle" data-toggle="dropdown">HELP US BUILD <b class="caret"></b></a>
+            <a href="#" rel="blockLink6" class="dropdown-toggle" data-toggle="dropdown">THE VIRTUAL SHIMMER WALL <b class="caret"></b></a>
+            <a href="#" rel="blockLink7" class="dropdown-toggle" data-toggle="dropdown">EXPLORE FURTHER <b class="caret"></b></a>        
+          </li>
+        </ul>
+      </div>
+    </div>
 		<div id="content" class="postshome clearfix">
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
