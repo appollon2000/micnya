@@ -23,7 +23,8 @@ $j(document).ready(function() {
 		$shimmerWallNav = $("#blockLink6 a"),
 		$exploreNav = $("#blockLink7 a"),
 		$welcomeArrow = $("#arrow-down a"),
-		$faqLink = $("#socialNetworks a.subscribe");
+		$faqLink = $("#socialNetworks a.subscribe"),
+		$selectedOption = $(".dd-selected");
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -71,6 +72,10 @@ $j(document).ready(function() {
 		}, 500, "linear");
 	});
 	
+	$selectedOption.on("click", function (e) {
+		$(this).removeClass("error-input");
+	})
+	
 	$faqLink.on("click", function (e) {
 		e.preventDefault();
 
@@ -79,7 +84,7 @@ $j(document).ready(function() {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
 					isFaqContentLoaded = true;
 					isFaqContentActive = true;
-					//console.log("win hei: "+ $$window.height + ", " + $main.height + ", " + $("#container").height);
+					
 					$main.prepend(pageOverlay);
 					$main.find("#page-overlay").show();
 					$main.find(".faq-popup").show();
@@ -672,26 +677,40 @@ $j(document).ready(function() {
 				$j(this).addClass("error-input");
 			} else {
 				userInputClear = true;
+				$j(this).removeClass("error-input");
 			}
 		});
 		
 		if ($ccSelection.is(":checked") === false) {
 			userCCTypeSelected = false;
+			$donationBody.find("#step-2 .user-info.cc-type label").addClass("error-label");
 		} else {
 			userCCTypeSelected = true;
+			$donationBody.find("#step-2 .user-info.cc-type label").removeClass("error-label");
 		}
 		
 		if (countrySelection != "Country") {
-				countrySelected = true;
-		} 
+			countrySelected = true;
+			$("#select-country").find(".dd-selected").removeClass("error-input");
+		} else {
+			$("#select-country").find(".dd-selected").addClass("error-input");
+		}
 		
 		if (stateSelection != "State") {
 			stateSelected = true;
-		} 
+			$("#select-state").find(".dd-selected").removeClass("error-input");
+		} else {
+			$("#select-state").find(".dd-selected").addClass("error-input");
+		}
+		
+		$("#iscatg").removeClass("error-input");
+		if ($donationBody.find("#step-2 input").hasClass("error-input")) {
+			userInputClear = false;
+		}
 
 		if (userInputClear && userCCTypeSelected && stateSelected && countrySelected) {
 			infoVerified = true;
-		}
+		} 
 
 		return infoVerified;
 	}

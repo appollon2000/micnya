@@ -9,6 +9,7 @@ body { background: #eeefe9 !important; }
 #footer .left a { color: #26343d; text-decoration: underline; }
 /* page overlay */
 #page-overlay { background: #000; display: none; height: 10800px; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%; z-index: 10000; }
+.error-input { border: 1px solid red; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
@@ -127,6 +128,7 @@ body { background: #eeefe9 !important; }
 #step-2 .user-info.cc-type { width: 80%; }
 #step-2 .user-info.cc-type > div { float: left; margin-bottom: 10px; width: 50%; }
 #step-2 .user-info.cc-type label { margin-left: 0; }
+#step-2 .user-info.cc-type label.error-label { color: red; }
 #step-2 .user-info.cc-type input { float: left; height: 16px !important; overflow: hidden; padding-left: 0; width: 15px !important; }
 #step-2 #select-state, #step-2 #select-country { margin-top: -10px; width: 346px !important; }
 #step-2 #select-state a, #step-2 #select-country a, #step-2 #select-exp-day a, #step-2 #select-exp-year a { color: #000; padding-left: 4px; text-transform: normal !important; }
