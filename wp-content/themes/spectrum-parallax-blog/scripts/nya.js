@@ -666,11 +666,14 @@ $j(document).ready(function() {
 			countrySelected = false,
 			expDaySelected = false,
 			expYearSelected = false,
+			emailAddressesCleared = false,
 			$ccSelection = $donationBody.find("input:radio[name=cc-type]"),
 			stateSelection = $donationBody.find("#select-state .dd-selected-text").text(),
 			countrySelection = $donationBody.find("#select-country .dd-selected-text").text(),
 			selectExpDay = $donationBody.find("#select-exp-day .dd-selected-text").text(),
-			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text();
+			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text(),
+			emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+			//console.log( emailCheck.test('some.body@domain.co.uk') + ", " + emailCheck.test('hola3hola.com') + ", " + emailCheck.test('hola@.com') + ", " + emailCheck.test(" @aja.com"));
 		
 		$donationBody.find("#step-2 input").each( function (index, element) {
 			if ($j(this).val() == "") {
@@ -680,6 +683,16 @@ $j(document).ready(function() {
 				$j(this).removeClass("error-input");
 			}
 		});
+		
+		//console.log($("#donor-email").text() + ", " +  $("#donor-email-repeat").text() + ", " + $("#donor-email").val() + ", " +  $("#donor-email-repeat").val());
+		if ($("#donor-email").val() != "" && $("#donor-email-repeat").val() != "" && emailCheck.test($("#donor-email").val()) && emailCheck.test($("#donor-email-repeat").val()) && ($("#donor-email").val() == $("#donor-email-repeat").val())) {
+			emailAddressesCleared = true;
+			$("#donor-email-repeat").removeClass("error-input");
+			$("#donor-email").removeClass("error-input");
+		} else {
+			$("#donor-email-repeat").addClass("error-input");
+			$("#donor-email").addClass("error-input");
+		}
 		
 		if ($ccSelection.is(":checked") === false) {
 			userCCTypeSelected = false;
