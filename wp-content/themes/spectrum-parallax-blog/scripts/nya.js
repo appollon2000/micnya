@@ -682,10 +682,10 @@ $j(document).ready(function() {
 		
 		if ($ccSelection.is(":checked") === false) {
 			userCCTypeSelected = false;
-			$donationBody.find("#step-2 .user-info.cc-type label").addClass("error-input");
+			$donationBody.find("#step-2 .user-info.cc-type label").addClass("error-label");
 		} else {
 			userCCTypeSelected = true;
-			$donationBody.find("#step-2 .user-info.cc-type label").removeClass("error-input");
+			$donationBody.find("#step-2 .user-info.cc-type label").removeClass("error-label");
 		}
 		
 		if (countrySelection != "Country") {

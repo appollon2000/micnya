@@ -128,6 +128,7 @@ body { background: #eeefe9 !important; }
 #step-2 .user-info.cc-type { width: 80%; }
 #step-2 .user-info.cc-type > div { float: left; margin-bottom: 10px; width: 50%; }
 #step-2 .user-info.cc-type label { margin-left: 0; }
+#step-2 .user-info.cc-type label.error-label { color: red; }
 #step-2 .user-info.cc-type input { float: left; height: 16px !important; overflow: hidden; padding-left: 0; width: 15px !important; }
 #step-2 #select-state, #step-2 #select-country { margin-top: -10px; width: 346px !important; }
 #step-2 #select-state a, #step-2 #select-country a, #step-2 #select-exp-day a, #step-2 #select-exp-year a { color: #000; padding-left: 4px; text-transform: normal !important; }
