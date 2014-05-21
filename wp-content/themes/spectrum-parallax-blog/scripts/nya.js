@@ -666,7 +666,6 @@ $j(document).ready(function() {
 			countrySelected = false,
 			expDaySelected = false,
 			expYearSelected = false,
-			emailAddressesCleared = false,
 			$ccSelection = $donationBody.find("input:radio[name=cc-type]"),
 			stateSelection = $donationBody.find("#select-state .dd-selected-text").text(),
 			countrySelection = $donationBody.find("#select-country .dd-selected-text").text(),
@@ -692,8 +691,7 @@ $j(document).ready(function() {
 			}
 		});
 		
-		if ($donorEmail.val() != "" && $donorEmailRepeat.val() != "" && emailCheck.test($donorEmail.val()) && emailCheck.test($donorEmailRepeat.val()) && ($donorEmail.val() == $donorEmailRepeat.val())) {
-			emailAddressesCleared = true;
+		if (emailCheck.test($donorEmail.val()) && emailCheck.test($donorEmailRepeat.val()) && ($donorEmail.val() == $donorEmailRepeat.val())) {
 			$donorEmailRepeat.removeClass("error-input");
 			$donorEmail.removeClass("error-input");
 		} else {
