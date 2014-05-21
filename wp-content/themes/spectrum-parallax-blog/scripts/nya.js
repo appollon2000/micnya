@@ -30,7 +30,7 @@ $j(document).ready(function() {
 		currentDonationStep = 1,
 		donationAmount,
 		donationLevel,
-		regExpNumbers = /[^0-9]/g,
+		regExpNumbers = /^[0-9]{1,20}$/,
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
 		pageOverlay = "<div id='page-overlay'></div>",
 		faqPlaceHolder = "<div id='faq-place-holder' class='faq-popup'><div id='holder'></div></div>",
@@ -369,7 +369,7 @@ $j(document).ready(function() {
 	function checkOnUserKeyInput() {
 		var userInput = Number($userOtherDonation.val());
 		
-		if (!regExpNumbers.test($userOtherDonation.val()) && userInput >= 25) {				
+		if (!regExpNumbers.test(userInput) && userInput >= 25) {				
 			if(userInput >= 25 && userInput < 100) {							
 				$donationBody.find(".donation-content.other .donation-reference").text("Friend");	
 				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.twenty-five .donation-info").text());
@@ -396,7 +396,7 @@ $j(document).ready(function() {
 		} else {		
 			var amountRegistered = Number($userOtherDonation.val());
 				
-			if (!regExpNumbers.test($userOtherDonation.val()) && amountRegistered >= 25) {	
+			if (!regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
 				
 				if(amountRegistered >= 25 && amountRegistered < 100) {					
 					donationLevel = "Friend";					
@@ -673,8 +673,12 @@ $j(document).ready(function() {
 			selectExpDay = $donationBody.find("#select-exp-day .dd-selected-text").text(),
 			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text(),
 			emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-			//console.log( emailCheck.test('some.body@domain.co.uk') + ", " + emailCheck.test('hola3hola.com') + ", " + emailCheck.test('hola@.com') + ", " + emailCheck.test(" @aja.com"));
 		
+		var $donorEmail = $("#donor-email"),
+			$donorEmailRepeat = $("#donor-email-repeat"),
+			$donorCcNumber = $("#donor-cc-number"),
+			$donorCvvNumber = $("#donor-cvv");
+
 		$donationBody.find("#step-2 input").each( function (index, element) {
 			if ($j(this).val() == "") {
 				$j(this).addClass("error-input");
@@ -684,14 +688,25 @@ $j(document).ready(function() {
 			}
 		});
 		
-		//console.log($("#donor-email").text() + ", " +  $("#donor-email-repeat").text() + ", " + $("#donor-email").val() + ", " +  $("#donor-email-repeat").val());
-		if ($("#donor-email").val() != "" && $("#donor-email-repeat").val() != "" && emailCheck.test($("#donor-email").val()) && emailCheck.test($("#donor-email-repeat").val()) && ($("#donor-email").val() == $("#donor-email-repeat").val())) {
+		if ($donorEmail.val() != "" && $donorEmailRepeat.val() != "" && emailCheck.test($donorEmail.val()) && emailCheck.test($donorEmailRepeat.val()) && ($donorEmail.val() == $donorEmailRepeat.val())) {
 			emailAddressesCleared = true;
-			$("#donor-email-repeat").removeClass("error-input");
-			$("#donor-email").removeClass("error-input");
+			$donorEmailRepeat.removeClass("error-input");
+			$donorEmail.removeClass("error-input");
 		} else {
-			$("#donor-email-repeat").addClass("error-input");
-			$("#donor-email").addClass("error-input");
+			$donorEmailRepeat.addClass("error-input");
+			$donorEmail.addClass("error-input");
+		}
+
+		if (!regExpNumbers.test(Number($donorCcNumber.val()))) {
+			$donorCcNumber.addClass("error-input");
+		} else {
+			$donorCcNumber.removeClass("error-input");
+		}
+		
+		if (!regExpNumbers.test(Number($donorCvvNumber.val()))) {
+			$donorCvvNumber.addClass("error-input");
+		} else {
+			$donorCvvNumber.removeClass("error-input");
 		}
 		
 		if ($ccSelection.is(":checked") === false) {
@@ -799,6 +814,8 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
 		
 		$donationBody.find(".oval-other").addClass("selected");
+		
+		amountSelected = false;
 	}
 	
 	
