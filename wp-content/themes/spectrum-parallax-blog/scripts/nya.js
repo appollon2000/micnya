@@ -677,11 +677,15 @@ $j(document).ready(function() {
 		var $donorEmail = $("#donor-email"),
 			$donorEmailRepeat = $("#donor-email-repeat"),
 			$donorCcNumber = $("#donor-cc-number"),
-			$donorCvvNumber = $("#donor-cvv");
+			$donorCvvNumber = $("#donor-cvv"),
+			$donorAddressMore = $("#donor-address-more");
 
 		$donationBody.find("#step-2 input").each( function (index, element) {
 			if ($j(this).val() == "") {
 				$j(this).addClass("error-input");
+				if ($donorAddressMore.val() == "") {
+					$donorAddressMore.removeClass("error-input");
+				}
 			} else {
 				userInputClear = true;
 				$j(this).removeClass("error-input");
