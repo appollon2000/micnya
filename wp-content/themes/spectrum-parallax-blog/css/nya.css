@@ -201,7 +201,7 @@ body { background: #eeefe9 !important; }
 
 #content #block1 { min-height: 1720px !important; max-height: 1720px; height: 1720px; }
 #content #block1 #text-top h1, #content #block1 #text-bottom h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 70px; line-height: 70px; text-transform: uppercase; }
-#content #block1 #text-top h1 { margin-bottom: 110px; }
+#content #block1 #text-top h1 { margin-bottom: 110px;letter-spacing: -3px; }
 #content #block1 #text-top h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 30px; margin-bottom: 100px; }
 #content #block1 #text-top h3 { color: #fff; font-size: 20px; }
 #mission-block-container { color: #fff; font-family: "Swiss721BT-Black"; font-size: 70px; margin-bottom: 300px; text-align: center; width: 1050px; }

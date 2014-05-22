@@ -73,7 +73,8 @@ if (!$detect->isMobile()) { ?>
 
 <?php } else { ?>
 	<style type="text/css" media="screen">
-		#nav, .widget_tia_pixelscroll,#links-vertical-connector {display: none;}
+		#nav, .widget_tia_pixelscroll,#links-vertical-connector,#mission-block-container #text-top h3,#mission-block-container #text-top #arrow-down {display: none;}
+		#container{margin-top:50px !important;}
 		<?php if(tia_get_option('tia_mobile_backgrounds')) { ?>
 		div.parallax-container[style] {background-image: none !important;}
 		<?php } ?>

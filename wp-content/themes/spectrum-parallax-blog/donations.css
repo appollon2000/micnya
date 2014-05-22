@@ -148,12 +148,83 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #mobNav .navbar-collapse ul li {display: block;position: relative;width: 100%;clear:both;padding: 15px 0 0;}
 .navbar-collapse ul li a {font-weight: bold;background:#26343d;color:#fff;display: block;width:100%;line-height: 20px;margin: 0;padding:10px 30px 10px 0;position: relative;}
 .navbar-collapse ul li a:hover{color: #00B1CC;background:#fff;}
-
+.center.blank{margin-left:-4%;}
 @media only screen and (min-width : 1px) and (max-width : 1024px) {
-ul#nav,#links-vertical-connector,#widget-donate{display:none;}
+ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,#mission-block-container #text-top h3{display:none;}
 #mobNav{display:block;}
 #donation-widget{width:100%;left:0;top:0;height:inherit !important;}
 #donation-widget #widget-logo{width:100%;background: #26343d url(images/mobile/mob-logo.png) no-repeat 50% 50px;height:inherit !important;padding-top: 40px;}
 #widget-logo a{width: 100%;}
+#donation-widget #widget-donate{float:left;clear:both;width:100%;}
+#donation-widget #widget-donate a{width:100%;background: #fff452 url(images/mobile/mob-donate.jpg) no-repeat 50% 10px;height:40px !important;padding-bottom: 10px;}
 #donation-widget #widget-content{clear:both;width:100%;}
+#static-background {top:90px;background-size: 100% auto;background-position: 50% 22% !important;}
+#content{top:47px;}
+#content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:54px;line-height:54px;}
+#content #block1 #text-top h2,#mission-block-container #text-bottom h2 {font-size: 26px;margin-bottom: 85px;line-height:26px;}
+#donation-info h2{font-size:26px;line-height:26px;}
+#content #block1 #text-top h3{font-size: 22px;}
+.story, .inside,#mission-block-container,.storycenter div.bg1[style], .story .center{width:96% !important;max-width:96% !important;padding:0 2%;}
+#mission-block-container #text-top{margin-top:279px;}
+.center.blank{margin:0;padding:0;}
+#content.postshome .post, #content.postshome .page{padding:0;}
+.secondary p.left, .secondary p.right, #socialNetworks{text-align:left !important;}
+#block2, #block3, #block5, #block9, #block10{background-size: 100% auto;background-position: 50% 115px !important;}
+#block4{background-size: 100% auto;background-position: 50% 210px !important;}
+#mission-block-container #text-top {height: 460px;}
+#content.postshome .post, #content.postshome .page {min-height: 600px !important;}
+#donation-info h1,#donation-info h2{padding:0 3%;}
+#donation-info h2{margin-top: 80px;line-height: 30px;}
+#donation-info{margin-top: 100px;}
+#block6{height:770px;margin-left:-8px;}
+#block6 .story {margin-top: 40px;}
+#block6 h2.titleTops, #block6 h3.titleTops-h3 {display:none;}
+#block6 .float-left.blank{margin-left:0;}
+#block6 .story,#mast,#block6 .story .float-left {min-width: 292px !important;width: 292px !important;}
+.ib-main-wrapper,.ib-main{width: 100% !important;}
+.ib-main div.tyle{margin-bottom:-22px;}
+.ib-main-wrapper,#mast{height: 525px !important;}
+.ib-main div.tyle img{opacity:1 !important;}
+#block4{height: 850px;}
+}
+
+@media only screen and (min-width : 1px) and (max-width : 800px) {
+.post, .page {background-attachment: scroll;}
+.parallax-container {background-position: center top;}
+#content.postshome .post, #content.postshome .page {min-height: 650px !important;}
+}
+@media only screen and (min-width : 1px) and (max-width : 769px) {
+#footer .left{margin:-23px 0 0;padding-top:12px;clear:both;width:100%;}
+#block2, #block3, #block5, #block9, #block10{background-size: 100% auto;background-position: 50% 10% !important;}
+#block4{background-size: 100% auto;background-position: 50% 15% !important;}
+#mission-block-container #text-top {height: 340px;}
+}
+@media only screen and (min-width : 1px) and (max-width : 640px) {
+#content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:44px;line-height:44px;}
+#content #block1 #text-top h2,#mission-block-container #text-bottom h2 {font-size: 20px;line-height:20px;}
+#donation-info h2{font-size:20px;line-height:20px;}
+#content #block1 #text-top h3{font-size: 16px;}
+#mission-block-container #text-top{margin-top:254px;}
+#content.postshome .post, #content.postshome .page {min-height: 600px !important;}
+}
+@media only screen and (min-width : 1px) and (max-width : 510px) {
+#content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:34px;line-height:34px;}
+#content #block1 #text-top h2,#mission-block-container #text-bottom h2 {font-size: 22px;line-height:22px;}
+#donation-info h2{font-size:22px;line-height:22px;}
+#content #block1 #text-top h3{font-size: 15px;}
+#mission-block-container #text-top{margin-top:254px;}
+#content #block1 #text-top h1 {margin-bottom: 60px;}
+#content.postshome .post, #content.postshome .page {min-height: 290px !important;}
+#block5{height: 622px;}
+}
+@media only screen and (min-width : 1px) and (max-width : 400px) {
+#content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:24px;line-height:24px;}
+#content #block1 #text-top h2,#mission-block-container #text-bottom h2 {font-size: 15px;line-height:15px;}
+#donation-info h2{font-size:15px;line-height:15px;}
+#content #block1 #text-top h3{font-size: 13px;}
+#mission-block-container #text-top{margin-top:240px;}
+#content.postshome .post, #content.postshome .page {min-height: 240px !important;}
+}
+@media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
+
 }
