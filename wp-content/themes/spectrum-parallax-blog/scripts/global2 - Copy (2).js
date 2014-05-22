@@ -70,9 +70,7 @@ $j = jQuery.noConflict();
                     
                     kinetic_moving = false;
                     
-                  },
-                  maxvelocity: 100,
-                  throttleFPS:100
+                  }
                 });
                 
               },
@@ -514,7 +512,7 @@ setTimeout(function () {
 maindonBtn.trigger('click');
 }, 1400);
 }else {
-  trigLink.trigger('click');
+  return false;
 }
 });
 
@@ -546,11 +544,6 @@ doct.mouseup(function (e) {
     resbox.fadeOut();
   }
 });
-
-$('#select-state > .dd-select').attr('tabindex', '600');
-$('#select-country > .dd-select').attr('tabindex', '800');
-$('#select-exp-day > .dd-select').attr('tabindex', '1300');
-$('#select-exp-year > .dd-select').attr('tabindex', '1400');
 
 }, 1600);
 
@@ -778,6 +771,13 @@ dataType: 'json',
 data: tileStr
 });
 
+});
+
+indivTile.mouseover(function() {
+var that = $(this);
+that.addClass('skew2').delay(180).queue(function(){
+that.removeClass('skew2').dequeue();
+});
 });
 
 if( $('#mast').length > 0 ) { // if target element exists in DOM
