@@ -20,7 +20,7 @@
 			<div id="searchBox">
 				<div id="dosearch">
 					<form id="searchus">
-						<input type="text" placeholder="TYPE IN NAME" id="searchTerm" name="searchTerm" maxlength="20">
+						<input type="text" placeholder="SEARCH NAME" id="searchTerm" name="searchTerm" maxlength="20">
 						<div id="searchGo" class="brownGradRight">
 						<div id="searchArrow" class="arrowCentered"></div>
 						</div>

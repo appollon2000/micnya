@@ -30,400 +30,396 @@ return vars;
 var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a');
 
 $j = jQuery.noConflict();
- $(function() {
+$(function() {
+
+var $ibWrapper  = $j('#ib-main-wrapper'),
+
+Template  = (function() {
+    
+    // true if dragging the container
+  var kinetic_moving        = false,
+    // current index of the opened item
+    current           = -1,
+    // true if the item is being opened / closed
+    isAnimating         = false,
+    // items on the grid
+    $ibItems          = $ibWrapper.find('div.ib-main div.tyle'),
+    // image items on the grid
+    $ibImgItems         = $ibItems.not('.ib-content'),
+    // total image items on the grid
+    imgItemsCount       = $ibImgItems.length,
+    init            = function() {
       
-        var $ibWrapper  = $j('#ib-main-wrapper'),
-         
-          Template  = (function() {
+      // add a class ib-image to the image items
+      $ibImgItems.addClass('ib-image');
+      // apply the kinetic plugin to the wrapper
+      loadKinetic();
+      // load some events
+      initEvents();
+  
+    },
+    loadKinetic         = function() {
+      setWrapperSize();              
+      $ibWrapper.kinetic({
+        moved : function() {
+          
+          kinetic_moving = true;
+          
+        },
+        stopped : function() {
+          
+          kinetic_moving = false;
+          
+        },
+        maxvelocity: 100,
+        throttleFPS:100
+      });
+      
+    },
+    setWrapperSize  = function() {
+      
+      var containerMargins  = $j('#ib-top').outerHeight(true) + $j('#header').outerHeight(true) + parseInt( $ibItems.css('margin-top') );
+      $ibWrapper.css({"height": 440,width: 583});
+      
+    },
+    initEvents   = function() {
+    
+      // open the item only if not dragging the container
+      $ibItems.bind('click.ibTemplate', function( event ) {
+        
+        if( !kinetic_moving )
+          openItem( $j(this) );
+      
+        return false; 
+      
+      });
+      
+      // on window resize, set the wrapper and preview size accordingly
+      $j(window).bind('resize.ibTemplate', function( event ) {
+        
+        setWrapperSize();
+        
+        $j('#ib-img-preview, #ib-content-preview').css({
+          width : 583,
+          height  : 440
+        })
+        
+      });
+    
+    },
+    openItem   = function( $item ) {
+      
+      if( isAnimating ) return false;
+      
+      // if content item
+      if( $item.hasClass('ib-content') ) {
+        
+        isAnimating = true;
+        current = $item.index('.ib-content');
+        loadContentItem( $item, function() { isAnimating = false; } );
+        
+      }
+      // if image item
+      else {
+      
+        isAnimating = true;
+        current = $item.index('.ib-image');
+        loadImgPreview( $item, function() { isAnimating = false; } );
+        
+      }
+      
+    },
+    // opens one image item (fullscreen)
+    loadImgPreview        = function( $item, callback ) {
+      
+      var largeSrc    = $item.children('img').data('largesrc'),
+        description   = $item.children('span').text(),
+        largeImageData  = {
+          src     : largeSrc,
+          description : description
+        };
+      
+      // preload large image
+      $item.addClass('ib-loading');
+      
+      preloadImage( largeSrc, function() {
+        
+        $item.removeClass('ib-loading');
+        
+        var hasImgPreview = ( $j('#ib-img-preview').length > 0 );
+        
+        if( !hasImgPreview )
+          $j('#previewTmpl').tmpl( largeImageData ).insertAfter( $ibWrapper );
+        else
+          $j('#ib-img-preview').children('img.ib-preview-img')
+                    .attr( 'src', largeSrc ).end()
+                    .find('span.ib-preview-descr')
+                    .text( description );
+          
+        //get dimentions for the image, based on the windows size
+        var dim = getImageDim( largeSrc );
+        
+        $item.removeClass('ib-img-loading');
+        
+        //set the returned values and show/animate preview
+       $j('#ib-img-preview').css({
+          width : $item.width(),
+          height  : $item.height(),
+          left  : $item.offset().left,
+          top   : $item.offset().top
+        }).children('img.ib-preview-img').hide().css({
+          width : dim.width,
+          height  : dim.height,
+          left  : dim.left,
+          top   : dim.top
+        }).fadeIn( 400 ).end().show().animate({
+          width : 250,
+          left  : 0
+        }, 100, 'easeOutExpo', function() {
+        
+          $j(this).animate({
+            height  : 250,
+            top   : 0
+          }, 100, function() {
+          
+            var $this = $j(this);
+            $this.find('span.ib-preview-descr, span.ib-close').show()
+            if( imgItemsCount > 1 )
+              $this.find('div.ib-nav').show();
               
-              // true if dragging the container
-            var kinetic_moving        = false,
-              // current index of the opened item
-              current           = -1,
-              // true if the item is being opened / closed
-              isAnimating         = false,
-              // items on the grid
-              $ibItems          = $ibWrapper.find('div.ib-main div.tyle'),
-              // image items on the grid
-              $ibImgItems         = $ibItems.not('.ib-content'),
-              // total image items on the grid
-              imgItemsCount       = $ibImgItems.length,
-              init            = function() {
-                
-                // add a class ib-image to the image items
-                $ibImgItems.addClass('ib-image');
-                // apply the kinetic plugin to the wrapper
-                loadKinetic();
-                // load some events
-                initEvents();
+            if( callback ) callback.call();
+          
+          });
+        
+        });
+        
+        if( !hasImgPreview )
+          initImgPreviewEvents();
+        
+      } );
+      
+    },
+    // opens one content item (fullscreen)
+    loadContentItem  = function( $item, callback ) {
+      
+      var hasContentPreview = ($j('#ib-content-preview').length > 0 ),
+        honor        = $item.children('div.honor').html(),
+        teaser        = $item.children('div.ib-teaser').html(),
+        categz        = $item.children('div.categz').html(),
+        tsdates        = $item.children('div.ts-dates').html(),
+        tscity        = $item.children('div.ts-city').html(),
+        tssocial        = $item.children('div.socialz').html(),
+        popupbg        = $item.children('div.popupbg').html(),
+        content       = $item.children('div.ib-content-full').html(),
+        contentData     = {
+          honor: honor,
+          teaser    : teaser,
+          categz    : categz,
+          tsdates   : tsdates,
+          tscity    : tscity,
+          tssocial  : tssocial,
+          popupbg : popupbg,
+          content : content
+        };
+        
+      if( !hasContentPreview )
+        $j('#contentTmpl').tmpl( contentData ).insertAfter( $ibWrapper );
+        
+      //set the returned values and show/animate preview
+      $j('#ib-content-preview').removeAttr('rel').css({
+        width : $item.width(),
+        height  : $item.height(),
+        left  : $item.offset().left,
+        top   : $item.offset().top
+      }).attr('rel',popupbg).show().fadeIn(function() {
+      
+        $j(this).animate({
+        }, 100, function() {
+          
+          var $this = $j(this),
+            $honor = $this.find('div.honor'),
+            $teaser = $this.find('div.ib-teaser'),
+            $content= $this.find('div.ib-content-full'),
+            $tsdates = $this.find('div.ts-dates'),
+            $tscity = $this.find('div.ts-city'),
+            $categz = $this.find('div.categz'),
+            $tssocial = $this.find('div.socialz'),
+            $popupbg = $this.find('div.popupbg'),
+            $close  = $this.find('span.ib-close');
             
-              },
-              loadKinetic         = function() {
-                setWrapperSize();              
-                $ibWrapper.kinetic({
-                  moved : function() {
-                    
-                    kinetic_moving = true;
-                    
-                  },
-                  stopped : function() {
-                    
-                    kinetic_moving = false;
-                    
-                  },
-                  maxvelocity: 100,
-                  throttleFPS:100
-                });
+          if( hasContentPreview ) {
+            $honor.html( honor )
+            $teaser.html( teaser )
+            $content.html( content )
+            $tsdates.html( tsdates )
+            $tscity.html( tscity )
+            $categz.html( categz )
+            $tssocial.html( tssocial )
+            $popupbg.html( popupbg )
+          }
+          $honor.show();
+          $teaser.show();
+          $content.show();
+          $tsdates.show();
+          $tscity.show();
+          $categz.show();
+          $categz.show();
+          $tssocial.show();
+          $close.show();
+          
+          if( callback ) callback.call();
+        
+        });
+      
+      });
+      
+      if( !hasContentPreview )
+        initContentPreviewEvents(); 
+      
+    },
+    // preloads an image
+    preloadImage  = function( src, callback ) {
+    
+      $j('<img/>').load(function(){
+      
+        if( callback ) callback.call();
+      
+      }).attr( 'src', src );
+    
+    },
+    // load the events for the image preview : navigation ,close button, and window resize
+    initImgPreviewEvents    = function() {
+    
+      var $preview  =$j('#ib-img-preview');
+      
+      $preview.find('span.ib-nav-prev').bind('click.ibTemplate', function( event ) {
+        
+        navigate( 'prev' );
+        
+      }).end().find('span.ib-nav-next').bind('click.ibTemplate', function( event ) {
+        
+        navigate( 'next' );
+        
+      }).end().find('span.ib-close').bind('click.ibTemplate', function( event ) {
+        
+        closeImgPreview();
+        
+      });
+      
+      //resizing the window resizes the preview image
+      $j(window).bind('resize.ibTemplate', function( event ) {
+        
+        var $largeImg = $preview.children('img.ib-preview-img'),
+          dim     = getImageDim( $largeImg.attr('src') );
+        
+        $largeImg.css({
+          width : dim.width,
+          height  : dim.height,
+          left  : dim.left,
+          top   : dim.top
+        })
+        
+      });
+      
+    },
+    // load the events for the content preview : close button
+    initContentPreviewEvents  = function() {
+    
+      $j('#ib-content-preview').find('span.ib-close').bind('click.ibTemplate', function( event ) {
+        
+        closeContentPreview();
+        
+      });
+      
+    },
+    // navigate the image items in fullscreen mode
+    navigate          = function( dir ) {
+      
+      if( isAnimating ) return false;
+      
+      isAnimating   = true;
+      
+      var $preview  = $j('#ib-img-preview'),
+        $loading  = $preview.find('div.ib-loading-large');
+      
+      $loading.show();
+      
+      if( dir === 'next' ) {
+        
+        ( current === imgItemsCount - 1 ) ? current = 0 : ++current;
+        
+      }
+      else if( dir === 'prev' ) {
+        
+        ( current === 0 ) ? current = imgItemsCount - 1 : --current;
+        
+      }
+      
+      var $item   = $ibImgItems.eq( current ),
+        largeSrc  = $item.children('img').data('largesrc'),
+        description = $item.children('span').text();
+        
+      preloadImage( largeSrc, function() {
+        
+        $loading.hide();
+        
+        //get dimentions for the image, based on the windows size
+        var dim = getImageDim( largeSrc );
+        
+        $preview.children('img.ib-preview-img')
+                  .attr( 'src', largeSrc )
+                .css({
+          width : dim.width,
+          height  : dim.height,
+          left  : dim.left,
+          top   : dim.top
+                })
+                .end()
+                .find('span.ib-preview-descr')
+                .text( description );
+        
+        $ibWrapper.scrollTop( $item.offset().top )
+              .scrollLeft( $item.offset().left );
+        
+        isAnimating = false;
+        
+      });
+      
+    },
+    // closes the fullscreen image item
+    closeImgPreview       = function() {
+    
+      if( isAnimating ) return false;
+      
+      isAnimating = true;
+      
+      var $item = $ibImgItems.eq( current );
+      
+      $j('#ib-img-preview').find('span.ib-preview-descr, div.ib-nav, span.ib-close')
+              .hide()
+              .end()
+              .animate({
+                height  : $item.height(),
+                top   : $item.offset().top
+                }, 100, 'easeOutExpo', function() {
                 
-              },
-              setWrapperSize  = function() {
-                
-                var containerMargins  = $j('#ib-top').outerHeight(true) + $j('#header').outerHeight(true) + parseInt( $ibItems.css('margin-top') );
-                $ibWrapper.css({"height": 440,width: 583});
-                
-              },
-              initEvents   = function() {
-              
-                // open the item only if not dragging the container
-                $ibItems.bind('click.ibTemplate', function( event ) {
+                $j(this).animate({
+                  width : $item.width(),
+                  left  : $item.offset().left
+                  }, 100, function() {
                   
-                  if( !kinetic_moving )
-                    openItem( $j(this) );
-                
-                  return false; 
-                
-                });
-                
-                // on window resize, set the wrapper and preview size accordingly
-                $j(window).bind('resize.ibTemplate', function( event ) {
-                  
-                  setWrapperSize();
-                  
-                  $j('#ib-img-preview, #ib-content-preview').css({
-                    width : 583,
-                    height  : 440
-                  })
-                  
-                });
-              
-              },
-              openItem   = function( $item ) {
-                
-                if( isAnimating ) return false;
-                
-                // if content item
-                if( $item.hasClass('ib-content') ) {
-                  
-                  isAnimating = true;
-                  current = $item.index('.ib-content');
-                  loadContentItem( $item, function() { isAnimating = false; } );
-                  
-                }
-                // if image item
-                else {
-                
-                  isAnimating = true;
-                  current = $item.index('.ib-image');
-                  loadImgPreview( $item, function() { isAnimating = false; } );
-                  
-                }
-                
-              },
-              // opens one image item (fullscreen)
-              loadImgPreview        = function( $item, callback ) {
-                
-                var largeSrc    = $item.children('img').data('largesrc'),
-                  description   = $item.children('span').text(),
-                  largeImageData  = {
-                    src     : largeSrc,
-                    description : description
-                  };
-                
-                // preload large image
-                $item.addClass('ib-loading');
-                
-                preloadImage( largeSrc, function() {
-                  
-                  $item.removeClass('ib-loading');
-                  
-                  var hasImgPreview = ( $j('#ib-img-preview').length > 0 );
-                  
-                  if( !hasImgPreview )
-                    $j('#previewTmpl').tmpl( largeImageData ).insertAfter( $ibWrapper );
-                  else
-                    $j('#ib-img-preview').children('img.ib-preview-img')
-                              .attr( 'src', largeSrc ).end()
-                              .find('span.ib-preview-descr')
-                              .text( description );
-                    
-                  //get dimentions for the image, based on the windows size
-                  var dim = getImageDim( largeSrc );
-                  
-                  $item.removeClass('ib-img-loading');
-                  
-                  //set the returned values and show/animate preview
-                 $j('#ib-img-preview').css({
-                    width : $item.width(),
-                    height  : $item.height(),
-                    left  : $item.offset().left,
-                    top   : $item.offset().top
-                  }).children('img.ib-preview-img').hide().css({
-                    width : dim.width,
-                    height  : dim.height,
-                    left  : dim.left,
-                    top   : dim.top
-                  }).fadeIn( 400 ).end().show().animate({
-                    width : 250,
-                    left  : 0
-                  }, 100, 'easeOutExpo', function() {
-                  
-                    $j(this).animate({
-                      height  : 250,
-                      top   : 0
-                    }, 100, function() {
-                    
-                      var $this = $j(this);
-                      $this.find('span.ib-preview-descr, span.ib-close').show()
-                      if( imgItemsCount > 1 )
-                        $this.find('div.ib-nav').show();
-                        
-                      if( callback ) callback.call();
-                    
-                    });
-                  
-                  });
-                  
-                  if( !hasImgPreview )
-                    initImgPreviewEvents();
+                   $j(this).fadeOut(function() {isAnimating = false;});
                   
                 } );
-                
-              },
-              // opens one content item (fullscreen)
-              loadContentItem  = function( $item, callback ) {
-                
-                var hasContentPreview = ($j('#ib-content-preview').length > 0 ),
-                  honor        = $item.children('div.honor').html(),
-                  teaser        = $item.children('div.ib-teaser').html(),
-                  categz        = $item.children('div.categz').html(),
-                  tsdates        = $item.children('div.ts-dates').html(),
-                  tscity        = $item.children('div.ts-city').html(),
-                  tssocial        = $item.children('div.socialz').html(),
-                  popupbg        = $item.children('div.popupbg').html(),
-                  content       = $item.children('div.ib-content-full').html(),
-                  contentData     = {
-                    honor: honor,
-                    teaser    : teaser,
-                    categz    : categz,
-                    tsdates   : tsdates,
-                    tscity    : tscity,
-                    tssocial  : tssocial,
-                    popupbg : popupbg,
-                    content : content
-                  };
-                  
-                if( !hasContentPreview )
-                  $j('#contentTmpl').tmpl( contentData ).insertAfter( $ibWrapper );
-                  
-                //set the returned values and show/animate preview
-                $j('#ib-content-preview').removeAttr('rel').css({
-                  width : $item.width(),
-                  height  : $item.height(),
-                  left  : $item.offset().left,
-                  top   : $item.offset().top
-                }).attr('rel',popupbg).show().fadeIn(function() {
-                
-                  $j(this).animate({
-                  }, 100, function() {
-                    
-                    var $this = $j(this),
-                      $honor = $this.find('div.honor'),
-                      $teaser = $this.find('div.ib-teaser'),
-                      $content= $this.find('div.ib-content-full'),
-                      $tsdates = $this.find('div.ts-dates'),
-                      $tscity = $this.find('div.ts-city'),
-                      $categz = $this.find('div.categz'),
-                      $tssocial = $this.find('div.socialz'),
-                      $popupbg = $this.find('div.popupbg'),
-                      $close  = $this.find('span.ib-close');
-                      
-                    if( hasContentPreview ) {
-                      $honor.html( honor )
-                      $teaser.html( teaser )
-                      $content.html( content )
-                      $tsdates.html( tsdates )
-                      $tscity.html( tscity )
-                      $categz.html( categz )
-                      $tssocial.html( tssocial )
-                      $popupbg.html( popupbg )
-                    }
-                    $honor.show();
-                    $teaser.show();
-                    $content.show();
-                    $tsdates.show();
-                    $tscity.show();
-                    $categz.show();
-                    $categz.show();
-                    $tssocial.show();
-                    $close.show();
-                    
-                    if( callback ) callback.call();
-                  
-                  });
-                
-                });
-                
-                if( !hasContentPreview )
-                  initContentPreviewEvents(); 
-                
-              },
-              // preloads an image
-              preloadImage  = function( src, callback ) {
               
-                $j('<img/>').load(function(){
-                
-                  if( callback ) callback.call();
-                
-                }).attr( 'src', src );
-              
-              },
-              // load the events for the image preview : navigation ,close button, and window resize
-              initImgPreviewEvents    = function() {
-              
-                var $preview  =$j('#ib-img-preview');
-                
-                $preview.find('span.ib-nav-prev').bind('click.ibTemplate', function( event ) {
-                  
-                  navigate( 'prev' );
-                  
-                }).end().find('span.ib-nav-next').bind('click.ibTemplate', function( event ) {
-                  
-                  navigate( 'next' );
-                  
-                }).end().find('span.ib-close').bind('click.ibTemplate', function( event ) {
-                  
-                  closeImgPreview();
-                  
-                });
-                
-                //resizing the window resizes the preview image
-                $j(window).bind('resize.ibTemplate', function( event ) {
-                  
-                  var $largeImg = $preview.children('img.ib-preview-img'),
-                    dim     = getImageDim( $largeImg.attr('src') );
-                  
-                  $largeImg.css({
-                    width : dim.width,
-                    height  : dim.height,
-                    left  : dim.left,
-                    top   : dim.top
-                  })
-                  
-                });
-                
-              },
-              // load the events for the content preview : close button
-              initContentPreviewEvents  = function() {
-              
-                $j('#ib-content-preview').find('span.ib-close').bind('click.ibTemplate', function( event ) {
-                  
-                  closeContentPreview();
-                  
-                });
-                
-              },
-              // navigate the image items in fullscreen mode
-              navigate          = function( dir ) {
-                
-                if( isAnimating ) return false;
-                
-                isAnimating   = true;
-                
-                var $preview  = $j('#ib-img-preview'),
-                  $loading  = $preview.find('div.ib-loading-large');
-                
-                $loading.show();
-                
-                if( dir === 'next' ) {
-                  
-                  ( current === imgItemsCount - 1 ) ? current = 0 : ++current;
-                  
-                }
-                else if( dir === 'prev' ) {
-                  
-                  ( current === 0 ) ? current = imgItemsCount - 1 : --current;
-                  
-                }
-                
-                var $item   = $ibImgItems.eq( current ),
-                  largeSrc  = $item.children('img').data('largesrc'),
-                  description = $item.children('span').text();
-                  
-                preloadImage( largeSrc, function() {
-                  
-                  $loading.hide();
-                  
-                  //get dimentions for the image, based on the windows size
-                  var dim = getImageDim( largeSrc );
-                  
-                  $preview.children('img.ib-preview-img')
-                            .attr( 'src', largeSrc )
-                          .css({
-                    width : dim.width,
-                    height  : dim.height,
-                    left  : dim.left,
-                    top   : dim.top
-                          })
-                          .end()
-                          .find('span.ib-preview-descr')
-                          .text( description );
-                  
-                  $ibWrapper.scrollTop( $item.offset().top )
-                        .scrollLeft( $item.offset().left );
-                  
-                  isAnimating = false;
-                  
-                });
-                
-              },
-              // closes the fullscreen image item
-              closeImgPreview       = function() {
-              
-                if( isAnimating ) return false;
-                
-                isAnimating = true;
-                
-                var $item = $ibImgItems.eq( current );
-                
-                $j('#ib-img-preview').find('span.ib-preview-descr, div.ib-nav, span.ib-close')
-                        .hide()
-                        .end()
-                        .animate({
-                          height  : $item.height(),
-                          top   : $item.offset().top
-                          }, 100, 'easeOutExpo', function() {
-                          
-                          $j(this).animate({
-                            width : $item.width(),
-                            left  : $item.offset().left
-                            }, 100, function() {
-                            
-                             $j(this).fadeOut(function() {isAnimating = false;});
-                            
-                          } );
-                        
-                        });
+              });
               
               },
               // closes the fullscreen content item
-              closeContentPreview     = function() {
-                
-                if( isAnimating ) return false;
-                
+              closeContentPreview     = function() { 
+                if( isAnimating ) return false;   
                 isAnimating = true;
-                
                 var $item = $ibItems.not('.ib-image').eq( current );
-                
                $j('#ib-content-preview').find('div.ib-teaser, div.ib-content-full, span.ib-close')
                             .hide().end().fadeOut(function() {isAnimating = false;});     
               },
@@ -431,8 +427,7 @@ $j = jQuery.noConflict();
               getImageDim  = function( src ) {
                 
                 var img = new Image();
-                img.src  = src;
-                
+                img.src  = src;                
                 var w_w = 583,
                   w_h = 440,
                   r_w = w_h / w_w,
@@ -453,8 +448,7 @@ $j = jQuery.noConflict();
                   new_h = w_w * r_i;
                   new_w = w_w;
                 
-                }
-                
+                }           
                 return {
                   width : new_w,
                   height  : new_h,
@@ -524,7 +518,6 @@ var bdy = $("html, body");
 bdy.animate({ scrollTop: 820}, 'slow');
 });
 
-
 setTimeout(function () {
   var doct = $(document),tyl = $('.tyle');
   tyl.each(function(i) {
@@ -551,7 +544,6 @@ $('#select-state > .dd-select').attr('tabindex', '600');
 $('#select-country > .dd-select').attr('tabindex', '800');
 $('#select-exp-day > .dd-select').attr('tabindex', '1300');
 $('#select-exp-year > .dd-select').attr('tabindex', '1400');
-
 }, 1600);
 
 setTimeout(function () {
@@ -618,25 +610,29 @@ var row = $(this);
 //$('.tyle').slice(0,).repeat().each($).animate({opacity:0},$).animate({opacity:1});
 setInterval(addWave, 13000);
 
-
-
-
 inpt.on("click", function(e) {
   e.preventDefault();
+  $('#blockLink6 a').trigger('click');
   var inval = $.trim($('input#searchTerm').val()).replace(/ /g,''), rawVal = $('#dosearch input#searchTerm').val();
   resu.empty();   
   if(!inval==''){
     var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
-    if($innerListItem.length > 0 && $innerListItem.length < 6){
+    if($innerListItem.length > 0 && $innerListItem.length < 15){
       //console.log($innerListItem);
       resu.empty();ints.val('');
       resu.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ rawVal +"</div><ul id='newList'></ul>");
       $innerListItem.each(function() {
-      var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id'),locat= $(this).find('.ts-city').text();
-     $("#newList").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr first'>"+fullname+"</span> <span class='tileAttr second'>"+locat+"</span></a></li>");
+var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) >= 0), gifAll= ($(this).find('.allgift').text().replace('From: ','').toLowerCase().indexOf(rawVal) >= 0);
+        if(regh2) {
+          var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id'),locat= $(this).find('.ts-city').text();
+          $("#newList").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr first'>"+fullname+"</span> <span class='tileAttr second'>"+locat+"</span></a></li>");
+          }else {
+          var donname = $(this).find('.allgift').text().replace('From: ',''),gotobId = $(this).attr('id'),locatn= $(this).find('.ts-city').text();
+          $("#newList").append("<li><a class='"+gotobId+"' href='#'><span class='tileAttr first'>"+donname+"</span> <span class='tileAttr second'>"+locatn+"</span></a></li>");
+        }
       });
 
-}else if($innerListItem.length > 5){
+}else if($innerListItem.length > 15){
 resu.empty().fadeIn().append("<div class='noresults'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
 }
 else {
