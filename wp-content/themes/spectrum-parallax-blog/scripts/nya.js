@@ -369,25 +369,39 @@ $j(document).ready(function() {
 	function checkOnUserKeyInput() {
 		var userInput = Number($userOtherDonation.val());
 
-		if (regExpNumbers.test(userInput) && userInput >= 25) {			
+		if (regExpNumbers.test(userInput) && userInput >= 25) {		
+			$donationBody.find(".donation-content.other").removeClass("light-red-selected-donation");
+			$donationBody.find(".donation-amount.other").removeClass("dark-red-selected-donation");
+				
 			if(userInput >= 25 && userInput < 100) {						
 				$donationBody.find(".donation-content.other .donation-reference").text("Friend");	
-				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.twenty-five .donation-info").text());
+				$donationBody.find(".donation-content.other .donation-info-other").removeClass("supporter-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").removeClass("transformer-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.twenty-five .donation-info").text()).addClass("friend-donation-padding-top");
 			} else if (userInput >= 100 && userInput < 250) {
 				$donationBody.find(".donation-content.other .donation-reference").text("Supporter");
-				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.one-fifty .donation-info").text());
+				$donationBody.find(".donation-content.other .donation-info-other").removeClass("friend-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").removeClass("transformer-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.one-fifty .donation-info").text()).addClass("supporter-donation-padding-top");
 			} else if (userInput >= 250){
 				$donationBody.find(".donation-content.other .donation-reference").text("Transformer");	
-				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.two-fifty .donation-info").text());
+				$donationBody.find(".donation-content.other .donation-info-other").removeClass("friend-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").removeClass("supporter-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.two-fifty .donation-info").text()).addClass("transformer-donation-padding-top");
 			} else {
 				$donationBody.find(".donation-content.other .donation-reference").text("");	
 				$donationBody.find(".donation-content.other .donation-info-other").text("");
 			}
-		} 
+		} else {
+			$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
+			$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");			
+		}
 		
 		if ($userOtherDonation.val() == "") {
 			$donationBody.find(".donation-content.other .donation-reference").text("");	
 			$donationBody.find(".donation-content.other .donation-info-other").text("");
+			$donationBody.find(".donation-content.other").removeClass("light-red-selected-donation");
+			$donationBody.find(".donation-amount.other").removeClass("dark-red-selected-donation");
 		}
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25

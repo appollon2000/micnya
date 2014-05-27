@@ -10,6 +10,9 @@ body { background: #eeefe9 !important; }
 /* page overlay */
 #page-overlay { background: #000; display: none; height: 10800px; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%; z-index: 10000; }
 .error-input { border: 1px solid red; }
+#donation-body .donation-info-other.friend-donation-padding-top { padding-top: 22px; }
+#donation-body .donation-info-other.supporter-donation-padding-top { padding-top: 18px; }
+#donation-body .donation-info-other.transformer-donation-padding-top { padding-top: 12px; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
