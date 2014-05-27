@@ -209,7 +209,7 @@ body { background: #eeefe9 !important; }
 #mission-block-container #text-top { float: left; height: 840px; margin-top: 250px; width: 100%; }
 #mission-block-container #text-bottom { float: left; width: 100%; }
 #mission-block-container #text-bottom h2 { color: #fff; font-size: 40px; line-height: 60px; text-transform: none; }
-#block7 { background: rgba(28, 76, 89, 0.5); }
+#block7 { background: rgba(255, 255, 255, 0.7) !important; }
 #block7 h2.titleTops { font-family: "Swiss721BT-Black"; width: 1000px; }
 #block7 .story { margin-top: 100px; min-width: 1050px !important; width: 1050px !important; }
 #block8 .story { width: 1050px; }
