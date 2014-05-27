@@ -165,7 +165,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #content #block1 #text-top h2,#mission-block-container #text-bottom h2 {font-size: 26px;margin-bottom: 85px;line-height:26px;}
 #donation-info h2{font-size:26px;line-height:26px;}
 #content #block1 #text-top h3{font-size: 22px;}
-.story, .inside,#mission-block-container,.storycenter div.bg1[style], .story .center{width:96% !important;max-width:96% !important;padding:0 2%;}
+.story, .inside,#mission-block-container,.storycenter div.bg1[style], .story .center,#block9 .story{width:96% !important;max-width:96% !important;padding:0 2%;}
 #mission-block-container #text-top{margin-top:279px;}
 .center.blank{margin:0;padding:0;}
 #content.postshome .post, #content.postshome .page{padding:0;}
@@ -188,6 +188,26 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-container{width: 100%;margin: 100px 0 0;}
 #donation-body .selection{margin:0 0 2px 0;width:100%;height:auto;}
 #donation-body .donation-amount.other p{margin-right:-8px 0 0 -2px;}
+#block8 .float-left.blank{height: 0;margin-bottom: 25px;overflow: hidden;padding-bottom: 56.25%;padding-top: 35px;position: relative;width: 100% !important;}
+#block8 .float-left.blank iframe{height: 100%;left: 0;position: absolute;top: 0;width: 100% !important;}
+#block7 #content.postshome .post, #block7 #content.postshome .page {width:100 !important;}
+#block7 .story{min-width: 100% !important;width:100% !important;}
+#block7 .float-left.blank{width:100% !important;}
+#block7 #explore-further{width:100%;height:auto;}
+#explore-further #explore-further-container .content p{clear:both;}
+#block7 #explore-further #wall-video{margin:0 0 12px;display:block !important;float:none !important;height: 0 !important;margin-bottom: 25px;overflow: hidden;padding-bottom: 56.25%;padding-top: 35px;position: relative !important;width: 100% !important;}
+#block7 #explore-further #wall-video iframe{height: 100%;left: 0;position: absolute;top: 0;width: 100% !important;}
+#header, #footer .main, #footer .secondary, .pagination{width:100% !important;}
+#socialNetworks a{margin:0 -3px 0 0;}
+#footer{z-index:1000 !important;}
+#socialNetworks{margin:0;}
+#footer,#explore-further-discover, #explore-further-find-out{width:100% !important;max-width:1024px;}
+#footer a img{width: 33%;}
+#block9 .story{padding:0 !important;}
+#explore-further-discover{margin-top: 0;}
+#explore-further-donate{width:100%;}
+#explore-further-donate a{width:100%;height:auto;}
+#explore-further-find-out{margin:40px 0 0 !important;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 800px) {
@@ -203,6 +223,8 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-header{height:auto;}
 #donation-header h1{font-size: 26px;padding:15px 0 10px;}
 #donation-header h2{font-size:14px;padding-bottom: 12px;}
+#explore-further-discover, #explore-further-find-out{font-size:38px;}
+#explore-further-discover{margin-top: -12%;}
 }
 @media only screen and (min-width : 1px) and (max-width : 640px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:44px;line-height:44px;}
@@ -218,6 +240,8 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body .donation-amount{height: 100px;padding-left:0}
 #donation-body .donation-content{clear:left;}
 #donation-body .donation-content{width:100%;}
+#explore-further-discover, #explore-further-find-out{font-size:32px;}
+
 }
 @media only screen and (min-width : 1px) and (max-width : 510px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:34px;line-height:34px;}
@@ -230,6 +254,9 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #block5{height: 622px;}
 #block6 .story,#mast,#block6 .story .float-left {min-width: 288px !important;width: 288px !important;}
 #mast{margin-left:-22px;}
+#explore-further h1{font-size:30px;}
+#explore-further #explore-further-container .header h2{font-size:16px;line-height:18px;padding-top: 12px;}
+#explore-further-find-out{margin-top:150px;}
 }
 @media only screen and (min-width : 1px) and (max-width : 400px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:24px;line-height:24px;}
@@ -239,6 +266,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #mission-block-container #text-top{margin-top:240px;}
 #content.postshome .post, #content.postshome .page {min-height: 240px !important;}
 #mast{margin-left: -17px;}
+#explore-further-find-out{margin-top:470px;}
 }
 @media only screen and (min-width : 1px) and (max-width : 1024px) {}
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
