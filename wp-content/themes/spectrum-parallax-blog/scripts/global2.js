@@ -821,4 +821,15 @@ e.preventDefault();
 var self   = $(this), indx  = self.attr('rel');
 $('ul#nav li#'+indx+' a').trigger('click');
 });
+
+$(window).scroll(function(){
+if ($(window).width() <= 1024) {
+
+if( $('#explore-further-donate').is_on_screen() ) {
+     $('#footer').show();
+  } else {
+     $('#footer').hide();
+  }
+}
+});
 });
