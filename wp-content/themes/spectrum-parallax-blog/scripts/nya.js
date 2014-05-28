@@ -28,6 +28,8 @@ $j(document).ready(function() {
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
+		customDonationAmount = 0,
+		isCustomDonation = false,
 		donationAmount,
 		donationLevel,
 		regExpNumbers = /^[0-9]{1,20}$/,
@@ -373,34 +375,47 @@ $j(document).ready(function() {
 	});
 	
 	function checkOnUserKeyInput() {
-		var userInput = Number($userOtherDonation.val());
+		var userInput = $userOtherDonation.val().split("$"),
+			inputToUse;
+			
+		if (userInput[1] == undefined) {
+			inputToUse = Number(userInput[0]);
+		} else {
+			inputToUse = Number(userInput[1]);
+		}
 
-		if (regExpNumbers.test(userInput) && userInput >= 25) {		
+		if (regExpNumbers.test(inputToUse) && inputToUse >= 25) {		
 			$donationBody.find(".donation-content.other").removeClass("light-red-selected-donation");
 			$donationBody.find(".donation-amount.other").removeClass("dark-red-selected-donation");
+			$donationBody.find(".donation-content.other .donation-info").hide();
 				
-			if(userInput >= 25 && userInput < 100) {						
+			if(inputToUse >= 25 && inputToUse < 100) {						
 				$donationBody.find(".donation-content.other .donation-reference").text("Friend");	
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("supporter-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("transformer-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.twenty-five .donation-info").text()).addClass("friend-donation-padding-top");
-			} else if (userInput >= 100 && userInput < 250) {
+				donationLevel = "Friend";
+			} else if (inputToUse >= 100 && inputToUse < 250) {
 				$donationBody.find(".donation-content.other .donation-reference").text("Supporter");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("friend-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("transformer-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.one-fifty .donation-info").text()).addClass("supporter-donation-padding-top");
-			} else if (userInput >= 250){
+				donationLevel = "Supporter";
+			} else if (inputToUse >= 250){
 				$donationBody.find(".donation-content.other .donation-reference").text("Transformer");	
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("friend-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("supporter-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.two-fifty .donation-info").text()).addClass("transformer-donation-padding-top");
+				donationLevel = "Transformer";
 			} else {
 				$donationBody.find(".donation-content.other .donation-reference").text("");	
 				$donationBody.find(".donation-content.other .donation-info-other").text("");
 			}
+			customDonationAmount = inputToUse;
 		} else {
 			$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
-			$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");			
+			$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");	
+			$donationBody.find(".donation-content.other .donation-info").show();		
 		}
 		
 		if ($userOtherDonation.val() == "") {
@@ -408,6 +423,7 @@ $j(document).ready(function() {
 			$donationBody.find(".donation-content.other .donation-info-other").text("");
 			$donationBody.find(".donation-content.other").removeClass("light-red-selected-donation");
 			$donationBody.find(".donation-amount.other").removeClass("dark-red-selected-donation");
+			$donationBody.find(".donation-content.other .donation-info").hide();
 		}
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25
@@ -417,27 +433,27 @@ $j(document).ready(function() {
 		if (amountSelected) {
 			continueToSecondStep();		
 		} else {		
-			var amountRegistered = Number($userOtherDonation.val());
+			var amountRegistered = customDonationAmount;
 				
-			if (!regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
+		//	if (!regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
 				
-				if(amountRegistered >= 25 && amountRegistered < 100) {					
-					donationLevel = "Friend";					
-				} else if (amountRegistered >= 100 && amountRegistered < 250) {
-					donationLevel = "Supporter";
-				} else {
-					donationLevel = "Transformer";
-				}
+		//		if(amountRegistered >= 25 && amountRegistered < 100) {					
+		//			donationLevel = "Friend";					
+		//		} else if (amountRegistered >= 100 && amountRegistered < 250) {
+		//			donationLevel = "Supporter";
+		//		} else {
+		//			donationLevel = "Transformer";
+		//		}
 				
 				donationAmount = "$" + amountRegistered;
 				
 				continueToSecondStep();
-			} else {
-				$donationBody.find(".donation-content.other .donation-info").show();
-				$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
-				$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
+		//	} else {
+		//		$donationBody.find(".donation-content.other .donation-info").show();
+		//		$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
+		//		$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
 				
-			}
+		//	}
 			var finalAmount = $('input#other_amount');
 			finalAmount.val(amountRegistered);
 		}
@@ -681,6 +697,7 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".oval").removeClass("selected");
+		$donationBody.find(".donation-content.other .donation-info").hide();
 		
 		$donationContainer.find("input").removeClass("error-input").val("");
 		$donationContainer.find("#step-6 a.tile").removeClass("selected");
