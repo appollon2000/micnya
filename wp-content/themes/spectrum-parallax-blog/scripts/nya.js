@@ -299,10 +299,16 @@ $j(document).ready(function() {
 		e.preventDefault();
 		
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-		$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
-		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
-		$donationBody.find(".oval").removeClass("selected");
-		$donationContainer.find("input").removeClass('error-input');
+			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
+			$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
+			$donationBody.find(".oval").removeClass("selected");
+			$donationContainer.find("input").removeClass('error-input');
+		
+			resetDonationForm();
+		
+			$donationHeader.animate({
+				height: 128
+			}, 500, "linear");
 
 			$donationHeader.find("h1").fadeOut("slow", function() {
 				$j(this).text("Choose your donation amount");
@@ -599,8 +605,10 @@ $j(document).ready(function() {
 				height: 560
 			}, 500, "linear");
 			
+			$donationNext.removeClass("personalize-tile");
+			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$j(this).text("Personalize your virtual tile");				
+				$j(this).text("Personalize your virtual tile");	
 				$j(this).fadeIn();
 			});
 			
@@ -645,6 +653,17 @@ $j(document).ready(function() {
 				$donationContainer.animate({
 					height: 430
 				}, 500, "linear");
+				
+				$donationHeader.animate({
+					height: 92
+				}, 500, "linear");
+				
+				$donationHeader.find("h1").fadeOut("slow", function () {
+					$j(this).text("Thank you for your contribution");	
+					$j(this).fadeIn();
+				});
+				
+				$donationHeader.find("h2").fadeOut();
 			
 				$donationNext.removeClass("virtual-submit");
 				$donationNext.fadeOut();

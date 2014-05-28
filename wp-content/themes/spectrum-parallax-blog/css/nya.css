@@ -16,7 +16,7 @@ body { background: #eeefe9 !important; }
 /* Removing section headers */
 .blockText { background: transparent !important; }
 .blockText h1, .blockText .meta, .blockText .postmetadata { display: none; }
-#block2, #block3, #block4, #block5, #block9, #block10 { background-position: 50% 0 !important; }
+#block2, #block3, #block4, #block5, #block7, #block9, #block10 { background-position: 50% 0 !important; }
 #arrow-down a { background: url('/wp-content/themes/nya/images/arrow.down.png') no-repeat; display: block; height: 41px; margin: 20px auto; width: 67px; }
 #faq-place-holder { display:none; height: 100%; position: fixed; width:100%; z-index: 10000; }
 #faq-place-holder #holder { margin: 250px auto 0; width: 75%; }
@@ -69,7 +69,7 @@ body { background: #eeefe9 !important; }
 #back-button a { background: url('/wp-content/themes/nya/images/donation.back.btn.png') no-repeat; display: none; float: left; height: 39px; text-indent: -9999px; width: 322px; }
 
 #donation-info { margin-top: 250px; width: 1050px; }
-#donation-info h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 70px; line-height: 74px; text-align: center; }
+#donation-info h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 72px; line-height: 74px; text-align: center; text-transform: none; }
 #donation-info h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 20px; line-height: 30px; margin-top: 20px; text-align: center; text-transform: none; }
 #donation-info #donate-now-button { background: url('/wp-content/themes/nya/images/donate.now.lg.png') no-repeat; float: left; height: 74px; margin: 20px 0 0 34%; text-indent: -9999px; width: 313px; }
 
@@ -95,7 +95,8 @@ body { background: #eeefe9 !important; }
 #next a.complete-tile { background-position: -24px -174px; margin-left: 244px; width: 379px; }
 #next a.personalize-tile { background-position: 0 -233px; margin-left: 227px; width: 420px; }
 #view-your-tile, #donate-another { float: left; height: 58px; margin: 0 auto; }
-#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: left; height: 58px; margin: 0 4px 0 77px; text-indent: -9999px; width: 374px; }
+#view-your-tile { margin-left: 138px; }
+#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: left; height: 58px; margin-right: 4px; text-indent: -9999px; width: 374px; }
 #donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: left; height: 58px; text-indent: -9999px; width: 374px; }
 
 #main { margin: 0 auto; top: -12px; width: 100%; }
@@ -111,7 +112,7 @@ body { background: #eeefe9 !important; }
 #donation-body .oval.selected, #donation-body .oval:hover { background: url('/wp-content/themes/nya/images/donation.selection.on.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
 #donation-body .donation-content { background-color: #03a7c1; float: left; height: 100%; width: 90%; }
 #donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; font-size: 12px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
-#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; height: 60px; padding-left: 26px; width: 14%; }
+#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; font-weight: normal; height: 60px; padding-left: 26px; width: 14%; }
 #donation-body .donation-amount.other { /*font-size: 11px; padding-left: 20px; padding-top: 13px; text-align: center; text-transform: lowercase;*/ }
 #donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
 #donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -8px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
@@ -212,7 +213,7 @@ body { background: #eeefe9 !important; }
 #mission-block-container #text-top { float: left; height: 840px; margin-top: 250px; width: 100%; }
 #mission-block-container #text-bottom { float: left; width: 100%; }
 #mission-block-container #text-bottom h2 { color: #fff; font-size: 40px; line-height: 60px; text-transform: none; }
-#block7 { background: rgba(255, 255, 255, 0.7) !important; }
+
 #block7 h2.titleTops { font-family: "Swiss721BT-Black"; width: 1000px; }
 #block7 .story { margin-top: 100px; min-width: 1050px !important; width: 1050px !important; }
 #block8 .story { width: 1050px; }
@@ -223,7 +224,7 @@ body { background: #eeefe9 !important; }
 #explore-further #explore-further-container .header { background-color: #26343d; height: 50px; text-align: center; }
 #explore-further #explore-further-container .header h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 21px; padding-top: 23px; }
 #explore-further #explore-further-container .content { padding: 15px 40px; }
-#explore-further #explore-further-container .content p { color: #fff; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 14px; font-weight: normal; text-transform: none; }
+#explore-further #explore-further-container .content p { color: #fff; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 14px; font-weight: normal; text-transform: none; width: 50%; }
 #explore-further #explore-further-container .content a { color: #fff; text-decoration: underline; }
 #explore-further #explore-further-container .content a:hover { color: #fff452; }
 
@@ -233,7 +234,7 @@ body { background: #eeefe9 !important; }
 #block8 .story .float-left { margin-top: 150px !important; width: 1050px }
 #explore-further-discover, #explore-further-find-out { color: #fff; font-family: "Swiss721BT-Black"; font-size: 45px; text-align: center; width: 1050px; }
 #explore-further-find-out { margin-bottom: 700px; margin-top: 200px; }
-#explore-further-discover a, #explore-further-find-out a { color: #fff; text-decoration: underline; }
+#explore-further-discover a, #explore-further-find-out a { color: #fff452; text-decoration: underline; }
 #explore-further-discover { margin-top: 200px; }
 #explore-further-donate { text-align: center; width: 1050px; }
 #explore-further-donate a { background: url('/wp-content/themes/spectrum-parallax-blog/images/donate.now.btn.lg.png') no-repeat; color: #fff452; float: left; height: 112px; margin: 0 0 300px 20%; padding-top: 44px; text-indent: -9999px; width: 674px; }
