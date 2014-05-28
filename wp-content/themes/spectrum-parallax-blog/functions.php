@@ -623,5 +623,18 @@ function tia_pings($comment, $args, $depth) {
 <?php
 }
 
+add_action('my_hourly_event', 'do_this_hourly');
+
+function my_activation() {
+	if ( !wp_next_scheduled( 'my_hourly_event' ) ) {
+		wp_schedule_event( current_time( 'timestamp' ), 'hourly', 'my_hourly_event');
+	}
+}
+add_action('wp', 'my_activation');
+
+function do_this_hourly() {
+	$w3_plugin_totalcache->flush_all();
+}
+
 
 ?>

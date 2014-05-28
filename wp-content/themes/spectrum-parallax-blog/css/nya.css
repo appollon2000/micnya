@@ -224,7 +224,8 @@ body { background: #eeefe9 !important; }
 #explore-further #explore-further-container .content a { color: #fff; text-decoration: underline; }
 #explore-further #explore-further-container .content a:hover { color: #fff452; }
 
-#block9 { background: rgba(0, 0, 0, 0.2); padding-top: 160px !important; }
+#block9 { padding-top: 160px !important;background-color: transparent !important; }
+#block10 { background-color: transparent !important; }
 #block9 .story { width: 1050px; }
 #block9 .story .float-left { width: 1050px; }
 #block8 .story .float-left { margin-top: 150px !important; width: 1050px }
