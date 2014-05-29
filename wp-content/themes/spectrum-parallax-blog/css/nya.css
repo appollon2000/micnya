@@ -10,7 +10,7 @@ body { background: #eeefe9 !important; }
 /* page overlay */
 #page-overlay { background: #000; display: none; height: 10800px; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%; z-index: 10000; }
 .error-input { border: 1px solid red; }
-#donation-body .donation-info-other.friend-donation-padding-top { padding-top: 22px; }
+#donation-body .donation-info-other.friend-donation-padding-top { padding-top: 25px; }
 #donation-body .donation-info-other.supporter-donation-padding-top { padding-top: 18px; }
 #donation-body .donation-info-other.transformer-donation-padding-top { padding-top: 12px; }
 /* Removing section headers */
@@ -113,17 +113,17 @@ body { background: #eeefe9 !important; }
 #donation-body .oval.selected.oval-error { background: url('/wp-content/themes/nya/images/donation.selection.error.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
 #donation-body .donation-content { background-color: #03a7c1; float: left; height: 100%; width: 90%; }
 #donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; font-size: 12px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
-#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; font-weight: normal; height: 60px; padding-left: 26px; width: 14%; }
+#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; font-weight: normal; height: 60px; padding-left: 26px; padding-top: 26px; width: 14%; }
 #donation-body .donation-amount.other { /*font-size: 11px; padding-left: 20px; padding-top: 13px; text-align: center; text-transform: lowercase;*/ }
 #donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
-#donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -8px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
-#donation-body .donation-amount.other p.other-input { margin: 4px 0 0 0; }
-#donation-body .donation-content.other .donation-info { color: #fff; display: none; margin: -46px 0 0 125px; padding: 28px 0 0; }
-#donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; text-align: center; width: 22%; }
+#donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -13px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
+#donation-body .donation-amount.other p.other-input { margin: -2px 0 0 0; }
+#donation-body .donation-content.other .donation-info { color: #fff; display: none; margin: -50px 0 0 125px; padding: 28px 0 0; }
+#donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; padding-top: 26px; text-align: center; width: 22%; }
 #donation-body .donation-info, #donation-body .donation-info-other { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
-#donation-body .twenty-five .donation-info { padding-top: 22px; }
+#donation-body .twenty-five .donation-info { padding-top: 25px; }
 #donation-body .one-fifty .donation-info { padding-top: 20px; }
-#donation-body .two-fifty .donation-info { padding-top: 9px; }
+#donation-body .two-fifty .donation-info { padding-top: 13px; }
 
 #step-2 .left-container, #step-2 .right-container { float: left; width: 40%; }
 #step-2 .left-container { margin-left: 15%; }
@@ -250,7 +250,7 @@ body { background: #eeefe9 !important; }
 #donation-widget #widget-donate a { background: url('/wp-content/themes/nya/images/widget.donate.now.png') no-repeat; float: left; height: 39px; margin-top: 2px; text-indent: -9999px; width: 322px; }
 #donation-widget #donation-goal, #donation-widget #amount-donated, #donation-widget #donation-left { background-color: #fff; float: left; height: 100%; text-align: center; padding-top: 10px; width: 32%; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
-#donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; margin-bottom: 3px; }
+#donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
 
 @media screen and (-webkit-min-device-pixel-ratio:0){
 	#content #nav #blockLink1 a { padding-left: 128px !important; }

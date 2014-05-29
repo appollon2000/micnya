@@ -126,6 +126,8 @@ $j(document).ready(function() {
 	
 	$donationContainer.find("input").on("focusout", function() {
 		$j(this).removeClass("focus-in-background");
+		/*$donationBody.find(".other p.other-amount").show();
+		$userOtherDonation.val(""); need to fix this */
 	});
 	
 	$donateNowBtnBottom.on("click", function (e ) {
@@ -441,7 +443,7 @@ $j(document).ready(function() {
 		} else {		
 			var amountRegistered = customDonationAmount;
 				
-			if (!regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
+			if (regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
 				
 		//		if(amountRegistered >= 25 && amountRegistered < 100) {					
 		//			donationLevel = "Friend";					
