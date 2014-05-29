@@ -32,6 +32,7 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
       </div>
     </div>
 		<div id="content" class="postshome clearfix">
+          <div id="wrapHeader">
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
           <div id="donation-widget">
@@ -56,7 +57,7 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
 		  	<div id="back-button"><a href="back">Back</a></div>
 	      </div>
       </div>
-
+</div>
             <!--end post nav -->
         	<?php $i = 1; //Start a counter outside of the loop
         	if(tia_get_option('tia_pages_enabled'))	{

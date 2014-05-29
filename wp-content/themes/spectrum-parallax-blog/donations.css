@@ -8,7 +8,7 @@ width: 97%;}.ts-wrapper{position:relative;width:350px;height:350px;margin:0 auto
 .clozy a{color:#000;} .clozy .pp_close {text-indent:inherit;background: none !important;cursor: pointer;right:inherit;top:inherit;height: auto !important;width: 100px !important;position:absolute;left:50%;margin-left:-36px;width:100px;bottom:0;color:#000;z-index: 5000000;}
 
 
-
+#wrapHeader{width:100%;height:400px;}
 div.honor {padding-top:15px;font-weight: normal;font-size:13px;margin-left:25px;color:#26343d;text-transform:none;}div.categz{text-transform:uppercase;font-size:10px;font-weight:bold;padding:0 0 6px;color:#313e47;margin-left:25px;}div.ts-dates{color:#313e47;margin-left:25px;float:left;clear:left;font-weight: normal;}div.ts-city{font-weight: normal;color:#313e47;float:right;margin-right: 20px;text-transform: none;}
 .ib-teaser{width:350px;text-align:left;margin:0 auto;}a#jpfaq{display:block;margin-top:16px;height:inherit !important;color:#666;font-size:18px;}#inline-8,#faq-container{background:#26343D;color:#fff;width:500px;height:300px;overflow:auto;}
 #tile-donate-btn{width:128px;height:143px;position:absolute;z-index: 10;background-color: #00b1cc;top:0;left:593px;text-align:center;}
@@ -150,6 +150,17 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 .navbar-collapse ul li a {font-weight: bold;background:#26343d;color:#fff;display: block;width:100%;line-height: 20px;margin: 0;padding:10px 30px 10px 0;position: relative;}
 .navbar-collapse ul li a:hover{color: #00B1CC;background:#fff;}
 .center.blank{margin-left:-4%;}
+#wrapHeader {
+    background: none repeat scroll 0 0 #30BDD2;
+    height: 300px;
+    position: fixed;
+    width: 100%;
+    z-index: 500000;
+}
+#content #nav{z-index:80000000;}
+
+
+
 @media only screen and (min-width : 1px) and (max-width : 1024px) {
 ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,#mission-block-container #text-top h3{display:none;}
 #mobNav{display:block;}
@@ -185,9 +196,11 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #mast{margin-left:-22px;}
 #block4{height: 850px;}
 #block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{min-width: 100% !important;width: 100% !important;padding:0% !important;margin-left:0;}
-#donation-container{width: 100%;margin: 100px 0 0;}
-#donation-body .selection{margin:0 0 2px 0;width:100%;height:auto;}
-#donation-body .donation-amount.other p{margin-right:-8px 0 0 -2px;}
+#donation-container{width: 100%;margin: 100px 0 0;height:542px;}
+#donation-body .selection{margin:0 0 2px 0;width:100%;height:60px;position:relative;}
+#donation-body .donation-content{ position: relative;top: -69px;width: 100%;}
+#donation-body .selection a{position: relative;top: 20px;z-index: 50;}
+#donation-body .donation-amount.other p{position:static !important;display: block;margin:0;width:auto;}
 #block8 .float-left.blank{height: 0;margin-bottom: 25px;overflow: hidden;padding-bottom: 56.25%;padding-top: 35px;position: relative;width: 100% !important;}
 #block8 .float-left.blank iframe{height: 100%;left: 0;position: absolute;top: 0;width: 100% !important;}
 #block7 #content.postshome .post, #block7 #content.postshome .page {width:100 !important;}
@@ -213,6 +226,9 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #content #block1 {height: 1020px;max-height: 1020px;min-height: 1020px !important;}
 .secondary p.left, .secondary p.right, #socialNetworks{padding:0 !important;}
 #footer .left{position: absolute;bottom:80%;left:4%;}
+#next a{margin-left:41%;}
+#donation-body{padding-top:12px;}
+#donation-body .donation-amount{padding-left: 0;text-align:center;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 800px) {
