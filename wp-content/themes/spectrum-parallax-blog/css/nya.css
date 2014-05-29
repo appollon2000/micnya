@@ -70,8 +70,8 @@ body { background: #eeefe9 !important; }
 
 #donation-info { margin-top: 250px; width: 1050px; }
 #donation-info h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 72px; line-height: 74px; text-align: center; text-transform: none; }
-#donation-info h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 20px; line-height: 30px; margin-top: 20px; text-align: center; text-transform: none; }
-#donation-info #donate-now-button { background: url('/wp-content/themes/nya/images/donate.now.lg.png') no-repeat; float: left; height: 74px; margin: 20px 0 0 34%; text-indent: -9999px; width: 313px; }
+#donation-info h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 30px; line-height: 30px; margin-top: 40px; text-align: center; text-transform: none; }
+#donation-info #donate-now-button { background: url('/wp-content/themes/nya/images/donate.now.lg.png') no-repeat; float: left; height: 74px; margin: 40px 0 0 34%; text-indent: -9999px; width: 313px; }
 
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input { border: 1px solid red; }
 #links-vertical-connector { background-color: #000; height: 92px; position: fixed; right: 49px; top: 65px; width: 1px; }
@@ -110,6 +110,7 @@ body { background: #eeefe9 !important; }
 #donation-body .selection p { margin: 0; }
 #donation-body .oval { background: url('/wp-content/themes/nya/images/donation.selection.off.png') 19px 19px no-repeat; float: left; height: 20px; padding: 30px; text-indent: -9999px; width: 4%; }
 #donation-body .oval.selected, #donation-body .oval:hover { background: url('/wp-content/themes/nya/images/donation.selection.on.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
+#donation-body .oval.selected.oval-error { background: url('/wp-content/themes/nya/images/donation.selection.error.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
 #donation-body .donation-content { background-color: #03a7c1; float: left; height: 100%; width: 90%; }
 #donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; font-size: 12px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
 #donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; font-weight: normal; height: 60px; padding-left: 26px; width: 14%; }
@@ -117,7 +118,7 @@ body { background: #eeefe9 !important; }
 #donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
 #donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -8px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
 #donation-body .donation-amount.other p.other-input { margin: 4px 0 0 0; }
-#donation-body .donation-content.other .donation-info { display: none; margin-left: 125px; padding: 28px 0 0; }
+#donation-body .donation-content.other .donation-info { color: #fff; display: none; margin: -46px 0 0 125px; padding: 28px 0 0; }
 #donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; text-align: center; width: 22%; }
 #donation-body .donation-info, #donation-body .donation-info-other { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
 #donation-body .twenty-five .donation-info { padding-top: 22px; }
@@ -212,7 +213,7 @@ body { background: #eeefe9 !important; }
 #mission-block-container { color: #fff; font-family: "Swiss721BT-Black"; font-size: 70px; margin-bottom: 300px; text-align: center; width: 1050px; }
 #mission-block-container #text-top { float: left; height: 840px; margin-top: 250px; width: 100%; }
 #mission-block-container #text-bottom { float: left; width: 100%; }
-#mission-block-container #text-bottom h2 { color: #fff; font-size: 40px; line-height: 60px; text-transform: none; }
+#mission-block-container #text-bottom h2 { color: #fff; font-size: 50px; line-height: 60px; text-transform: none; }
 
 #block7 h2.titleTops { font-family: "Swiss721BT-Black"; width: 1000px; }
 #block7 .story { margin-top: 100px; min-width: 1050px !important; width: 1050px !important; }

@@ -165,6 +165,7 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".donation-content").removeClass("light-red-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
+		$donationBody.find(".selection .oval-other").removeClass("oval-error");
 		
 		$("#donation-widget-steps").show();
 		$("#widget-donate a").hide();
@@ -387,6 +388,7 @@ $j(document).ready(function() {
 		if (regExpNumbers.test(inputToUse) && inputToUse >= 25) {		
 			$donationBody.find(".donation-content.other").removeClass("light-red-selected-donation");
 			$donationBody.find(".donation-amount.other").removeClass("dark-red-selected-donation");
+			$donationBody.find(".selection .oval-other").removeClass("oval-error");
 			$donationBody.find(".donation-content.other .donation-info").hide();
 				
 			if(inputToUse >= 25 && inputToUse < 100) {						
@@ -413,8 +415,11 @@ $j(document).ready(function() {
 			}
 			customDonationAmount = inputToUse;
 		} else {
+			$donationBody.find(".selection .oval-other").addClass("oval-error");
 			$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
-			$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");	
+			$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
+			$donationBody.find(".donation-content.other .donation-reference").text("");	
+			$donationBody.find(".donation-content.other .donation-info-other").text("");	
 			$donationBody.find(".donation-content.other .donation-info").show();		
 		}
 		
@@ -423,6 +428,7 @@ $j(document).ready(function() {
 			$donationBody.find(".donation-content.other .donation-info-other").text("");
 			$donationBody.find(".donation-content.other").removeClass("light-red-selected-donation");
 			$donationBody.find(".donation-amount.other").removeClass("dark-red-selected-donation");
+			$donationBody.find(".selection .oval-other").removeClass("oval-error");
 			$donationBody.find(".donation-content.other .donation-info").hide();
 		}
 	}
@@ -435,7 +441,7 @@ $j(document).ready(function() {
 		} else {		
 			var amountRegistered = customDonationAmount;
 				
-		//	if (!regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
+			if (!regExpNumbers.test(amountRegistered) && amountRegistered >= 25) {	
 				
 		//		if(amountRegistered >= 25 && amountRegistered < 100) {					
 		//			donationLevel = "Friend";					
@@ -448,12 +454,12 @@ $j(document).ready(function() {
 				donationAmount = "$" + amountRegistered;
 				
 				continueToSecondStep();
-		//	} else {
-		//		$donationBody.find(".donation-content.other .donation-info").show();
-		//		$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
-		//		$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
+			} else {
+				$donationBody.find(".donation-content.other .donation-info").show();
+				$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
+				$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
 				
-		//	}
+			}
 			var finalAmount = $('input#other_amount');
 			finalAmount.val(amountRegistered);
 		}
