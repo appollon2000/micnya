@@ -126,8 +126,11 @@ $j(document).ready(function() {
 	
 	$donationContainer.find("input").on("focusout", function() {
 		$j(this).removeClass("focus-in-background");
-		/*$donationBody.find(".other p.other-amount").show();
-		$userOtherDonation.val(""); need to fix this */
+		
+		if ($userOtherDonation.val() == "") {
+			$donationBody.find(".other p.other-amount").show();
+			$userOtherDonation.val("");
+		}
 	});
 	
 	$donateNowBtnBottom.on("click", function (e ) {
@@ -167,7 +170,12 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 		$donationBody.find(".donation-content").removeClass("light-red-selected-donation");
 		$donationBody.find(".donation-amount").removeClass("dark-red-selected-donation");
+		$donationBody.find(".donation-content.other .donation-reference").text("");	
+		$donationBody.find(".donation-content.other .donation-info-other").text("");
 		$donationBody.find(".selection .oval-other").removeClass("oval-error");
+		$donationBody.find(".other p.other-amount").show();
+		$donationBody.find(".donation-content.other .donation-info").hide();
+		$userOtherDonation.val("");
 		
 		$("#donation-widget-steps").show();
 		$("#widget-donate a").hide();
@@ -320,7 +328,7 @@ $j(document).ready(function() {
 				$j(this).fadeIn();
 			});
 			
-			$donationHeader.find("h2").text("Together we can create Ocean Wonders: Sharks! and build a new New York Aquarium for generations of curious minds to come.");
+			$donationHeader.find("h2").html("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.");
 			$donationHeader.find("h2").fadeIn();
 			
 			$donationContainer.animate({
@@ -803,7 +811,7 @@ $j(document).ready(function() {
 			infoVerified = true;
 		} 
 
-		return infoVerified;
+		return true;//infoVerified;
 	}
 	
 	function verifyTileInfoEntry () {
