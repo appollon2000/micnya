@@ -504,9 +504,24 @@ colors.on("click", function(e) {
 });
 prevTile.on("click", function(e) {
   e.preventDefault();
-  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), prevContent = $('#WrpopupPrev .prevContent'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span'), txtArea = $('textarea.text-area-message').val();
+  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), prevContent = $('#WrpopupPrev .prevContent'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span'), txtArea = $('textarea.text-area-message').val(),infos=$('#WrpopupPrev .prevAllgift');
   tileLoc.text(vloc);tileDate.text(todayDate);tileFrom.text(vname);prevContent.text(txtArea);
-  if(hLength > 0) {inOf.text('In honor of');tileFname.text(hname);}else {inOf.text('In memory of');tileFname.text(mname);}
+   if(vname.length > 0 && hLength < 1){
+    inOf.text('');
+    tileFname.text(vname);
+    infos.hide();
+  }
+  if(hLength > 0) {
+    inOf.text('In honor of');
+    tileFname.text(hname);
+    infos.show();
+  }
+  if(mname.length > 0){
+    inOf.text('In memory of');tileFname.text(mname);infos.show();
+  }
+
+
+
   Box.show();
 });
 prevClose.on("click", function(e) {

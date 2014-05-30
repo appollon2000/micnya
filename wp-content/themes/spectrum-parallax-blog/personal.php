@@ -17,10 +17,15 @@ $hname = $_POST['hname'];
 $mname = $_POST['mname'];
 $vemail = $_POST['hemail'];
 
-if(strlen(trim($hname))> 0) {
+if(strlen(trim($vname))> 0 && strlen(trim($hname)) <1 ){
+$praiseName = '';
+$praise = 2;
+}
+if(strlen(trim($hname))> 0){
 $praiseName = $hname;
 $praise = 0;
-}else {
+}
+if(strlen(trim($mname))> 0) {
 $praiseName = $mname;
 $praise = 1;
 }
