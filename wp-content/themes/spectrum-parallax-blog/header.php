@@ -110,6 +110,7 @@ if (!$detect->isMobile() && !tia_get_option('tia_scrollEasing_enabled') ) { ?>
 	<script id="contentTmpl" type="text/x-jquery-tmpl"> 
 	<div id="ib-content-preview" class="ib-content-preview">
     <div class="ts-wrapper">
+    <div class="shimclose"><a href="#"></a></div>
     <div class="honor">{{html honor}}</div>
     <div class="ib-teaser" style="display:none;">{{html teaser}}</div>
     <div class="categz">{{html categz}}</div>

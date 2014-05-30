@@ -36,7 +36,7 @@ $j(document).ready(function() {
 		staticBackground = "<div id='static-background'></div><div id='bg-overlay'></div>",
 		pageOverlay = "<div id='page-overlay'></div>",
 		faqPlaceHolder = "<div id='faq-place-holder' class='faq-popup'><div id='holder'></div></div>",
-		verticalLinkConnector = "<div id='links-vertical-connector'></div>",
+		verticalLinkConnector = "<div id='links-vertical-connector' class='opaq'></div>",
 		closeFaq = "<a href='close-faq' id='close-faq'>Close</a>",
 		virtualTileSelection = "memory-oval",
 		tileDonationTriggered = false,

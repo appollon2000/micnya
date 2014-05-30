@@ -1,5 +1,5 @@
 <?php $postType = 'post'; ?>
-	<ul id="nav"> <!-- post nav -->
+	<ul id="nav" class="opaq"> <!-- post nav -->
 <?php if(tia_get_option('tia_reorder_enabled')) {
 		$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 		$perPage = get_option('posts_per_page');
