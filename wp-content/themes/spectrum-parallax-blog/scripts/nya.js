@@ -488,7 +488,7 @@ $j(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationContainer.animate({
-				height: 430
+				height: 470
 			}, 500, "linear");
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
@@ -583,7 +583,7 @@ $j(document).ready(function() {
 			currentDonationStep--;
 			
 			$donationContainer.animate({
-				height: 430
+				height: 470
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
@@ -811,7 +811,7 @@ $j(document).ready(function() {
 			infoVerified = true;
 		} 
 
-		return true;//infoVerified;
+		return infoVerified;
 	}
 	
 	function verifyTileInfoEntry () {

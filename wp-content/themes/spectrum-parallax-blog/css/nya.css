@@ -150,6 +150,7 @@ body { background: #eeefe9 !important; }
 #step-2 input[type="radio"] { opacity: 0; z-index: 9999; }
 #step-2 input[type="radio"]:checked + .radio-overlay { background: url("/wp-content/themes/nya/images/checkbox.png") no-repeat scroll 0 -16px rgba(0, 0, 0, 0); }
 #step-2 .radio-overlay { background: url("/wp-content/themes/nya/images/checkbox.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); display: inline-block; height: 15px; left: -1em; overflow: hidden; position: relative; width: 16px; }
+#step-2 .more-text { color: #fff; float: left; font-family: Arial, Verdana, Helvetica; font-size: 11px; padding: 8px 20% 0; text-align: center; width: 100%; }
 #step-3 #post-transaction { color: #fff; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 13px; line-height: 1.2em; margin: 0 auto; text-align: center; width: 80%; }
 #step-3 #post-transaction span { color: #fff454; font-family: Arial, Verdana, Helvetica, sans-serif; font-weight: bold; }
 
@@ -157,7 +158,8 @@ body { background: #eeefe9 !important; }
 #step-5 .section-container { margin: 0 auto; width: 42%; }
 #step-5 .section-container .section-top { margin-left: 10%; width: 90%; }
 #step-5 p { color: #fff; font-family: "Swiss721BT-Black"; font-size: 13px; margin: 15px 0; }
-#step-5 .section-bottom p { margin-left: 37px; }
+#step-5 .section-bottom p { margin-left: -37px; }
+#step-5 .section-bottom .optional-text { color: #00b1cc; float: left; margin-right: 15px; }
 #step-5 .user-info p { font-weight: normal; margin: 3px 0; }
 #step-5 .user-info input { background: #0895ac; border: 0; color: #000; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 79%; }
 #donation-body #step-5 .selection { margin-left: 0; width: 100%; }
@@ -165,6 +167,7 @@ body { background: #eeefe9 !important; }
 #donation-body #step-5 .oval.selected, #donation-body #step-5 .oval:over { }
 #step-5 .section-bottom .user-info input { margin-left: 37px; width: 70%; }
 #step-5 .section-bottom .selection.bottom { margin-top: 70px; }
+#step-5 .section-bottom p.light-text { font-family: Arial, Verdana, Helvetica !important; margin-top: -4px !important; }
 
 #step-6 .left-container, #step-6 .right-container { float: left; margin: 0 5%; width: 40%; }
 #step-6 .section-container { margin: -30px auto; padding: 0 10%; width: 100%; }
