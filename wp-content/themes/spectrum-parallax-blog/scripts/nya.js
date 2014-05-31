@@ -50,6 +50,7 @@ $j(document).ready(function() {
 	//$main.prepend(pageOverlay);
 	$main.prepend(faqPlaceHolder);
 	$main.find("#nav").before(verticalLinkConnector);
+	$donationBody.find("#accordion").accordion();
 	
 	setFooterFAQ();
 	//resetDonationForm();
@@ -811,7 +812,7 @@ $j(document).ready(function() {
 			infoVerified = true;
 		} 
 
-		return infoVerified;
+		return true;//infoVerified;
 	}
 	
 	function verifyTileInfoEntry () {

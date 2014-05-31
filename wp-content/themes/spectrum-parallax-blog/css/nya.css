@@ -255,6 +255,8 @@ body { background: #eeefe9 !important; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
 #donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
 
+#accordion { background-color: #253640; padding: 5%; position: fixed; top: 50%; width: 50%; }
+
 @media screen and (-webkit-min-device-pixel-ratio:0){
 	#content #nav #blockLink1 a { padding-left: 128px !important; }
 	#content #nav #blockLink5 a { padding-left: 115px !important; }
