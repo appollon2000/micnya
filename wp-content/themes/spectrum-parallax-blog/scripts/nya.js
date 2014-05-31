@@ -1,6 +1,7 @@
 $j = jQuery.noConflict();
 $j(document).ready(function() {
 	var $window = $(window),
+		$body = $(document.body),
 		$main = $j("#main"),
 		$donationContainer = $j("#donation-container"),
 		$donationBody = $j("#donation-body"),
@@ -24,7 +25,8 @@ $j(document).ready(function() {
 		$exploreNav = $("#blockLink7 a"),
 		$welcomeArrow = $("#arrow-down a"),
 		$faqLink = $("#socialNetworks a.subscribe"),
-		$selectedOption = $(".dd-selected");
+		$selectedOption = $(".dd-selected"),
+		$closeFaq;
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
@@ -37,7 +39,6 @@ $j(document).ready(function() {
 		pageOverlay = "<div id='page-overlay'></div>",
 		faqPlaceHolder = "<div id='faq-place-holder' class='faq-popup'><div id='holder'></div></div>",
 		verticalLinkConnector = "<div id='links-vertical-connector' class='opaq'></div>",
-		closeFaq = "<a href='close-faq' id='close-faq'>Close</a>",
 		virtualTileSelection = "memory-oval",
 		tileDonationTriggered = false,
 		animalTileSelected = "anmbg1",
@@ -50,8 +51,9 @@ $j(document).ready(function() {
 	//$main.prepend(pageOverlay);
 	$main.prepend(faqPlaceHolder);
 	$main.find("#nav").before(verticalLinkConnector);
-	$donationBody.find("#accordion").accordion();
-	
+	$main.find("#accordion").accordion();
+	$main.find("#accordion").prepend("<div id='accordion-header'>FAQ</div><a href='close-faq' id='close-faq'>Close</a>");
+	$closeFaq = $("#close-faq");
 	setFooterFAQ();
 	//resetDonationForm();
 	
@@ -77,12 +79,19 @@ $j(document).ready(function() {
 	
 	$selectedOption.on("click", function (e) {
 		$(this).removeClass("error-input");
-	})
+	});
+	
+	$closeFaq.on("click", function (e) {
+		e.preventDefault();
+		
+		$main.find("#accordion").fadeOut();
+	});
 	
 	$faqLink.on("click", function (e) {
 		e.preventDefault();
 
-		if (!isFaqContentActive) {
+		$main.find("#accordion").fadeIn();
+		/*if (!isFaqContentActive) {
 			if (!isFaqContentLoaded) {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
 					isFaqContentLoaded = true;
@@ -109,7 +118,7 @@ $j(document).ready(function() {
 					hideFaqSection();
 				});
 			}
-		}	
+		}*/
 	});
 	
 	$donationInfo.on("click", function (e) {
