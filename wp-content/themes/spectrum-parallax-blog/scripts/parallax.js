@@ -17,6 +17,7 @@ $(document).ready(function() { //when the document is ready...
 	var $window = $(window);
 	var windowHeight = $window.height(); //get the height of the window
 	var positionInWindow = $window.scrollTop();
+	var numberOfContainers = $("#content .parallax-container").length;
 	parallaxHeight = 960;
 	getCurrentPosition();
 	
@@ -63,6 +64,12 @@ $(document).ready(function() { //when the document is ready...
 		}
 	}	
 	
+	function removeBlockOpacity () {
+		for (var i = 2; i <= numberOfContainers; i++ ) {
+			$("#block" + i).css({"opacity" : "1"});
+		}
+	}
+	
 	function getCurrentPosition() {
 		var curPosition = Math.ceil((positionInWindow / parallaxHeight) + 1);
 		
@@ -102,6 +109,7 @@ $(document).ready(function() { //when the document is ready...
 		var pos = $window.scrollTop(); //position of the scrollbar
 		var blockAdjust = null;
 		$("#accordion").hide();
+		removeBlockOpacity();
 		setCurrentPosition();
 		$('.parallax-container').each(function(i) {
 			var blockAdjust = 0;

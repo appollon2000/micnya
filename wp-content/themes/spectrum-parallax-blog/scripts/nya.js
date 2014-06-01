@@ -44,7 +44,8 @@ $j(document).ready(function() {
 		animalTileSelected = "anmbg1",
 		colorTileSelected = "1",
 		isFaqContentLoaded = false,
-		isFaqContentActive = false;
+		isFaqContentActive = false,
+		numberOfContainers = $("#content .parallax-container").length;
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
@@ -85,12 +86,18 @@ $j(document).ready(function() {
 		e.preventDefault();
 		
 		$main.find("#accordion").fadeOut();
+		for (var i = 2; i <= numberOfContainers; i++ ) {
+			$("#block" + i).css({"opacity" : "1"});
+		}
 	});
 	
 	$faqLink.on("click", function (e) {
 		e.preventDefault();
 
 		$main.find("#accordion").fadeIn();
+		for (var i = 2; i <= numberOfContainers; i++ ) {
+			$("#block" + i).css({"opacity" : "0"});
+		}
 		/*if (!isFaqContentActive) {
 			if (!isFaqContentLoaded) {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
@@ -899,5 +906,8 @@ $j(document).ready(function() {
 		amountSelected = false;
 	}
 	
+	function isOn() {
+		console.log("on")
+	}
 	
 });
