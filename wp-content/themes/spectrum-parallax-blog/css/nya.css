@@ -144,6 +144,7 @@ body { background: #eeefe9 !important; }
 #step-2 #select-state .dd-select, #step-2 #select-country .dd-select, #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select { background-color: #0895AC !important; border: 0; border-radius: 0; height: 30px; margin-bottom: 2px; width: 80% !important; }
 #step-2 #select-exp-day { margin-top: 0; width: 75px !important; }
 #step-2 #select-exp-year { margin: -52px 0 0 19%; width: 25% !important; }
+#step-2 #select-exp-year label { float: left; margin: -26px 0 0 78px; width: 150px; }
 /*#step-2 #select-exp-day .dd-select { width: 18% !important; }
 #step-2 #select-exp-year .dd-select { width: 22% !important; }*/
 #step-2 #select-state .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options { border: 0; box-shadow: none; width: 80% !important; }
