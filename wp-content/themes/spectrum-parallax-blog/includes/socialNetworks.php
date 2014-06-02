@@ -1,10 +1,10 @@
 <div id="socialNetworks">
 	
 	<?php if(tia_get_option('tia_facebook')) : ?>
-            <a href="<?php echo tia_get_option('tia_facebook'); ?>" target="_blank" title="on facebook"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/facebook-20.png" alt="facebook" /></a>
+            <a href="<?php echo tia_get_option('tia_facebook'); ?>" target="_blank" title="on facebook"><img class="deskie" src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/facebook-20.png" alt="facebook" /><img class="mobiz" src="<?php bloginfo('template_url'); ?>/images/mobile/fb1.jpg" alt="facebook" /></a>
     <?php endif; ?>
     <?php if(tia_get_option('tia_twitter')) : ?>
-            <a href="<?php echo tia_get_option('tia_twitter'); ?>" target="_blank" title="on twitter"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/twitter-20.png" alt="facebook" /></a>
+            <a href="<?php echo tia_get_option('tia_twitter'); ?>" target="_blank" title="on twitter"><img class="deskie" src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/twitter-20.png" alt="twitter" /><img class="mobiz" src="<?php bloginfo('template_url'); ?>/images/mobile/twt1.jpg" alt="twitter" /></a>
     <?php endif; ?>
     <?php if(tia_get_option('tia_pinterest')) : ?>
             <a href="<?php echo tia_get_option('tia_pinterest'); ?>" title="on Pinterest" id="pinterest"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/pinterest-20.png" alt="pinterest" /></a>
@@ -50,8 +50,8 @@
     <?php endif; ?>
 	<?php $tia_rss = tia_get_option('tia_rss'); ?>
     <?php if($tia_rss) : ?>
-        <a href="<?php echo $tia_rss; ?>" class="subscribe"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/rss-20.png" alt="rss feed" /></a>
+        <a href="<?php echo $tia_rss; ?>" class="subscribe"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/rss-20.png" class="deskie" alt="rss feed" /><img src="<?php bloginfo('template_url'); ?>/images/mobile/faq1.jpg" class="mobiz" alt="rss feed" /></a>
     <?php else : ?>
-        <a href="<?php echo get_bloginfo('rss2_url') ?>" class="subscribe"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/rss-20.png" alt="rss feed" /></a>
+        <a href="<?php echo get_bloginfo('rss2_url') ?>" class="subscribe"><img src="<?php bloginfo('template_url'); ?>/images/icons/socialmedia/rss-20.png" class="deskie" alt="rss feed" /><img src="<?php bloginfo('template_url'); ?>/images/mobile/faq1.jpg" class="mobiz" alt="rss feed" /></a>
     <?php  endif; ?>
 </div>

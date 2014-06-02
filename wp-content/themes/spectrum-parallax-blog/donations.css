@@ -7,7 +7,7 @@ width: 97%;}.ts-wrapper{position:relative;width:350px;height:350px;margin:0 auto
 .faqClose div{color: #C4C6BF;display: block;font: lighter 30px/32px arial,sans-serif;text-align: center;}.fqLeft{float:left;margin-left:12px;}
 .clozy a{color:#000;} .clozy .pp_close {text-indent:inherit;background: none !important;cursor: pointer;right:inherit;top:inherit;height: auto !important;width: 100px !important;position:absolute;left:50%;margin-left:-36px;width:100px;bottom:0;color:#000;z-index: 5000000;}
 
-div.honor {padding-top:15px;font-weight: normal;font-size:13px;margin-left:25px;color:#26343d;text-transform:none;}div.categz{text-transform:uppercase;font-size:10px;font-weight:bold;padding:0 0 6px;color:#313e47;margin-left:25px;}div.ts-dates{color:#313e47;margin-left:25px;float:left;clear:left;font-weight: normal;}div.ts-city{font-weight: normal;color:#313e47;float:right;margin-right: 20px;text-transform: none;}
+div.honor {padding-top:11px;font-weight: normal;font-size:13px;margin-left:25px;color:#26343d;text-transform:none;}div.categz{text-transform:uppercase;font-size:10px;font-family: "Swiss721BT-Black";padding:0 0 6px;color:#313e47;margin-left:25px;}div.ts-dates{color:#313e47;margin-left:25px;float:left;clear:left;font-weight: normal;}div.ts-city{font-weight: normal;color:#313e47;float:right;margin-right: 20px;text-transform: none;}
 .ib-teaser{width:350px;text-align:left;margin:0 auto;}a#jpfaq{display:block;margin-top:16px;height:inherit !important;color:#666;font-size:18px;}#inline-8,#faq-container{background:#26343D;color:#fff;width:500px;height:300px;overflow:auto;}
 #tile-donate-btn{width:128px;height:143px;position:absolute;z-index: 10;background-color: #00b1cc;top:0;left:593px;text-align:center;}
 #tile-donate-btn a{display:block;width:128px;height:143px;color:#fff;text-transform: uppercase;font-weight: bold;padding-top: 47px;font-size: 24px;line-height: 30px;}
@@ -20,7 +20,7 @@ a.sharetwt{background:url(images/icons/icon-twt.png) no-repeat;width:16px;height
 .allgift{float:left;text-transform:none;width:145px;line-height:16px;margin:-15px 0 0 25px;text-align:left;color:#4b5e62;font-size:12px;}
 .iconz {float:right;margin-right:20px;}
 .ib-content-full{position:relative;clear:both;text-align:center;width:350px;margin:0 auto;display:none;text-transform:none;line-height:26px;font-size:20px;color:#fff;padding-top:13px}
-.ib-content-preview .ib-teaser h2{text-transform:uppercase;font-size:22px;font-weight:bold;margin-left:24px;color:#00b1cc}
+.ib-content-preview .ib-teaser h2{text-transform:uppercase;font-size:22px;font-weight:bold;margin-left:24px;color:#00b1cc;padding-top:3px;}
 .tyle .iconz{opacity:0;}
 .headerList {width:100%;padding:20px 0;font-weight:bold;background-color: #192a37;text-transform:uppercase;}
 ul#newList {width:87%;margin: 10px auto 0;list-style:none;display:block;padding:0;}ul#newList li {line-height: 28px;margin:0;float:none;}ul#newList a {color:#DDD;}ul#newList a:hover{color:#fff452;}.noresults {margin-top:30px;font-size:21px;font-weight:bold;line-height: 24px;}
@@ -154,6 +154,7 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #content #nav{z-index:80000000;}
 #donation-widget,#content #nav{top:10px !important;}
 */
+.mobiz{display:none;}
 
 @media only screen and (min-width : 1px) and (max-width : 1024px) {
 ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,#mission-block-container #text-top h3{display:none;}
@@ -175,8 +176,6 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 .center.blank{margin:0;padding:0;}
 #content.postshome .post, #content.postshome .page{padding:0;}
 .secondary p.left, .secondary p.right, #socialNetworks{text-align:left !important;}
-#block2, #block3, #block5, #block9, #block10{background-size: 100% auto;background-position: 50% 115px !important;}
-#block4{background-size: 100% auto;background-position: 50% 210px !important;}
 #mission-block-container #text-top {height: 460px;}
 #content.postshome .post, #content.postshome .page {min-height: 600px !important;}
 #donation-info h1,#donation-info h2{padding:0 3%;}
@@ -188,7 +187,6 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #block6 .float-left.blank{margin-left:0;}
 #block6 .story,#mast,#block6 .story .float-left {min-width: 655px !important;width: 655px !important;}
 #mast{margin-left:-22px;}
-#block4{height: 850px;}
 #block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{min-width: 100% !important;width: 100% !important;padding:0% !important;margin-left:0;}
 #donation-container{width: 100%;margin: 55px 0 0;height:396px;}
 #donation-body .selection{margin:0 0 2px 0;width:100%;height:60px;position:relative;}
@@ -201,7 +199,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #block7 .story{min-width: 100% !important;width:100% !important;}
 #block7 .float-left.blank{width:100% !important;}
 #block7 #explore-further{width:100%;height:auto;}
-#explore-further #explore-further-container .content p{clear:both;}
+#explore-further #explore-further-container .content p{clear:both;width:100%;}
 #block7 #explore-further #wall-video{margin:0 0 12px;display:block !important;float:none !important;height: 0 !important;margin-bottom: 25px;overflow: hidden;padding-bottom: 56.25%;padding-top: 35px;position: relative !important;width: 100% !important;}
 #block7 #explore-further #wall-video iframe{height: 100%;left: 0;position: absolute;top: 0;width: 100% !important;}
 #header, #footer .main, #footer .secondary, .pagination{width:100% !important;}
@@ -219,25 +217,48 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-info{width:100% !important;}
 #content #block1 {height: 1020px;max-height: 1020px;min-height: 1020px !important;}
 .secondary p.left, .secondary p.right, #socialNetworks{padding:0 !important;}
-#footer .left{position: absolute;bottom:80%;left:4%;}
+#footer .left{position: absolute;bottom:90%;left:3%;margin:0;}
 #next a{margin-left:41%;}
 #donation-body{padding-top:20px;}
 #donation-body .donation-amount.other{padding:8px 4% 0 1%;}
 .donation-content.other #donation-body .donation-amount{padding-left: 0;text-align:center;padding-top:0;}
 #donation-body .oval,#donation-body .oval.selected, #donation-body .oval:hover { background: none; height: 60px; width:100%; }
 #wrapHeader {background: none;height:auto;position: static;width:auto;}
+#block2{background-image:none !important;}
+#block2{background:url(images/portico1.jpg) no-repeat !important;background-size:100% !important;background-color:#EDEFE8 !important;}
+#content.postshome #block2.post, #content.postshome #block2.page {height: 100% !important;min-height: 100% !important;padding-bottom: 106%;}
+#block3{background-image:none !important;}
+#block3{background:url(images/portico2.jpg) no-repeat !important;background-size:100% !important;background-color:#EDEFE8 !important;}
+#content.postshome #block3.post, #content.postshome #block3.page {height: 100% !important;min-height: 100% !important;padding-bottom: 140%;}
+#block4{background-image:none !important;}
+#block4{background:url(images/portico3.jpg) no-repeat !important;background-size:100% !important;background-color:#EDEFE8 !important;}
+#content.postshome #block4.post, #content.postshome #block4.page {height: 100% !important;min-height: 100% !important;padding-bottom: 140%;}
+#donation-body .donation-amount.other input{margin-top:8px;}
+#step-5{margin-top:20px;}
+#step-5 .section-bottom .user-info input{margin-left:0;}
+.deskie{display:none;}
+.mobiz{display:block;}
+#footer a img {float: left;width: 33%;margin-right: 0.2%;}
+#footer .left, #footer .left a{color:#fff;}
+.story .float-left, .story .float-right, .story .center{width:100%;}
+}
 
+@media only screen and (min-width : 1px) and (max-width : 825px) {
+#step-2 .left-container, #step-2 .right-container{margin-left:7%;}
+#step-2 .user-info.cc-type > div{width:100%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 800px) {
 .post, .page {background-attachment: scroll;}
 .parallax-container {background-position: center top;}
 #content.postshome .post, #content.postshome .page {min-height: 650px !important;}
+#step-2 .left-container, #step-2 .right-container{width:36%}
+#step-2 #select-exp-day{width:63px !important;}
+#step-2 #select-exp-year{margin-left:21% !important;}
 }
 @media only screen and (min-width : 1px) and (max-width : 769px) {
 #footer .left{margin:-23px 0 0;padding-top:12px;clear:both;width:100%;}
-#block2, #block3, #block5, #block9, #block10{background-size: 100% auto;background-position: 50% 10% !important;}
-#block4{background-size: 100% auto;background-position: 50% 15% !important;}
+#block5, #block9, #block10{background-size: 100% auto;background-position: 50% 10% !important;}
 #mission-block-container #text-top {height: 340px;}
 #donation-header{height:auto;}
 #donation-header h1{font-size: 26px;padding:15px 0 10px;}
@@ -245,6 +266,22 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #explore-further-discover, #explore-further-find-out{font-size:38px;}
 #explore-further-discover{margin-top: -12%;}
 #next a{margin-left:33%;}
+#step-2 .left-container{margin-left:12%;}
+}
+@media only screen and (min-width : 1px) and (max-width : 705px) {
+#step-2 .left-container{margin-left:2%;}
+#step-2 #select-exp-year{width:30% !important;}
+}
+@media only screen and (min-width : 1px) and (max-width : 675px) {
+#step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:120px !important;}
+#step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select{width:56px !important;}
+#step-2 #select-exp-year{margin-left:20%;}
+#donation-container{height:auto !important;}
+#step-2 .left-container, #step-2 .right-container{width:30%;}
+#step-2 .user-info input,#step-2 #select-state, #step-2 #select-country,#step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:133px !important;}
+#step-2 .left-container{margin-left:22%;}
+#step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select{width:64px !important;}
+#step-2 #select-exp-year{margin-left:42% !important;}
 }
 @media only screen and (min-width : 1px) and (max-width : 640px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:44px;line-height:44px;}
@@ -266,8 +303,8 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #next a{margin-left:26%;}
 #donation-body .selection,#donation-body .oval, #donation-body .oval.selected, #donation-body .oval:hover,#donation-body .donation-amount{height:90px;}
 #donation-container{height:484px;}
-#donation-body{margin-top: -18px;}
-#donation-container{height:497px;}
+#donation-body{margin-top: 20px;}
+#donation-body{height:497px;}
 #content.postshome #block5.post, #content.postshome #block5.page {min-height: 690px !important;}
 #donation-body .selection a{top:20px;display:inline-block;float:none;}
 #donation-body .donation-info, #donation-body .donation-info-other{margin-top:-55px;}
@@ -276,10 +313,15 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 @media only screen and (min-width : 1px) and (max-width : 606px) {
 #block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{margin-left:-1%;}
 #next a{margin-left:22%;}
+#step-2 .left-container{margin-left:8%;}
+#step-2 .left-container, #step-2 .right-container{width:40%;}
+#donation-header h1{font-size:20px;}
 }
 @media only screen and (min-width : 1px) and (max-width : 520px) {
 #donation-container{height:518px;}
 #content.postshome #block5.post, #content.postshome #block5.page {min-height: 720px !important;}
+#step-2 .left-container{margin-left:5%;}
+#step-2 .left-container, #step-2 .right-container{width:30%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 510px) {
@@ -312,6 +354,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body .donation-content{top:-125px;}
 #donation-body .donation-info, #donation-body .donation-info-other{margin-top:-87px;margin-left:19.5%;}
 #donation-body .donation-amount.other p{font-size:10px;}
+#step-3 #post-transaction{margin-top:50px;}
 }
 @media only screen and (min-width : 1px) and (max-width : 400px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:24px;line-height:24px;}
@@ -325,6 +368,14 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #explore-further-discover, #explore-further-find-out{font-size:28px;}
 #content.postshome #block9.post, #content.postshome #block9.page,#content.postshome #block10.post, #content.postshome #block10.page {min-height: 500px !important;}
 #next a{margin-left:9%;}
+#step-2 .user-info input, #step-2 #select-state, #step-2 #select-country, #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:100px !important;font-size:11px;}
+#step-2 .user-info label{font-size:11px;}
+#step-2 .user-info.cc-type label {display: inline-block;margin-left: -5px;width: 124px;}
+#step-2 #select-exp-day .dd-select{width:42px !important;}
+#donation-body{height:555px;}
+#step-2 #select-exp-year{margin-left:52% !important;}
+#step-2 #select-exp-year .dd-select{width:54px !important;}
+#donation-header h1{font-size:14px;}
 }
 @media only screen and (min-width : 1px) and (max-width : 370px) {
 #donation-container{height:700px;}
