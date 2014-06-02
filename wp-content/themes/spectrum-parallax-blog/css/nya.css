@@ -255,6 +255,14 @@ body { background: #eeefe9 !important; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
 #donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
 
+#accordion { background-color: #1e4b58; display: none; padding: 7% 5% 4%; position: fixed; top: 30%; width: 1050px; }
+#accordion-header { background: #253640; color: #fff; font-size: 25px; font-family: "Swiss721BT-Black"; height: 70px; left: 0; padding-top: 20px; position: absolute; text-align: center; top: 0; width: 100%; }
+#close-faq { background: url('/wp-content/themes/nya/images/close.faq.btn.sm.png') no-repeat; height: 19px; position: absolute; right: 10px; text-indent: -9999px; top: 10px; width: 19px; }
+.ui-accordion .ui-accordion-content { height: auto !important; }
+.ui-accordion .ui-accordion-header { border: 0 !important; border-radius: 0; text-transform: uppercase; }
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { background: #00b1cc !important; border: 0 !important; }
+.ui-widget-content { background: transparent !important; border: 0 !important; color: #fff !important; }
+.ui-widget-content h2 { color: #fff452; }
 @media screen and (-webkit-min-device-pixel-ratio:0){
 	#content #nav #blockLink1 a { padding-left: 128px !important; }
 	#content #nav #blockLink5 a { padding-left: 115px !important; }
