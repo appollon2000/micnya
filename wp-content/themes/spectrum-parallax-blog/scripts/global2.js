@@ -486,7 +486,7 @@ Template  = (function() {
           })();
         
         Template.init();
-ctdn.countdown({until: new Date(2014, 5 - 1, 30, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
+ctdn.countdown({until: new Date(2014, 6 - 1, 16, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
 animals.on("click", function(e) {
   e.preventDefault();
   var that = $(this),rel = that.attr('rel'),dat = that.attr('data'), icz = that.attr('data-icon'), motif = $('#WrpopupPrev-box #WrpopupPrev');
@@ -899,6 +899,34 @@ if ($(window).width() > 1024) {
 });
 timeWave();
 });
+$(window).resize(function(){
+if ($(window).width() <= 675) {
+$('#donation-container').addClass('moheight');
+$('#block5').find('#next a').on("click", function(e) {
+ e.preventDefault();
+ $('#donation-container').addClass('moheight2');
+$('#block5').addClass('boheight');
+});
+}
+if ($(window).width() > 675) {
+$('#donation-container').removeClass('moheight');
+$('#block5').removeClass('boheight');
+ $('#donation-container').removeClass('moheight2');
+}
+});
+if ($(window).width() <= 675) {
+$('#donation-container').addClass('moheight');
+$('#block5').find('#next a').on("click", function(e) {
+ e.preventDefault();
+ $('#donation-container').addClass('moheight2');
+ $('#block5').addClass('boheight');
+});
+}
+if ($(window).width() > 675) {
+$('#donation-container').removeClass('moheight');
+$('#donation-container').removeClass('moheight2');
+$('#block5').removeClass('boheight');
+}
 
 //(function( $ ) {
 //  $(function() {

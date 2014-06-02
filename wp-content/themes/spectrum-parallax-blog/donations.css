@@ -173,6 +173,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-info h2{font-size:26px;line-height:26px;}
 #content #block1 #text-top h3{font-size: 22px;}
 .story, .inside,#mission-block-container,.storycenter div.bg1[style], .story .center,#block9 .story,#block10 .float-left.blockText,#block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center,#block5 .center.blank{width:96% !important;max-width:96% !important;padding:0 2%;}
+#block9 .story .center.blockText {margin-left:-3%;}
 #mission-block-container #text-top{margin-top:279px;}
 .center.blank{margin:0;padding:0;}
 #content.postshome .post, #content.postshome .page{padding:0;}
@@ -242,11 +243,17 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #footer a img {float: left;width: 33%;margin-right: 0.2%;}
 #footer .left, #footer .left a{color:#fff;}
 .story .float-left, .story .float-right, .story .center{width:100%;}
+#step-3 #post-transaction{margin-top:50px;}
+#next a.personalize-tile{margin-left:2%;}
+#step-5 .section-container,#step-5 .user-info input,#step-5 .section-bottom .user-info input{width:100%;}
+#step-5 .section-container .section-top,#step-5 .section-container .section-bottom {margin-left: 3%;width: 92%;}
+#step-5 .section-container .section-bottom > .user-info{margin-top:-16%;}
+#step-5 .section-bottom p{margin-left: 0;}
+#step-2 .user-info.cc-type > div{width:100%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 825px) {
 #step-2 .left-container, #step-2 .right-container{margin-left:7%;}
-#step-2 .user-info.cc-type > div{width:100%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 800px) {
@@ -277,12 +284,22 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:120px !important;}
 #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select{width:56px !important;}
 #step-2 #select-exp-year{margin-left:20%;}
-#donation-container{height:auto !important;}
-#step-2 .left-container, #step-2 .right-container{width:30%;}
-#step-2 .user-info input,#step-2 #select-state, #step-2 #select-country,#step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:133px !important;}
-#step-2 .left-container{margin-left:22%;}
+#donation-container{height:398px;}
+#donation-container.moheight{height:398px !important;}
+#donation-container.moheight.moheight2{height:800px !important;}
+#step-2 .left-container, #step-2 .right-container,.user-info{width:100%;clear:left;}
+#step-2 .user-info input{width:96% !important;}
+#step-2 #select-state, #step-2 #select-country,#step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:98% !important;}
+#step-2 .left-container, #step-2 .right-container{margin-left:2%;}
 #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select{width:64px !important;}
-#step-2 #select-exp-year{margin-left:42% !important;}
+#step-2 #select-exp-year{margin:-53px 0 0 11% !important;}
+#step-2 .user-info .cvv{width:64px !important;}
+#content.postshome #block5.post, #content.postshome #block5.page{min-height:700px !important;}
+#content.postshome #block5.post.boheight, #content.postshome #block5.page.boheight{min-height:1000px !important;}
+#donation-body .donation-amount.other input{margin:8px 0 0 3%;}
+#step-2 #select-state .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options{width:98% !important;}
+#step-2 #select-exp-year .dd-options{width:32% !important;}
+#next a{margin-left:30%;}
 }
 @media only screen and (min-width : 1px) and (max-width : 640px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:44px;line-height:44px;}
@@ -296,33 +313,27 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body .donation-reference{padding:20px 12px 0 12px;text-align:left;}
 #donation-body .donation-info, #donation-body .donation-info-other{clear:left;margin:-61px 0 0 16.5%;padding:0 0 8px 0 !important;}
 #donation-body .donation-amount{height: 100px;padding-left:0;text-align:center;}
-#donation-body .donation-content{clear:left;}
-#donation-body .donation-content{width:100%;}
+#donation-body .donation-content{clear:left;width:100%;}
 #explore-further-discover, #explore-further-find-out{font-size:32px;}
 #explore-further-find-out{margin:0 !important;}
 #block7{padding-bottom:50px !important;}
 #next a{margin-left:26%;}
 #donation-body .selection,#donation-body .oval, #donation-body .oval.selected, #donation-body .oval:hover,#donation-body .donation-amount{height:90px;}
 #donation-container{height:484px;}
-#donation-body{margin-top: 20px;}
-#donation-body{height:497px;}
-#content.postshome #block5.post, #content.postshome #block5.page {min-height: 690px !important;}
+#donation-body{margin-top: 0;}
 #donation-body .selection a{top:20px;display:inline-block;float:none;}
 #donation-body .donation-info, #donation-body .donation-info-other{margin-top:-55px;}
+#content.postshome #block5.post, #content.postshome #block5.page{min-height:700px !important;}
+#donation-container.moheight{height:528px !important;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 606px) {
-#block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{margin-left:-1%;}
 #next a{margin-left:22%;}
-#step-2 .left-container{margin-left:8%;}
-#step-2 .left-container, #step-2 .right-container{width:40%;}
 #donation-header h1{font-size:20px;}
+#explore-further #explore-further-container .header h2{font-size:16px;padding-top:16px;}
 }
 @media only screen and (min-width : 1px) and (max-width : 520px) {
-#donation-container{height:518px;}
-#content.postshome #block5.post, #content.postshome #block5.page {min-height: 720px !important;}
-#step-2 .left-container{margin-left:5%;}
-#step-2 .left-container, #step-2 .right-container{width:30%;}
+#step-2 #select-exp-year {margin: -52px 0 0 16% !important;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 510px) {
@@ -332,7 +343,6 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #content #block1 #text-top h3{font-size: 15px;}
 #mission-block-container #text-top{margin-top:254px;}
 #content #block1 #text-top h1 {margin-bottom: 60px;}
-#content.postshome .post, #content.postshome .page {min-height: 290px !important;}
 #block5{height: 622px;}
 #block6 .story,#mast,#block6 .story .float-left {min-width: 288px !important;width: 288px !important;}
 #mast{margin-left:-22px;}
@@ -356,6 +366,8 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body .donation-info, #donation-body .donation-info-other{margin-top:-87px;margin-left:19.5%;}
 #donation-body .donation-amount.other p{font-size:10px;}
 #step-3 #post-transaction{margin-top:50px;}
+#step-2 #select-exp-year {margin: -52px 0 0 19% !important;}
+#donation-container.moheight {height: 680px !important;}
 }
 @media only screen and (min-width : 1px) and (max-width : 400px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:24px;line-height:24px;}
@@ -363,20 +375,14 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-info h2{font-size:15px;line-height:15px;}
 #content #block1 #text-top h3{font-size: 13px;}
 #mission-block-container #text-top{margin-top:240px;}
-#content.postshome .post, #content.postshome .page {min-height: 240px !important;}
 #mast{margin-left: -17px;}
 #explore-further-find-out{margin-top:470px;}
 #explore-further-discover, #explore-further-find-out{font-size:28px;}
-#content.postshome #block9.post, #content.postshome #block9.page,#content.postshome #block10.post, #content.postshome #block10.page {min-height: 500px !important;}
-#next a{margin-left:9%;}
-#step-2 .user-info input, #step-2 #select-state, #step-2 #select-country, #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:100px !important;font-size:11px;}
-#step-2 .user-info label{font-size:11px;}
-#step-2 .user-info.cc-type label {display: inline-block;margin-left: -5px;width: 124px;}
-#step-2 #select-exp-day .dd-select{width:42px !important;}
-#donation-body{height:555px;}
-#step-2 #select-exp-year{margin-left:52% !important;}
-#step-2 #select-exp-year .dd-select{width:54px !important;}
+#next a{margin-left:7%;}
+#step-2 .user-info input, #step-2 #select-state, #step-2 #select-country, #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{font-size:11px;}
+#step-2 .user-info label{font-size:11px;}}
 #donation-header h1{font-size:14px;}
+#step-2 #select-exp-year {margin: -52px 0 0 27% !important;}
 }
 @media only screen and (min-width : 1px) and (max-width : 370px) {
 #donation-container{height:700px;}
