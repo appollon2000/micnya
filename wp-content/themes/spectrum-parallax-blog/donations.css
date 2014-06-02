@@ -99,9 +99,10 @@ h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
 #popupPrev {height: 250px;width: 250px;position: relative;}
 .prevHonor {color: #26343D;font-size: 13px;font-weight: normal;margin-left: 25px;padding-top: 15px;text-transform: none;}
 .prevName{margin: 0 auto;text-align: left;line-height:20px;width: 250px;}.prevName h2 {color: #00B1CC;font-size: 22px;font-family: "Arial";font-weight: bold;margin-left: 25px;text-transform: uppercase;padding-top:4px;}
-.prevCategz {color: #313E47;font-size: 10px;margin-left: 25px;padding: 0 0 6px;text-transform: uppercase;}
+.prevCategz {color: #313E47;font-size: 10px;margin-left: 25px;padding: 3px 0 6px;text-transform: uppercase;font-family: "Swiss721BT-Black";}
 .prevDates {clear: left;color: #313E47;float: left;font-weight: normal;margin-left: 25px;}
 .prevCity {color: #313E47;float: right;font-weight: normal;margin-right: 20px;text-transform: none;}
+.prevIconz a{cursor:default !important;}
 .prevSocialz {bottom: 4px;clear: both;height: 22px;left: 0;position: absolute;width: 100%;z-index: 2;}
 .prevAllgift{color: #4B5E62;float: left;font-size: 12px;line-height: 16px;margin: -15px 0 0 25px;text-align: left;text-transform: none;width: 145px;}
 .prevIconz {float: right;margin-right: 20px;}
