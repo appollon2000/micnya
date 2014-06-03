@@ -537,12 +537,12 @@ clkDonate.on("click", function(e) {
   e.preventDefault();
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
-trigLink.trigger('click');
+$("html, body").animate({ scrollTop: $("#block5").offset().top });
 setTimeout(function () {
 maindonBtn.trigger('click');
 }, 1400);
 }else {
-  trigLink.trigger('click');
+  $("html, body").animate({ scrollTop: $("#block5").offset().top });
 }
 });
 
