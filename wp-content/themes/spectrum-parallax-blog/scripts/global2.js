@@ -590,7 +590,7 @@ setTimeout(function () {
       var imagex = $(this), imgOriginal = imagex.data('original');
       $(imagex).attr('src', imgOriginal);
   });
-}, 15000);
+}, 8000);
 
 function addWave() {
 var wrid = $('#ib-main-wrapper'),parz = $('div.tyle', wrid);
