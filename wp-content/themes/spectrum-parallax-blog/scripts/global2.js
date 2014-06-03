@@ -50,7 +50,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3);
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),inpt2=$('#searchGo2'),resu=$('#results'),resu2=$('#results2'),ints=$('input#searchTerm'),ints2=$('input#searchTerm2'),formz=$('form#searchus'),formz2=$('form#searchus2'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3);
 
 $j = jQuery.noConflict();
 $(function() {
@@ -537,12 +537,12 @@ clkDonate.on("click", function(e) {
   e.preventDefault();
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
-trigLink.trigger('click');
+$("html, body").animate({ scrollTop: $("#block5").offset().top });
 setTimeout(function () {
 maindonBtn.trigger('click');
 }, 1400);
 }else {
-  trigLink.trigger('click');
+  $("html, body").animate({ scrollTop: $("#block5").offset().top });
 }
 });
 
@@ -691,9 +691,61 @@ inpt.trigger('click');
 }
 });
 
+inpt2.on("click", function(e) {
+  e.preventDefault();
+  var inval = $.trim($('input#searchTerm2').val()).replace(/ /g,''), rawVal = $('#dosearch2 input#searchTerm2').val();
+  resu2.empty();   
+  if(!inval==''){
+    var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
+    if($innerListItem.length > 0 && $innerListItem.length < 15){
+      //console.log($innerListItem);
+      resu2.empty();ints2.val('');
+      resu2.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ rawVal +"</div><ul id='newList2'></ul>");
+      $innerListItem.each(function() {
+var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) >= 0), gifAll= ($(this).find('.allgift').text().replace('From: ','').toLowerCase().indexOf(rawVal) >= 0);
+        if(regh2) {
+          var fullname = $(this).find('.ib-teaser h2').text(),gotoId = $(this).attr('id'),locat= $(this).find('.ts-city').text();
+          $("#newList2").append("<li><a class='"+gotoId+"' href='#'><span class='tileAttr first'>"+fullname+"</span> <span class='tileAttr second'>"+locat+"</span></a></li>");
+          }else {
+          var donname = $(this).find('.allgift').text().replace('From: ',''),gotobId = $(this).attr('id'),locatn= $(this).find('.ts-city').text();
+          $("#newList2").append("<li><a class='"+gotobId+"' href='#'><span class='tileAttr first'>"+donname+"</span> <span class='tileAttr second'>"+locatn+"</span></a></li>");
+        }
+      });
+
+}else if($innerListItem.length > 15){
+resu2.empty().fadeIn().append("<div class='noresults'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
+}
+else {
+resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
+}
+
+}else {
+resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
+}
+});
+
+formz2.keypress( function(e) {
+var code = e.keyCode || e.which;
+if( code === 13 ) {
+e.preventDefault();
+inpt2.trigger('click');
+}
+});
+
 $(document).on('click', 'ul#newList li a', function (e) {
  e.preventDefault();
 var mid = $(this).attr('class'),targz = $('#'+mid),mainFrame = $('#ib-main-wrapper'),rez=$('#results');
+rez.fadeOut(800, function() {
+mainFrame.animate({
+scrollTop: 0 + targz.position().top,scrollLeft:0 + targz.position().left
+}, 2300, function() {
+targz[0].click();
+});
+});
+});
+$(document).on('click', 'ul#newList2 li a', function (e) {
+ e.preventDefault();
+var mid = $(this).attr('class'),targz = $('#'+mid),mainFrame = $('#ib-main-wrapper'),rez=$('#results2');
 rez.fadeOut(800, function() {
 mainFrame.animate({
 scrollTop: 0 + targz.position().top,scrollLeft:0 + targz.position().left
