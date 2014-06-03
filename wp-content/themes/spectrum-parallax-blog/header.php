@@ -1,5 +1,9 @@
+<?php
+	include 'scripts/Mobile_Detect.php';
+	$detect = new Mobile_Detect();
+?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); if($detect->isMobile()) {echo ' class="mozyy"';} ?>>
 <head profile="http://gmpg.org/xfn/11">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
@@ -23,8 +27,6 @@
 	<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script> -->
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery-1.11.0.min.js"></script>
 	<?php
-	include 'scripts/Mobile_Detect.php';
-	$detect = new Mobile_Detect();
 
 	if (!is_home() && !$detect->isMobile()) { ?>
 	<script type="text/javascript">
@@ -124,7 +126,7 @@ if (!$detect->isMobile() && !tia_get_option('tia_scrollEasing_enabled') ) { ?>
 	</div>
 </script>
 </head>
-<body <?php body_class(tia_get_option('tia_theme_color')." ".tia_get_option('tia_theme_bkg')); if($detect->isMobile()) {echo ' mozyy';} ?> id="desk">
+<body <?php body_class(tia_get_option('tia_theme_color')." ".tia_get_option('tia_theme_bkg')); ?> id="desk">
 <div id="container">
     <div id="headerBar" class="navbar navbar-default">
         <div id="header" class="navbar-inner navbar-header">
