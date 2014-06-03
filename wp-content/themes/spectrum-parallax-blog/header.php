@@ -124,7 +124,7 @@ if (!$detect->isMobile() && !tia_get_option('tia_scrollEasing_enabled') ) { ?>
 	</div>
 </script>
 </head>
-<body <?php body_class(tia_get_option('tia_theme_color')." ".tia_get_option('tia_theme_bkg')); ?> id="desk">
+<body <?php body_class(tia_get_option('tia_theme_color')." ".tia_get_option('tia_theme_bkg')); if($detect->isMobile()) {echo ' mozyy';} ?> id="desk">
 <div id="container">
     <div id="headerBar" class="navbar navbar-default">
         <div id="header" class="navbar-inner navbar-header">
