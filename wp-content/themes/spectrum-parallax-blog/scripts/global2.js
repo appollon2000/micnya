@@ -834,7 +834,7 @@ if( $('#mast').length > 0 ) { // if target element exists in DOM
   }
 }
 $(window).scroll(function(){ // bind window scroll event
-
+var mozyy = $('html.mozyy'),scrolled = $(window).scrollTop();;
   if( $('#mast').length > 0 ) { // if target element exists in DOvar opaq = $(".opaq");M
     if( $('#mast').is_on_screen() ) { // if target element is visible on screen after DOM loaded
       tgHide.addClass('togHide');
@@ -842,6 +842,13 @@ $(window).scroll(function(){ // bind window scroll event
       tgHide.removeClass('togHide');
   }
   }
+  if(scrolled >= 280) {
+    $('#donation-widget #widget-donate').addClass('dbb');
+  }
+  else {
+    $('#donation-widget #widget-donate').removeClass('dbb');
+  }
+
 });
 $("html, body").animate({ scrollTop:0 }, 500, function() {
   var bl6 = $('#block6');
