@@ -71,7 +71,7 @@ if (!$detect->isMobile()) { ?>
 			setTopMargin();
 			jQuery("#accordion").accordion({autoHeight: false, collapsible: true, active: false}).css("height","auto");
 			$(window).resize(function() { setTopMargin(); });
-			Touche(document.querySelector('div.tyle')).on('click', handleClick);
+			Touche(document.querySelector('div.tyle img')).on('click', handleClick);
 		});
 	</script>
 
