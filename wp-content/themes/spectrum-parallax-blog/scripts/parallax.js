@@ -108,8 +108,8 @@ $(document).ready(function() { //when the document is ready...
 	function Move() {
 		var pos = $window.scrollTop(); //position of the scrollbar
 		var blockAdjust = null;
-		$("#accordion").hide();
-		removeBlockOpacity();
+		//$("#accordion").hide();
+		//removeBlockOpacity();
 		setCurrentPosition();
 		$('.parallax-container').each(function(i) {
 			var blockAdjust = 0;

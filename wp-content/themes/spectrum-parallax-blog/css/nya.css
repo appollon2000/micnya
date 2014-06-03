@@ -129,6 +129,7 @@ body { background: #eeefe9 !important; }
 #step-2 .left-container { margin-left: 15%; }
 #step-2 .user-info input { background-color: #0895ac; border: 0; color: #000; margin-bottom: 2px; width: 80%; }
 #step-2 .user-info input { background-color: #0895ac; border: 0; color: #000; height: 30px; margin-bottom: 2px; padding-left: 1%; width: 277px; }
+#step-2 .user-info #donor-email-repeat { margin-bottom: 10px; }
 #step-2 .user-info .cvv { width: 17%; }
 #step-2 .user-info label { color: #fff; margin-left: 5px; }
 #step-2 .user-info.cc-type { width: 80%; }
@@ -136,15 +137,15 @@ body { background: #eeefe9 !important; }
 #step-2 .user-info.cc-type label { margin-left: 0; }
 #step-2 .user-info.cc-type label.error-label { color: red; }
 #step-2 .user-info.cc-type input { float: left; height: 16px !important; overflow: hidden; padding-left: 0; width: 15px !important; }
-#step-2 #select-state, #step-2 #select-country { margin-top: 0; width: 346px !important; }
+#step-2 #select-state, #step-2 #select-country { margin-top: 0; width: 347px !important; }
 #step-2 #select-state a, #step-2 #select-country a, #step-2 #select-exp-day a, #step-2 #select-exp-year a { color: #000; padding-left: 4px; text-transform: normal !important; }
 #step-2 #select-state .dd-selected-text { text-transform: normal !important; }
 #step-2 #select-state ul li, #step-2 #select-country ul li, #step-2 #select-exp-day ul li, #step-2 #select-exp-year ul li { float: left; margin: 0; padding: 0; width: 100% }
-#step-2 #select-state { margin-bottom: -8px; }
+#step-2 #select-state {}
 #step-2 #select-state .dd-select, #step-2 #select-country .dd-select, #step-2 #select-exp-day .dd-select, #step-2 #select-exp-year .dd-select { background-color: #0895AC !important; border: 0; border-radius: 0; height: 30px; margin-bottom: 2px; width: 80% !important; }
-#step-2 #select-exp-day { margin-top: 0; width: 75px !important; }
-#step-2 #select-exp-year { margin: -52px 0 0 19%; width: 25% !important; }
-#step-2 #select-exp-year label { float: left; margin: -26px 0 0 78px; width: 150px; }
+#step-2 #select-exp-day { margin-top: 0; width: 74px !important; }
+#step-2 #select-exp-year { margin: -52px 0 0 18%; width: 25% !important; }
+#step-2 label[for="expiration-date"] { float: left; margin: -26px 0 0 138px; width: 150px; }
 /*#step-2 #select-exp-day .dd-select { width: 18% !important; }
 #step-2 #select-exp-year .dd-select { width: 22% !important; }*/
 #step-2 #select-state .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options { border: 0; box-shadow: none; width: 80% !important; }
@@ -152,6 +153,7 @@ body { background: #eeefe9 !important; }
 #step-2 input[type="radio"]:checked + .radio-overlay { background: url("/wp-content/themes/nya/images/checkbox.png") no-repeat scroll 0 -16px rgba(0, 0, 0, 0); }
 #step-2 .radio-overlay { background: url("/wp-content/themes/nya/images/checkbox.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0); display: inline-block; height: 15px; left: -1em; overflow: hidden; position: relative; width: 16px; }
 #step-2 .more-text { color: #fff; float: left; font-family: Arial, Verdana, Helvetica; font-size: 11px; padding: 8px 20% 0; text-align: center; width: 100%; }
+#step-2 p { margin: 0; }
 #step-3 #post-transaction { color: #fff; font-family: Arial, Verdana, Helvetica, sans-serif; font-size: 13px; line-height: 1.2em; margin: 0 auto; text-align: center; width: 80%; }
 #step-3 #post-transaction span { color: #fff454; font-family: Arial, Verdana, Helvetica, sans-serif; font-weight: bold; }
 
@@ -269,4 +271,6 @@ body { background: #eeefe9 !important; }
 	#content #nav #blockLink5 a { padding-left: 115px !important; }
 	#content #nav #blockLink6 a { padding-left: 22px !important; }
 	#content #nav #blockLink7 a { padding-left: 90px !important; }
+	#step-2 #select-state, #step-2 #select-country { width: 346px !important; }
+	#step-2 #select-exp-day { width: 75px !important; }
 }

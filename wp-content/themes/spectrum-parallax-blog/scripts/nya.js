@@ -139,6 +139,7 @@ $j(document).ready(function() {
 	
 	$donationContainer.find("input").on("focusin", function() {
 		$j(this).addClass("focus-in-background");
+		$j(this).val("$");
 	});
 	
 	$donationContainer.find("input").on("focusout", function() {

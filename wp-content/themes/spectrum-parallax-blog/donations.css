@@ -406,7 +406,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #step-2 .user-info input, #step-2 #select-state, #step-2 #select-country, #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{font-size:11px;}
 #step-2 .user-info label{font-size:11px;}}
 #donation-header h1{font-size:14px;}
-#step-2 #select-exp-year {margin: -52px 0 0 27% !important;}
+/*#step-2 #select-exp-year {margin: -52px 0 0 27% !important;}*/
 #next a.complete-tile{width:100%;}
 #footer .left{font-size:8px;}
 #donation-body .donation-amount.other input{width:45px;}
