@@ -29,7 +29,7 @@ $j(document).ready(function() {
 		$closeFaq;
 	
 	var amountSelected = false,
-		currentDonationStep = 0,
+		currentDonationStep = 1,
 		customDonationAmount = 0,
 		isCustomDonation = false,
 		donationAmount,
@@ -167,16 +167,18 @@ $j(document).ready(function() {
 	
 	$donationBackBtn.on("click", function (e) {
 		e.preventDefault();
-	
+		console.log("donationBackBtn: " + currentDonationStep)
 		switch(currentDonationStep) {
 			case 2:
-				goBackToFirstStep();
+				//goBackToFirstStep();
+				customizeUserTileInfo();
 				break;
-			case 3:
+			case 3:				
 				goBackToSecondStep();
 				break;
-			case 6:
-				goBackToFourthStep();
+			case 5:
+				//goBackToFourthStep();
+				goBackToFirstStep();
 				break;
 		}
 	});
@@ -307,9 +309,6 @@ $j(document).ready(function() {
 		e.preventDefault();
 
 		switch(currentDonationStep) {
-			case 0:
-				customizeUserTile();
-				break;
 			case 1:
 				authorizeFirstStep();
 				break;
@@ -326,6 +325,9 @@ $j(document).ready(function() {
 				customizeUserTile();
 				break;
 			case 6:
+				userTileSelection();
+				break;
+			case 7:
 				thankYouSection();
 				break;
 		}
@@ -347,7 +349,7 @@ $j(document).ready(function() {
 			}, 500, "linear");
 
 			$donationHeader.find("h1").fadeOut("slow", function() {
-				$j(this).text("Enter your name");
+				//$j(this).text("Enter your name");
 				$j(this).fadeIn();
 			});
 			
@@ -470,7 +472,8 @@ $j(document).ready(function() {
 		// If the user selects a default amount, proceed to the next section; otherwise,
 		// validate the user entry.
 		if (amountSelected) {
-			continueToSecondStep();		
+			//continueToSecondStep();
+			customizeUserTileInfo();		
 		} else {		
 			var amountRegistered = customDonationAmount;
 				
@@ -485,22 +488,24 @@ $j(document).ready(function() {
 		//		}
 				
 				donationAmount = "$" + amountRegistered;
-				
-				continueToSecondStep();
+				customizeUserTileInfo();
+				//continueToSecondStep();
 			} else {
 				$donationBody.find(".donation-content.other .donation-info").show();
 				$donationBody.find(".donation-content.other").addClass("light-red-selected-donation");
 				$donationBody.find(".donation-amount.other").addClass("dark-red-selected-donation");
 				
 			}
+			
 			var finalAmount = $('input#other_amount');
 			finalAmount.val(amountRegistered);
 		}
 	}
 	// If not errors on Step 1, proceed to Step 2
+	// Client update: From step 1, user will go to step 4, then back to step 2.
 	function continueToSecondStep () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep++;
+			currentDonationStep = 2;
 			
 			$donationHeader.animate({
 				height: 65
@@ -514,7 +519,7 @@ $j(document).ready(function() {
 				height: 470
 			}, 500, "linear");
 			
-			$donationSteps.find(".step-number").text(currentDonationStep);
+			$donationSteps.find(".step-number").text("3");//currentDonationStep);
 			$donationBackBtn.show();
 			
 			$donationHeader.find("h1").fadeOut("slow", function() {
@@ -530,14 +535,15 @@ $j(document).ready(function() {
 	/* If user wants to donate a differet amount, back button will return him/her to donation section */
 	function goBackToFirstStep() {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep--;
+			//currentDonationStep--;
+			currentDonationStep = 1;
 			
 			$donationHeader.animate({
 				height: 128
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").animate({
-				paddingTop: 35
+				paddingTop: 30
 			}, 500, "linear");
 			
 			$donationContainer.animate({
@@ -552,7 +558,7 @@ $j(document).ready(function() {
 				$j(this).fadeIn();
 			});
 			
-			$donationHeader.find("h2").show();
+			$donationHeader.find("h2").fadeIn();
 
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
@@ -595,16 +601,14 @@ $j(document).ready(function() {
 				$j("#step-" + currentDonationStep).find(".transaction-donation").text(donationAmount);
 				$j("#step-" + currentDonationStep).find(".transaction-level").text(donationLevel);
 				
-				$donationSteps.find(".step-number").text(currentDonationStep);
+				$donationSteps.find(".step-number").text("4");
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
 	}
 	
 	function goBackToSecondStep() {
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep--;
-			
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {			
 			$donationContainer.animate({
 				height: 470
 			}, 500, "linear");
@@ -617,13 +621,15 @@ $j(document).ready(function() {
 			$donationNext.removeClass("submit-transition");
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
+			currentDonationStep--;
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
 	// Step 3: let the user acknowledge the amount of the transaction and what kind of donor he/she will become
 	function submitTransaction () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			currentDonationStep++;
+			//currentDonationStep++;
+			currentDonationStep = 6;
 			
 			$donationContainer.animate({
 				height: 65
@@ -635,9 +641,40 @@ $j(document).ready(function() {
 
 				$j(this).fadeIn();
 			});
-			
+
 			$donationBody.hide();
 			$donationBackBtn.hide();
+		});
+	}
+	
+	function userTileSelection () {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {	
+			$donationHeader.animate({
+				height: 128
+			}, 500, "linear");
+			
+			$donationHeader.find("h1").animate({
+				paddingTop: 30
+			}, 500, "linear");
+			
+			$donationContainer.animate({
+				height: 560
+			}, 500, "linear");
+				
+			$donationHeader.find("h1").fadeOut("slow", function () {
+				$j(this).text("Personalize your tile");
+				//$donationNext.removeClass("submit-transition").addClass("personalize-tile");
+
+				$j(this).fadeIn();
+			});
+			
+			$donationSteps.find(".step-number").text(currentDonationStep - 1);
+			$donationBody.show();
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			$donationHeader.find("h2").html("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.").show();
+			$donationNext.removeClass("personalize-tile").addClass("complete-tile");
+			$donationBackBtn.hide();
+			currentDonationStep = 7;
 		});
 	}
 	// Step 4: transaction was successful; now user has the chance to initiate tile customization
@@ -646,30 +683,31 @@ $j(document).ready(function() {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			$donationBody.show();
 			
-			currentDonationStep++;
+			//currentDonationStep++;
+			currentDonationStep = 5;
 			
 			$donationHeader.animate({
-				height: 128
+				height: 65
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").animate({
-				paddingTop: 35
+				paddingTop: 22
 			}, 500, "linear");
 			
 			$donationContainer.animate({
-				height: 560
+				height: 475
 			}, 500, "linear");
 			
-			$donationNext.removeClass("personalize-tile");
+			//$donationNext.removeClass("personalize-tile");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$j(this).text("Choose your donation");	
+				$j(this).text("Enter your name");	
 				$j(this).fadeIn();
 			});
 			
-			$donationHeader.find("h2").text("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.").show();
-			$donationSteps.find(".step-number").text(currentDonationStep - 1);
-			$donationBackBtn.hide();
+			$donationHeader.find("h2").fadeOut();//text("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.").show();
+			$donationSteps.find(".step-number").text("2");//currentDonationStep - 1);
+			$donationBackBtn.show();
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
@@ -685,23 +723,38 @@ $j(document).ready(function() {
 		});
 	}
 	
+	/*function goBackToFifthStep () {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			currentDonationStep--;
+			
+			//$donationBackBtn.hide();
+			
+			
+			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+		});
+	}*/
+	
 	function customizeUserTile () {
 		var tileInfoVerification = verifyTileInfoEntry();
 		
 		if (tileInfoVerification) {
-			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			continueToSecondStep();
+			//$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+				/*
 				currentDonationStep++;
 			
 				$donationSteps.find(".step-number").text(currentDonationStep - 1);
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 				$donationNext.removeClass("personalize-tile").addClass("complete-tile");
 				$donationBackBtn.show();
-			});
+				*/
+			//});
 		}
 	}
 	
 	function thankYouSection () {
 		if (animalTileSelected != "" &&  colorTileSelected != "") {
+			currentDonationStep = 6;
 			$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 				currentDonationStep++;
 			
@@ -713,6 +766,10 @@ $j(document).ready(function() {
 					height: 92
 				}, 500, "linear");
 				
+				$donationHeader.find("h1").animate({
+					paddingTop: 30
+				}, 500, "linear");
+				
 				$donationHeader.find("h1").fadeOut("slow", function () {
 					$j(this).text("Thank you for your contribution");	
 					$j(this).fadeIn();
@@ -721,10 +778,13 @@ $j(document).ready(function() {
 				$donationHeader.find("h2").fadeOut();
 			
 				$donationNext.removeClass("virtual-submit");
+				$donationNext.removeClass("complete-tile")
 				$donationNext.fadeOut();
 				$donateAnotherTile.fadeIn();
 				$viewYourTile.fadeIn();
 				$donationBackBtn.hide();
+				//$("#donation-widget-steps").hide();
+				//$("#widget-donate a").show();
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
@@ -740,7 +800,9 @@ $j(document).ready(function() {
 		
 		$donationContainer.find("input").removeClass("error-input").val("");
 		$donationContainer.find("#step-6 a.tile").removeClass("selected");
-		$donationSteps.find(".step-number").text(1);
+		$donationSteps.find(".step-number").text("1");
+		$("#donation-widget-steps").show();
+		$("#widget-donate a").hide();
 		animalTileSelected = "anmbg1";
 		colorTileSelected = "1";
 	}
@@ -834,7 +896,7 @@ $j(document).ready(function() {
 			infoVerified = true;
 		} 
 
-		return infoVerified;
+		return true;//infoVerified;
 	}
 	
 	function verifyTileInfoEntry () {
@@ -843,7 +905,7 @@ $j(document).ready(function() {
 			tileNameLocation = false;
 		
 		if (!tileDonationTriggered) {
-			$donationBody.find("#step-0 .section-top input").each( function (index, element) {
+			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
 				if ($j(this).val() == "") {
 					$j(this).addClass("error-input");
 				} else {
@@ -886,6 +948,9 @@ $j(document).ready(function() {
 			$("#donation-widget-steps").show();
 			$widgetDonate.hide();
 		});
+		
+		$("#donation-widget-steps").show();
+		$("#widget-donate a").hide();
 	}
 	
 	function navOverwriteTransition (moveToPosition) {
