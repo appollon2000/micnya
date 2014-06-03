@@ -29,7 +29,7 @@ $j(document).ready(function() {
 		$closeFaq;
 	
 	var amountSelected = false,
-		currentDonationStep = 1,
+		currentDonationStep = 0,
 		customDonationAmount = 0,
 		isCustomDonation = false,
 		donationAmount,
@@ -139,7 +139,9 @@ $j(document).ready(function() {
 	
 	$donationContainer.find("input").on("focusin", function() {
 		$j(this).addClass("focus-in-background");
-		$j(this).val("$");
+		if ($j(this).hasClass("other-donation")) {
+			$j(this).val("$");
+		}
 	});
 	
 	$donationContainer.find("input").on("focusout", function() {
@@ -305,6 +307,9 @@ $j(document).ready(function() {
 		e.preventDefault();
 
 		switch(currentDonationStep) {
+			case 0:
+				customizeUserTile();
+				break;
 			case 1:
 				authorizeFirstStep();
 				break;
@@ -342,7 +347,7 @@ $j(document).ready(function() {
 			}, 500, "linear");
 
 			$donationHeader.find("h1").fadeOut("slow", function() {
-				$j(this).text("Choose your donation amount");
+				$j(this).text("Enter your name");
 				$j(this).fadeIn();
 			});
 			
@@ -658,11 +663,11 @@ $j(document).ready(function() {
 			$donationNext.removeClass("personalize-tile");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
-				$j(this).text("Personalize your virtual tile");	
+				$j(this).text("Choose your donation");	
 				$j(this).fadeIn();
 			});
 			
-			$donationHeader.find("h2").text("In appreciation of your support, you can personalize a symbolic tile on our virtual shimmer wall.").show();
+			$donationHeader.find("h2").text("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.").show();
 			$donationSteps.find(".step-number").text(currentDonationStep - 1);
 			$donationBackBtn.hide();
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
@@ -829,7 +834,7 @@ $j(document).ready(function() {
 			infoVerified = true;
 		} 
 
-		return true;//infoVerified;
+		return infoVerified;
 	}
 	
 	function verifyTileInfoEntry () {
@@ -838,7 +843,7 @@ $j(document).ready(function() {
 			tileNameLocation = false;
 		
 		if (!tileDonationTriggered) {
-			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
+			$donationBody.find("#step-0 .section-top input").each( function (index, element) {
 				if ($j(this).val() == "") {
 					$j(this).addClass("error-input");
 				} else {
