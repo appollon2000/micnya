@@ -429,13 +429,13 @@ $j(document).ready(function() {
 				$donationBody.find(".donation-content.other .donation-reference").text("Supporter");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("friend-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("transformer-donation-padding-top");
-				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.one-fifty .donation-info").text()).addClass("supporter-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").html($donationBody.find(".donation-content.one-fifty .donation-info").html()).addClass("supporter-donation-padding-top");
 				donationLevel = "Supporter";
 			} else if (inputToUse >= 250){
 				$donationBody.find(".donation-content.other .donation-reference").text("Transformer");	
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("friend-donation-padding-top");
 				$donationBody.find(".donation-content.other .donation-info-other").removeClass("supporter-donation-padding-top");
-				$donationBody.find(".donation-content.other .donation-info-other").text($donationBody.find(".donation-content.two-fifty .donation-info").text()).addClass("transformer-donation-padding-top");
+				$donationBody.find(".donation-content.other .donation-info-other").html($donationBody.find(".donation-content.two-fifty .donation-info").html()).addClass("transformer-donation-padding-top");
 				donationLevel = "Transformer";
 			} else {
 				$donationBody.find(".donation-content.other .donation-reference").text("");	
