@@ -50,7 +50,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),resu=$('#results'),ints=$('input#searchTerm'),formz=$('form#searchus'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3);
 
 $j = jQuery.noConflict();
 $(function() {
@@ -866,10 +866,21 @@ e.preventDefault();
 var thUl = $('#mobNav .nav.navbar-nav');
 thUl.slideToggle();
 });
-mobMenuAnc.on("click", function(e) {
+mob1.on("click", function(e) {
 e.preventDefault();
-var self   = $(this), indx  = self.attr('rel');
-$('ul#nav li#'+indx+' a').trigger('click');
+$("html, body").animate({ scrollTop: $("#mission-block-container").offset().top });
+});
+mob2.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#donation-info").offset().top });
+});
+mob3.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#block6").offset().top });
+});
+mob4.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#explore-further").offset().top });
 });
 
 $(window).resize(function(){
