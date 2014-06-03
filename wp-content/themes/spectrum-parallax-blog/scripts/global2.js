@@ -842,7 +842,7 @@ var scrolled = $(window).scrollTop();;
       tgHide.removeClass('togHide');
   }
   }
-  if(scrolled >= 260) {
+  if(scrolled >= 200) {
     $('#donation-widget #widget-donate').addClass('dbb');
   }
   else {
