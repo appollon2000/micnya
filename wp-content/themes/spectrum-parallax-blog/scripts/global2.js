@@ -834,7 +834,7 @@ if( $('#mast').length > 0 ) { // if target element exists in DOM
   }
 }
 $(window).scroll(function(){ // bind window scroll event
-var mozyy = $('html.mozyy'),scrolled = $(window).scrollTop();;
+var scrolled = $(window).scrollTop();;
   if( $('#mast').length > 0 ) { // if target element exists in DOvar opaq = $(".opaq");M
     if( $('#mast').is_on_screen() ) { // if target element is visible on screen after DOM loaded
       tgHide.addClass('togHide');
