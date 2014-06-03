@@ -58,7 +58,6 @@ if (!$detect->isMobile()) { ?>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/parallax.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.scrollTo-1.4.6-min.js"></script>
 	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.inview.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/touche.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			function setTopMargin() {
@@ -71,7 +70,7 @@ if (!$detect->isMobile()) { ?>
 			setTopMargin();
 			jQuery("#accordion").accordion({autoHeight: false, collapsible: true, active: false}).css("height","auto");
 			$(window).resize(function() { setTopMargin(); });
-			Touche(document.querySelector('div.tyle img')).on('click', handleClick);
+			
 		});
 	</script>
 
@@ -84,7 +83,9 @@ if (!$detect->isMobile()) { ?>
 		<?php } ?>
 		.post, .page {background-attachment:scroll;}
 	</style>
-
+	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/scripts/jquery.tap.min.js"></script>
+	<script type="text/javascript">
+</script>
 <?php }
 
 if (!$detect->isMobile() && !tia_get_option('tia_scrollEasing_enabled') ) { ?>
