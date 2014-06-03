@@ -156,7 +156,6 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #donation-widget,#content #nav{top:10px !important;}
 */
 .mobiz{display:none;}
-
 @media only screen and (min-width : 1px) and (max-width : 1024px) {
 ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,#mission-block-container #text-top h3{display:none;}
 #mobNav{display:block;}
@@ -442,5 +441,5 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 .iconz{margin-right:26px;}
 #block6 .story, #mast, #block6 .story .float-left {min-width: 320px !important;width: 320px !important;}
 #block6 .story .float-left, #block6  .story .float-right, #block6  .story .center{padding:0 !important;}
-html.mozyy .dbb{position:fixed;}
+.dbb{position:fixed;top:129px;}
 }
