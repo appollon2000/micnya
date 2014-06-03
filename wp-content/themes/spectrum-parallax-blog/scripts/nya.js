@@ -26,12 +26,14 @@ $j(document).ready(function() {
 		$welcomeArrow = $("#arrow-down a"),
 		$faqLink = $("#socialNetworks a.subscribe"),
 		$selectedOption = $(".dd-selected"),
+		$donationWidgetStepsHolder = $("#donation-widget-steps"),
 		$closeFaq;
 	
 	var amountSelected = false,
 		currentDonationStep = 1,
 		customDonationAmount = 0,
 		isCustomDonation = false,
+		firstDonationComplete = false,
 		donationAmount,
 		donationLevel,
 		regExpNumbers = /^[0-9]{1,20}$/,
@@ -162,12 +164,16 @@ $j(document).ready(function() {
 	$widgetDonate.on("click", function (e) {
 		e.preventDefault();
 		
-		gotoDonationForm();
+		if (!firstDonationComplete) {
+			gotoDonationForm();
+		} else {
+			animateTileDonation();
+		}
 	});
 	
 	$donationBackBtn.on("click", function (e) {
 		e.preventDefault();
-		console.log("donationBackBtn: " + currentDonationStep)
+		//console.log("donationBackBtn: " + currentDonationStep)
 		switch(currentDonationStep) {
 			case 2:
 				//goBackToFirstStep();
@@ -199,8 +205,8 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-content.other .donation-info").hide();
 		$userOtherDonation.val("");
 		
-		$("#donation-widget-steps").show();
-		$("#widget-donate a").hide();
+		$donationWidgetStepsHolder.show();
+		$widgetDonate.hide();
 
 		if ($j(this).text() != '0') {			
 			$j(this).parent().find(".donation-content").addClass("light-yellow-selected-donation");
@@ -239,11 +245,11 @@ $j(document).ready(function() {
 		$donationContainer.find("#step-5 input").removeClass("error-input");
 		
 		if ($j(this).hasClass("virtual-tile")) {
-			$donationContainer.find(".oval").removeClass("selected");
+			$donationContainer.find("#step-5 .oval").removeClass("selected");
 			tileDonationTriggered = false;
 		} else if ($j(this).hasClass("virtual-tile-honor")) {
 			if (!$donationContainer.find("#in-honor-donation .oval").hasClass("selected")) {
-				$donationContainer.find(".oval").removeClass("selected");
+				$donationContainer.find("#step-5 .oval").removeClass("selected");
 				$donationContainer.find("#in-honor-donation .oval").addClass("selected");
 				
 				virtualTileSelection = "honor-oval";
@@ -252,7 +258,7 @@ $j(document).ready(function() {
 			tileDonationTriggered = true;
 		} else {
 			if (!$donationContainer.find("#in-memory-donation .oval").hasClass("selected")) {
-				$donationContainer.find(".oval").removeClass("selected");
+				$donationContainer.find("#step-5 .oval").removeClass("selected");
 				$donationContainer.find("#in-memory-donation .oval").addClass("selected");
 				
 				virtualTileSelection = "memory-oval";
@@ -336,7 +342,9 @@ $j(document).ready(function() {
 	$donateAnotherTile.on("click", function (e) {
 		e.preventDefault();
 		
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+		animateTileDonation();
+		
+		/*$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 			$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 			$donationBody.find(".oval").removeClass("selected");
@@ -369,7 +377,7 @@ $j(document).ready(function() {
 			$viewYourTile.fadeOut();
 			
 			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
-		});
+		});*/
 		
 	});
 	
@@ -409,6 +417,43 @@ $j(document).ready(function() {
 		$j(this).hide();
 		$userOtherDonation.focus();
 	});
+	
+	function animateTileDonation () {
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
+			$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
+			$donationBody.find(".oval").removeClass("selected");
+			$donationContainer.find("input").removeClass('error-input');
+		
+			resetDonationForm();
+		
+			$donationHeader.animate({
+				height: 128
+			}, 500, "linear");
+
+			$donationHeader.find("h1").fadeOut("slow", function() {
+				//$j(this).text("Enter your name");
+				$j(this).fadeIn();
+			});
+			
+			$donationHeader.find("h2").html("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.");
+			$donationHeader.find("h2").fadeIn();
+			
+			$donationContainer.animate({
+				height: 475
+			}, 500, "linear");
+			
+			currentDonationStep = 1;
+			
+			$donationSteps.find(".step-number").text(currentDonationStep);
+			$donationNext.removeClass("complete-tile");
+			$donationNext.fadeIn();
+			$donateAnotherTile.fadeOut();
+			$viewYourTile.fadeOut();
+			
+			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
+		});
+	}
 	
 	function checkOnUserKeyInput() {
 		var userInput = $userOtherDonation.val().split("$"),
@@ -516,7 +561,7 @@ $j(document).ready(function() {
 			}, 500, "linear");
 			
 			$donationContainer.animate({
-				height: 470
+				height: 430
 			}, 500, "linear");
 			
 			$donationSteps.find(".step-number").text("3");//currentDonationStep);
@@ -610,7 +655,7 @@ $j(document).ready(function() {
 	function goBackToSecondStep() {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {			
 			$donationContainer.animate({
-				height: 470
+				height: 430
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
@@ -783,8 +828,9 @@ $j(document).ready(function() {
 				$donateAnotherTile.fadeIn();
 				$viewYourTile.fadeIn();
 				$donationBackBtn.hide();
-				//$("#donation-widget-steps").hide();
-				//$("#widget-donate a").show();
+				$donationWidgetStepsHolder.hide();
+				$widgetDonate.show();
+				firstDonationComplete = true;
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
@@ -801,8 +847,8 @@ $j(document).ready(function() {
 		$donationContainer.find("input").removeClass("error-input").val("");
 		$donationContainer.find("#step-6 a.tile").removeClass("selected");
 		$donationSteps.find(".step-number").text("1");
-		$("#donation-widget-steps").show();
-		$("#widget-donate a").hide();
+		$donationWidgetStepsHolder.show();
+		$widgetDonate.hide();
 		animalTileSelected = "anmbg1";
 		colorTileSelected = "1";
 	}
@@ -896,7 +942,7 @@ $j(document).ready(function() {
 			infoVerified = true;
 		} 
 
-		return true;//infoVerified;
+		return infoVerified;
 	}
 	
 	function verifyTileInfoEntry () {
@@ -945,12 +991,12 @@ $j(document).ready(function() {
 		$(document.body).animate({
 			scrollTop: moveToPosition
 		}, 500, "linear", function() {
-			$("#donation-widget-steps").show();
+			$donationWidgetStepsHolder.show();
 			$widgetDonate.hide();
 		});
 		
-		$("#donation-widget-steps").show();
-		$("#widget-donate a").hide();
+		//$donationWidgetStepsHolder.show();
+		//$widgetDonate.hide();
 	}
 	
 	function navOverwriteTransition (moveToPosition) {
