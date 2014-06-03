@@ -369,12 +369,12 @@ Template  = (function() {
       
       if( dir === 'next' ) {
         
-        ( current === imgItemsCount - 1 ) ? current = 0 : ++current;
+        (current === imgItemsCount - 1) ? current = 0 : ++current;
         
       }
-      else if( dir === 'prev' ) {
+      else if(dir === 'prev') {
         
-        ( current === 0 ) ? current = imgItemsCount - 1 : --current;
+        (current === 0) ? current = imgItemsCount - 1 : --current;
         
       }
       
@@ -390,13 +390,12 @@ Template  = (function() {
         var dim = getImageDim( largeSrc );
         
         $preview.children('img.ib-preview-img')
-                  .attr( 'src', largeSrc )
-                .css({
+                  .attr( 'src', largeSrc ).css({
           width : dim.width,
           height  : dim.height,
           left  : dim.left,
           top   : dim.top
-                })
+          })
                 .end()
                 .find('span.ib-preview-descr')
                 .text( description );
@@ -519,9 +518,6 @@ prevTile.on("click", function(e) {
   if(mname.length > 0){
     inOf.text('In memory of');tileFname.text(mname);infos.show();
   }
-
-
-
   Box.show();
 });
 prevClose.on("click", function(e) {
