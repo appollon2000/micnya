@@ -915,7 +915,10 @@ if ($(window).width() > 1024) {
   $('#footer').show();
 }
 });
-timeWave();
+if($('html').hasClass("mozyy")) {
+} else{
+ timeWave(); 
+}
 });
 $(window).resize(function(){
 if ($(window).width() <= 675) {
