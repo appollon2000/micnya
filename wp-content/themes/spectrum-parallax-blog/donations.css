@@ -163,10 +163,12 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #donation-widget{width:100%;top:0;left:0;height:91px;background-color: #26343d;}
 #donation-widget #donation-goal, #donation-widget #amount-donated, #donation-widget #donation-left{background:none;}
 #donation-widget #widget-content{margin-top:20px;}
-.widget-container-info{color:#c5cac6;}
-#donation-widget #widget-donate a{margin:0 20px 0 0;background: url("/wp-content/themes/spectrum-parallax-blog/images/donate-new.png") no-repeat;width:120px;height:91px;}
+.widget-container-info{color:#fff;}
+#donation-widget #widget-donate a#donateClk.bigz{margin:0 20px 0 0;background: url("/wp-content/themes/spectrum-parallax-blog/images/donate-new.png") no-repeat;width:120px;height:91px;}
+#donation-steps.ligz{background:none;border-left: 1px solid #00B1CC;border-right: 1px solid #00B1CC;font-size:14px;padding-top:17px;height: 91px;margin: 0 20px 0 0;width: 120px;}
 #donation-widget #widget-logo{margin:0 25px 0 34px;}
-#content #nav li a{width:12px;height:12px;color:#C5CAC6;}
+#back-button a.midz { margin:17px 0 0 !important;background: url('/wp-content/themes/nya/images/donation.back.btn2.png') no-repeat; height:39px; text-indent:-9999px; width:119px; }
+#content #nav li a{width:12px;height:12px;color:#fff;}
 .mobiz{display:none;}
 @media only screen and (min-width : 1px) and (max-width : 1150px) {
 #donation-widget #widget-logo,#donation-widget #widget-donate a{margin:0;}
@@ -180,7 +182,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-widget #widget-logo{width:100%;background: #26343d url(images/mobile/mob-logo.png) no-repeat 50% 50px;height:inherit !important;padding-top: 40px;}
 #widget-logo a{width: 100%;}
 #donation-widget #widget-donate{float:left;clear:both;width:100%;}
-#donation-widget #widget-donate a{width:100%;background: #fff452 url(images/mobile/mob-donate.jpg) no-repeat 50% 10px;height:40px !important;padding-bottom: 10px;}
+#donation-widget #widget-donate a#donateClk{width:100%;background: #fff452 url(images/mobile/mob-donate.jpg) no-repeat 50% 10px;height:40px !important;padding-bottom: 10px;}
 #donation-widget #widget-content{clear:both;width:100%;}
 #static-background {top:90px;background-size: 100% auto;background-position: 50% 22% !important;}
 #content{top:47px;}

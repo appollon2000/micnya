@@ -45,10 +45,10 @@ body { background: #eeefe9 !important; }
 #content #nav li a:hover, #content #nav li a.active, #content #nav li a.active-link { background: url('/wp-content/themes/nya/images/bullet.on.png') 247px 0 no-repeat !important; border: 0; color: #fff452 !important; height: 12px; width: 12px; }
 #content #nav li a { line-height: 12px;background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 247px 0 !important; border: 0 !important; color: #000; font-family: "Swiss721BT-Black"; font-size: 11px; font-weight: normal; height: 15px !important; margin-bottom: -2px; padding-top: 0; text-transform: uppercase; text-indent: 0 !important; width: 270px !important; }
 #content #nav #blockLink2, #content #nav #blockLink3, #content #nav #blockLink4, #content #nav #blockLink8, #content #nav #blockLink9, #content #nav #blockLink10 { display: none; } 
-#content #nav #blockLink1 a { padding-left: 140px !important; }
-#content #nav #blockLink5 a { padding-left: 130px !important; }
-#content #nav #blockLink6 a { padding-left: 44px !important; }
-#content #nav #blockLink7 a { padding-left: 105px !important; }
+#content #nav #blockLink1 a { padding-left: 148px !important; }
+#content #nav #blockLink5 a { padding-left: 138px !important; }
+#content #nav #blockLink6 a { padding-left: 52px !important; }
+#content #nav #blockLink7 a { padding-left: 113px !important; }
 
 .page-id-58 { background-color: #00b1cc !important; height: 960px; margin: 0 auto; width: 1430px; }
 .page-id-58 #container { background: url('/wp-content/themes/nya/images/main.bkg.jpg') no-repeat !important; height: 100%; }
@@ -269,7 +269,7 @@ body { background: #eeefe9 !important; }
 #donation-widget { height: 194px; left: 50px; position: fixed; top: 60px; width: 322px; z-index: 50000; font-weight: bold; text-transform: uppercase;}
 #donation-widget #widget-logo { background: url('/wp-content/themes/nya/images/nya.logo.png') no-repeat; display: block; float: left; height: 91px; margin-bottom: 2px; width: 322px; }
 #donation-widget #widget-content { float: left; height: 61px; width: 322px; }
-#donation-widget #widget-donate a { background: url('/wp-content/themes/nya/images/widget.donate.now.png') no-repeat; float: left; height: 39px; margin-top: 2px; text-indent: -9999px; width: 322px; }
+#donation-widget #widget-donate a#donateClk { background: url('/wp-content/themes/nya/images/widget.donate.now.png') no-repeat; float: left; height: 39px; margin-top: 2px; text-indent: -9999px; width: 322px; }
 #donation-widget #donation-goal, #donation-widget #amount-donated, #donation-widget #donation-left { background-color: #fff; float: left; height: 100%; text-align: center; padding-top: 10px; width: 32%; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
 #donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
