@@ -29,6 +29,7 @@ html,body,#container{margin:0 !important;padding:0 !important;background:#fff !i
 @media print {
 #ib-content-preview.certificate .ib-content-full {width:650px !important;padding-top: 0 !important;}
 #ib-content-preview.certificate .ib-content-full p{color: #333 !important;font-size:13px !important;padding: 1px 0;}
+#ib-content-preview.certificate{margin:0 auto !important;}
 }
 
 
