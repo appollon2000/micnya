@@ -25,6 +25,7 @@ html,body,#container{margin:0 !important;padding:0 !important;background:#fff !i
 .ib-content-preview{display:block !important;position: static !important;margin:0 !important;padding:0 !important;}
 .allgift{margin:-15px 0 0 14px !important;}
 #container{display:none;}
+#ib-content-preview.certificate .ib-content-full p{padding:0;}
 @media print {
 #ib-content-preview.certificate .ib-content-full {width:650px !important;padding-top: 0 !important;}
 #ib-content-preview.certificate .ib-content-full p{color: #333 !important;font-size:13px !important;padding: 1px 0;}
@@ -92,13 +93,13 @@ echo '<div class="ib-content-preview certificate" id="ib-content-preview">
 </div>
 <div class="categz">'.$category.'</div>
 <div style="display: block;" class="ib-content-full">
-<p>In recognition of his donation, a virtual shimmer wall tile has been personalized with your name. You can see it <a href="/?shimmer=1">here</a>.</p>
+<p>In recognition of this donation, a virtual shimmer wall tile has been personalized with your name. You can see it <a href="/?shimmer=1">here</a>.</p>
 <p>
-The Ocean Wonders: Sharks! exhibit will transform the Aquarium and connect people to their local seascape like never before. A virtual tile on the 3D model of this exhibit now bears your name. Please visit 
-nyaquarium.com/shimmer to view your tile.
+The <i>Ocean Wonders: Sharks!</i> exhibit will transform the Aquarium and connect visitors to their local seascape as never before. Please visit 
+<a href="http://nyaquarium.com/shimmer">nyaquarium.com/shimmer</a> to view your tile.
 </p>
 <p>
-Created by WCS’s design team in collaboration with award-winning environmental artist Ned Kahn, the real-life shimmer wall at the WCS New York Aquarium will wrap the entire exterior of Ocean Wonders: Sharks! in 33,000 aluminum tiles, transforming the Coney Island skyline.
+Created by Wildlife Conservation Society’s design team in collaboration with award-winning environmental artist Ned Kahn, the shimmer wall will be an amazing new installation of public art, and a beacon for visitors to the New York Aquarium from far and wide.
 </p>
 </div>
 </div>'

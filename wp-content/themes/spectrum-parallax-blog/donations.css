@@ -170,6 +170,14 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #back-button a.midz { margin:17px 0 0 !important;background: url('/wp-content/themes/nya/images/donation.back.btn2.png') no-repeat; height:39px; text-indent:-9999px; width:119px; }
 #content #nav li a{width:12px;height:12px;color:#fff;}
 .mobiz{display:none;}
+.listWrapper{width:100%;}
+ul.listCenter{color: #fff;font-family: Arial !important;font-size: 14px;margin:40px auto 0 auto;text-transform: uppercase;width: 540px;padding-left:40px;}
+#block6 .float-left.blank {width:100%;}
+#block6 h3.titleTops-h3 {width:100%;position:relative;margin:0;left:auto;font-weight:bold;}
+#block6 h2.titleTops {width:100%;position:relative;left:auto;top:0;line-height:56px;}
+
+
+#content ul.listCenter li {float:none;font-weight:bold;}
 @media only screen and (min-width : 1px) and (max-width : 1150px) {
 #donation-widget #widget-logo,#donation-widget #widget-donate a{margin:0;}
 #content #nav{right:22px !important;}
