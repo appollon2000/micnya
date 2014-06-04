@@ -58,7 +58,7 @@ ul#newList2 {width:87%;margin: 10px auto 0;list-style:none;display:block;padding
 .transformer13{background:transparent url(images/tiles/transformer13.png) no-repeat}
 .transformer14{background:transparent url(images/tiles/transformer14.png) no-repeat}
 .transformer15{background:transparent url(images/tiles/transformer15.png) no-repeat}
-
+#explore-further-find-out,#explore-further-donate{margin-left:15px;}
 .lrner {background-color: #fff452;background-position: 0 -46px;}
 .ib-content-preview{height: 350px !important;left: 50% !important;margin-left: -175px;position: absolute;top: 50px !important;width: 350px !important;z-index: 10000;display:none;}
 .tyle.ib-content div {text-indent:-1000px;opacity:0;font-size:0;}
@@ -128,7 +128,7 @@ a.dd-selected,span.dd-pointer-down {color: #fff !important;}
 .tyle:hover{-moz-transition:color 0.1s ease-out;-webkit-transition:color 0.1s ease-out;-o-transition:color 0.1s ease-out;-ms-transition:color 0.1s ease-out;transition:color 0.1s ease-out;}
 #searchBox {display:none;position: absolute;z-index: 100;bottom: 33px;left:41px;}
 #searchBox2 {display:none;clear:both;}
-html.mozyy #searchBox2 {display:block;margin-left:-20px;}
+html.mozyy #searchBox2 {display:block;margin:0 auto;width:62%;}
 #searchBox input::-webkit-input-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input:-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input::-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox input:-ms-input-placeholder{font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}
 #searchBox2 input::-webkit-input-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox2 input:-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox2 input::-moz-placeholder {font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}#searchBox2 input:-ms-input-placeholder{font-weight: bold;font-size:22px;color: #000;opacity: 1 !important;}
 .togHide{display:block !important;}
@@ -159,7 +159,20 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #content #nav{z-index:80000000;}
 #donation-widget,#content #nav{top:10px !important;}
 */
+#nav{z-index:1000000;}
+#donation-widget{width:100%;top:0;left:0;height:91px;background-color: #26343d;}
+#donation-widget #donation-goal, #donation-widget #amount-donated, #donation-widget #donation-left{background:none;}
+#donation-widget #widget-content{margin-top:20px;}
+.widget-container-info{color:#c5cac6;}
+#donation-widget #widget-donate a{margin:0 20px 0 0;background: url("/wp-content/themes/spectrum-parallax-blog/images/donate-new.png") no-repeat;width:120px;height:91px;}
+#donation-widget #widget-logo{margin:0 25px 0 34px;}
+#content #nav li a{width:12px;height:12px;color:#C5CAC6;}
 .mobiz{display:none;}
+@media only screen and (min-width : 1px) and (max-width : 1150px) {
+#donation-widget #widget-logo,#donation-widget #widget-donate a{margin:0;}
+#content #nav{right:22px !important;}
+#links-vertical-connector{right:39px;}
+}
 @media only screen and (min-width : 1px) and (max-width : 1024px) {
 ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,#mission-block-container #text-top h3{display:none;}
 #mobNav{display:block;}
@@ -191,7 +204,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #block6 h2.titleTops, #block6 h3.titleTops-h3 {display:none;}
 #block6 .float-left.blank{margin-left:0;}
 #block6 .story,#mast,#block6 .story .float-left {min-width: 655px !important;width: 655px !important;}
-#mast{margin-left:-22px;}
+#mast{margin-left:-6%;}
 #block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{min-width: 100% !important;width: 100% !important;padding:0% !important;margin-left:0;}
 #donation-container{width: 100%;margin:20px 0 0;padding-bottom:1%;float:left;height:auto !important;}
 #donation-body .selection{margin:0 0 2px 0;width:100%;height:60px;position:relative;}
@@ -275,6 +288,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #step-6 #preview-tile{clear:both;margin-top:1%;}
 #next a.complete-tile{margin-left:27%;}
 #back-button a{margin-left:30%;}
+#mast{margin-left:-5%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 800px) {
@@ -297,6 +311,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #next a{margin-left:33%;}
 #step-2 .left-container{margin-left:12%;}
 #back-button a{margin-left:27%;}
+#mast{margin-left:-4%;}
 }
 @media only screen and (min-width : 1px) and (max-width : 705px) {
 #step-2 .left-container{margin-left:2%;}
@@ -335,7 +350,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body .donation-info, #donation-body .donation-info-other{clear:left;margin:-61px 0 0 16.5%;padding:0 0 8px 0 !important;}
 #donation-body .donation-amount{height: 100px;padding-left:0;text-align:center;}
 #donation-body .donation-content{clear:left;width:100%;}
-#explore-further-discover, #explore-further-find-out{font-size:32px;}
+#explore-further-discover, #explore-further-find-out{font-size:26px;}
 #explore-further-find-out{margin:0 !important;}
 #block7{padding-bottom:50px !important;}
 #next a{margin-left:26%;}
@@ -371,7 +386,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #content #block1 #text-top h1 {margin-bottom: 60px;}
 #block5{height: 622px;}
 #block6 .story,#mast,#block6 .story .float-left {min-width: 288px !important;width: 288px !important;}
-#mast{margin-left:-22px;}
+#mast{margin-left:-3%;}
 #explore-further h1{font-size:30px;}
 #explore-further #explore-further-container .header h2{font-size:16px;line-height:18px;padding:2%;}
 #explore-further-discover{margin-top:-41%;}
@@ -385,6 +400,8 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 .iconz{margin-right:26px;}
 #block6 .story, #mast, #block6 .story .float-left {min-width: 320px !important;width: 320px !important;}
 #block6 .story .float-left, #block6  .story .float-right, #block6  .story .center{padding:0 !important;}
+#explore-further-donate a{-ms-transform: scale(0.8);-webkit-transform: scale(0.8);transform: scale(0.8);}
+#block9{margin-bottom:50px !important;}
 }
 @media only screen and (min-width : 1px) and (max-width : 440px) {
 #next a{margin-left:28%;}
@@ -408,7 +425,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-info h2{font-size:15px;line-height:20px;padding:0 10px;}
 #content #block1 #text-top h3{font-size: 13px;}
 #mission-block-container #text-top{margin-top:240px;}
-#mast{margin-left: -17px;}
+#mast{margin-left:-2%;}
 #explore-further-find-out{margin-top:470px;}
 #explore-further-discover, #explore-further-find-out{font-size:22px;}
 #next a{margin-left:25%;}
@@ -432,14 +449,20 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
 #mobNav{background:#26343D;height:36px;position: fixed;z-index:100000;}
-.ib-main-wrapper,.ib-main{width: 100% !important;height:525px !important;}
+.shimbg{background:#666 !important;}
+html.mozyy #searchBox2 {display:block;margin:0 auto;width:57% !important;}
+#mast{margin-left:-1%;}
+#results, #results2{top:50% !important;}
+/*.ib-main-wrapper,.ib-main{width: 100% !important;height:525px !important;}*/
+input#searchTerm, input#searchTerm2{border-radius: 0 !important;}
 #content{top:-2px;}
+#mobNav .navbar-collapse ul{margin-top:-7px;}
 span.tileAttr.first, span.tileAttr.second{width:50%;}
 ul#newList2{width:73%;}
 .ib-main div.tyle img{opacity:1 !important;}
 .ts-wrapper{z-index:1000000000000;}
 #donation-widget{top:-47px;position:absolute;}
-#block6 .story, #mast, #block6 .story .float-left {min-width: 655px !important;width: 655px !important;}
+/*#block6 .story, #mast, #block6 .story .float-left {min-width: 655px !important;width: 655px !important;}*/
 #block6 .story .float-left, #block6  .story .float-right, #block6  .story .center{padding:0 !important;}
 .dbb{position:fixed !important;top:35px !important;}
 .dbb a {background: url("images/mobile/mob-donate.jpg") no-repeat scroll 50% 10px #FFF452;height: 40px !important;padding-bottom: 10px;width: 100%;}
@@ -448,12 +471,12 @@ ul#newList2{width:73%;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
 .ib-main div.tyle{margin-bottom:-22px;}
-#block6 .story, #mast, #block6 .story .float-left,.ib-main-wrapper,#mast,#ib-content-preview {min-width: 300px !important;width: 300px !important;margin:0 auto;}
+/*#block6 .story, #mast, #block6 .story .float-left,.ib-main-wrapper,#mast {min-width: 300px !important;width: 300px !important;margin:0 auto;}*/
+#ib-content-preview{min-width: 300px !important;width: 300px !important;margin:0;top:10%;}
 .ib-main-wrapper,#mast{height: 525px !important;}
 .ts-wrapper{z-index:1000000000000;width:300px !important;}
 .ib-main div.tyle img{opacity:1 !important;}
 .ib-content-full p{width:280px !important;}
 .shimclose{right:10px;}
 .iconz{margin-right:10px;}
-
 }

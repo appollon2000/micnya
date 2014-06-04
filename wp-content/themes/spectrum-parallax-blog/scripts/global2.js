@@ -533,6 +533,15 @@ documt.mouseup(function (e) {
   }
 
 });
+documt.mouseup(function (e) {
+  var container = $("#results1,#results2"),resbox1 = $('#results'),resbox2 = $('#results2');
+  if (!container.is(e.target) && container.has(e.target).length === 0) 
+  {
+    resbox1.hide();
+    resbox2.hide();
+  }
+
+});
 clkDonate.on("click", function(e) {
   e.preventDefault();
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
@@ -927,15 +936,15 @@ $("html, body").animate({ scrollTop: $("#mission-block-container").offset().top 
 });
 mob2.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#donation-info").offset().top });
+$("html, body").animate({ scrollTop: $("#block5").offset().top });
 });
 mob3.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#block6").offset().top });
+$("html, body").animate({ scrollTop: $("#donate-another").offset().top });
 });
 mob4.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#explore-further").offset().top });
+$("html, body").animate({ scrollTop: $("#block7").offset().top });
 });
 
 $(window).resize(function(){

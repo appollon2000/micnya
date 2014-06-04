@@ -40,15 +40,15 @@ body { background: #eeefe9 !important; }
 	font-style: normal;
 }
 /* Right Navigation */
-#content #nav { right: 37px !important; top: 60px !important; width: 100px; }
-#content ul li { float: right; }
-#content #nav li a:hover, #content #nav li a.active, #content #nav li a.active-link { background: url('/wp-content/themes/nya/images/bullet.on.png') 247px 0 no-repeat !important; border: 0; color: #000 !important; height: 21px; width: 22px; }
-#content #nav li a { background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 247px 0 !important; border: 0 !important; color: #000; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; height: 21px !important; margin-bottom: -2px; padding-top: 4px; text-transform: uppercase; text-indent: 0 !important; width: 270px !important; }
+#content #nav { right: 37px !important; top: 10px !important; width: 100px; }
+#content ul li { float: right; margin: 0 0 7px !important; }
+#content #nav li a:hover, #content #nav li a.active, #content #nav li a.active-link { background: url('/wp-content/themes/nya/images/bullet.on.png') 247px 0 no-repeat !important; border: 0; color: #fff452 !important; height: 12px; width: 12px; }
+#content #nav li a { line-height: 12px;background: url('/wp-content/themes/nya/images/bullet.off.png') no-repeat 247px 0 !important; border: 0 !important; color: #000; font-family: "Swiss721BT-Black"; font-size: 11px; font-weight: normal; height: 15px !important; margin-bottom: -2px; padding-top: 0; text-transform: uppercase; text-indent: 0 !important; width: 270px !important; }
 #content #nav #blockLink2, #content #nav #blockLink3, #content #nav #blockLink4, #content #nav #blockLink8, #content #nav #blockLink9, #content #nav #blockLink10 { display: none; } 
-#content #nav #blockLink1 a { padding-left: 128px !important; }
-#content #nav #blockLink5 a { padding-left: 115px !important; }
-#content #nav #blockLink6 a { padding-left: 22px !important; }
-#content #nav #blockLink7 a { padding-left: 90px !important; }
+#content #nav #blockLink1 a { padding-left: 140px !important; }
+#content #nav #blockLink5 a { padding-left: 130px !important; }
+#content #nav #blockLink6 a { padding-left: 44px !important; }
+#content #nav #blockLink7 a { padding-left: 105px !important; }
 
 .page-id-58 { background-color: #00b1cc !important; height: 960px; margin: 0 auto; width: 1430px; }
 .page-id-58 #container { background: url('/wp-content/themes/nya/images/main.bkg.jpg') no-repeat !important; height: 100%; }
@@ -75,7 +75,7 @@ body { background: #eeefe9 !important; }
 #donation-info #donate-now-button { background: url('/wp-content/themes/nya/images/donate.now.lg.png') no-repeat; float: left; height: 74px; margin: 40px 0 0 34%; text-indent: -9999px; width: 313px; }
 
 #step-2 .user-info input.error-input, #step-5 .user-info input.error-input, #step-0 .user-info input.error-input { border: 1px solid red; }
-#links-vertical-connector { background-color: #000; height: 92px; position: fixed; right: 49px; top: 65px; width: 1px; }
+#links-vertical-connector { background-color: #fff; height: 58px; position: fixed; right: 54px; top: 17px; width: 1px;z-index: 1000000; }
 /* Donation Container */
 .light-yellow-selected-donation { background-color: #e6ec5d !important; color: #000 !important; }
 .dark-yellow-selected-donation { background-color: #fff452 !important; color: #000 !important; }

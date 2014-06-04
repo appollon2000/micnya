@@ -37,6 +37,7 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
         	<div id="cover-right">&nbsp;</div>
           <div id="donation-widget" class="opaq">
         <div id="widget-logo"><a href="/"></a></div>
+          <div id="widget-donate"><a href="widget-donate" class="click-donate">Donate Now</a></div>
           <div id="widget-content">
             <div id="donation-goal">
               <div class="widget-container-header">$ Goal</div>
@@ -51,7 +52,6 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
             <div class="widget-container-info" id="widget-days-left"></div>
             </div>
           </div>
-          <div id="widget-donate"><a href="widget-donate" class="click-donate">Donate Now</a></div>
 		  <div id="donation-widget-steps">
 		  	<div id="donation-steps">Step <span class="step-number">1</span> of 5</div>
 		  	<div id="back-button"><a href="back">Back</a></div>
