@@ -25,11 +25,11 @@ html,body,#container{margin:0 !important;padding:0 !important;background:#fff !i
 .ib-content-preview{display:block !important;position: static !important;margin:0 !important;padding:0 !important;}
 .allgift{margin:-15px 0 0 14px !important;}
 #container{display:none;}
-#ib-content-preview.certificate .ib-content-full p{padding:0;}
+#ib-content-preview.certificate .ib-content-full p{padding:0;text-align:center;}
+#ib-content-preview.certificate{margin:0 auto !important;}
 @media print {
 #ib-content-preview.certificate .ib-content-full {width:650px !important;padding-top: 0 !important;}
 #ib-content-preview.certificate .ib-content-full p{color: #333 !important;font-size:13px !important;padding: 1px 0;}
-#ib-content-preview.certificate{margin:0 auto !important;}
 }
 
 
