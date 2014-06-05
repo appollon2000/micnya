@@ -598,7 +598,7 @@ $("html, body").animate({ scrollTop: $("#block5").offset().top });
 });
 uli3.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#donate-another").offset().top });
+$("html, body").animate({ scrollTop: $("#block6").offset().top });
 });
 uli4.on("click", function(e) {
 e.preventDefault();
