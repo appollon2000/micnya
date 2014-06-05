@@ -65,9 +65,9 @@ body { background: #eeefe9 !important; }
 .page-id-58 #back-to-main { background: url("/wp-content/themes/nya/images/transitions.btn.png") no-repeat scroll 0 -116px rgba(0, 0, 0, 0); float: left; height: 58px; margin-top: -10px; text-indent: -9999px; width: 178px; }
 .page-id-58 #footer { left: 0; }
 
-#donation-widget-steps { display: none; }
+#donation-widget-steps { display: none; position: relative;}
 #donation-steps { background-color: #fff; color: #00B1CC; font-weight: bold; float: left; height: 30px; margin: 2px 0; padding: 6px 0 0 0; font-family: "Swiss721BT-Black"; font-size: 18px;text-align: center; width: 100%; }
-#back-button a { background: url('/wp-content/themes/nya/images/donation.back.btn.png') no-repeat; display: none; float: left; height: 39px; text-indent: -9999px; width: 322px; }
+#back-button a { background: url('/wp-content/themes/nya/images/donation.back.btn.png') no-repeat; display: none; float: left; height: 39px; text-indent: -9999px; width: 120px;margin-top: 17px !important; }
 
 #donation-info { margin-top: 250px; width: 1050px; }
 #donation-info h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 72px; line-height: 74px; text-align: center; text-transform: none; }
