@@ -571,6 +571,9 @@ $j(document).ready(function() {
 			$donationSteps.find(".step-number").text("3");//currentDonationStep);
 			$donationBackBtn.show();
 			
+			$donationWidgetStepsHolder.find("#donation-steps").removeClass("add-ipad-full-width");
+			$donationWidgetStepsHolder.find("#back-button.midz").show();
+			
 			$donationHeader.find("h1").fadeOut("slow", function() {
 				$j(this).text("Enter Billing Information");
 				$j(this).fadeIn();
@@ -601,6 +604,11 @@ $j(document).ready(function() {
 			
 			$donationSteps.find(".step-number").text(currentDonationStep);
 			$donationBackBtn.hide();
+			
+			if (isIpad) {
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			}
 			
 			$donationHeader.find("h1").fadeOut("slow", function() {
 				$j(this).text("Choose donation amount");
@@ -693,6 +701,11 @@ $j(document).ready(function() {
 
 			$donationBody.hide();
 			$donationBackBtn.hide();
+			
+			if (isIpad) {
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			}
 		});
 	}
 	
@@ -724,6 +737,11 @@ $j(document).ready(function() {
 			$donationNext.removeClass("personalize-tile").addClass("complete-tile");
 			$donationBackBtn.hide();
 			currentDonationStep = 7;
+			
+			if (isIpad) {
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			}
 		});
 	}
 	// Step 4: transaction was successful; now user has the chance to initiate tile customization
@@ -758,6 +776,8 @@ $j(document).ready(function() {
 			$donationSteps.find(".step-number").text("2");//currentDonationStep - 1);
 			$donationBackBtn.show();
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
+			$donationWidgetStepsHolder.find("#donation-steps").removeClass("add-ipad-full-width");
+			$donationWidgetStepsHolder.find("#back-button.midz").show();
 		});
 	}
 	
@@ -767,6 +787,11 @@ $j(document).ready(function() {
 			
 			$donationBackBtn.hide();
 			$donationNext.removeClass("complete-tile").addClass("personalize-tile");
+			
+			if (isIpad) {
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			}
 			
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
@@ -837,6 +862,12 @@ $j(document).ready(function() {
 				$donationWidgetStepsHolder.hide();
 				$widgetDonate.show();
 				firstDonationComplete = true;
+				
+				if (isIpad) {
+					$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+					$donationWidgetStepsHolder.find("#back-button.midz").hide();
+				}
+				
 				$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			});
 		}
@@ -999,6 +1030,11 @@ $j(document).ready(function() {
 		}, 500, "linear", function() {
 			$donationWidgetStepsHolder.show();
 			$widgetDonate.hide();
+			
+			if (isIpad) {
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			}
 		});
 		
 		//$donationWidgetStepsHolder.show();
@@ -1031,6 +1067,10 @@ $j(document).ready(function() {
 	
 	function isOn() {
 		console.log("on")
+	}
+	
+	function isIpad() {
+		return (navigator.userAgent.match(/iPad/i) === null) ? false : true;
 	}
 	
 });

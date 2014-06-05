@@ -33,7 +33,7 @@ body { background: #eeefe9 !important; }
 #faq-place-holder #holder #footer,
 #faq-place-holder #holder .post-edit-link,
 #faq-place-holder #holder #commentForm { display: none; }
-
+#donation-steps.add-ipad-full-width { width: 100%}
 .Swiss721BT-Black { 
 	font-family: "Swiss721BT-Black";
 	font-weight: normal;
