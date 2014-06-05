@@ -964,7 +964,7 @@ $("html, body").animate({ scrollTop: $("#block5").offset().top });
 });
 mob3.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#block6").offset().top - 80 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top - 75 });
 });
 mob4.on("click", function(e) {
 e.preventDefault();
