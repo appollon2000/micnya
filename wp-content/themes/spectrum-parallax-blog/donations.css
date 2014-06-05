@@ -493,9 +493,9 @@ ul#newList2{width:73%;}
 #results, #results2{margin-left:-50%;left:50%;width:100%;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) and (orientation : landscape) { 
-#accordion{top:13%;padding:7% 3% 1%;}
+#accordion{top:15%;padding:7% 3% 1%;}
 #accordion p{margin:5px 0;}
-.ui-accordion .ui-accordion-content{height:160px !important;}
+.ui-accordion .ui-accordion-content{height:170px !important;}
 }
 
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
