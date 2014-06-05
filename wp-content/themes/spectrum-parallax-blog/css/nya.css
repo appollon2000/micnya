@@ -261,7 +261,7 @@ body { background: #eeefe9 !important; }
 #explore-further-discover a, #explore-further-find-out a { color: #fff452; text-decoration: underline; }
 #explore-further-discover { margin-top: 200px; }
 #explore-further-donate { text-align: center; width: 1050px; }
-#explore-further-donate a { background: url('/wp-content/themes/spectrum-parallax-blog/images/donate.now.btn.lg.png') no-repeat; color: #fff452; float: left; height: 112px; margin: 0 0 300px 20%; padding-top: 44px; text-indent: -9999px; width: 674px; }
+#explore-further-donate a { background: url('/wp-content/themes/spectrum-parallax-blog/images/donate.now.btn.lg.png') no-repeat; color: #fff452; display: block; height: 113px; margin: 0 auto 300px; text-indent: -9999px; width: 678px; }
 #explore-further-discover a:hover, #explore-further-find-out a:hover { color: #fff452; text-decoration: underline; }
 #explore-further-donate a:hover { color: #fff; }
 
@@ -274,7 +274,7 @@ body { background: #eeefe9 !important; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
 #donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
 
-#accordion { background-color: #1e4b58; display: none; padding: 7% 5% 4%; position: fixed; top: 30%; width: 1050px; }
+#accordion { background-color: #1e4b58; display: none; padding: 7% 5% 4%; position: fixed; top: 20%; width: 1050px; }
 #accordion-header { background: #253640; color: #fff; font-size: 25px; font-family: "Swiss721BT-Black"; height: 70px; left: 0; padding-top: 20px; position: absolute; text-align: center; top: 0; width: 100%; }
 #close-faq { background: url('/wp-content/themes/nya/images/close.faq.btn.sm.png') no-repeat; height: 19px; position: absolute; right: 10px; text-indent: -9999px; top: 10px; width: 19px; }
 .ui-accordion .ui-accordion-content { height: auto !important; }
