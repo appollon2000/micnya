@@ -146,6 +146,7 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #ascrail2001{display: none !important;}
 #step-2 #select-state a:focus, #step-2 #select-country a:focus, #step-2 #select-exp-day a:focus, #step-2 #select-exp-year a:focus{background:#e6ec5d;}
 #mobNav{text-align:right;width:100%;position: fixed;z-index: 10000;top:0;display:none;cursor:pointer;}
+#logosm a{display:none;float:left;display:block;background: url(images/small-logo.jpg) no-repeat;width:90px;height:24px;margin-left:12px 0 0 2%;}
 #next-nav{float:right;text-transform:uppercase;color:#fff;font-size:14px;font-weight:bold;padding-top:12px;}
 #mobNav .navbar-toggle{float: right;margin:10px 30px 0 10px;padding:0;position: relative;}
 #mobNav .navbar-toggle .icon-bar {background-color: #fff;display: block;height: 2px;margin-top: 4px;width: 22px;}
@@ -466,13 +467,12 @@ input#searchTerm2{width:243px !important;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
-	
+#logosm a{display:block;}
 #mobNav{background:#26343D;height:36px;position: fixed;z-index:100000;}
 .shimbg{background:#666 !important;}
 html.mozyy #searchBox2 {display:block;margin:0 auto;width:57% !important;}
 #mast{margin-left:-1%;}
 #results, #results2{top:50% !important;}
-/*.ib-main-wrapper,.ib-main{width: 100% !important;height:525px !important;}*/
 input#searchTerm, input#searchTerm2{border-radius: 0 !important;}
 #content{top:-2px;}
 #mobNav .navbar-collapse ul{margin-top:-7px;}
@@ -481,7 +481,6 @@ ul#newList2{width:73%;}
 .ib-main div.tyle img{opacity:1 !important;}
 .ts-wrapper{z-index:1000000000000;}
 #donation-widget{top:-47px;position:absolute;}
-/*#block6 .story, #mast, #block6 .story .float-left {min-width: 655px !important;width: 655px !important;}*/
 #block6 .story .float-left, #block6  .story .float-right, #block6  .story .center{padding:0 !important;}
 .dbb{position:fixed !important;top:35px !important;}
 .dbb a {background: url("images/mobile/mob-donate.jpg") no-repeat scroll 50% 10px #FFF452;height: 40px !important;padding-bottom: 10px;width: 100%;}
@@ -490,7 +489,6 @@ ul#newList2{width:73%;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
-	
 .ib-main div.tyle{margin-bottom:-22px;}
 /*#block6 .story, #mast, #block6 .story .float-left,.ib-main-wrapper,#mast {min-width: 300px !important;width: 300px !important;margin:0 auto;}*/
 #ib-content-preview{min-width: 300px !important;width: 300px !important;margin:0;top:10%;}

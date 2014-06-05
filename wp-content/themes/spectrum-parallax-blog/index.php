@@ -12,6 +12,7 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
 
 	<div id="main">
     <div id="mobNav">
+      <div id="logosm"><a href="/"></a></div>
       <div id="menuMob">
         <div class="navbar-toggle">
           <span class="icon-bar"></span>
