@@ -495,7 +495,7 @@ ul#newList2{width:73%;}
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) and (orientation : landscape) { 
 #accordion{top:13%;padding:7% 3% 1%;}
 #accordion p{margin:5px 0;}
-.ui-accordion .ui-accordion-content{height:110px !important;}
+.ui-accordion .ui-accordion-content{height:140px !important;}
 }
 
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
