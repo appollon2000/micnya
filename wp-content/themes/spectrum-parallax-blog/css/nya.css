@@ -300,14 +300,15 @@ body { background: #eeefe9 !important; }
   .ui-accordion .ui-accordion-content { height: 150px !important; }
 }
 
-@media only screen and (min-width: 480px) and (max-width : 768px) {
+@media only screen and (min-width: 480px) and (max-width : 767px) {
   .ui-accordion .ui-accordion-content { height: 180px !important; }
 }
 
 
-@media only screen and (min-width: 769px) and (max-width : 1023px) {
+@media only screen and (min-width: 768px) and (max-width : 1023px) {
 	#accordion { left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
-  .ui-accordion .ui-accordion-content { height: 190px !important; }
+  	.ui-accordion .ui-accordion-content { height: 190px !important; }
+	#view-your-tile { margin: 0 10px 0 5px; }
 }
 
 @media only screen and (min-width: 1024px) and (max-width : 1224px) {
