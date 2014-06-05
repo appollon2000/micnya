@@ -956,7 +956,7 @@ thUl.slideToggle();
 });
 mob1.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#mission-block-container").offset().top });
+$("html, body").animate({ scrollTop: 0 });
 });
 mob2.on("click", function(e) {
 e.preventDefault();
@@ -964,7 +964,7 @@ $("html, body").animate({ scrollTop: $("#block5").offset().top });
 });
 mob3.on("click", function(e) {
 e.preventDefault();
-$("html, body").animate({ scrollTop: $("#donate-another").offset().top });
+$("html, body").animate({ scrollTop: $("#block6").offset().top });
 });
 mob4.on("click", function(e) {
 e.preventDefault();
