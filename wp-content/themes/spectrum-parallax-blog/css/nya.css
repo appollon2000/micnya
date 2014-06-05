@@ -253,7 +253,7 @@ body { background: #eeefe9 !important; }
 
 #block9 { padding-top: 160px !important;background-color: transparent !important; }
 #block10 { background-color: transparent !important; }
-#block9 .story { width: 1050px; }
+#block9 .story, #block10 .story { width: 1050px; }
 #block9 .story .float-left { width: 1050px; }
 #block8 .story .float-left { margin-top: 150px !important; width: 1050px }
 #explore-further-discover, #explore-further-find-out { color: #fff; font-family: "Swiss721BT-Black"; font-size: 45px; text-align: center; width: 1050px; }
