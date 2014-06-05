@@ -95,8 +95,8 @@ body { background: #eeefe9 !important; }
 #next a.submit-transition { background-position: -121px -58px; }
 #next a.complete-tile { background-position: -24px -174px; margin-left: 244px; width: 379px; }
 #next a.personalize-tile { background-position: 0 -233px; width: 420px; }
-#view-your-tile, #donate-another { float: left; height: 58px; margin: 0 auto;width:100%; }
-#view-your-tile { }
+#view-your-tile, #donate-another { float: left; height: 58px; }
+#view-your-tile { margin: 0 20px 0 132px; }
 #view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: none; height: 58px; margin-right: 4px; text-indent: -9999px; width: 374px;margin:0 auto; }
 #donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: none; height: 58px; text-indent: -9999px; width: 374px;margin:0 auto; }
 
