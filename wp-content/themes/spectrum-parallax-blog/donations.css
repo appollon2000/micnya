@@ -108,7 +108,7 @@ h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
 .prevAllgift{color: #4B5E62;float: left;font-size: 12px;line-height: 16px;margin: -15px 0 0 25px;text-align: left;text-transform: none;width: 145px;}
 .prevIconz {float: right;margin-right: 20px;}
 .popupbg,#today-date {display: none;}#tile-donate-btn a:hover{color:#fff;}
-.prevContent{clear: both;color: #26343D;font-size: 11px;line-height: 16px;;position: relative; margin-left: 25px;padding: 8px 0 0;text-transform: uppercase;text-transform: none;width: 208px;}
+.prevContent{clear: both;color: #26343D;font-size: 11px;line-height: 16px;;position: relative; margin-left: 25px;padding: 8px 0 0;text-transform: uppercase;text-transform: none;width: 208px;word-wrap:break-word;}
 #ascrail2000{width:16px !important;background: #26343d !important;}
 #ascrail2000 div {background-color:#fff452 !important;width:15px !important;margin: 0 auto !important;border-radius: 0 !important;border: none !important;}
 span.tileAttr{padding-right:30px;text-align: left;}
