@@ -906,9 +906,11 @@ var scrolled = $(window).scrollTop();;
   }
   if(scrolled >= 175) {
     $('#donation-widget #widget-donate').addClass('dbb');
+    $('#logosm a').show();
   }
   else {
     $('#donation-widget #widget-donate').removeClass('dbb');
+    $('#logosm a').hide();
   }
 
 });
