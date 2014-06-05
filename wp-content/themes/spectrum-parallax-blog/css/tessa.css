@@ -1,0 +1,24 @@
+.listWrapper{
+width:100%;
+	
+}
+ul.listCenter{
+	color: white;
+font-family: Arial !important;
+font-size: 14px;
+margin:40px auto 0 auto;
+text-transform: uppercase;
+width: 540px;
+padding-left:40px;
+}
+
+
+
+#content ul.listCenter li {float:none;font-weight:bold;}
+
+
+/* Should be rewritten in donations.css */
+
+#block6 .float-left.blank {width:100%;}
+#block6 h3.titleTops-h3 {width:100%;position:relative;margin:0;left:auto;font-weight:bold;}
+#block6 h2.titleTops {width:100%;position:relative;left:auto;top:0;line-height:56px;}
