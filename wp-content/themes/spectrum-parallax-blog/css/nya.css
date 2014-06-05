@@ -91,14 +91,14 @@ body { background: #eeefe9 !important; }
 #step-1 { display: block;}
 #step-2, #step-3, #step-4, #step-5, #step-6, #step-7 { display: none; }
 #next { margin: 0 auto; width: 875px; }
-#next a { background: url('/wp-content/themes/nya/images/transitions.btn.png') no-repeat -121px 0; display: none; float: left; height: 58px; margin-left: 345px; text-align: center; text-indent: -9999px; width: 178px; }
+#next a { background: url('/wp-content/themes/nya/images/transitions.btn.png') no-repeat -121px 0; display: none; float: none; height: 58px; margin:0 auto; text-align: center; text-indent: -9999px; width: 178px; }
 #next a.submit-transition { background-position: -121px -58px; }
 #next a.complete-tile { background-position: -24px -174px; margin-left: 244px; width: 379px; }
-#next a.personalize-tile { background-position: 0 -233px; margin-left: 227px; width: 420px; }
-#view-your-tile, #donate-another { float: left; height: 58px; margin: 0 auto; }
-#view-your-tile { margin-left: 138px; }
-#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: left; height: 58px; margin-right: 4px; text-indent: -9999px; width: 374px; }
-#donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: left; height: 58px; text-indent: -9999px; width: 374px; }
+#next a.personalize-tile { background-position: 0 -233px; width: 420px; }
+#view-your-tile, #donate-another { float: left; height: 58px; margin: 0 auto;width:100%; }
+#view-your-tile { }
+#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: none; height: 58px; margin-right: 4px; text-indent: -9999px; width: 374px;margin:0 auto; }
+#donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.png') no-repeat; float: none; height: 58px; text-indent: -9999px; width: 374px;margin:0 auto; }
 
 #main { margin: 0 auto; top: -12px; width: 100%; }
 #block5 .center.blank { width: 1050px; } 
@@ -114,7 +114,7 @@ body { background: #eeefe9 !important; }
 #donation-body .oval.selected.oval-error { background: url('/wp-content/themes/nya/images/donation.selection.error.png') 19px 19px no-repeat; height: 20px; padding: 30px; text-indent: -9999px; width: 4% }
 #donation-body .donation-content { background-color: #03a7c1; float: left; height: 100%; width: 90%; }
 #donation-body .donation-amount, #donation-body .donation-reference { background-color: #00b1cc; font-size: 12px; font-weight: bold; float: left; height: 34%; padding: 20px; text-transform: uppercase; width: 4% }
-#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; font-weight: normal; height: 60px; padding-left: 26px; padding-top: 26px; width: 14%; }
+#donation-body .donation-amount { font-family: "Swiss721BT-Black"; font-size: 13px; font-weight: normal; height: 60px; padding-left: 26px; padding-top: 26px; width: 14%;text-align:center; }
 #donation-body .donation-amount.other { /*font-size: 11px; padding-left: 20px; padding-top: 13px; text-align: center; text-transform: lowercase;*/ }
 #donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
 #donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -13px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
@@ -186,7 +186,7 @@ body { background: #eeefe9 !important; }
 #donation-body #step-5 .oval.selected, #donation-body #step-5 .oval:over { }
 #step-5 .section-bottom .user-info input { margin-left: 37px; width: 70%; }
 #step-5 .section-bottom .selection.bottom { margin-top: 70px; }
-#step-5 .section-bottom p.light-text { font-family: Arial, Verdana, Helvetica !important; margin-top: -4px !important; }
+#step-5 .section-bottom p.light-text { font-family: Arial, Verdana, Helvetica !important; margin-top: -4px !important;padding-left:37px; }
 
 #step-6 .left-container, #step-6 .right-container { float: left; margin: 0 5%; width: 40%; }
 #step-6 .section-container { margin: -30px auto; padding: 0 10%; width: 100%; }

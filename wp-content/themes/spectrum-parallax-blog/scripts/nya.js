@@ -132,10 +132,12 @@ $j(document).ready(function() {
 	
 	$donationInfo.on("click", function (e) {
 		e.preventDefault();
+		
 		$donationInfo.fadeOut("slow", function(){
 		
 			$donationContainer.fadeIn();
 			$donationNext.fadeIn();
+			$donationNext.css("display","block");
 		});
 	});
 	
@@ -449,7 +451,9 @@ $j(document).ready(function() {
 			$donationNext.removeClass("complete-tile");
 			$donationNext.fadeIn();
 			$donateAnotherTile.fadeOut();
+			$donateAnotherTile.css("display","block");
 			$viewYourTile.fadeOut();
+			$viewYourTile.css("display","block");
 			
 			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
 		});
@@ -826,7 +830,9 @@ $j(document).ready(function() {
 				$donationNext.removeClass("complete-tile")
 				$donationNext.fadeOut();
 				$donateAnotherTile.fadeIn();
+				$donateAnotherTile.css("display","block");
 				$viewYourTile.fadeIn();
+				$viewYourTile.css("display","block");
 				$donationBackBtn.hide();
 				$donationWidgetStepsHolder.hide();
 				$widgetDonate.show();
