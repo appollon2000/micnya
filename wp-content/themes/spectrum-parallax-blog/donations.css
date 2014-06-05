@@ -467,7 +467,7 @@ input#searchTerm2{width:243px !important;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
-#logosm {margin:12px 0 0 2% !important;}
+#logosm {margin:6px 0 0 2% !important;}
 #logosm a{margin:0;}
 #menuMob{display:inline-block;margin-top:-12px;}
 #mobNav{background:#26343D;height:36px;position: fixed;z-index:100000;}
