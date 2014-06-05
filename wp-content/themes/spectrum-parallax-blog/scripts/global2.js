@@ -718,18 +718,22 @@ var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) 
           }else {
           var donname = $(this).find('.allgift').text().replace('From: ',''),gotobId = $(this).attr('id'),locatn= $(this).find('.ts-city').text();
           $("#newList2").append("<li><a class='"+gotobId+"' href='#'><span class='tileAttr first'>"+donname+"</span> <span class='tileAttr second'>"+locatn+"</span></a></li>");
+          $("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
         }
       });
 
 }else if($innerListItem.length > 15){
 resu2.empty().fadeIn().append("<div class='noresults'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
+$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
 }
 else {
 resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
+$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
 }
 
 }else {
 resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
+$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
 }
 });
 
@@ -738,6 +742,7 @@ var code = e.keyCode || e.which;
 if( code === 13 ) {
 e.preventDefault();
 inpt2.trigger('click');
+$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
 }
 });
 

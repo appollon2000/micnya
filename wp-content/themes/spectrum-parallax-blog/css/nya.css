@@ -274,7 +274,7 @@ body { background: #eeefe9 !important; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
 #donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
 
-#accordion { background-color: #1e4b58; display: none; padding: 7% 5% 4%; position: fixed; top: 20%; width: 1050px; }
+#accordion { background-color: #1e4b58; display: none; padding: 7% 5% 4%; position: fixed; top: 20%; left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
 #accordion-header { background: #253640; color: #fff; font-size: 25px; font-family: "Swiss721BT-Black"; height: 70px; left: 0; padding-top: 20px; position: absolute; text-align: center; top: 0; width: 100%; }
 #close-faq { background: url('/wp-content/themes/nya/images/close.faq.btn.sm.png') no-repeat; height: 19px; position: absolute; right: 10px; text-indent: -9999px; top: 10px; width: 19px; }
 .ui-accordion .ui-accordion-content { height: auto !important; }
@@ -292,22 +292,24 @@ body { background: #eeefe9 !important; }
 }
 
 @media only screen and  (max-width : 320px) {
-	#accordion { padding-top: 20%; width: 280px; }
+	#accordion { padding-top: 20%; }
+  .ui-accordion .ui-accordion-content { height: 140px !important; }
 }
 
 @media only screen and (min-width: 321px) and (max-width : 479px) {
-	#accordion { margin-left: 0px; padding-top: 20%; width: 350px; }
+  .ui-accordion .ui-accordion-content { height: 150px !important; }
 }
 
 @media only screen and (min-width: 480px) and (max-width : 768px) {
-	#accordion { margin-left: 80px; padding-top: 15%;width: 460px; }
+  .ui-accordion .ui-accordion-content { height: 180px !important; }
 }
 
 
 @media only screen and (min-width: 769px) and (max-width : 1023px) {
-	#accordion { margin-left: 0px; padding-top: 10%; width: 700px; }
+	#accordion { left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
+  .ui-accordion .ui-accordion-content { height: 190px !important; }
 }
 
 @media only screen and (min-width: 1024px) and (max-width : 1224px) {
-	#accordion { margin-left: 80px; width: 900px; }
+	#accordion { left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
 }
