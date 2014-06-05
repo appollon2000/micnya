@@ -491,8 +491,11 @@ ul#newList2{width:73%;}
 .dbb a {background: url("images/mobile/mob-donate.jpg") no-repeat scroll 50% 10px #FFF452;height: 40px !important;padding-bottom: 10px;width: 100%;}
 #mobNav{width:100%;}
 #results, #results2{margin-left:-50%;left:50%;width:100%;}
-
 }
+@media only screen and (min-device-width : 1px) and (max-device-width : 1024px) and (orientation : landscape) { 
+#accordion{top:5%;}
+}
+
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
 .ib-main div.tyle{margin-bottom:-22px;}
 /*#block6 .story, #mast, #block6 .story .float-left,.ib-main-wrapper,#mast {min-width: 300px !important;width: 300px !important;margin:0 auto;}*/
@@ -503,8 +506,5 @@ ul#newList2{width:73%;}
 .ib-content-full p{width:280px !important;}
 .shimclose{right:10px;}
 .iconz{margin-right:10px;}
-
-
-
 
 }

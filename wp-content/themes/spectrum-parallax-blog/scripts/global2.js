@@ -50,7 +50,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),inpt2=$('#searchGo2'),resu=$('#results'),resu2=$('#results2'),ints=$('input#searchTerm'),ints2=$('input#searchTerm2'),formz=$('form#searchus'),formz2=$('form#searchus2'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3);
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),inpt2=$('#searchGo2'),resu=$('#results'),resu2=$('#results2'),ints=$('input#searchTerm'),ints2=$('input#searchTerm2'),formz=$('form#searchus'),formz2=$('form#searchus2'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3),donNex = $('#next a');
 
 $j = jQuery.noConflict();
 $(function() {
@@ -562,7 +562,7 @@ bdy.animate({ scrollTop: 820}, 'slow');
 });
 
 setTimeout(function () {
-  var doct = $(document),tyl = $('.tyle');
+  var doct = $(document),tyl = $('.tyle'),uli1 = $('ul#nav li a').eq(0),uli2 = $('ul#nav li a').eq(4),uli3 = $('ul#nav li a').eq(5),uli4 = $('ul#nav li a').eq(6);
   tyl.each(function(i) {
 var row = $('.tyle:even');
 var row2 = $('.tyle:odd');
@@ -587,6 +587,23 @@ $('#select-state > .dd-select').attr('tabindex', '600');
 $('#select-country > .dd-select').attr('tabindex', '800');
 $('#select-exp-day > .dd-select').attr('tabindex', '1300');
 $('#select-exp-year > .dd-select').attr('tabindex', '1400');
+uli1.off("click");uli2.off("click");uli3.off("click");uli4.off("click");
+uli1.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: 0 });
+});
+uli2.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#block5").offset().top });
+});
+uli3.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#donate-another").offset().top });
+});
+uli4.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#block7").offset().top });
+});
 }, 1600);
 
 setTimeout(function () {
