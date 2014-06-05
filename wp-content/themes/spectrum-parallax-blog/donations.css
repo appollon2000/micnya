@@ -467,7 +467,7 @@ input#searchTerm2{width:243px !important;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
-#logosm a{display:block;}
+#logosm a{display:block;padding: 12px 0 0 2%;}
 #mobNav{background:#26343D;height:36px;position: fixed;z-index:100000;}
 .shimbg{background:#666 !important;}
 html.mozyy #searchBox2 {display:block;margin:0 auto;width:57% !important;}
