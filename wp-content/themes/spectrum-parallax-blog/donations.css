@@ -169,7 +169,7 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #donation-steps.ligz{background:none;border-left: 1px solid #00B1CC;border-right: 1px solid #00B1CC;font-size:14px;padding-top:17px;height: 91px;margin: 0 20px 0 0;width: 120px;}
 #donation-widget #widget-logo{margin:0 25px 0 34px;}
 #back-button.midz { position:absolute;width:50%;right:0;top:0;margin:2px 0 0 !important; height:30px; text-indent:-9999px;background-color: #fff452;}
-#back-button.midz a{background:url("/wp-content/themes/nya/images/donation.back.btn2.png") no-repeat scroll 50% 18%;height:30px;width:100%;margin:7px 0 0 !important;}
+#back-button.midz a{background:url("/wp-content/themes/nya/images/donation.back.btn2.png") no-repeat scroll 50% 1%;height:30px;width:100%;margin:7px 0 0 !important;}
 #content #nav li a{width:12px;height:12px;color:#fff;}
 .mobiz{display:none;}
 .listWrapper{width:100%;}

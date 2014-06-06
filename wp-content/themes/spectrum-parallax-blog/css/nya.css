@@ -282,6 +282,13 @@ body { background: #eeefe9 !important; }
 .ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active { background: #00b1cc !important; border: 0 !important; }
 .ui-widget-content { background: transparent !important; border: 0 !important; color: #fff !important; }
 .ui-widget-content h2 { color: #fff452; }
+
+/* mobile faq */
+body.page-id-382 { background-color: #00b1cc !important; }
+.page-id-382 h1 { color: #fff; font-size: 20px; padding: 20px 0 10px; text-align: center; }
+.page-id-382 h2 { color: #fff452; }
+.page-id-382 h3 { color: #fff; }
+.page-id-382 #back-to-main { background-color: #fff452; color: #000; font-family: "Swiss721BT-Black" !important; height: auto; padding: 5px 10px; width: auto; }
 @media screen and (-webkit-min-device-pixel-ratio:0){
 	#content #nav #blockLink1 a { padding-left: 128px !important; }
 	#content #nav #blockLink5 a { padding-left: 115px !important; }

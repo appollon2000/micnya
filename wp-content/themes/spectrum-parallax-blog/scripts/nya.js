@@ -96,14 +96,14 @@ $j(document).ready(function() {
 	$faqLink.on("click", function (e) {
 		e.preventDefault();
 
-	//	if (!isMobile()) {
+		if (!isMobile()) {
 			$main.find("#accordion").fadeIn();
 			for (var i = 2; i <= numberOfContainers; i++ ) {
 				$("#block" + i).css({"opacity" : "0"});
 			}
-	//	} else {
-	//		window.open("/faq-mobile");
-	//	}
+		} else {
+			window.open("/faq-mobile", "_self");
+		}
 		/*if (!isFaqContentActive) {
 			if (!isFaqContentLoaded) {
 				$main.find("#faq-place-holder #holder").load("/page-faq", function() {
