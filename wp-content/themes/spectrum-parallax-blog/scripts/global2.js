@@ -579,7 +579,6 @@ $("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
 });
 bckbt.on("click", function(e) {
 e.preventDefault();
-alert('hi karen!');
 if($('html').hasClass("mozyy")) {
 setTimeout(function () {
 $("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
