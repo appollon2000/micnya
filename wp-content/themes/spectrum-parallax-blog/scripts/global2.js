@@ -544,7 +544,27 @@ documt.mouseup(function (e) {
 });
 clkDonate.on("click", function(e) {
   e.preventDefault();
+if($('html').hasClass("mozyy")) {
+var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
+if (!isOn){
+setTimeout(function () {
+$("html, body").animate({ scrollTop: $("#donation-container").offset().top - 300 });
+}, 1400);
+}else {
+  $("html, body").animate({ scrollTop: $("#donation-container").offset().top - 300});
+}
+}else{
 
+var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
+if (!isOn){
+$("html, body").animate({ scrollTop: $("#block5").offset().top });
+setTimeout(function () {
+maindonBtn.trigger('click');
+}, 1400);
+}else {
+  $("html, body").animate({ scrollTop: $("#block5").offset().top });
+}
+}
 });
 
 clkArrow.on("click", function(e) {
