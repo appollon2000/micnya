@@ -579,8 +579,9 @@ $("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
 });
 bckbt.on("click", function(e) {
 e.preventDefault();
+alert('hi karen!');
 if($('html').hasClass("mozyy")) {
-$("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
+$("html, body").animate({ scrollTop: 0 });
 }
 });
 
