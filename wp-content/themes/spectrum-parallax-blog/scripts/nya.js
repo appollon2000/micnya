@@ -616,7 +616,7 @@ $j(document).ready(function() {
 			$donationSteps.find(".step-number").text(currentDonationStep);
 			$donationBackBtn.hide();
 			
-			if (isIpad()) {
+			if (isIpad() || isMobile()) {
 				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
@@ -713,7 +713,7 @@ $j(document).ready(function() {
 			$donationBody.hide();
 			$donationBackBtn.hide();
 			
-			if (isIpad()) {
+			if (isIpad() || isMobile()) {
 				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
@@ -749,7 +749,7 @@ $j(document).ready(function() {
 			$donationBackBtn.hide();
 			currentDonationStep = 7;
 			
-			if (isIpad()) {
+			if (isIpad() || isMobile()) {
 				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
@@ -799,7 +799,7 @@ $j(document).ready(function() {
 			$donationBackBtn.hide();
 			$donationNext.removeClass("complete-tile").addClass("personalize-tile");
 			
-			if (isIpad()) {
+			if (isIpad() || isMobile()) {
 				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
@@ -874,7 +874,7 @@ $j(document).ready(function() {
 				$widgetDonate.show();
 				firstDonationComplete = true;
 				
-				if (isIpad()) {
+				if (isIpad() || isMobile()) {
 					$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
 					$donationWidgetStepsHolder.find("#back-button.midz").hide();
 				}
@@ -1042,7 +1042,7 @@ $j(document).ready(function() {
 			$donationWidgetStepsHolder.show();
 			$widgetDonate.hide();
 			
-			if (isIpad()) {
+			if (isIpad() || isMobile()) {
 				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}

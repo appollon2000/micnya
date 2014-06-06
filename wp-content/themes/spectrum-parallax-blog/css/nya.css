@@ -320,3 +320,8 @@ body.page-id-382 { background-color: #00b1cc !important; }
 @media only screen and (min-width: 1024px) and (max-width : 1224px) {
 	#accordion { left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait) {
+	#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.mobile.png') no-repeat; height: 47px; margin-left: 10px; margin-right: 0; width: 300px; }
+	#donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.mobile.png') no-repeat; height: 47px; margin-left: 10px; width: 300px; }
+}
