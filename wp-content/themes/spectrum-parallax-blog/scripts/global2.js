@@ -581,7 +581,9 @@ bckbt.on("click", function(e) {
 e.preventDefault();
 alert('hi karen!');
 if($('html').hasClass("mozyy")) {
-$("html, body").animate({ scrollTop: 0 });
+setTimeout(function () {
+$("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
+}, 1400);
 }
 });
 
