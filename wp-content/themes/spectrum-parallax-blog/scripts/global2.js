@@ -543,19 +543,19 @@ documt.mouseup(function (e) {
 
 });
 clkDonate.on("click", function(e) {
-  e.preventDefault();
+e.preventDefault();
 if($('html').hasClass("mozyy")) {
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
 $("html, body").animate({ scrollTop: 0}, 'fast');
 setTimeout(function () {
-$("html, body").animate({ scrollTop: $("#block5").offset().top-100});;
+$("html, body").animate({ scrollTop: $("#block5").offset().top-85});;
 maindonBtn.trigger('click');
 }, 1400);
 }else {
   $("html, body").animate({ scrollTop: 0}, 'fast');
 setTimeout(function () {
-$("html, body").animate({ scrollTop: $("#block5").offset().top-100});;
+$("html, body").animate({ scrollTop: $("#block5").offset().top-85});;
 }, 1400);
 }
 }else{
@@ -570,6 +570,11 @@ maindonBtn.trigger('click');
   $("html, body").animate({ scrollTop: $("#block5").offset().top });
 }
 }
+});
+donNex.on("click", function(e) {
+e.preventDefault();
+$("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
+console.log('indeed');
 });
 
 clkArrow.on("click", function(e) {
