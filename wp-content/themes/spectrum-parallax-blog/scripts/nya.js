@@ -461,6 +461,12 @@ $j(document).ready(function() {
 			//$viewYourTile.css("display","block");
 			
 			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
+			
+			$donationHeader.find("h1").fadeOut("slow", function() {
+				$j(this).text("Choose donation amount");
+				$j(this).fadeIn();
+			});
+			
 		});
 	}
 	
