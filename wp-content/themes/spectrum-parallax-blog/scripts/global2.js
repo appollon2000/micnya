@@ -549,7 +549,7 @@ var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button')
 if (!isOn){
 $("html, body").animate({ scrollTop: 0}, 'fast');
 setTimeout(function () {
-$("html, body").animate({ scrollTop: 800}, 'fast');
+$("html, body").animate({ scrollTop: $("#donation-container").offset().top});;
 maindonBtn.trigger('click');
 }, 1400);
 }else {
