@@ -554,7 +554,8 @@ maindonBtn.trigger('click');
 }, 1400);
 }else {
   $("html, body").animate({ scrollTop: 0}, 'fast');
-  $("html, body").animate({ scrollTop: $("#block5").offset().top-100});;
+setTimeout(function () {
+$("html, body").animate({ scrollTop: $("#block5").offset().top-100});;
 }, 1400);
 }
 }else{
