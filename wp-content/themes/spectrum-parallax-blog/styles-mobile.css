@@ -131,8 +131,8 @@ smaller than 600
 	}
 
 	#content.postshome .post, #content.postshome .page, .posthome {
-		padding-left: 10px;
-		padding-right: 10px;
+		/*padding-left: 10px;
+		padding-right: 10px;*/
 	}
 	
 	.float-left, .float-right, .story .float-left, .story .float-right {float:none; width:95%; min-width:95%}

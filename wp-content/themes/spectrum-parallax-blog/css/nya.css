@@ -119,7 +119,7 @@ body { background: #eeefe9 !important; }
 #donation-body .donation-amount.other input { background: none; border: 0; color: #fff; height: 30px; margin: -15px 0 0 -25px; padding: 10px; width: 60px; }
 #donation-body .donation-amount.other p { color: #fff; font-size: 12px; line-height: 12px; margin: -13px 0 0 -13px; position: absolute; text-align: center; text-transform: lowercase; width: 60px; }
 #donation-body .donation-amount.other p.other-input { margin: -2px 0 0 0; }
-#donation-body .donation-content.other .donation-info { color: #fff; display: none; margin: -50px 0 0 125px; padding: 28px 0 0; }
+#donation-body .donation-content.other .donation-info { color: #fff; display: none; margin: -50px 0 0 23%; padding: 28px 0 0; }
 #donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; padding-top: 26px; text-align: center; width: 22%; }
 #donation-body .donation-info, #donation-body .donation-info-other { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
 #donation-body .twenty-five .donation-info { padding-top: 25px; }
@@ -233,8 +233,8 @@ body { background: #eeefe9 !important; }
 #content #block1 #text-top h2 { color: #fff; font-family: "Swiss721BT-Black"; font-size: 30px; margin-bottom: 100px; text-transform: none; }
 #content #block1 #text-top h3 { color: #fff; font-family: Arial, Verdana, Helvetica !important; font-size: 12px; font-weight: normal; text-transform: uppercase; }
 #mission-block-container { color: #fff; font-family: "Swiss721BT-Black"; font-size: 70px; margin-bottom: 300px; text-align: center; width: 1050px; }
-#mission-block-container #text-top { float: left; height: 840px; margin-top: 250px; width: 100%; }
-#mission-block-container #text-bottom { float: left; width: 100%; }
+#mission-block-container #text-top { float: left; height: 840px; margin-top: 250px; width: 100%;padding:0 40px; }
+#mission-block-container #text-bottom { float: left; width: 100%;padding:0 40px; }
 #mission-block-container #text-bottom h2 { color: #fff; font-size: 50px; line-height: 60px; text-transform: none; }
 
 #block7 h2.titleTops { font-family: "Swiss721BT-Black"; width: 1000px; }
@@ -256,11 +256,11 @@ body { background: #eeefe9 !important; }
 #block9 .story, #block10 .story { width: 1050px; }
 #block9 .story .float-left { width: 1050px; }
 #block8 .story .float-left { margin-top: 150px !important; width: 1050px }
-#explore-further-discover, #explore-further-find-out { color: #fff; font-family: "Swiss721BT-Black"; font-size: 45px; text-align: center; width: 1050px; }
+#explore-further-discover, #explore-further-find-out { color: #fff; font-family: "Swiss721BT-Black"; font-size: 45px; text-align: center; width: 1050px;padding:0 20px; }
 #explore-further-find-out { margin-bottom: 700px; margin-top: 200px; }
 #explore-further-discover a, #explore-further-find-out a { color: #fff452; text-decoration: underline; }
 #explore-further-discover { margin-top: 200px; }
-#explore-further-donate { margin-left: 0 !important; text-align: center; width: 1050px; }
+#explore-further-donate { text-align: center; width: 1050px; }
 #explore-further-donate a { background: url('/wp-content/themes/spectrum-parallax-blog/images/donate.now.btn.lg.png') no-repeat; color: #fff452; display: block; height: 113px; margin: 0 auto 300px; text-indent: -9999px; width: 678px; }
 #explore-further-discover a:hover, #explore-further-find-out a:hover { color: #fff452; text-decoration: underline; }
 #explore-further-donate a:hover { color: #fff; }
@@ -314,8 +314,7 @@ body.page-id-382 { background-color: #00b1cc !important; }
 
 @media only screen and (min-width: 768px) and (max-width : 1023px) {
 	#accordion { left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
-  	.ui-accordion .ui-accordion-content { height: 190px !important; }
-	#view-your-tile { margin: 0 10px 0 5px; }
+  .ui-accordion .ui-accordion-content { height: 190px !important; }
 }
 
 @media only screen and (min-width: 1024px) and (max-width : 1224px) {

@@ -58,7 +58,7 @@ ul#newList2 {width:87%;margin: 10px auto 0;list-style:none;display:block;padding
 .transformer13{background:transparent url(images/tiles/transformer13.png) no-repeat}
 .transformer14{background:transparent url(images/tiles/transformer14.png) no-repeat}
 .transformer15{background:transparent url(images/tiles/transformer15.png) no-repeat}
-#explore-further-find-out,#explore-further-donate{margin-left:15px;}
+#explore-further-find-out,#explore-further-donate{}
 .lrner {background-color: #fff452;background-position: 0 -46px;}
 .ib-content-preview{height: 350px !important;left: 50% !important;margin-left: -175px;position: absolute;top: 50px !important;width: 350px !important;z-index: 10000;display:none;}
 .tyle.ib-content div {text-indent:-1000px;opacity:0;font-size:0;}
@@ -80,7 +80,7 @@ span.ib-close{display:none !important;opacity:0;}
 #ib-content-preview[rel="anmbg15"],#WrpopupPrev[rel="anmbg15"]{background:#ccc url(images/popup/15.png) no-repeat center center}
 h2.titleTops{color: #FFF;display: block;font-size: 36px;text-transform: uppercase;left: 50%;letter-spacing: 1px;margin-top: -54px;line-height: 24px;position: absolute;text-align: center;top: 12px;width: 940px;}
 h2.titleTops span {font-size:16px;}
-h3.titleTops-h3 {color:#fff;font-family:Arial !important;font-size:14px;left:50%;margin-top:-15px;position:absolute;text-align:center;text-transform:uppercase;width:875px;}
+h3.titleTops-h3 {color:#fff;font-family:Arial !important;font-size:14px;left:50%;margin-top:-15px;position:absolute;text-align:center;width:875px;}
 #tilePreview {width:220px;height:32px;background:#fff452;text-align:center;}#tilePreview a{display:block;width:220px;height:32px;color:#000;line-height:35px;margin-top:-14px;}
 .threesixth {
 overflow: visible !important;
@@ -179,7 +179,7 @@ ul.listCenter{color: #fff;font-family: Arial !important;font-size: 14px;margin:4
 #block6 h2.titleTops {width:100%;position:relative;left:auto;top:0;line-height:56px;}
 
 
-#content ul.listCenter li {float:none;font-weight:bold;}
+#content ul.listCenter li {float:none;font-weight:bold;text-transform:none;}
 @media only screen and (min-width : 1px) and (max-width : 1150px) {
 #donation-widget #widget-logo,#donation-widget #widget-donate a{margin:0;}
 #content #nav{right:22px !important;}
@@ -201,8 +201,8 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #content #block1 #text-top h2,#mission-block-container #text-bottom h2 {font-size: 26px;margin-bottom: 85px;line-height:26px;}
 #donation-info h2{font-size:26px;line-height:26px;}
 #content #block1 #text-top h3{font-size: 22px;}
-.story, .inside,#mission-block-container,.storycenter div.bg1[style], .story .center,#block9 .story,#block10 .float-left.blockText,#block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center,#block5 .center.blank{width:96% !important;max-width:96% !important;padding:0 2%;}
-#block9 .story .center.blockText {margin-left:-3%;}
+.story, .inside,#mission-block-container,.storycenter div.bg1[style], .story .center,#block9 .story,#block10 .float-left.blockText,#block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center,#block5 .center.blank{width:100% !important;max-width:100% !important;padding:0;}
+#block9 .story .center.blockText {}
 #mission-block-container #text-top{margin-top:279px;}
 .center.blank{margin:0;padding:0;}
 #content.postshome .post, #content.postshome .page{padding:0;}
@@ -252,6 +252,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body .donation-amount.other{padding:18px 0 0 0;}
 .donation-content.other #donation-body .donation-amount{padding-left: 0;text-align:center;padding-top:0;}
 #donation-body #step-1 .oval,#donation-body #step-1 .oval.selected, #donation-body #step-1 .oval:hover { background: none; width:100%; }
+
 #wrapHeader {background: none;height:auto;position: static;width:auto;}
 #block2{background-image:none !important;}
 #block2{background:url(images/portico1.jpg) no-repeat !important;background-size:100% !important;background-color:#EDEFE8 !important;}
@@ -284,7 +285,7 @@ ul#nav,#links-vertical-connector,#mission-block-container #text-top #arrow-down,
 #donation-body #step-5 .selection a {top:0;}
 #next a.complete-tile{margin-left:31%;}
 #WrpopupPrev-box{left:50%;margin-left:-136px;top:30%;}
-#view-your-tile{}
+#view-your-tile{margin-left:6%;}
 #step-6{padding-top:12px;}
 #step-6 .section-container{padding:0 2%;}
 .animalIconBar,.colourBar,#step-6 .text-area-message{width:100%;}
@@ -307,6 +308,7 @@ span.tileAttr.first, span.tileAttr.second{width:48%;}
 #back-button a{margin-left:30%;}
 #content ul#newList2 li{padding:0 0 0 5%;}
 span.tileAttr.first, span.tileAttr.second{font-size:15px;}
+#view-your-tile{margin-left:3%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 800px) {
@@ -316,6 +318,7 @@ span.tileAttr.first, span.tileAttr.second{font-size:15px;}
 #step-2 .left-container, #step-2 .right-container{width:36%}
 #step-2 #select-exp-day{width:63px !important;}
 #step-2 #select-exp-year{margin-left:21% !important;}
+#view-your-tile{margin-left:1%;}
 }
 @media only screen and (min-width : 1px) and (max-width : 769px) {
 #footer .left{margin:-23px 0 0;padding-top:12px;clear:both;width:100%;}
@@ -330,11 +333,14 @@ span.tileAttr.first, span.tileAttr.second{font-size:15px;}
 #step-2 .left-container{margin-left:12%;}
 #back-button a{margin-left:27%;}
 #mast{margin-left:-4%;}
+#view-your-tile,#donate-another{margin-left:23%;}
 }
 @media only screen and (min-width : 1px) and (max-width : 705px) {
 #step-2 .left-container{margin-left:2%;}
 #step-2 #select-exp-year{width:30% !important;}
 span.tileAttr.first, span.tileAttr.second{font-size:13px;}
+#view-your-tile,#donate-another{margin-left:20%;}
+
 }
 @media only screen and (min-width : 1px) and (max-width : 675px) {
 #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{width:120px !important;}
@@ -354,6 +360,7 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #step-2 #select-state .dd-options, #step-2 #select-country .dd-options, #step-2 #select-exp-day .dd-options, #step-2 #select-exp-year .dd-options{width:98% !important;}
 #step-2 #select-exp-year .dd-options{width:63px !important;}
 #next a.complete-tile{}
+#view-your-tile{}
 }
 @media only screen and (min-width : 1px) and (max-width : 640px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:44px;line-height:44px;}
@@ -365,6 +372,7 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #donation-body{padding-top: 0;}
 #donation-body .donation-content{width:87%;}
 #donation-body .donation-reference{padding:20px 12px 0 12px;text-align:left;}
+#donation-body .donation-content.other .donation-info {margin-left:16%;}
 #donation-body .donation-info, #donation-body .donation-info-other{clear:left;margin:-61px 0 0 16.5%;padding:0 0 8px 0 !important;}
 #donation-body .donation-amount{height: 100px;padding:38px 0;text-align:center;}
 #donation-body .donation-content{clear:left;width:100%;}
@@ -380,6 +388,8 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #back-button a{margin-left:22%;}
 #step-6 .section-container{margin:0 auto;}
 #step-3 #post-transaction{margin-top:20px;}
+#view-your-tile,#donate-another{margin-left:15%;}
+#step-7 #social-icons-tiles {padding:0 8%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 606px) {
@@ -431,10 +441,13 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #donation-body .donation-amount{width:16%;}
 #donation-body .donation-content{top:-125px;}
 #donation-body .donation-info, #donation-body .donation-info-other{margin-top:-87px;margin-left:19.5%;}
+#donation-body .donation-content.other .donation-info{margin-left:19.5%;margin-top:-106px;}
 #donation-body .donation-amount.other p{font-size:10px;}
 #step-2 #select-exp-year {margin: -52px 0 0 19% !important;}
 #next a.complete-tile{margin-left:4%;}
 #back-button a{margin-left:11%;}
+#view-your-tile,#donate-another{margin-left:3%;}
+#step-7 #social-icons-tiles {padding:0 3%;}
 }
 @media only screen and (min-width : 1px) and (max-width : 400px) {
 #content #block1 #text-top h1, #content #block1 #text-bottom h1,#donation-info h1{font-size:24px;line-height:24px;}
@@ -444,7 +457,7 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #mission-block-container #text-top{margin-top:240px;}
 #mast{margin-left:-2%;}
 #explore-further-find-out{margin-top:470px;}
-#explore-further-discover, #explore-further-find-out{font-size:22px;}
+#explore-further-discover, #explore-further-find-out{font-size:22px;padding:0 10px;}
 #next a{}
 #step-2 .user-info input, #step-2 #select-state, #step-2 #select-country, #step-2 #select-state .dd-select, #step-2 #select-country .dd-select{font-size:11px;}
 #step-2 .user-info label{font-size:11px;}
@@ -453,6 +466,7 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #next a.complete-tile{width:379px;margin:0 auto;float:none;display:block !important;}
 #footer .left{font-size:8px;}
 #donation-body .donation-amount.other input{width:45px;}
+#view-your-tile{margin-left:3%;}
 }
 
 @media only screen and (min-width : 1px) and (max-width : 370px) {
@@ -466,6 +480,7 @@ input#searchTerm2{width:243px !important;}
 #block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{margin-left:-1%;}
 #footer .left{font-size: 8px;}
 #back-button a{margin-left:0;}
+#view-your-tile{margin-left:0;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
