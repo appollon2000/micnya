@@ -528,11 +528,12 @@ h2.titleTops{font-size:22px;line-height: 30px !important;margin:10px  0 10px 0 !
 .ib-main div.tyle{margin-bottom:-22px;}
 /*#block6 .story, #mast, #block6 .story .float-left,.ib-main-wrapper,#mast {min-width: 300px !important;width: 300px !important;margin:0 auto;}*/
 #ib-content-preview{min-width: 300px !important;width: 300px !important;margin:0;top:10%;}
-.ib-main-wrapper,#mast{height: 200px !important;}
+.ib-main-wrapper,#mast{height: 270px !important;}
 .ts-wrapper{z-index:1000000000000;width:300px !important;}
 .ib-main div.tyle img{opacity:1 !important;}
 .ib-content-full p{width:280px !important;}
 .shimclose{right:10px;}
 .iconz{margin-right:10px;}
 #block6 .story, #mast, #block6 .story .float-left{min-width:200px !important;width:200px !important;}
+ul.listCenter{padding-left:5px;}
 }
