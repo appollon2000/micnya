@@ -454,12 +454,19 @@ $j(document).ready(function() {
 			$donationSteps.find(".step-number").text(currentDonationStep);
 			$donationNext.removeClass("complete-tile");
 			$donationNext.fadeIn();
+			$donationNext.css("display","block");
 			$donateAnotherTile.fadeOut();
-			$donateAnotherTile.css("display","block");
+			//$donateAnotherTile.css("display","block");
 			$viewYourTile.fadeOut();
-			$viewYourTile.css("display","block");
+			//$viewYourTile.css("display","block");
 			
 			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
+			
+			$donationHeader.find("h1").fadeOut("slow", function() {
+				$j(this).text("Choose donation amount");
+				$j(this).fadeIn();
+			});
+			
 		});
 	}
 	
