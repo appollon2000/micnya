@@ -547,8 +547,9 @@ clkDonate.on("click", function(e) {
 if($('html').hasClass("mozyy")) {
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
+$("html, body").animate({ scrollTop: 0}, 'fast');
 setTimeout(function () {
-$("html, body").animate({ scrollTop: 0});
+$("html, body").animate({ scrollTop: 800}, 'fast');
 maindonBtn.trigger('click');
 }, 1400);
 }else {
