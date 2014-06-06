@@ -548,7 +548,7 @@ if($('html').hasClass("mozyy")) {
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
   alert('on');
-$("html, body").animate({ scrollTop: $("#donation-container").offset().top });
+//$("html, body").animate({ scrollTop: $("#donation-container").offset().top });
 
 }else {
   alert('off');
