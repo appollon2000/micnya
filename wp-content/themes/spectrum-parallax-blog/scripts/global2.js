@@ -573,8 +573,9 @@ maindonBtn.trigger('click');
 });
 donNex.on("click", function(e) {
 e.preventDefault();
+if($('html').hasClass("mozyy")) {
 $("html, body").animate({ scrollTop: $("#block5").offset().top-85 });
-console.log('indeed');
+}
 });
 
 clkArrow.on("click", function(e) {
