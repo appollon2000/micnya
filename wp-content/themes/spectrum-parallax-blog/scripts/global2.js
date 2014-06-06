@@ -545,6 +545,7 @@ documt.mouseup(function (e) {
 clkDonate.on("click", function(e) {
   e.preventDefault();
 if($('html').hasClass("mozyy")) {
+  alert('hi');
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
 $("html, body").animate({ scrollTop: $("#block5").offset().top });
