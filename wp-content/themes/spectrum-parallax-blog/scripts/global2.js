@@ -545,15 +545,14 @@ documt.mouseup(function (e) {
 clkDonate.on("click", function(e) {
   e.preventDefault();
 if($('html').hasClass("mozyy")) {
-  alert('hi');
 var trigLink = $('ul#nav li#blockLink5 a'),maindonBtn = $('a#donate-now-button'), isOn = $('#donation-container').is(':visible');
 if (!isOn){
-$("html, body").animate({ scrollTop: $("#block5").offset().top });
+$("html, body").animate({ scrollTop: $("#donation-container").offset().top });
 setTimeout(function () {
 maindonBtn.trigger('click');
 }, 1400);
 }else {
-  $("html, body").animate({ scrollTop: $("#block5").offset().top });
+  $("html, body").animate({ scrollTop: $("#donation-container").offset().top });
 }
 }else{
 
