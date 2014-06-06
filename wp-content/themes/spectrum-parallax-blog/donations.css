@@ -91,7 +91,7 @@ transform-style: preserve-3d;
 .skew{-webkit-transform:perspective(300px) rotateX(30deg);-moz-transform: perspective(300px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform::perspective(300px) rotateX(30deg);transform-style: preserve-3d;transform:perspective(300px) rotateX(30deg);}
 .skew2{-webkit-transform:perspective(200px) rotateX(30deg);-moz-transform: perspective(200px) rotateX(30deg);-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform::perspective(200px) rotateX(30deg);transform-style: preserve-3d;transform:perspective(200px) rotateX(30deg);}
 h1, h2, h3, h4, h5, h6 {font-family: "Swiss721BT-Black" !important;}
-#WrpopupPrev-box{display:none;height: 302px;width: 272px;background: #283b44;position:absolute;z-index:10;top:271px;left:469px;}
+#WrpopupPrev-box{display:none;height: 302px;width: 272px;background: #283b44;position:absolute;z-index:10;top:308px;left:498px;}
 .prevClose{background: url(images/prevclose.png) no-repeat;width:17px;height:17px;position: absolute;z-index: 10;top:8px;right:6px;}
 .prevClose a{display:block;width:17px;height:17px;}
 .shimclose{background: url(images/shimclose.png) no-repeat;width:17px;height:17px;position: absolute;z-index: 10;top:8px;right:6px;}

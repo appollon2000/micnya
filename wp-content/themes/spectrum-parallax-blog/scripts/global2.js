@@ -488,10 +488,9 @@ Template  = (function() {
 ctdn.countdown({until: new Date(2014, 6 - 1, 16, 18, 00, 00), format: 'dHMS', timezone: -5,layout: '<div class="countdown_section">' + '<span class="countdown_amount">{dnn}&nbsp;</span></div>'});
 animals.on("click", function(e) {
   e.preventDefault();
-  var that = $(this),rel = that.attr('rel'),dat = that.attr('data'), icz = that.attr('data-icon'), motif = $('#WrpopupPrev-box #WrpopupPrev');
+  var that = $(this),rel = that.attr('rel'),dat = that.attr('data'), icz = that.attr('data-icon');
   $("#rec0Icon ul li a[data='"+dat+"']").removeClass('lrner');
   $('input#'+dat).val(rel);
-  motif.attr('rel',icz);
   that.addClass('lrner');
 });
 colors.on("click", function(e) {
@@ -503,7 +502,8 @@ colors.on("click", function(e) {
 });
 prevTile.on("click", function(e) {
   e.preventDefault();
-  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), prevContent = $('#WrpopupPrev .prevContent'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span'), txtArea = $('textarea.text-area-message').val(),infos=$('#WrpopupPrev .prevAllgift');
+  var Box = $('#WrpopupPrev-box'), vname = $('#vtile-name').val(), vloc = $('#vtile-location').val(), hname = $('#honor-name').val(), hemail = $('#honor-email').val(), mname = $('#memory-name').val(), todayDate = $('#today-date').text(), tileFname = $('#WrpopupPrev .prevName h2'), inOf = $('#WrpopupPrev .prevHonor'), tileLoc = $('#WrpopupPrev .prevCity'), tileDate = $('#WrpopupPrev .prevDates'), prevContent = $('#WrpopupPrev .prevContent'), hLength = $('#honor-name').val().length, tileFrom = $('#WrpopupPrev .prevAllgift span'), txtArea = $('textarea.text-area-message').val(),infos=$('#WrpopupPrev .prevAllgift'), animy = $('#rec0Icon ul li a.selected').attr('rel'),doncol = $('#donorColour00 ul li a.selected').attr('rel'),motif = $('#WrpopupPrev-box #WrpopupPrev');
+  motif.css({'background-image':'url(/wp-content/themes/spectrum-parallax-blog/images/popup/'+animy+'-'+doncol+'.png)','background-repeat': 'no-repeat'});
   tileLoc.text(vloc);tileDate.text(todayDate);tileFrom.text(vname);prevContent.text(txtArea);
    if(vname.length > 0 && hLength < 1){
     inOf.text('');
