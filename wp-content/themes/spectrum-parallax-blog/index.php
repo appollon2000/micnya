@@ -9,7 +9,6 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
 }
 
 ?>
-
 	<div id="main">
     <div id="mobNav">
       <div id="logosm"><a href="/"></a></div>
@@ -33,7 +32,6 @@ while ($numb = mysql_fetch_assoc ($resl2)) {
       </div>
     </div>
 		<div id="content" class="postshome clearfix">
-
         	<div id="cover-left">&nbsp;</div>
         	<div id="cover-right">&nbsp;</div>
           <div id="donation-widget" class="opaq">
