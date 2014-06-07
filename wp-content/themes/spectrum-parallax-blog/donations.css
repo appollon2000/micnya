@@ -553,9 +553,9 @@ html.mozyy #searchBox2{width: 225px !important;margin: 35px 0 0 14px !important;
 div.honor{font-size: 11px;margin-left: 5px;padding-top: 4px;}
 div.categz{margin-left:6px;}
 div.ts-dates{margin-left:6px;}
-div.ts-city{margin-right:88px;}
+div.ts-city{margin-right:48px;}
 input#searchTerm2{width:193px !important;}
-#content ul.listCenter{padding-left:0;width:250px;margin: 30px 0 0 -20x !important;}
+#content ul.listCenter{padding-left:0;margin: 30px 0 0 -30x !important;}
 .ib-content-preview{left:0% !important;margin-left: 0 !important;}
 #next a.personalize-tile{margin-left:-3%;}
 }
