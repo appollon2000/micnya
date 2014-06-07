@@ -534,6 +534,7 @@ h2.titleTops{font-size:22px;line-height: 30px !important;margin:10px  0 10px 0 !
 
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
 #ib-content-preview{min-width: 250px !important;width: 250px !important;margin:0;top:10%;}
+.headerList{font-size:13px;line-height:16px;}
 .ts-wrapper{width:250px;height:250px;}
 .ib-main-wrapper,#mast{height: 270px !important;}
 .shimclose{right:13px;}
@@ -554,7 +555,7 @@ div.categz{margin-left:6px;}
 div.ts-dates{margin-left:6px;}
 div.ts-city{margin-right:88px;}
 input#searchTerm2{width:193px !important;}
-#content ul.listCenter{padding-left:0;width:250px;margin: 30px 0 0 -9x !important;}
+#content ul.listCenter{padding-left:0;width:250px;margin: 30px 0 0 -20x !important;}
 .ib-content-preview{left:0% !important;margin-left: 0 !important;}
 #next a.personalize-tile{margin-left:-3%;}
 }
