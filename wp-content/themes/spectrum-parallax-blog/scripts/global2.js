@@ -874,7 +874,7 @@ function onTimeout(){
 
 $(document).on('click', 'a.submit-transition', function (e) {
  e.preventDefault();
- var amnt = $('input#other_amount').val(), categz;
+ var amnt = $('input#other_amount').val(), categz,hemailength = $('input#honor-email').val().length,hemail=$('input#honor-email').val();
 
 if(amnt >= 25 && amnt < 150) {         
 categz = "Friend";         
@@ -886,6 +886,10 @@ categz = "Transformer";
  var donorStr = "&donor.email=" + $('input#donor-email').val() + "&card_cvv="+ $('input#donor-cvv').val() + "&card_exp_date_month="+$.trim($('#select-exp-day ul.dd-options li a.dd-option-selected').text())+"&card_exp_date_year="+ $.trim($('#select-exp-year ul.dd-options li a.dd-option-selected').text())+ "&card_number="+$('input#donor-cc-number').val()+"&other_amount="+ amnt;
 
 var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=7081&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val()+"&category="+categz;
+
+if(hemailength>0){
+uriStr += "&send_ecardname=on"+"&tribute_ecard_subjectname=Thank You for Supporting the New York Aquarium"+"&ecard_recpientsname=" + hemail +"&ecard_recpientssubmit=true"+"&tribute_ecard_subjectsubmit=true"+"&send_ecardsubmit=true"+"&e_card_copy_sendersubmite=true"+"&tribute_honoree_namename=Gift Recipient"+"&tribute_honoree_namesubmit=true"+"&stationery_layout_choosere=true"+"&stationery_layout_id=3381"+"&tribute_ecard_messagesubmit=true"+"&select_gridsubmit=true"+"&tribute_ecard_messagename=-";
+}
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
 var longStr = url + donorStr;
