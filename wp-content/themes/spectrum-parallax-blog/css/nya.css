@@ -123,8 +123,8 @@ body { background: #eeefe9 !important; }
 #donation-body .donation-reference { background: transparent; font-family: "Swiss721BT-Black"; padding-top: 26px; text-align: center; width: 22%; }
 #donation-body .donation-info, #donation-body .donation-info-other { float: left; font-size: 9px; line-height: 12px; padding: 10px 0 0 4px; text-transform: uppercase; width: 63%; }
 #donation-body .twenty-five .donation-info { padding-top: 25px; }
-#donation-body .one-fifty .donation-info { padding-top: 20px; }
-#donation-body .two-fifty .donation-info { padding-top: 13px; }
+#donation-body .one-fifty .donation-info { padding-top: 12px; }
+#donation-body .two-fifty .donation-info { padding-top: 7px; }
 
 #step-2 .left-container, #step-2 .right-container { float: left; width: 40%; }
 #step-2 .left-container { margin-left: 15%; }
@@ -274,8 +274,8 @@ body { background: #eeefe9 !important; }
 #donation-widget #donation-goal, #donation-widget #amount-donated { margin-right: 1%; width: 33%; }
 #donation-widget .widget-container-header { color: #00b1cc; font-family: "Swiss721BT-Black"; font-size: 12px; font-weight: normal; margin-bottom: 3px; }
 
-#accordion { background-color: #1e4b58; display: none; padding: 7% 5% 4%; position: fixed; top: 20%; left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
-#accordion-header { background: #253640; color: #fff; font-size: 25px; font-family: "Swiss721BT-Black"; height: 70px; left: 0; padding-top: 20px; position: absolute; text-align: center; top: 0; width: 100%; }
+#accordion { background-color: #1e4b58; display: none; padding:6% 5% 4%; position: fixed; top: 20%; left:50%; margin-left: -40%; padding-top: 10%; width: 80%; }
+#accordion-header { background: #253640; color: #fff; font-size: 25px; font-family: "Swiss721BT-Black"; height: 52px; left: 0; padding-top: 9px; position: absolute; text-align: center; top: 0; width: 100%; }
 #close-faq { background: url('/wp-content/themes/nya/images/close.faq.btn.sm.png') no-repeat; height: 19px; position: absolute; right: 10px; text-indent: -9999px; top: 10px; width: 19px; }
 .ui-accordion .ui-accordion-content { height: auto !important; }
 .ui-accordion .ui-accordion-header { border: 0 !important; border-radius: 0; text-transform: uppercase; }
