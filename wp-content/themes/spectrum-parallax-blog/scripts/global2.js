@@ -786,11 +786,12 @@ $("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
 });
 
 formz2.keypress( function(e) {
-var code = e.keyCode || e.which;
+var code = e.keyCode || e.which, mep = $('#.ib-content-preview');
 if( code === 13 ) {
 e.preventDefault();
 inpt2.trigger('click');
 $("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+mep.hide();
 }
 });
 
