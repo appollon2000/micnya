@@ -716,7 +716,7 @@ inpt.on("click", function(e) {
     if($innerListItem.length > 0 && $innerListItem.length < 15){
       //console.log($innerListItem);
       resu.empty();ints.val('');
-      resu.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ rawVal +"</div><ul id='newList'></ul>");
+      resu.fadeIn().append("<div class='headerList'>WE FOUND " + $innerListItem.length + " INDIVIDUALS WITH THE NAME "+ rawVal +"</div><ul id='newList'></ul>");
       $innerListItem.each(function() {
 var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) >= 0), gifAll= ($(this).find('.allgift').text().replace('From: ','').toLowerCase().indexOf(rawVal) >= 0);
         if(regh2) {
@@ -729,7 +729,7 @@ var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) 
       });
 
 }else if($innerListItem.length > 15){
-resu.empty().fadeIn().append("<div class='noresults'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
+resu.empty().fadeIn().append("<div class='noresults'>WE FOUND " + $innerListItem.length + " INDIVIDUALS WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
 }
 else {
 resu.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
@@ -757,7 +757,7 @@ inpt2.on("click", function(e) {
     if($innerListItem.length > 0 && $innerListItem.length < 15){
       //console.log($innerListItem);
       resu2.empty();ints2.val('');
-      resu2.fadeIn().append("<div class='headerList'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE NAME "+ rawVal +"</div><ul id='newList2'></ul>");
+      resu2.fadeIn().append("<div class='headerList'>WE FOUND " + $innerListItem.length + " INDIVIDUALS WITH THE NAME "+ rawVal +"</div><ul id='newList2'></ul>");
       $innerListItem.each(function() {
 var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) >= 0), gifAll= ($(this).find('.allgift').text().replace('From: ','').toLowerCase().indexOf(rawVal) >= 0);
         if(regh2) {
@@ -771,7 +771,7 @@ var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) 
       });
 
 }else if($innerListItem.length > 15){
-resu2.empty().fadeIn().append("<div class='noresults'>WE FOUND INDIVIDUALS " + $innerListItem.length + " WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
+resu2.empty().fadeIn().append("<div class='noresults'>WE FOUND " + $innerListItem.length + " INDIVIDUALS WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
 $("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
 }
 else {
