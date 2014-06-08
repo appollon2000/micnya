@@ -914,6 +914,14 @@ $j(document).ready(function() {
 			countrySelected = false,
 			expDaySelected = false,
 			expYearSelected = false,
+			userFirstname = false,
+			userLastname = false,
+			userAddress = false,
+			userCity = false,
+			userPostalCode = false,
+			userEmail = false,
+			donorCcNumber = false,
+			donorCvvNumber = false,
 			$ccSelection = $donationBody.find("input:radio[name=cc-type]"),
 			stateSelection = $donationBody.find("#select-state .dd-selected-text").text(),
 			countrySelection = $donationBody.find("#select-country .dd-selected-text").text(),
@@ -925,11 +933,18 @@ $j(document).ready(function() {
 			$donorEmailRepeat = $("#donor-email-repeat"),
 			$donorCcNumber = $("#donor-cc-number"),
 			$donorCvvNumber = $("#donor-cvv"),
-			$donorAddressMore = $("#donor-address-more");
+			$donorAddressMore = $("#donor-address-more"),
+			$donorFirstname = $("#donor-first-name"),
+			$donorLastname = $("#donor-last-name"),
+			$donorAddress = $("#donor-address"),
+			$donorCity = $("#donor-city"),
+			$donorPostalCode = $("#donor-postal-code");
 
-		$donationBody.find("#step-2 input").each( function (index, element) {
+		/*$donationBody.find("#step-2 input").each( function (index, element) {
+			console.log("values: " + $j(this).val())
 			if ($j(this).val() == "") {
 				$j(this).addClass("error-input");
+				console.log("input error - all " + $j(this).val())
 				if ($donorAddressMore.val() == "") {
 					$donorAddressMore.removeClass("error-input");
 				}
@@ -937,26 +952,68 @@ $j(document).ready(function() {
 				userInputClear = true;
 				$j(this).removeClass("error-input");
 			}
-		});
+		});*/
+		
+		if ($donorFirstname.val() == "") {
+			$donorFirstname.addClass("error-input");
+		} else {
+			$donorFirstname.removeClass("error-input");
+			userFirstname = true;
+		}
+		
+		if ($donorLastname.val() == "") {
+			$donorLastname.addClass("error-input");
+		} else {
+			$donorLastname.removeClass("error-input");
+			userLastname = true;
+		}
+		
+		if ($donorAddress.val() == "") {
+			$donorAddress.addClass("error-input");
+		} else {
+			$donorAddress.removeClass("error-input");
+			userAddress = true;
+		}
+		
+		if ($donorCity.val() == "") {
+			$donorCity.addClass("error-input");
+		} else {
+			$donorCity.removeClass("error-input");
+			userCity = true;
+		}
+		
+		if ($donorPostalCode.val() == "") {
+			$donorPostalCode.addClass("error-input");
+		} else {
+			$donorPostalCode.removeClass("error-input");
+			userPostalCode = true;
+		}
 		
 		if (emailCheck.test($donorEmail.val()) && emailCheck.test($donorEmailRepeat.val()) && ($donorEmail.val() == $donorEmailRepeat.val())) {
 			$donorEmailRepeat.removeClass("error-input");
 			$donorEmail.removeClass("error-input");
+			userEmail = true;
 		} else {
 			$donorEmailRepeat.addClass("error-input");
 			$donorEmail.addClass("error-input");
 		}
 
-		if (!regExpNumbers.test(Number($donorCcNumber.val()))) {
+		if (!regExpNumbers.test(Number($donorCcNumber.val())) || $donorCcNumber.val() == "") {
 			$donorCcNumber.addClass("error-input");
 		} else {
 			$donorCcNumber.removeClass("error-input");
+			donorCcNumber = true;
 		}
 		
-		if (!regExpNumbers.test(Number($donorCvvNumber.val()))) {
+		if (!regExpNumbers.test(Number($donorCvvNumber.val())) || $donorCvvNumber.val() == "") {
 			$donorCvvNumber.addClass("error-input");
 		} else {
 			$donorCvvNumber.removeClass("error-input");
+			donorCvvNumber = true;
+		}
+		
+		if (userFirstname && userLastname && userAddress && userCity && userPostalCode && userEmail && donorCvvNumber && donorCcNumber) {
+			userInputClear = true;
 		}
 		
 		if ($ccSelection.is(":checked") === false) {
@@ -982,9 +1039,9 @@ $j(document).ready(function() {
 		}
 		
 		$("#iscatg").removeClass("error-input");
-		if ($donationBody.find("#step-2 input").hasClass("error-input")) {
-			userInputClear = false;
-		}
+//		if ($donationBody.find("#step-2 input").hasClass("error-input")) {
+//			userInputClear = false;
+//		}
 
 		if (userInputClear && userCCTypeSelected && stateSelected && countrySelected) {
 			infoVerified = true;
