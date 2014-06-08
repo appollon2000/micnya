@@ -58,7 +58,7 @@ $j(document).ready(function() {
 	$main.find("#accordion").prepend("<div id='accordion-header'>FAQ</div><a href='close-faq' id='close-faq'>Close</a>");
 	$closeFaq = $("#close-faq");
 	setFooterFAQ();
-	//resetDonationForm();
+	resetDonationForm();
 	
 	$donationBody.find("#select-state").ddslick();
 	$donationBody.find("#select-country").ddslick();
