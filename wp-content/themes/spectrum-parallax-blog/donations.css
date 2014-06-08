@@ -558,4 +558,13 @@ input#searchTerm2{width:193px !important;}
 #content ul.listCenter{padding-left:0;margin: 30px 0 0 -16px !important;}
 .ib-content-preview{left:0% !important;margin-left: 0 !important;}
 #next a.personalize-tile{margin-left:-3%;}
+#step-7 #social-icons-tiles a{font-size:13px;}
+#step-7 #social-icons-tiles #tw-share{text-indent:10px;}
+#view-your-tile a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-9px 0 0 -22px !important;}
+#donate-another a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-25px 0 0 -22px !important;}
+}
+@media only screen and (min-device-width : 1px) and (max-device-width : 320px) {
+#next a.personalize-tile{margin-left:-47px;}
+#next a.complete-tile{margin-left:-27px;}
+#step-6 #preview-tile{margin-left:53px;}
 }
