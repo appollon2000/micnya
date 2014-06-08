@@ -179,7 +179,7 @@ $j(document).ready(function() {
 	
 	$donationBackBtn.on("click", function (e) {
 		e.preventDefault();
-		//console.log("donationBackBtn: " + currentDonationStep)
+
 		switch(currentDonationStep) {
 			case 2:
 				//goBackToFirstStep();
@@ -676,9 +676,14 @@ $j(document).ready(function() {
 	}
 	
 	function goBackToSecondStep() {
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {			
+		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {	
+	
 			$donationContainer.animate({
 				height: 430
+			}, 500, "linear");
+			
+			$donationHeader.animate({
+				height: 65
 			}, 500, "linear");
 			
 			$donationHeader.find("h1").fadeOut("slow", function () {
@@ -687,9 +692,13 @@ $j(document).ready(function() {
 			});
 			
 			$donationNext.removeClass("submit-transition");
-			
-			$donationSteps.find(".step-number").text(currentDonationStep);
-			currentDonationStep--;
+			$donationBackBtn.show();
+			$donationHeader.find("h2").hide();
+
+			$donationSteps.find(".step-number").text("3");
+			$donationBody.find("#step-1").hide();
+			currentDonationStep = 2;
+			//currentDonationStep--;
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
@@ -783,9 +792,10 @@ $j(document).ready(function() {
 				$j(this).fadeIn();
 			});
 			
-			$donationHeader.find("h2").fadeOut();//text("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.").show();
+			$donationHeader.find("h2").hide();//text("Together we can create <i>Ocean Wonders: Sharks!</i> and build a new New York Aquarium for generations of curious minds to come.").show();
 			$donationSteps.find(".step-number").text("2");//currentDonationStep - 1);
 			$donationBackBtn.show();
+			$donationBody.find("#step-1").hide();
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 			$donationWidgetStepsHolder.find("#donation-steps").removeClass("add-ipad-full-width");
 			$donationWidgetStepsHolder.find("#back-button.midz").show();
