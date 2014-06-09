@@ -584,9 +584,9 @@ input#searchTerm2{width:193px !important;}
 #accordion-header{padding-top:3px;height:38px;font-size:14px;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 320px) {
-#accordion {padding:18% 5% 2%;top:23%;}
-.ui-widget-content h2{font-size:12px;}
-.ui-accordion .ui-accordion-content{height:40px !important;}
+#accordion {padding:17% 5% 2%;top:23%;}
+.ui-widget-content h2{font-size:14px;}
+.ui-accordion .ui-accordion-content{height:40px !important;padding:0.8em 2em;}
 #accordion p{margin:3px 0;line-height: 14px;}
 /*#next a.personalize-tile{margin-left:-47px;}
 #next a.complete-tile{margin-left:-27px;}
