@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 09, 2014 at 03:51 PM
+-- Generation Time: Jun 09, 2014 at 04:17 PM
 -- Server version: 5.6.12-log
 -- PHP Version: 5.4.12
 
@@ -487,9 +487,7 @@ INSERT INTO `dentry` (`id`, `message`, `icon`, `color`, `recipient_email`, `reci
 (452, 'Edlin Rose Novogratz', 11, '2e4f80', 'tinanovo@gmail.com', 'Novogratz', 'Edlin', NULL, 'Brooklyn, NY', 1, 336, 0, 1, ''),
 (453, 'Emeraude Virginia Novogratz', 12, 'e8c037', 'tinanovo@gmail.com', 'Novogratz', 'Emeraude', NULL, 'Brooklyn, NY', 1, 336, 0, 1, ''),
 (454, 'Tina Estes Novogratz', 6, '177a8f', 'tinanovo@gmail.com', 'Novogratz', 'Tina', NULL, 'Brooklyn, NY', 1, 336, 0, 1, ''),
-(455, 'The Estes Novogratz Family', 1, '74b26b', 'tinanovo@gmail.com', 'Novogratz', 'John', NULL, 'Brooklyn, NY', 1, 336, 0, 1, ''),
-(456, '', 1, 'E81F83', '', '', 'gtgtgt', NULL, '', 0, 337, 2, 0, ''),
-(457, '', 6, '177A8F', '', '', 'gtgtgt', NULL, '', 0, 338, 2, 0, '');
+(455, 'The Estes Novogratz Family', 1, '74b26b', 'tinanovo@gmail.com', 'Novogratz', 'John', NULL, 'Brooklyn, NY', 1, 336, 0, 1, '');
 
 -- --------------------------------------------------------
 
@@ -826,9 +824,7 @@ INSERT INTO `donation` (`id`, `donation_date`, `amount`, `tile_quantity`, `is_gi
 (333, '2014-05-16 05:06:00', 100, 1, 1, 'Michael', 'Greene', 0, 'Brooklyn, NY', 385228, 368),
 (334, '2014-05-20 23:39:34', 300, 4, 0, 'Rebecca', 'Simmons', 0, 'New York', 386385, 369),
 (335, '2014-05-21 21:12:42', 300, 4, 1, 'Tina', 'Novogratz', 0, 'Brooklyn, NY', 386585, 370),
-(336, '2014-05-21 21:16:29', 300, 4, 1, 'Tina', 'Novogratz', 0, 'Brooklyn, NY', 386586, 371),
-(337, '2014-06-09 11:02:09', 25, 1, 1, 'tgtr', 'gt', 1, '6u', 0, 372),
-(338, '2014-06-09 11:42:18', 25, 1, 1, 'tgtr', 'gt', 1, '6u', 0, 373);
+(336, '2014-05-21 21:16:29', 300, 4, 1, 'Tina', 'Novogratz', 0, 'Brooklyn, NY', 386586, 371);
 
 -- --------------------------------------------------------
 
@@ -1169,9 +1165,7 @@ INSERT INTO `donor` (`id`, `email`) VALUES
 (368, 'Greenem55@gmail.com'),
 (369, 'rs.home@icloud.com'),
 (370, 'tinanovo@gmail.com'),
-(371, 'tinanovo@gmail.com'),
-(372, 'ss@ss.ss'),
-(373, 'ss@ss.ss');
+(371, 'tinanovo@gmail.com');
 
 -- --------------------------------------------------------
 
