@@ -551,7 +551,7 @@ h2.titleTops{font-size:22px;line-height: 30px !important;margin:10px  0 10px 0 !
 #view-your-tile a{margin-left:45px;}
 }
 
-@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+@media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
 #ib-content-preview{min-width: 250px !important;width: 250px !important;margin:0;top:10%;}
 .headerList{font-size:13px;line-height:16px;}
 .ts-wrapper{width:250px;height:250px;}
@@ -582,12 +582,12 @@ input#searchTerm2{width:193px !important;}
 #donate-another a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-25px 0 0 -22px !important;}*/
 #results2{height:120px;overflow:auto;}
 #accordion-header{padding-top:3px;height:38px;font-size:20px;}
-#accordion {padding:7% 5% 2% !important;top:24%;}
+#accordion {padding:9% 5% 2%;top:24%;}
 .ui-widget-content h2{font-size:12px;margin-top:-2px;}
 .ui-accordion .ui-accordion-content{height:40px !important;padding:0.8em 2em;}
 #accordion p{margin:3px 0;line-height: 14px;}
 }
-@media only screen and (min-device-width : 319px) and (max-device-width : 479px) {
+@media only screen and (min-device-width : 1px) and (max-device-width : 320px) {
 #accordion {padding:17% 5% 2%;top:23%;}
 .ui-widget-content h2{font-size:12px;margin-top:-2px;}
 .ui-accordion .ui-accordion-content{height:40px !important;padding:0.8em 2em;}
@@ -595,4 +595,11 @@ input#searchTerm2{width:193px !important;}
 /*#next a.personalize-tile{margin-left:-47px;}
 #next a.complete-tile{margin-left:-27px;}
 #step-6 #preview-tile{margin-left:53px;}*/
+}
+@media only screen and (min-device-width : 321px) and (max-device-width : 480px) {
+#accordion-header{padding-top:3px;height:38px;font-size:20px;}
+#accordion {padding:7% 5% 2% !important;top:24%;}
+.ui-widget-content h2{font-size:12px;margin-top:-2px;}
+.ui-accordion .ui-accordion-content{height:40px !important;padding:0.8em 2em;}
+#accordion p{margin:3px 0;line-height: 14px;}
 }
