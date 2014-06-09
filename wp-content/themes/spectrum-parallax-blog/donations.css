@@ -598,7 +598,7 @@ input#searchTerm2{width:193px !important;}
 }
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape) {
 #accordion-header{padding-top:3px;height:38px;font-size:20px;}
-#accordion {padding:9% 5% 2% !important;top:24%;}
+#accordion {padding:9% 5% 2% !important;top:25%;}
 .ui-widget-content h2{font-size:12px;margin-top:-2px;}
 .ui-accordion .ui-accordion-content{height:40px !important;padding:0.8em 2em;}
 #accordion p{margin:3px 0;line-height: 14px;}
