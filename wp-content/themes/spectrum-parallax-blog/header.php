@@ -3,7 +3,7 @@
 	$detect = new Mobile_Detect();
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); if($detect->isMobile()) {echo ' class="mozyy"';} ?>>
+<html <?php language_attributes(); if($detect->isMobile()) {echo ' class="mozyy"';} else{echo ' class="desktp"';} ?>>
 <head profile="http://gmpg.org/xfn/11">
 	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
