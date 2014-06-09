@@ -584,7 +584,7 @@ input#searchTerm2{width:193px !important;}
 #results2{height:120px;overflow:auto;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 320px) {
-#next a.personalize-tile{margin-left:-47px;}
+/*#next a.personalize-tile{margin-left:-47px;}
 #next a.complete-tile{margin-left:-27px;}
-#step-6 #preview-tile{margin-left:53px;}
+#step-6 #preview-tile{margin-left:53px;}*/
 }
