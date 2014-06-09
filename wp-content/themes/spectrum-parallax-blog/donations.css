@@ -428,7 +428,6 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #explore-further-discover{margin-top:-41%;}
 #explore-further-find-out{margin-top:150px;}
 #next a{}
-#next a.complete-tile{margin-left:10%;}
 #back-button a{margin-left:17%;}
 .ib-content-preview{width:320px !important;height:320px !important;}
 .ts-wrapper{width:320px;height:320px;}
@@ -436,22 +435,26 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 .iconz{margin-right:26px;}
 #explore-further-donate a{-ms-transform: scale(0.8);-webkit-transform: scale(0.8);transform: scale(0.8);}
 /*#next a, #donation-info #donate-now-button {-ms-transform: scale(0.7);-webkit-transform: scale(0.7);transform: scale(0.7);}*/
-  #next a { background: url('/wp-content/themes/nya/images/transitions.btn.small.png') no-repeat -83px 0; display: none; float: none; height: 40px; margin:0 auto; text-align: center; text-indent: -9999px; width: 122px; }
+  #next a { background: url('/wp-content/themes/nya/images/transitions.btn.small.png') no-repeat -83px 0; display: none; float: none; height: 40px; margin:0 auto !important; text-align: center; text-indent: -9999px; width: 122px; }
   #next a.submit-transition {
     background-position: -84px -40px;
-	margin:0 auto;
+	margin:0 auto !important;
 }
 #next a.personalize-tile {
     background-position: 0px -161px;
     width: 290px;
+	margin:0 auto !important;
 }
 #next a.complete-tile{
-	background-position: 0px -120px;
-    width: 295px;
-	margin:0 auto;
+	background-position: -17px -120px;
+    width: 260px;
+	margin:0 auto !important;
 }
-#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.mobile.png') no-repeat; height: 47px; margin:0 auto; width: 300px; }
-	#donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.mobile.png') no-repeat; height: 47px; margin:0 auto; width: 300px; }
+#view-your-tile {margin:0 !important;; width:100%;}
+#donate-another {margin:0 !important;; width:100%;}
+
+#view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.mobile.png') no-repeat; height: 47px; margin:0 auto !important; width: 300px; }
+#donate-another a { background: url('/wp-content/themes/nya/images/donate.tile.btn.mobile.png') no-repeat; height: 47px; margin:0 auto !important; width: 300px; }
 	
 	
 #next a {margin:0px auto 0 auto;}
@@ -473,9 +476,8 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 #donation-body .donation-content.other .donation-info{margin-left:19.5%;margin-top:-106px;}
 #donation-body .donation-amount.other p{font-size:10px;}
 #step-2 #select-exp-year {margin: -52px 0 0 19% !important;}
-#next a.complete-tile{margin-left:4%;}
 #back-button a{margin-left:11%;}
-#view-your-tile,#donate-another{}
+
 #step-7 #social-icons-tiles {padding:0 3%;}
 
 }
@@ -496,13 +498,12 @@ span.tileAttr.first, span.tileAttr.second{font-size:13px;}
 /*#next a.complete-tile{width:379px;margin:0 auto;float:none;display:block !important;}*/
 #footer .left{font-size:8px;}
 #donation-body .donation-amount.other input{width:45px;}
-#view-your-tile{margin-left:3%;}
+
 }
 
 @media only screen and (min-width : 1px) and (max-width : 370px) {
 html.mozyy #searchBox2{width: 275px !important}
 #content.postshome #block5.post, #content.postshome #block5.page {min-height: 900px !important;}
-#next a.complete-tile{margin-left:0;}
 #back-button a{margin-left:0;}
 input#searchTerm2{width:243px !important;}
 }
@@ -510,7 +511,6 @@ input#searchTerm2{width:243px !important;}
 #block5 .story, #block5 .inside, #block5 .storycenter div.bg1[style], #block5 .story .center{margin-left:-1%;}
 #footer .left{font-size: 8px;}
 #back-button a{margin-left:0;}
-#view-your-tile{margin-left:0;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
@@ -576,7 +576,6 @@ div.ts-city{margin-right:48px;}
 input#searchTerm2{width:193px !important;}
 #content ul.listCenter{padding-left:0;margin: 30px 0 0 -16px !important;}
 .ib-content-preview{left:0% !important;margin-left: 0 !important;}
-#next a.personalize-tile{margin-left:-3%;}
 #step-7 #social-icons-tiles a{font-size:13px;}
 #step-7 #social-icons-tiles #tw-share{text-indent:10px;}
 #view-your-tile a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-9px 0 0 -22px !important;}
