@@ -617,7 +617,7 @@ $j(document).ready(function() {
 			$donationBackBtn.hide();
 			
 			if (isIpad() || isMobile()) {
-				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
 			
@@ -723,7 +723,7 @@ $j(document).ready(function() {
 			$donationBackBtn.hide();
 			
 			if (isIpad() || isMobile()) {
-				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
 		});
@@ -759,7 +759,7 @@ $j(document).ready(function() {
 			currentDonationStep = 7;
 			
 			if (isIpad() || isMobile()) {
-				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
 		});
@@ -810,7 +810,7 @@ $j(document).ready(function() {
 			$donationNext.removeClass("complete-tile").addClass("personalize-tile");
 			
 			if (isIpad() || isMobile()) {
-				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
 			
@@ -885,7 +885,7 @@ $j(document).ready(function() {
 				firstDonationComplete = true;
 				
 				if (isIpad() || isMobile()) {
-					$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+					$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
 					$donationWidgetStepsHolder.find("#back-button.midz").hide();
 				}
 				
@@ -910,6 +910,12 @@ $j(document).ready(function() {
 		$widgetDonate.hide();
 		animalTileSelected = "anmbg1";
 		colorTileSelected = "1";
+		
+		if (isIpad() || isMobile()) {
+			$donationWidgetStepsHolder.find("#donation-steps").hide();
+			$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			$widgetDonate.show();
+		}
 	}
 	
 	function setFooterFAQ() {
@@ -1111,7 +1117,7 @@ $j(document).ready(function() {
 			$widgetDonate.hide();
 			
 			if (isIpad() || isMobile()) {
-				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width");
+				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
 				$donationWidgetStepsHolder.find("#back-button.midz").hide();
 			}
 		});
