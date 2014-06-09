@@ -111,19 +111,11 @@ Template  = (function() {
       $ibItems.bind('click.ibTemplate', function( event ) {
         
         if( !kinetic_moving )
-          openItem( $j(this) );
-      
+          openItem( $j(this) );     
         return false; 
       
       });
-      if($('html').hasClass("mozyy")) {
-          $('div.ib-main div.tyle > img').on('click', function (e) {
-            alert('hi');
-          });
 
-        }
-      
-      // on window resize, set the wrapper and preview size accordingly
       $j(window).bind('resize.ibTemplate', function( event ) {
         
         setWrapperSize();
@@ -131,10 +123,8 @@ Template  = (function() {
         $j('#ib-img-preview, #ib-content-preview').css({
           width : 583,
           height  : 440
-        })
-        
-      });
-    
+        })  
+      }); 
     },
     openItem   = function( $item ) {
       
