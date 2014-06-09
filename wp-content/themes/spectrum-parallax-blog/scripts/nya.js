@@ -946,9 +946,9 @@ $j(document).ready(function() {
 			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text(),
 			emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
 		
-		var $donorEmail = $("#honor-email"),
+		var $honorEmail = $("#honor-email"),
 			$honorEmailRepeat = $("#honor-email-repeat"),
-			$honorEmail = $("#donor-email"),
+			$donorEmail = $("#donor-email"),
 			$donorEmailRepeat = $("#donor-email-repeat"),
 			$donorCcNumber = $("#donor-cc-number"),
 			$donorCvvNumber = $("#donor-cvv"),
