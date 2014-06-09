@@ -581,7 +581,7 @@ input#searchTerm2{width:193px !important;}
 /*#view-your-tile a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-9px 0 0 -22px !important;}
 #donate-another a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-25px 0 0 -22px !important;}*/
 #results2{height:120px;overflow:auto;}
-#accordion-header{padding-top:3px;height:38px;font-size:16px;}
+#accordion-header{padding-top:3px;height:38px;font-size:20px;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 320px) {
 #accordion {padding:17% 5% 2%;top:23%;}
