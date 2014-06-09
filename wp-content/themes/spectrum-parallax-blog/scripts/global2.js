@@ -1037,6 +1037,7 @@ if ($(window).width() > 1024) {
 if($('html').hasClass("mozyy")) {
 $('#donation-widget-steps').hide();
 $('#donation-widget #widget-donate a#donateClk').show();
+indivTile.off( "mouseenter mouseleave" );
 } else{
  timeWave(); 
 }
