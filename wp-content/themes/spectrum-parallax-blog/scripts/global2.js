@@ -112,6 +112,13 @@ Template  = (function() {
         
         if( !kinetic_moving )
           openItem( $j(this) );
+
+        if($('html').hasClass("mozyy")) {
+          $(document).on('click', 'div.ib-main div.tyle', function (e) {
+            alert('hi');
+          });
+
+        }
       
         return false; 
       
