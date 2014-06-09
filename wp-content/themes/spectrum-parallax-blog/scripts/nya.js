@@ -946,7 +946,9 @@ $j(document).ready(function() {
 			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text(),
 			emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
 		
-		var $donorEmail = $("#donor-email"),
+		var $donorEmail = $("#honor-email"),
+			$honorEmailRepeat = $("#honor-email-repeat"),
+			$honorEmail = $("#donor-email"),
 			$donorEmailRepeat = $("#donor-email-repeat"),
 			$donorCcNumber = $("#donor-cc-number"),
 			$donorCvvNumber = $("#donor-cvv"),
@@ -1013,6 +1015,15 @@ $j(document).ready(function() {
 		} else {
 			$donorEmailRepeat.addClass("error-input");
 			$donorEmail.addClass("error-input");
+		}
+
+		if (emailCheck.test($honorEmail.val()) && emailCheck.test($honorEmailRepeat.val()) && ($honorEmail.val() == $honorEmailRepeat.val())) {
+			$honorEmailRepeat.removeClass("error-input");
+			$honorEmail.removeClass("error-input");
+			userEmail = true;
+		} else {
+			$honorEmailRepeat.addClass("error-input");
+			$honorEmail.addClass("error-input");
 		}
 
 		if (!regExpNumbers.test(Number($donorCcNumber.val())) || $donorCcNumber.val() == "") {
