@@ -117,7 +117,7 @@ Template  = (function() {
       
       });
       if($('html').hasClass("mozyy")) {
-          $('div.ib-main div.tyle').on('click', function (e) {
+          $('div.ib-main div.tyle > img').on('click', function (e) {
             alert('hi');
           });
 
