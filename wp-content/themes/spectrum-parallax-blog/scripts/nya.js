@@ -902,7 +902,8 @@ $j(document).ready(function() {
 		$donationBody.find(".oval").removeClass("selected");
 		$donationBody.find(".donation-content.other .donation-info").hide();
 		
-		$donationContainer.find("input").removeClass("error-input").val("");
+		//$donationContainer.find("input").removeClass("error-input").val("");
+		$donationContainer.find("input").removeClass("error-input");
 		$donationContainer.find("#step-6 a.tile").removeClass("selected");
 		$donationSteps.find(".step-number").text("1");
 		$donationWidgetStepsHolder.show();
