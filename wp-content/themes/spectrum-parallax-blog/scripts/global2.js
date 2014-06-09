@@ -112,16 +112,16 @@ Template  = (function() {
         
         if( !kinetic_moving )
           openItem( $j(this) );
-
-        $('div.ib-main div.tyle').on("click", function(e) {
-            alert('hi');
-          });
-
-        }
       
         return false; 
       
       });
+      if($('html').hasClass("mozyy")) {
+          $('div.ib-main div.tyle').on('click', function (e) {
+            alert('hi');
+          });
+
+        }
       
       // on window resize, set the wrapper and preview size accordingly
       $j(window).bind('resize.ibTemplate', function( event ) {
