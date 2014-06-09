@@ -583,8 +583,8 @@ input#searchTerm2{width:193px !important;}
 #results2{height:120px;overflow:auto;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 320px) {
-#accordion {padding:14% 5% 2%;}
-.ui-accordion .ui-accordion-content{height:30px !important;}
+#accordion {padding:18% 5% 2%;top:23%;}
+.ui-accordion .ui-accordion-content{height:40px !important;}
 #accordion p{margin:1px 0;line-height: 14px;}
 /*#next a.personalize-tile{margin-left:-47px;}
 #next a.complete-tile{margin-left:-27px;}
