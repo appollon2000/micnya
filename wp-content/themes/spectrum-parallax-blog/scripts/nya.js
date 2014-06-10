@@ -173,7 +173,7 @@ $j(document).ready(function() {
 		if (!firstDonationComplete) {
 			gotoDonationForm();
 		} else {
-			animateTileDonation();
+			animateTileDonation("donate-new");
 		}
 	});
 	
@@ -348,7 +348,7 @@ $j(document).ready(function() {
 	$donateAnotherTile.on("click", function (e) {
 		e.preventDefault();
 		
-		animateTileDonation();
+		animateTileDonation("donate-another");
 		
 		/*$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
@@ -424,7 +424,7 @@ $j(document).ready(function() {
 		$userOtherDonation.focus();
 	});
 	
-	function animateTileDonation () {
+	function animateTileDonation (defaultText) {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 			$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
@@ -459,6 +459,14 @@ $j(document).ready(function() {
 			//$donateAnotherTile.css("display","block");
 			$viewYourTile.fadeOut();
 			//$viewYourTile.css("display","block");
+			
+			if (defaultText == "donate-another") {
+				if (isIpad() || isMobile()) {
+					$widgetDonate.hide();
+					$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
+					$donationWidgetStepsHolder.find("#back-button.midz").hide();
+				} 
+			}
 			
 			$donationBody.find("#step-" + currentDonationStep).show().fadeIn();
 			
