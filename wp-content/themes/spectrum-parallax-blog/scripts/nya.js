@@ -211,6 +211,11 @@ $j(document).ready(function() {
 		$donationBody.find(".donation-content.other .donation-info").hide();
 		$userOtherDonation.val("");
 		
+		if (isIpad() || isMobile()) {
+			$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
+			$donationWidgetStepsHolder.find("#back-button.midz").hide();
+		}
+		
 		$donationWidgetStepsHolder.show();
 		$widgetDonate.hide();
 
