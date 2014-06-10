@@ -566,7 +566,7 @@ span.tileAttr.first{width:95%;}
 #content ul.listCenter li {font-size: 11px;width:300px;margin:0 !important;line-height: 18px;}
 .allgift{font-size:10px;margin:-54px 0 0 7px;line-height:13px;}
 .ib-content-full{margin-left:2px;}
-html.mozyy #searchBox2{width: 225px !important;margin: 45px 0 0 14px !important;}
+html.mozyy #searchBox2{width: 225px !important;margin: 45px 0 0 14px !important;padding-top:10px;}
 .ib-content-full p{padding:7px 0px 8px 0;font-size:11px;}
 div.honor{font-size: 11px;margin-left: 5px;padding-top: 4px;}
 div.categz{margin-left:6px;}
@@ -579,7 +579,7 @@ input#searchTerm2{width:193px !important;}
 #step-7 #social-icons-tiles #tw-share{text-indent:10px;}
 /*#view-your-tile a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-9px 0 0 -22px !important;}
 #donate-another a{-webkit-transform:scale(0.7);transform:scale(0.7);margin:-25px 0 0 -22px !important;}*/
-#results2{height:120px;overflow:auto;}
+#results2{height:300px;overflow:auto;}
 #accordion-header{padding-top:3px;height:38px;font-size:20px;}
 #accordion {padding:9% 5% 2%;top:24%;}
 .ui-widget-content h2{font-size:12px;margin-top:-2px;}
