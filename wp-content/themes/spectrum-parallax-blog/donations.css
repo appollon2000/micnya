@@ -539,7 +539,7 @@ h2.titleTops{font-size:22px;line-height: 30px !important;margin:40px  0 10px 0 !
 h3.titleTops-h3{font-size:12px;line-height: 20px;}
 html.mozyy #searchBox2{width: 275px !important;margin:12px auto !important;}
 input#searchTerm2{width:243px !important;}
-#content ul.listCenter li {font-size: 13px;width:100%;margin:0 0 0 8% !important;line-height: 18px;}
+#content ul.listCenter li {font-size: 13px;width:100%;margin:0 0 0 6% !important;line-height: 18px;}
 span.tileAttr.first, span.tileAttr.second{font-size:15px;}
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) and (orientation : landscape) { 
