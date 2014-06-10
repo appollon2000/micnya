@@ -533,7 +533,7 @@ ul#newList2{width:100%;}
 .dbb{position:fixed !important;top:35px !important;}
 .dbb a {background: url("images/mobile/mob-donate.jpg") no-repeat scroll 50% 10px #FFF452;height: 40px !important;padding-bottom: 10px;width: 100%;}
 #mobNav{width:100%;}
-#results, #results2{margin-left:-50%;left:50%;width:100%;}
+#results, #results2{margin-left:-50%;left:50%;width:100%;height:300px;overflow:auto;}
 #block6 .story, #mast, #block6 .story .float-left{min-width:500px !important;width:500px !important;}
 h2.titleTops{font-size:22px;line-height: 30px !important;margin:40px  0 10px 0 !important;}
 h3.titleTops-h3{font-size:12px;line-height: 20px;}
