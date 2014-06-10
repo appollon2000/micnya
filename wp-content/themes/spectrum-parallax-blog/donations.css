@@ -548,6 +548,7 @@ input#searchTerm2{width:243px !important;}
 .ui-accordion .ui-accordion-content{height:170px !important;}
 h2.titleTops{font-size:22px;line-height: 30px !important;margin:10px  0 10px 0 !important;}
 #view-your-tile a{margin-left:45px;}
+span.tileAttr{padding-right:10px;}
 }
 
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
