@@ -17,7 +17,7 @@ $j(document).ready(function() {
 		$donationSteps = $("#donation-steps"),
 		$donationBackBtn = $("#back-button a"),
 		$donationInfo = $("#donation-info"),
-		$widgetDonate = $("#widget-donate a"),
+		$widgetDonate = $("#donateClk"),
 		$donateNowBtnBottom = $("#donate-now"),
 		$ourMissionNav = $("#blockLink1 a"),
 		$helpUsBuildNav = $("#blockLink5 a"),
@@ -918,11 +918,16 @@ $j(document).ready(function() {
 		$widgetDonate.hide();
 		animalTileSelected = "anmbg1";
 		colorTileSelected = "1";
-		
+
 		if (isIpad() || isMobile()) {
 			$donationWidgetStepsHolder.find("#donation-steps").hide();
 			$donationWidgetStepsHolder.find("#back-button.midz").hide();
-			$widgetDonate.show();
+			if (!firstDonationComplete) {
+				$widgetDonate.show();
+			} else {
+				$donationWidgetStepsHolder.find("#donation-steps").show();
+				$donationWidgetStepsHolder.find("#back-button.midz").hide();
+			}
 		}
 	}
 	
@@ -1159,7 +1164,7 @@ $j(document).ready(function() {
 	}
 	
 	function isOn() {
-		console.log("on")
+	//	console.log("on")
 	}
 	
 	function isIpad() {
