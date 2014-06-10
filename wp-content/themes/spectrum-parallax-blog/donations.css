@@ -520,12 +520,12 @@ input#searchTerm2{width:243px !important;}
 .shimbg{background:#666 !important;}
 html.mozyy #searchBox2 {display:block;margin:0 auto;width:57% !important;}
 #mast{margin-left:-1%;}
-#results, #results2{top:10% !important;}
+#results, #results2{top:7% !important;}
 input#searchTerm, input#searchTerm2{border-radius: 0 !important;}
 #content{top:-2px;}
 #mobNav .navbar-collapse ul{margin-top:-7px;}
 span.tileAttr.first, span.tileAttr.second{width:50%;}
-ul#newList2{width:73%;}
+ul#newList2{width:78%;}
 .ib-main div.tyle img{opacity:1 !important;}
 .ts-wrapper{z-index:1000000000000;}
 #donation-widget{top:-47px;position:absolute;}
@@ -539,7 +539,7 @@ h2.titleTops{font-size:22px;line-height: 30px !important;margin:40px  0 10px 0 !
 h3.titleTops-h3{font-size:12px;line-height: 20px;}
 html.mozyy #searchBox2{width: 275px !important;margin:12px auto !important;}
 input#searchTerm2{width:243px !important;}
-#content ul.listCenter li {font-size: 14px;width:550px;margin:0 0 0 7% !important;line-height: 18px;}
+#content ul.listCenter li {font-size: 14px;width:100%;margin:0 0 0 4% !important;line-height: 18px;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) and (orientation : landscape) { 
