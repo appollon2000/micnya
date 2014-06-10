@@ -520,7 +520,7 @@ input#searchTerm2{width:243px !important;}
 .shimbg{background:#666 !important;}
 html.mozyy #searchBox2 {display:block;margin:0 auto;width:57% !important;}
 #mast{margin-left:-1%;}
-#results, #results2{top:7% !important;}
+#results, #results2{top:5% !important;}
 input#searchTerm, input#searchTerm2{border-radius: 0 !important;}
 #content{top:-2px;}
 #mobNav .navbar-collapse ul{margin-top:-7px;}
@@ -548,7 +548,7 @@ input#searchTerm2{width:243px !important;}
 .ui-accordion .ui-accordion-content{height:170px !important;}
 h2.titleTops{font-size:22px;line-height: 30px !important;margin:10px  0 10px 0 !important;}
 #view-your-tile a{margin-left:45px;}
-span.tileAttr{padding-right:10px;}
+span.tileAttr{padding-right:10px !important;}
 }
 
 @media only screen and (min-device-width : 1px) and (max-device-width : 480px) {
