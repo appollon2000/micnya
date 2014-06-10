@@ -554,7 +554,7 @@ h2.titleTops{font-size:22px;line-height: 30px !important;margin:10px  0 10px 0 !
 #ib-content-preview{min-width: 250px !important;width: 250px !important;margin:0;top:10%;}
 .headerList{font-size:13px;line-height:16px;}
 .ts-wrapper{width:250px;height:250px;}
-.ib-main-wrapper,#mast{height: 270px !important;}
+.ib-main-wrapper,#mast{height: 270px !important;margin-bottom:15px;}
 .shimclose{right:13px;}
 .iconz{margin:-45px 15px 0 0;}
 span.tileAttr.second{display:none;}
