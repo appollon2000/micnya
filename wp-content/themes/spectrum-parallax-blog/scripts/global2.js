@@ -786,7 +786,7 @@ var code = e.keyCode || e.which, mep = $('#ib-content-preview');
 if( code === 13 ) {
 e.preventDefault();
 inpt2.trigger('click');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top -130 });
 mep.hide();
 }
 });
