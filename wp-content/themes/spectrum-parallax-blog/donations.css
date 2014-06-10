@@ -62,21 +62,21 @@ ul#newList2 {width:87%;margin: 10px auto 0;list-style:none;display:block;padding
 .ib-content-preview{height: 350px !important;left: 50% !important;margin-left: -175px;position: absolute;top: 50px !important;width: 350px !important;z-index: 10000;display:none;}
 .tyle.ib-content div {text-indent:-1000px;opacity:0;font-size:0;}
 span.ib-close{display:none !important;opacity:0;}
-#ib-content-preview[rel="anmbg1"],#WrpopupPrev[rel="anmbg1"]{background:#ccc url(images/popup/1.png) no-repeat center center}
-#ib-content-preview[rel="anmbg2"],#WrpopupPrev[rel="anmbg2"]{background:#ccc url(images/popup/2.png) no-repeat center center}
-#ib-content-preview[rel="anmbg3"],#WrpopupPrev[rel="anmbg3"]{background:#ccc url(images/popup/3.png) no-repeat center center}
-#ib-content-preview[rel="anmbg4"],#WrpopupPrev[rel="anmbg4"]{background:#ccc url(images/popup/4.png) no-repeat center center}
-#ib-content-preview[rel="anmbg5"],#WrpopupPrev[rel="anmbg5"]{background:#ccc url(images/popup/5.png) no-repeat center center}
-#ib-content-preview[rel="anmbg6"],#WrpopupPrev[rel="anmbg6"]{background:#ccc url(images/popup/6.png) no-repeat center center}
-#ib-content-preview[rel="anmbg7"],#WrpopupPrev[rel="anmbg7"]{background:#ccc url(images/popup/7.png) no-repeat center center}
-#ib-content-preview[rel="anmbg8"],#WrpopupPrev[rel="anmbg8"]{background:#ccc url(images/popup/8.png) no-repeat center center}
-#ib-content-preview[rel="anmbg9"],#WrpopupPrev[rel="anmbg9"]{background:#ccc url(images/popup/9.png) no-repeat center center}
-#ib-content-preview[rel="anmbg10"],#WrpopupPrev[rel="anmbg10"]{background:#ccc url(images/popup/10.png) no-repeat center center}
-#ib-content-preview[rel="anmbg11"],#WrpopupPrev[rel="anmbg11"]{background:#ccc url(images/popup/11.png) no-repeat center center}
-#ib-content-preview[rel="anmbg12"],#WrpopupPrev[rel="anmbg12"]{background:#ccc url(images/popup/12.png) no-repeat center center}
-#ib-content-preview[rel="anmbg13"],#WrpopupPrev[rel="anmbg13"]{background:#ccc url(images/popup/13.png) no-repeat center center}
-#ib-content-preview[rel="anmbg14"],#WrpopupPrev[rel="anmbg14"]{background:#ccc url(images/popup/14.png) no-repeat center center}
-#ib-content-preview[rel="anmbg15"],#WrpopupPrev[rel="anmbg15"]{background:#ccc url(images/popup/15.png) no-repeat center center}
+#ib-content-preview[rel="anmbg1"],#WrpopupPrev[rel="anmbg1"]{background:#ccc url(images/popup/1.png) no-repeat center top}
+#ib-content-preview[rel="anmbg2"],#WrpopupPrev[rel="anmbg2"]{background:#ccc url(images/popup/2.png) no-repeat center top}
+#ib-content-preview[rel="anmbg3"],#WrpopupPrev[rel="anmbg3"]{background:#ccc url(images/popup/3.png) no-repeat center top}
+#ib-content-preview[rel="anmbg4"],#WrpopupPrev[rel="anmbg4"]{background:#ccc url(images/popup/4.png) no-repeat center top}
+#ib-content-preview[rel="anmbg5"],#WrpopupPrev[rel="anmbg5"]{background:#ccc url(images/popup/5.png) no-repeat center top}
+#ib-content-preview[rel="anmbg6"],#WrpopupPrev[rel="anmbg6"]{background:#ccc url(images/popup/6.png) no-repeat center top}
+#ib-content-preview[rel="anmbg7"],#WrpopupPrev[rel="anmbg7"]{background:#ccc url(images/popup/7.png) no-repeat center top}
+#ib-content-preview[rel="anmbg8"],#WrpopupPrev[rel="anmbg8"]{background:#ccc url(images/popup/8.png) no-repeat center top}
+#ib-content-preview[rel="anmbg9"],#WrpopupPrev[rel="anmbg9"]{background:#ccc url(images/popup/9.png) no-repeat center top}
+#ib-content-preview[rel="anmbg10"],#WrpopupPrev[rel="anmbg10"]{background:#ccc url(images/popup/10.png) no-repeat center top}
+#ib-content-preview[rel="anmbg11"],#WrpopupPrev[rel="anmbg11"]{background:#ccc url(images/popup/11.png) no-repeat center top}
+#ib-content-preview[rel="anmbg12"],#WrpopupPrev[rel="anmbg12"]{background:#ccc url(images/popup/12.png) no-repeat center top}
+#ib-content-preview[rel="anmbg13"],#WrpopupPrev[rel="anmbg13"]{background:#ccc url(images/popup/13.png) no-repeat center top}
+#ib-content-preview[rel="anmbg14"],#WrpopupPrev[rel="anmbg14"]{background:#ccc url(images/popup/14.png) no-repeat center top}
+#ib-content-preview[rel="anmbg15"],#WrpopupPrev[rel="anmbg15"]{background:#ccc url(images/popup/15.png) no-repeat center top}
 h2.titleTops{color: #FFF;display: block;font-size: 36px;text-transform: uppercase;left: 50%;letter-spacing: 1px;margin-top: -54px;line-height: 24px;position: absolute;text-align: center;top: 12px;width: 940px;}
 h2.titleTops span {font-size:16px;}
 h3.titleTops-h3 {color:#fff;font-family:Arial !important;font-size:14px;left:50%;margin-top:-15px;position:absolute;text-align:center;width:875px;}
