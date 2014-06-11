@@ -436,6 +436,7 @@ $j(document).ready(function() {
 			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 			$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 			$donationBody.find(".oval").removeClass("selected");
+			$donationBody.find("#step-5 #in-honor-donation .user-info input").val("");
 			$donationContainer.find("input").removeClass('error-input');
 		
 			resetDonationForm();
@@ -923,6 +924,7 @@ $j(document).ready(function() {
 		$donationSteps.find(".step-number").text("1");
 		$donationWidgetStepsHolder.show();
 		$widgetDonate.hide();
+		tileDonationTriggered = false;
 		animalTileSelected = "anmbg1";
 		colorTileSelected = "1";
 
@@ -1094,7 +1096,7 @@ $j(document).ready(function() {
 			
 		var $inHonorEmail = $("#honor-email"),
 			$inHonorEmailRepeat = $("#honor-email-repeat");
-		
+	
 		if (!tileDonationTriggered) {
 			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
 				if ($j(this).val() == "") {
@@ -1105,6 +1107,7 @@ $j(document).ready(function() {
 			});
 		} else {
 			if (virtualTileSelection == "honor-oval") {
+				
 				$donationBody.find("#in-honor-donation input").each( function (index, element) {
 					if ($j(this).val() == "") {
 						$j(this).addClass("error-input");
@@ -1117,6 +1120,8 @@ $j(document).ready(function() {
 					$inHonorEmailRepeat.removeClass("error-input");
 					$inHonorEmail.removeClass("error-input");
 					userEmail = true;
+					tileDonationTriggered = true;
+		
 				} else {
 					$inHonorEmailRepeat.addClass("error-input");
 					$inHonorEmail.addClass("error-input");
@@ -1133,7 +1138,7 @@ $j(document).ready(function() {
 		
 		if (donationOrMemoryInput || tileNameLocation) {
 			infoVerified = true;
-			tileDonationTriggered = false;
+			//tileDonationTriggered = false;
 		}
 		
 		if (virtualTileSelection == "honor-oval" && !userEmail) {
