@@ -47,7 +47,9 @@ $j(document).ready(function() {
 		colorTileSelected = "1",
 		isFaqContentLoaded = false,
 		isFaqContentActive = false,
-		numberOfContainers = $("#content .parallax-container").length;
+		numberOfContainers = $("#content .parallax-container").length,
+		emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+		
 		
 	$userOtherDonation.val("");
 	$main.prepend(staticBackground);
@@ -961,9 +963,8 @@ $j(document).ready(function() {
 			stateSelection = $donationBody.find("#select-state .dd-selected-text").text(),
 			countrySelection = $donationBody.find("#select-country .dd-selected-text").text(),
 			selectExpDay = $donationBody.find("#select-exp-day .dd-selected-text").text(),
-			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text(),
-			emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
-		
+			selectExpYear = $donationBody.find("#select-exp-year .dd-selected-text").text();
+			
 		var $donorEmail = $("#donor-email"),
 			$donorEmailRepeat = $("#donor-email-repeat"),
 			$donorCcNumber = $("#donor-cc-number"),
@@ -1088,7 +1089,11 @@ $j(document).ready(function() {
 	function verifyTileInfoEntry () {
 		var infoVerified = false,
 			donationOrMemoryInput = false,
-			tileNameLocation = false;
+			tileNameLocation = false,
+			userEmail = false;
+			
+		var $inHonorEmail = $("#honor-email"),
+			$inHonorEmailRepeat = $("#honor-email-repeat");
 		
 		if (!tileDonationTriggered) {
 			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
@@ -1107,6 +1112,15 @@ $j(document).ready(function() {
 						donationOrMemoryInput = true;
 					}
 				}); 
+				
+				if (emailCheck.test($inHonorEmail.val()) && emailCheck.test($inHonorEmailRepeat.val()) && ($inHonorEmail.val() == $inHonorEmailRepeat.val())) {
+					$inHonorEmailRepeat.removeClass("error-input");
+					$inHonorEmail.removeClass("error-input");
+					userEmail = true;
+				} else {
+					$inHonorEmailRepeat.addClass("error-input");
+					$inHonorEmail.addClass("error-input");
+				}
 			} else {
 				if ($donationBody.find("#in-memory-donation input").val() == "") {
 					$donationBody.find("#in-memory-donation input").addClass("error-input");
@@ -1120,6 +1134,10 @@ $j(document).ready(function() {
 		if (donationOrMemoryInput || tileNameLocation) {
 			infoVerified = true;
 			tileDonationTriggered = false;
+		}
+		
+		if (virtualTileSelection == "honor-oval" && !userEmail) {
+			infoVerified = false;
 		}
 		
 		return infoVerified;
