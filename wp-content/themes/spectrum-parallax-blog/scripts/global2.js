@@ -762,22 +762,22 @@ var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) 
           }else {
           var donname = $(this).find('.allgift').text().replace('From: ',''),gotobId = $(this).attr('id'),locatn= $(this).find('.ts-city').text();
           $("#newList2").append("<li><a class='"+gotobId+"' href='#'><span class='tileAttr first'>"+donname+"</span> <span class='tileAttr second'>"+locatn+"</span></a></li>");
-          $("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+          $("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
         }
       });
 
 }else if($innerListItem.length > 15){
 resu2.empty().fadeIn().append("<div class='noresults'>WE FOUND " + $innerListItem.length + " INDIVIDUALS WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
 }
 else {
 resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
 }
 
 }else {
 resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
 }
 });
 
@@ -786,7 +786,7 @@ var code = e.keyCode || e.which, mep = $('#ib-content-preview');
 if( code === 13 ) {
 e.preventDefault();
 inpt2.trigger('click');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -20 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top + 10 });
 mep.hide();
 }
 });
@@ -945,7 +945,7 @@ if( $('#mast').length > 0 ) { // if target element exists in DOM
   }
 }
 $(window).scroll(function(){ // bind window scroll event
-var scrolled = $(window).scrollTop();;
+var scrolled = $(window).scrollTop();
   if( $('#mast').length > 0 ) { // if target element exists in DOvar opaq = $(".opaq");M
     if( $('#mast').is_on_screen() ) { // if target element is visible on screen after DOM loaded
       tgHide.addClass('togHide');
@@ -1022,6 +1022,7 @@ if ($(window).width() > 1024) {
 }
 });
 $(window).scroll(function(){
+var isHere = $('#donation-container').is(':visible');
 if ($(window).width() <= 1024) {
 
 if( $('#explore-further-donate').is_on_screen() ) {
@@ -1029,6 +1030,17 @@ if( $('#explore-further-donate').is_on_screen() ) {
   } else {
      $('#footer').hide();
   }
+ 
+ if(isHere){
+ if( $('#donation-body').is_on_screen() ) {
+	$('a#donateClk').css('display','none');
+	$('#donation-widget-steps').css('display','block');
+  } else {
+  $('#donation-widget-steps').css('display','none');
+    $('a#donateClk').css('display','block');
+  }
+ }
+ 
 }
 if ($(window).width() > 1024) {
   $('#footer').show();
@@ -1067,6 +1079,10 @@ if ($(window).width() <= 1024) {
 $('#donation-widget #widget-donate a#donateClk').removeClass('bigz');
 $('#back-button').addClass('midz');
 $('#donation-steps').removeClass('ligz');
+$('#donation-steps').removeClass('ligz');
+setTimeout(function () {
+$('#logosm').css('opacity',1);
+},2400);
 }
 if ($(window).width() > 1024) {
 $('#donation-widget #widget-donate a#donateClk').addClass('bigz');

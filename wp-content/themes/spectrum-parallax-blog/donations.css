@@ -164,7 +164,7 @@ input.focus-in-background{color:#000 !important;}.widget-container-info{font-siz
 #donation-widget #donation-goal, #donation-widget #amount-donated, #donation-widget #donation-left{background:none;}
 #donation-widget #widget-content{margin-top:20px;}
 .widget-container-info{color:#fff;}
-#donation-widget #widget-donate a#donateClk.bigz{margin:0 20px 0 0;background: url("/wp-content/themes/spectrum-parallax-blog/images/donate-new.png") no-repeat;width:120px;height:91px;}
+#donation-widget #widget-donate a#donateClk.bigz{opacity:0;margin:0 20px 0 0;background: url("/wp-content/themes/spectrum-parallax-blog/images/donate-new.png") no-repeat;width:120px;height:91px;}
 #donation-steps.ligz{background:none;border-left: 1px solid #00B1CC;border-right: 1px solid #00B1CC;font-size:14px;padding-top:17px;height: 91px;margin: 0 20px 0 0;width: 120px;}
 #donation-widget #widget-logo{margin:0 25px 0 34px;}
 #back-button.midz { position:absolute;width:50%;right:0;top:0;margin:2px 0 0 !important; height:30px; text-indent:-9999px;background-color: #fff452;}
@@ -513,8 +513,9 @@ input#searchTerm2{width:243px !important;}
 
 }
 @media only screen and (min-device-width : 1px) and (max-device-width : 1024px) {
-#logosm {margin:6px 0 0 2% !important;}
+#logosm {margin:6px 0 0 2% !important;opacity:0;}
 #logosm a{margin:0;}
+#donation-widget #widget-donate a#donateClk.bigz{opacity:0;}
 #menuMob{display:inline-block;margin-top:-12px;}
 #mobNav{background:#26343D;height:36px;position: fixed;z-index:100000;}
 .shimbg{background:#666 !important;}

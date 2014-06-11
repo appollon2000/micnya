@@ -118,7 +118,6 @@ $j(document).ready(function() {
 					$main.find("#faq-place-holder #holder h1").append(closeFaq);
 					$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
 						e.preventDefault();
-
 						isFaqContentActive = false;
 						hideFaqSection();
 					});
