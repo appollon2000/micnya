@@ -705,7 +705,7 @@ function stopWave() {
 inpt.on("click", function(e) {
   e.preventDefault();
   $('#blockLink6 a').trigger('click');
-  var inval = $.trim($('input#searchTerm').val()).replace(/ /g,''), rawVal = $('#dosearch input#searchTerm').val();
+  var inval = $.trim($('input#searchTerm').val()).replace(/ /g,''), rawVal = $('#dosearch input#searchTerm').val(),ints=$('input#searchTerm');
   resu.empty();   
   if(!inval==''){
     var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
@@ -746,7 +746,7 @@ inpt.trigger('click');
 
 inpt2.on("click", function(e) {
   e.preventDefault();
-  var inval = $.trim($('input#searchTerm2').val()).replace(/ /g,''), rawVal = $('#dosearch2 input#searchTerm2').val();
+  var inval = $.trim($('input#searchTerm2').val()).replace(/ /g,''), rawVal = $('#dosearch2 input#searchTerm2').val(),ints2=$('input#searchTerm2');
   resu2.empty();   
   if(!inval==''){
     var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
@@ -861,6 +861,7 @@ console.log(transactionID);
 function onFailure(jqXHR, textStatus, error){
   var failMsg = 'ERROR!\n\n'+error+'\n\nTransaction failed. Please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
   alert(failMsg);
+  return false;
 }
 
 function onTimeout(){
@@ -884,7 +885,7 @@ categz = "Transformer";
 var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=7081&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val()+"&category="+categz;
 
 if(hemailength>0){
-uriStr += "&send_ecardname=on"+"&tribute_ecard_subjectname=Thank You for Supporting the New York Aquarium"+"&ecard_recpientsname=" + hemail +"&ecard_recpientssubmit=true"+"&tribute_ecard_subjectsubmit=true"+"&send_ecardsubmit=true"+"&e_card_copy_sendersubmite=true"+"&tribute_honoree_namename=Gift Recipient"+"&tribute_honoree_namesubmit=true"+"&stationery_layout_choosere=true"+"&stationery_layout_id=3381"+"&tribute_ecard_messagesubmit=true"+"&select_gridsubmit=true"+"&tribute_ecard_messagename=-";
+uriStr += "&send_ecardname=on"+"&tribute_ecard_subjectname=Thank You for Supporting the New York Aquarium"+"&ecard_recpientsname=" + hemail +"&ecard_recpientssubmit=true"+"&tribute_ecard_subjectsubmit=true"+"&send_ecardsubmit=true"+"&e_card_copy_sendersubmite=true"+"&tribute_honoree_namename=Gift Recipient"+"&tribute_honoree_namesubmit=true"+"&stationery_layout_choosere=true"+"&stationery_layout_id=3821"+"&tribute_ecard_messagesubmit=true"+"&select_gridsubmit=true"+"&tribute_ecard_messagename=-";
 }
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
@@ -903,6 +904,7 @@ var xdr;
         },
 
           success:function(xml) {
+            $('#next a').addClass('passedon');
             a =  $(xml), trID=a.find('transaction_id').text();
              $.ajax({
                 type: 'POST',

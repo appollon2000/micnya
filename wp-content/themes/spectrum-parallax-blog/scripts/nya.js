@@ -48,7 +48,8 @@ $j(document).ready(function() {
 		isFaqContentLoaded = false,
 		isFaqContentActive = false,
 		numberOfContainers = $("#content .parallax-container").length,
-		emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+		emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i,
+		checkSuccess = false;
 		
 		
 	$userOtherDonation.val("");
@@ -353,7 +354,7 @@ $j(document).ready(function() {
 	
 	$donateAnotherTile.on("click", function (e) {
 		e.preventDefault();
-		
+		$donationNext.removeClass('passedon');
 		animateTileDonation("donate-another");
 		
 		/*$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
@@ -544,6 +545,7 @@ $j(document).ready(function() {
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25
 	function authorizeFirstStep () {
+		$donationNext.removeClass('passedon');
 		// If the user selects a default amount, proceed to the next section; otherwise,
 		// validate the user entry.
 		if (amountSelected) {
@@ -579,6 +581,7 @@ $j(document).ready(function() {
 	// If not errors on Step 1, proceed to Step 2
 	// Client update: From step 1, user will go to step 4, then back to step 2.
 	function continueToSecondStep () {
+		$donationNext.removeClass('passedon');
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep = 2;
 			
@@ -719,6 +722,8 @@ $j(document).ready(function() {
 	}
 	// Step 3: let the user acknowledge the amount of the transaction and what kind of donor he/she will become
 	function submitTransaction () {
+		  setTimeout(function () {
+		if($donationNext.hasClass('passedon')) {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			//currentDonationStep++;
 			currentDonationStep = 6;
@@ -743,6 +748,11 @@ $j(document).ready(function() {
 			}
 		});
 	}
+	else {
+		return false;
+	}
+}, 1000);
+}
 	
 	function userTileSelection () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {	
