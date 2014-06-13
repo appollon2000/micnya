@@ -1005,6 +1005,8 @@ e.preventDefault();
 $("html, body").animate({ scrollTop: $("#block7").offset().top });
 });
 
+$parentDiv.mousedown(function() {$(this).addClass('effic');}).mouseup(function() {    $(this).removeClass('effic');});
+
 $(window).resize(function(){
 if ($(window).width() <= 1024) {
 $('#donation-widget #widget-donate a#donateClk').removeClass('bigz');
