@@ -257,12 +257,12 @@ body { background: #eeefe9 !important; }
 #block9 .story .float-left { width: 1050px; }
 #block8 .story .float-left { margin-top: 150px !important; width: 1050px }
 #explore-further-discover, #explore-further-find-out { color: #fff; font-family: "Swiss721BT-Black"; font-size: 45px; text-align: center; width: 1050px;padding:0 20px; }
-#explore-further-find-out { margin-bottom: 700px; margin-top: 200px; }
+#explore-further-find-out { margin-bottom: 500px; margin-top: 200px; }
 #explore-further-discover a, #explore-further-find-out a { color: #fff452; text-decoration: underline; }
 #explore-further-discover { margin-top: 200px; }
 #explore-further-donate { text-align: center; width: 1050px; }
-#explore-further-donate a { background: url('/wp-content/themes/spectrum-parallax-blog/images/donate.now.btn.lg.png') no-repeat; color: #fff452; display: block; height: 113px; margin: 0 auto 300px; text-indent: -9999px; width: 678px; }
-#explore-further-discover a:hover, #explore-further-find-out a:hover { color: #fff452; text-decoration: underline; }
+#explore-further-donate a { background: url('/wp-content/themes/spectrum-parallax-blog/images/donate.now.btn.lg.png') no-repeat; color: #fff452; display: block; height: 113px; margin: 0 auto 500px; text-indent: -9999px; width: 678px; }
+#explore-further-discover a:hover, #explore-further-find-out a:hover { color: #fff; text-decoration: underline; }
 #explore-further-donate a:hover { color: #fff; }
 
 /*#content #block10 { background-image: url('/wp-content/uploads/2014/05/long.bkg.jpg') !important; background-position: 50% 0 !important; }*/

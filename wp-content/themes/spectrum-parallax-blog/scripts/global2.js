@@ -705,7 +705,7 @@ function stopWave() {
 inpt.on("click", function(e) {
   e.preventDefault();
   $('#blockLink6 a').trigger('click');
-  var inval = $.trim($('input#searchTerm').val()).replace(/ /g,''), rawVal = $('#dosearch input#searchTerm').val();
+  var inval = $.trim($('input#searchTerm').val()).replace(/ /g,''), rawVal = $('#dosearch input#searchTerm').val(),ints=$('input#searchTerm');
   resu.empty();   
   if(!inval==''){
     var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
@@ -746,7 +746,7 @@ inpt.trigger('click');
 
 inpt2.on("click", function(e) {
   e.preventDefault();
-  var inval = $.trim($('input#searchTerm2').val()).replace(/ /g,''), rawVal = $('#dosearch2 input#searchTerm2').val();
+  var inval = $.trim($('input#searchTerm2').val()).replace(/ /g,''), rawVal = $('#dosearch2 input#searchTerm2').val(),ints2=$('input#searchTerm2');
   resu2.empty();   
   if(!inval==''){
     var $innerListItem = $('div.ib-main .tyle[rel*="'+inval+'"]');
@@ -762,22 +762,22 @@ var regh2 = ($(this).find('.ib-teaser h2').text().toLowerCase().indexOf(rawVal) 
           }else {
           var donname = $(this).find('.allgift').text().replace('From: ',''),gotobId = $(this).attr('id'),locatn= $(this).find('.ts-city').text();
           $("#newList2").append("<li><a class='"+gotobId+"' href='#'><span class='tileAttr first'>"+donname+"</span> <span class='tileAttr second'>"+locatn+"</span></a></li>");
-          $("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+          $("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
         }
       });
 
 }else if($innerListItem.length > 15){
 resu2.empty().fadeIn().append("<div class='noresults'>WE FOUND " + $innerListItem.length + " INDIVIDUALS WITH THE SAME NAME, PLEASE REFINE YOUR SEARCH");
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
 }
 else {
 resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
 }
 
 }else {
 resu2.empty().fadeIn().html('<div class="noresults">No matches were found!</div>');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -300 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top +10 });
 }
 });
 
@@ -786,7 +786,7 @@ var code = e.keyCode || e.which, mep = $('#ib-content-preview');
 if( code === 13 ) {
 e.preventDefault();
 inpt2.trigger('click');
-$("html, body").animate({ scrollTop: $("#block6").offset().top -20 });
+$("html, body").animate({ scrollTop: $("#block6").offset().top + 10 });
 mep.hide();
 }
 });
@@ -861,6 +861,7 @@ console.log(transactionID);
 function onFailure(jqXHR, textStatus, error){
   var failMsg = 'ERROR!\n\n'+error+'\n\nTransaction failed. Please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
   alert(failMsg);
+  return false;
 }
 
 function onTimeout(){
@@ -884,7 +885,7 @@ categz = "Transformer";
 var uriStr = "method=donate&v=1.0&api_key=zooapikey&df_preview=true&source=NYA Microsite Donation Form&form_id=7081&level_id=8462&donor_email_opt_inname=implicit&donor_email_opt_insubmit=true&billing.name.first="+ $('input#donor-first-name').val()+ "&billing.name.last="+ $('input#donor-last-name').val()+ "&billing.address.street1="+$('input#donor-address').val()+"&billing.address.street2="+$('input#donor-address-more').val()+"&billing.address.city="+$('input#donor-city').val()+"&billing.address.state="+$.trim($('#select-state ul.dd-options li a.dd-option-selected').text())+"&billing.address.zip="+$('input#donor-postal-code').val()+"&category="+categz;
 
 if(hemailength>0){
-uriStr += "&send_ecardname=on"+"&tribute_ecard_subjectname=Thank You for Supporting the New York Aquarium"+"&ecard_recpientsname=" + hemail +"&ecard_recpientssubmit=true"+"&tribute_ecard_subjectsubmit=true"+"&send_ecardsubmit=true"+"&e_card_copy_sendersubmite=true"+"&tribute_honoree_namename=Gift Recipient"+"&tribute_honoree_namesubmit=true"+"&stationery_layout_choosere=true"+"&stationery_layout_id=3381"+"&tribute_ecard_messagesubmit=true"+"&select_gridsubmit=true"+"&tribute_ecard_messagename=-";
+uriStr += "&send_ecardname=on"+"&tribute_ecard_subjectname=Thank You for Supporting the New York Aquarium"+"&ecard_recpientsname=" + hemail +"&ecard_recpientssubmit=true"+"&tribute_ecard_subjectsubmit=true"+"&send_ecardsubmit=true"+"&e_card_copy_sendersubmite=true"+"&tribute_honoree_namename=Gift Recipient"+"&tribute_honoree_namesubmit=true"+"&stationery_layout_choosere=true"+"&stationery_layout_id=3821"+"&tribute_ecard_messagesubmit=true"+"&select_gridsubmit=true"+"&tribute_ecard_messagename=-";
 }
 
 var url = 'https://secure3.convio.net/wcs/site/CRDonationAPI?' + uriStr;
@@ -903,6 +904,7 @@ var xdr;
         },
 
           success:function(xml) {
+            $('#next a').addClass('passedon');
             a =  $(xml), trID=a.find('transaction_id').text();
              $.ajax({
                 type: 'POST',
@@ -945,7 +947,7 @@ if( $('#mast').length > 0 ) { // if target element exists in DOM
   }
 }
 $(window).scroll(function(){ // bind window scroll event
-var scrolled = $(window).scrollTop();;
+var scrolled = $(window).scrollTop();
   if( $('#mast').length > 0 ) { // if target element exists in DOvar opaq = $(".opaq");M
     if( $('#mast').is_on_screen() ) { // if target element is visible on screen after DOM loaded
       tgHide.addClass('togHide');
@@ -1003,6 +1005,8 @@ e.preventDefault();
 $("html, body").animate({ scrollTop: $("#block7").offset().top });
 });
 
+$parentDiv.mousedown(function() {$(this).addClass('effic');}).mouseup(function() {    $(this).removeClass('effic');});
+
 $(window).resize(function(){
 if ($(window).width() <= 1024) {
 $('#donation-widget #widget-donate a#donateClk').removeClass('bigz');
@@ -1022,6 +1026,7 @@ if ($(window).width() > 1024) {
 }
 });
 $(window).scroll(function(){
+var isHere = $('#donation-container').is(':visible');
 if ($(window).width() <= 1024) {
 
 if( $('#explore-further-donate').is_on_screen() ) {
@@ -1029,6 +1034,17 @@ if( $('#explore-further-donate').is_on_screen() ) {
   } else {
      $('#footer').hide();
   }
+ 
+ if(isHere){
+ if( $('#donation-body').is_on_screen() ) {
+	$('a#donateClk').css('display','none');
+	$('#donation-widget-steps').css('display','block');
+  } else {
+  $('#donation-widget-steps').css('display','none');
+    $('a#donateClk').css('display','block');
+  }
+ }
+ 
 }
 if ($(window).width() > 1024) {
   $('#footer').show();
@@ -1067,6 +1083,10 @@ if ($(window).width() <= 1024) {
 $('#donation-widget #widget-donate a#donateClk').removeClass('bigz');
 $('#back-button').addClass('midz');
 $('#donation-steps').removeClass('ligz');
+$('#donation-steps').removeClass('ligz');
+setTimeout(function () {
+$('#logosm').css('opacity',1);
+},2400);
 }
 if ($(window).width() > 1024) {
 $('#donation-widget #widget-donate a#donateClk').addClass('bigz');

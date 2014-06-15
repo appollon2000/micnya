@@ -48,7 +48,8 @@ $j(document).ready(function() {
 		isFaqContentLoaded = false,
 		isFaqContentActive = false,
 		numberOfContainers = $("#content .parallax-container").length,
-		emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i;
+		emailCheck = /^[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i,
+		checkSuccess = false;
 		
 		
 	$userOtherDonation.val("");
@@ -118,7 +119,6 @@ $j(document).ready(function() {
 					$main.find("#faq-place-holder #holder h1").append(closeFaq);
 					$main.find("#faq-place-holder #holder #close-faq").on("click", function (e) {
 						e.preventDefault();
-
 						isFaqContentActive = false;
 						hideFaqSection();
 					});
@@ -354,7 +354,7 @@ $j(document).ready(function() {
 	
 	$donateAnotherTile.on("click", function (e) {
 		e.preventDefault();
-		
+		$donationNext.removeClass('passedon');
 		animateTileDonation("donate-another");
 		
 		/*$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
@@ -436,6 +436,7 @@ $j(document).ready(function() {
 			$donationBody.find(".donation-content").removeClass("light-yellow-selected-donation");
 			$donationBody.find(".donation-amount").removeClass("dark-yellow-selected-donation");
 			$donationBody.find(".oval").removeClass("selected");
+			$donationBody.find("#step-5 #in-honor-donation .user-info input").val("");
 			$donationContainer.find("input").removeClass('error-input');
 		
 			resetDonationForm();
@@ -544,6 +545,7 @@ $j(document).ready(function() {
 	}
 	// Step 1: user selects a donation amount or enter one that is > $25
 	function authorizeFirstStep () {
+		$donationNext.removeClass('passedon');
 		// If the user selects a default amount, proceed to the next section; otherwise,
 		// validate the user entry.
 		if (amountSelected) {
@@ -579,6 +581,7 @@ $j(document).ready(function() {
 	// If not errors on Step 1, proceed to Step 2
 	// Client update: From step 1, user will go to step 4, then back to step 2.
 	function continueToSecondStep () {
+		$donationNext.removeClass('passedon');
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			currentDonationStep = 2;
 			
@@ -719,6 +722,8 @@ $j(document).ready(function() {
 	}
 	// Step 3: let the user acknowledge the amount of the transaction and what kind of donor he/she will become
 	function submitTransaction () {
+		  setTimeout(function () {
+		if($donationNext.hasClass('passedon')) {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
 			//currentDonationStep++;
 			currentDonationStep = 6;
@@ -743,6 +748,11 @@ $j(document).ready(function() {
 			}
 		});
 	}
+	else {
+		return false;
+	}
+}, 1000);
+}
 	
 	function userTileSelection () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {	
@@ -923,6 +933,7 @@ $j(document).ready(function() {
 		$donationSteps.find(".step-number").text("1");
 		$donationWidgetStepsHolder.show();
 		$widgetDonate.hide();
+		tileDonationTriggered = false;
 		animalTileSelected = "anmbg1";
 		colorTileSelected = "1";
 
@@ -1094,7 +1105,7 @@ $j(document).ready(function() {
 			
 		var $inHonorEmail = $("#honor-email"),
 			$inHonorEmailRepeat = $("#honor-email-repeat");
-		
+	
 		if (!tileDonationTriggered) {
 			$donationBody.find("#step-5 .section-top input").each( function (index, element) {
 				if ($j(this).val() == "") {
@@ -1105,6 +1116,7 @@ $j(document).ready(function() {
 			});
 		} else {
 			if (virtualTileSelection == "honor-oval") {
+				
 				$donationBody.find("#in-honor-donation input").each( function (index, element) {
 					if ($j(this).val() == "") {
 						$j(this).addClass("error-input");
@@ -1117,6 +1129,8 @@ $j(document).ready(function() {
 					$inHonorEmailRepeat.removeClass("error-input");
 					$inHonorEmail.removeClass("error-input");
 					userEmail = true;
+					tileDonationTriggered = true;
+		
 				} else {
 					$inHonorEmailRepeat.addClass("error-input");
 					$inHonorEmail.addClass("error-input");
@@ -1133,7 +1147,7 @@ $j(document).ready(function() {
 		
 		if (donationOrMemoryInput || tileNameLocation) {
 			infoVerified = true;
-			tileDonationTriggered = false;
+			//tileDonationTriggered = false;
 		}
 		
 		if (virtualTileSelection == "honor-oval" && !userEmail) {
