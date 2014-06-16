@@ -50,7 +50,7 @@ vars[hash[0]] = hash[1];
 return vars;
 }
 
-var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),inpt2=$('#searchGo2'),resu=$('#results'),resu2=$('#results2'),ints=$('input#searchTerm'),ints2=$('input#searchTerm2'),formz=$('form#searchus'),formz2=$('form#searchus2'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3),donNex = $('#next a'),bckbt = $('#back-button a');
+var $parentDiv = $('#ib-main-wrapper'),documt = $(document),inpt=$('#searchGo'),inpt2=$('#searchGo2'),resu=$('#results'),resu2=$('#results2'),ints=$('input#searchTerm'),ints2=$('input#searchTerm2'),formz=$('form#searchus'),formz2=$('form#searchus2'),animals=$('#donation-container .animals ul li a'),colors=$('#donation-container .colourBar ul li a'), prevTile = $('a#preview-tile'), prevClose = $('.prevClose a'), ctdn = jQuery('#widget-days-left'), clkDonate = $('a.click-donate'), indivTile = $('div.ib-main div.tyle'), clkArrow = $('#mission-block-container #arrow-down a'),mobMenu =$('#mobNav'),mobMenuAnc =$('#mobNav ul li a'),shimclose=$('.shimclose a'),mob1 = $('.ensb ul li a').eq(0),mob2 = $('.ensb ul li a').eq(1),mob3 = $('.ensb ul li a').eq(2),mob4 = $('.ensb ul li a').eq(3),donNex = $('#next a'),bckbt = $('#back-button a'),postTile=$('#social-icons-tiles a#fb-share');
 
 $j = jQuery.noConflict();
 $(function() {
@@ -973,7 +973,7 @@ $("html, body").animate({ scrollTop:0 }, 500, function() {
 if (getUrlVars()["vtile"]) {
 setTimeout(function () {
 $("html, body").animate({ scrollTop: $("#block6").offset().top }, 3000, function() {
-$('#goto0').trigger('click');
+$('div.tyle').eq(0).trigger('click');
 });
 }, 4400);
 }
@@ -983,6 +983,31 @@ $("html, body").animate({ scrollTop: $("#block6").offset().top }, 3000, function
 });
 }, 4400);
 }
+if (getUrlVars()["usertile"]) {
+var utile = getUrlVars()["usertile"];
+setTimeout(function () {
+$("html, body").animate({ scrollTop: $("#block6").offset().top }, 3000, function() {
+$('#goto'+utile).trigger('click');
+});
+}, 2000);
+}
+postTile.on("click", function(e) {
+e.preventDefault();
+$.ajax({
+  url: '/fetchtile',
+  data: "",
+  dataType: 'html',
+  success: function(data)
+  {
+    var myString = data;
+  var mOne = myString.split('-')[0], mTwo = myString.split('-')[1], mThree = myString.split('-')[2];
+  setTimeout(function() {
+      window.location.href = "https://www.facebook.com/dialog/feed?app_id=631772250191311&link=http://eyeballdigital.com/ny-aquarium/?usertile=goto"+mOne+"&picture=http://eyeballdigital.com/ny-aquarium/wp-content/themes/spectrum-parallax-blog/images/tiles/"+mTwo+"-"+mThree+".png&description=I+have+just+helped+build+New+York+Aquarium%27s+Ocean+Wonders%3A+Sharks!+by+donating+to+the+world%27s+best+shark+exhibit.+Come+explore+and+help+build+it+too!&redirect_uri=https://www.facebook.com/";
+}, 1800);
+}
+});
+});
+
 mobMenu.on("click", function(e) {
 e.preventDefault();
 var thUl = $('#mobNav .nav.navbar-nav');
