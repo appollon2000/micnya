@@ -987,7 +987,7 @@ if (getUrlVars()["usertile"]) {
 var utile = getUrlVars()["usertile"];
 setTimeout(function () {
 $("html, body").animate({ scrollTop: $("#block6").offset().top }, 3000, function() {
-$('#goto'+utile).trigger('click');
+$('#'+utile).trigger('click');
 });
 }, 2000);
 }
@@ -1002,8 +1002,8 @@ $.ajax({
     var myString = data;
   var mOne = myString.split('-')[0], mTwo = myString.split('-')[1], mThree = myString.split('-')[2];
   setTimeout(function() {
-      window.location.href = "https://www.facebook.com/dialog/feed?app_id=631772250191311&link=http://eyeballdigital.com/ny-aquarium/?usertile=goto"+mOne+"&picture=http://eyeballdigital.com/ny-aquarium/wp-content/themes/spectrum-parallax-blog/images/tiles/"+mTwo+"-"+mThree+".png&description=I+have+just+helped+build+New+York+Aquarium%27s+Ocean+Wonders%3A+Sharks!+by+donating+to+the+world%27s+best+shark+exhibit.+Come+explore+and+help+build+it+too!&redirect_uri=https://www.facebook.com/";
-}, 1800);
+      window.location.href = "https://www.facebook.com/dialog/feed?app_id=631772250191311&link=https://transform-dev.nyaquarium.com/?usertile=goto"+mOne+"&picture=https://transform-dev.nyaquarium.com/wp-content/themes/spectrum-parallax-blog/images/tiles/"+mTwo+"-"+mThree+".png&description=I+have+just+helped+build+New+York+Aquarium%27s+Ocean+Wonders%3A+Sharks!+by+donating+to+the+world%27s+best+shark+exhibit.+Come+explore+and+help+build+it+too!&redirect_uri=https://www.facebook.com/";
+}, 1500);
 }
 });
 });
