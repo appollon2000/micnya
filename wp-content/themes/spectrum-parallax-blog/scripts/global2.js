@@ -1031,7 +1031,14 @@ $("html, body").animate({ scrollTop: $("#block7").offset().top });
 });
 
 $parentDiv.mousedown(function() {$(this).addClass('effic');}).mouseup(function() {    $(this).removeClass('effic');});
-
+$('input#searchTerm').focus(function() {
+var pVal=$(this);
+pVal.attr('placeholder','');
+})
+.blur(function() {
+var pVal=$(this);
+pVal.attr('placeholder','SEARCH NAME');
+});
 $(window).resize(function(){
 if ($(window).width() <= 1024) {
 $('#donation-widget #widget-donate a#donateClk').removeClass('bigz');
