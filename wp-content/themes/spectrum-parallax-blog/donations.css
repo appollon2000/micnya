@@ -176,7 +176,7 @@ html.mozyy #donation-widget #widget-donate a#donateClk.bigz{opacity:0;}
 .listWrapper{width:100%;}
 ul.listCenter{color: #fff;font-family: Arial !important;font-size: 14px;margin:40px auto 0 auto;text-transform: uppercase;width: 540px;padding-left:40px;}
 #block6 .float-left.blank {width:100%;}
-#block6 h3.titleTops-h3 {width:100%;position:relative;margin:0;left:auto;font-weight:bold;}
+#block6 h3.titleTops-h3 {width:100%;text-transform:uppercase;position:relative;margin:0;left:auto;font-weight:bold;}
 #block6 h2.titleTops {width:100%;position:relative;left:auto;top:0;line-height:56px;}
 
 
