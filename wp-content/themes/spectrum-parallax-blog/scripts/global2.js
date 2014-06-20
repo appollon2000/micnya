@@ -859,8 +859,13 @@ console.log(transactionID);
 }
 
 function onFailure(jqXHR, textStatus, error){
-  var failMsg = 'ERROR!\n\n'+error+'\n\nTransaction failed. Please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
-  alert(failMsg);
+  //var failMsg = 'ERROR!\n\n'+error+'\n\nTransaction failed. Please contact the administrator at nyashimmerwall@wcs.org\nYou have NOT been charged.';
+  //alert(failMsg);
+	$("#donation-header h1").text("Error");
+  	$("#step-3 #post-transaction").hide();
+	$("#step-error").show();
+	$("#next a").addClass("transaction-error");
+  
   return false;
 }
 

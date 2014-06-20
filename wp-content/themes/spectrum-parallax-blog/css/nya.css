@@ -10,6 +10,7 @@ body { background: #eeefe9 !important; }
 /* page overlay */
 #page-overlay { background: #000; display: none; height: 10800px; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%; z-index: 10000; }
 .error-input { border: 1px solid red; }
+
 #donation-body .donation-info-other.friend-donation-padding-top { padding-top: 25px; }
 #donation-body .donation-info-other.supporter-donation-padding-top { padding-top: 18px; }
 #donation-body .donation-info-other.transformer-donation-padding-top { padding-top: 12px; }
@@ -95,6 +96,7 @@ body { background: #eeefe9 !important; }
 #next a.submit-transition { background-position: -121px -58px; }
 #next a.complete-tile { background-position: -24px -174px; margin-left: 244px; width: 379px; }
 #next a.personalize-tile { background-position: 0 -233px; width: 420px; }
+#next a.transaction-error { background-position: -121px -115px; }
 #view-your-tile, #donate-another { float: left; height: 58px; }
 #view-your-tile { margin: 0 20px 0 132px; }
 #view-your-tile a { background: url('/wp-content/themes/nya/images/view.tile.btn.png') no-repeat; float: none; height: 58px; margin-right: 4px; text-indent: -9999px; width: 374px;margin:0 auto; }
@@ -227,6 +229,8 @@ body { background: #eeefe9 !important; }
 #step-7 #social-icons-tiles #fb-share { background: url('/wp-content/themes/nya/images/donate.fb.btn.png') no-repeat; }
 #step-7 #social-icons-tiles #tw-share { background: url('/wp-content/themes/nya/images/donate.tw.btn.png') no-repeat; }
 
+#step-error { display: none; }
+#step-error .step-error-text { margin: 0 auto; text-align: center; width: 80%; }
 #content #block1 { min-height: 1720px !important; max-height: 1720px; height: 1720px; }
 #content #block1 #text-top h1, #content #block1 #text-bottom h1 { color: #fff; display: block; font-family: "Swiss721BT-Black"; font-size: 70px; line-height: 70px; text-transform: uppercase; }
 #content #block1 #text-top h1 { margin-bottom: 110px;letter-spacing: -3px; }

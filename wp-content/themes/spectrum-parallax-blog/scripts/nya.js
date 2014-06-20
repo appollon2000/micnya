@@ -27,6 +27,7 @@ $j(document).ready(function() {
 		$faqLink = $("#socialNetworks a.subscribe"),
 		$selectedOption = $(".dd-selected"),
 		$donationWidgetStepsHolder = $("#donation-widget-steps"),
+		$stepError = $("#step-error"),
 		$closeFaq;
 	
 	var amountSelected = false,
@@ -34,6 +35,7 @@ $j(document).ready(function() {
 		customDonationAmount = 0,
 		isCustomDonation = false,
 		firstDonationComplete = false,
+		isDonationError = false,
 		donationAmount,
 		donationLevel,
 		regExpNumbers = /^[0-9]{1,20}$/,
@@ -669,6 +671,8 @@ $j(document).ready(function() {
 				});
 			
 				$donationNext.addClass("submit-transition");
+
+				$donationBody.find("#step-" + currentDonationStep + " #post-transaction").show();
 				
 				if (donationLevel == "Supporter") {
 					$j("#step-" + currentDonationStep).find(".supporter-donation").show();
@@ -715,44 +719,52 @@ $j(document).ready(function() {
 
 			$donationSteps.find(".step-number").text("3");
 			$donationBody.find("#step-1").hide();
+			$donationNext.removeClass("transaction-error");
 			currentDonationStep = 2;
+			$stepError.hide();
 			//currentDonationStep--;
 			$donationBody.find("#step-" + currentDonationStep).fadeIn();
 		});
 	}
 	// Step 3: let the user acknowledge the amount of the transaction and what kind of donor he/she will become
 	function submitTransaction () {
-		  setTimeout(function () {
-		if($donationNext.hasClass('passedon')) {
-		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
-			//currentDonationStep++;
-			currentDonationStep = 6;
+		if (!isDonationError) {
+			setTimeout(function () {
+				if($donationNext.hasClass('passedon')) {
+					$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {
+						//currentDonationStep++;
+						currentDonationStep = 6;
 			
-			$donationContainer.animate({
-				height: 65
-			}, 500, "linear");
+						$donationContainer.animate({
+							height: 65
+						}, 500, "linear");
 			
-			$donationHeader.find("h1").fadeOut("slow", function () {
-				$j(this).text("Your transaction is complete");
-				$donationNext.removeClass("submit-transition").addClass("personalize-tile");
+						$donationHeader.find("h1").fadeOut("slow", function () {
+							$j(this).text("Your transaction is complete");
+							$donationNext.removeClass("submit-transition").addClass("personalize-tile");
 
-				$j(this).fadeIn();
-			});
+							$j(this).fadeIn();
+						});
 
-			$donationBody.hide();
-			$donationBackBtn.hide();
+						$donationBody.hide();
+						$donationBackBtn.hide();
 			
-			if (isIpad() || isMobile()) {
-				$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
-				$donationWidgetStepsHolder.find("#back-button.midz").hide();
-			}
-		});
+						if (isIpad() || isMobile()) {
+							$donationWidgetStepsHolder.find("#donation-steps").addClass("add-ipad-full-width").show();
+							$donationWidgetStepsHolder.find("#back-button.midz").hide();
+						}
+					});
+				}
+				else {
+					isDonationError = true;
+					return false;
+				}
+			}, 1000);
+		} else {
+			isDonationError = false;
+			goBackToSecondStep();
+		}
 	}
-	else {
-		return false;
-	}
-}, 1000);
-}
 	
 	function userTileSelection () {
 		$donationBody.find("#step-" + currentDonationStep).fadeOut("slow", function () {	
