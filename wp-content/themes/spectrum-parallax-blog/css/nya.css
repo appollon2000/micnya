@@ -6,7 +6,7 @@ body { background: #eeefe9 !important; }
 #footer { background: transparent !important; bottom: -3px; position: fixed; z-index: 9999; }
 #footer .right { display: none; }
 #footer .left { color: #26343d; font-size: 9px; height: 29px; margin: -33px 0 0 368px; padding: 9px 20px; text-transform: uppercase; }
-#footer .left a { color: #26343d; text-decoration: underline; }
+#footer .left a { color: #26343d; padding: 0 5px; text-decoration: underline; }
 /* page overlay */
 #page-overlay { background: #000; display: none; height: 10800px; left: 0; opacity: 0.5; position: absolute; top: 0; width: 100%; z-index: 10000; }
 .error-input { border: 1px solid red; }
