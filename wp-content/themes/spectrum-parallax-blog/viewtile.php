@@ -54,7 +54,7 @@ if ($sumcat == 0) {
 }
   
 if($row['praise'] == 0) {
-$praisy = 'In honor of';
+$praisy = 'Given in honor of';
 }else {
 $praisy = 'In memory of';
 }

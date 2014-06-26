@@ -305,16 +305,20 @@ body.page-id-382 { background-color: #00b1cc !important; }
 @media only screen and  (max-width : 320px) {
 	#accordion { padding-top: 20%; }
   .ui-accordion .ui-accordion-content { height: 140px !important; }
-
+  #content ul.listCenter li:first-child,
+  #content ul.listCenter li:nth-child(2) { display: none; }
 }
 
 @media only screen and (min-width: 321px) and (max-width : 479px) {
   .ui-accordion .ui-accordion-content { height: 150px !important; }
+  #content ul.listCenter li:first-child,
+  #content ul.listCenter li:nth-child(2) { display: none; }
 }
 
 @media only screen and (min-width: 480px) and (max-width : 767px) {
   .ui-accordion .ui-accordion-content { height: 180px !important; }
-  
+  #content ul.listCenter li:first-child,
+  #content ul.listCenter li:nth-child(2) { display: none; }
 }
 
 
